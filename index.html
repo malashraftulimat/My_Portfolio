@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M ALASHRAF TOLIMAT | Game Developer</title>
+    <!-- Tailwind CSS & FontAwesome for Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#11151c',
+                        cardBg: '#1b222c',
+                        accent: '#ff6a00',
+                        accentHover: '#cc5500'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #11151c; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
+        .neon-border { border: 1px solid rgba(255, 106, 0, 0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .skill-box { border: 1px solid rgba(255, 106, 0, 0.5); }
+        .modal { display: none; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); }
+        .modal.active { display: flex; }
+        #lightbox { transition: opacity 0.3s ease; }
+        
+        .pixelated {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+        .pixelated-zoom-box {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            width: auto !important;
+            height: auto !important;
+            max-width: 80vw !important;
+            max-height: 80vh !important;
+            min-width: 350px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen relative">
+
+    <!-- Navbar & Language Switcher -->
+    <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-sm sm:text-xl tracking-wider text-accent flex items-center gap-2 shrink-0">
+                <i class="fa-solid fa-gamepad"></i>
+                <span class="hidden sm:inline">M ALASHRAF TOLIMAT</span>
+                <span class="sm:hidden">M A T</span>
+            </a>
+            <div class="flex items-center gap-2 sm:gap-3 text-sm font-semibold text-gray-400">
+                <i class="fa-solid fa-globe"></i>
+                <button onclick="setLang('ar')" class="hover:text-white transition lang-btn" data-lang="ar">AR</button> |
+                <button onclick="setLang('en')" class="hover:text-white transition text-white lang-btn" data-lang="en">EN</button> |
+                <button onclick="setLang('ja')" class="hover:text-white transition lang-btn" data-lang="ja">JA</button> |
+                <button onclick="setLang('ko')" class="hover:text-white transition lang-btn" data-lang="ko">KO</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-4 text-center">
+        <img src="7aSanki.png" alt="Logo" class="w-48 h-auto mx-auto mb-6 object-contain drop-shadow-[0_0_15px_rgba(255,106,0,0.3)]" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
+        
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide" id="dynamicName">M ALASHRAF TOLIMAT</h1>
+        
+        <p class="text-xl md:text-2xl font-light text-gray-300 max-w-2xl mx-auto mb-2" data-i18n="tagline">
+            GAME PROGRAMMER IN THE MAKING – BRIDGING CODE, CREATIVITY, AND CORE GAMEPLAY
+        </p>
+        <p class="text-accent mb-8" data-i18n="studentAt">Student at TECHNOS COLLEGE, Tokyo</p>
+
+        <div class="flex justify-center gap-4">
+            <a href="#projects" class="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded font-bold transition flex items-center gap-2" data-i18n="btnProjects">VIEW PROJECTS</a>
+            <a id="cv-link" href="Resume_English.pdf" target="_blank" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
+                <img src="MY-PHOTO.JPG.jpg" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'">
+            </div>
+            
+            <div class="flex-1 text-center md:text-start">
+                <h3 class="text-2xl font-bold mb-4 text-white uppercase tracking-wider" data-i18n="aboutTitle">ABOUT ME</h3>
+                <p class="text-gray-300 leading-relaxed text-sm md:text-base" data-i18n="aboutDesc">
+                    A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Project 1 (Unity) -->
+                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal1')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 overflow-hidden relative">
+                        <img src="solframe-thumb.gif" alt="Sol Frame" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider">GIF</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p1Title">Sol Frame</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
+                        <span class="border border-gray-600 px-2 py-1 rounded">Unity</span>
+                        <span class="border border-gray-600 px-2 py-1 rounded">C#</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 (3D Maya) -->
+                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal2')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="technos1.jpg" alt="3D Model" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p2Title">3D Environments</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
+                        <span class="border border-gray-600 px-2 py-1 rounded">3D</span>
+                        <span class="border border-gray-600 px-2 py-1 rounded">Maya</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Photoshop) -->
+                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal3')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="action_map copy.png" alt="Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated" onerror="this.style.display='none'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p3Title">Pixel Art & Design</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
+                        <span class="border border-gray-600 px-2 py-1 rounded">Photoshop</span>
+                    </div>
+                </div>
+                
+                <!-- Project 4 (TGS 2024 / Networking) -->
+                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal4')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="DE.CEO.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover object-top" onerror="this.style.display='none'">
+                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p4Title">Tokyo Game Show 2024</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
+                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
+                        <span class="border border-gray-600 px-2 py-1 rounded">Event</span>
+                        <span class="border border-gray-600 px-2 py-1 rounded">Networking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Languages -->
+    <section class="py-12 px-4 bg-cardBg/30 border-y border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Skills Box Icons -->
+                <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                        <i class="fa-solid fa-gamepad text-3xl text-gray-300 mb-2"></i>
+                        <span class="text-sm text-gray-400 font-bold">Game Dev</span>
+                        <span class="text-xs text-gray-500 mt-1">Unity</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                        <i class="fa-solid fa-code text-3xl text-gray-300 mb-2"></i>
+                        <span class="text-sm text-gray-400 font-bold">Code</span>
+                        <span class="text-xs text-gray-500 mt-1">C#</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                        <i class="fa-solid fa-pen-ruler text-3xl text-gray-300 mb-2"></i>
+                        <span class="text-sm text-gray-400 font-bold">Design</span>
+                        <span class="text-xs text-gray-500 mt-1">Maya / PS</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                        <i class="fa-solid fa-volume-high text-3xl text-gray-300 mb-2"></i>
+                        <span class="text-sm text-gray-400 font-bold">Audio</span>
+                        <span class="text-xs text-gray-500 mt-1">Cubase</span>
+                    </div>
+                </div>
+
+                <!-- Language Bars -->
+                <div class="flex-1 bg-cardBg p-6 rounded-lg border border-gray-800 flex flex-col justify-center">
+                    <ul class="space-y-4 text-sm font-bold text-gray-300">
+                        <li class="flex items-center gap-4">
+                            <span class="w-32" data-i18n="langAr">ARABIC</span>
+                            <div class="flex-1 flex gap-1 h-2">
+                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-32" data-i18n="langEn">ENGLISH</span>
+                            <div class="flex-1 flex gap-1 h-2">
+                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-32" data-i18n="langJa">JAPANESE</span>
+                            <div class="flex-1 flex gap-1 h-2">
+                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="w-32" data-i18n="langTr">TURKISH</span>
+                            <div class="flex-1 flex gap-1 h-2">
+                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Form -->
+    <footer class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardBg/50 p-8 rounded-lg border border-gray-800">
+            <!-- AJAX Contact Form (Formspree) -->
+            <form id="contact-form" class="flex flex-col gap-3 w-full">
+                <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
+                <div data-fs-error style="display: none;" class="bg-red-900/50 text-red-400 p-3 text-sm rounded border border-red-700 font-bold" data-i18n="msgError">Failed to send message.</div>
+
+                <input type="text" name="name" placeholder="Name" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
+                <input type="email" name="email" placeholder="Email" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
+                <textarea name="message" placeholder="Message" rows="3" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded resize-none"></textarea>
+                
+                <button type="submit" data-fs-submit-btn class="border border-gray-600 hover:border-accent hover:text-white text-gray-300 text-xs py-2 px-4 rounded w-max transition">
+                    <span data-i18n="btnContactSubmit">Submit</span>
+                </button>
+            </form>
+
+            <!-- Email & Socials -->
+            <div class="text-center flex flex-col items-center gap-4 border-t md:border-t-0 md:border-s border-gray-700 pt-6 md:pt-0">
+                <a href="mailto:ashraftmtbus@gmail.com" class="text-gray-300 hover:text-white transition font-mono text-sm md:text-base">ashraftmtbus@gmail.com</a>
+                <div class="flex gap-6 text-3xl text-gray-400 mt-2">
+                    <a href="https://github.com/malashraftulimat" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://7asanki.itch.io/" target="_blank" class="hover:text-accent transition"><i class="fa-brands fa-itch-io"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-4xl transition">&times;</button>
+        <img id="lightbox-img" src="" class="pixelated-zoom-box rounded-lg shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal 1: Sol Frame -->
+    <div id="modal1" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-cardBg w-full max-w-2xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal1')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p1Title">Sol Frame</h2>
+            <video class="w-full rounded mb-4 bg-gray-900 block" poster="solframe-poster.jpg" controls loop muted playsinline preload="none">
+                <source src="solframe.mp4" type="video/mp4">
+            </video>
+            <p class="text-gray-300 mb-6 text-sm" data-i18n="p1DescLong">A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://7asanki.itch.io/solframe" target="_blank" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition" data-i18n="btnDemo">Play Demo on itch.io</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: 3D Maya Gallery -->
+    <div id="modal2" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal2')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p2Title">3D Environments</h2>
+            
+            <p class="text-xs text-gray-500 mb-2 tracking-wider" data-i18n="clickToEnlarge">CLICK IMAGES TO ENLARGE</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('koganeibus.jpg')">
+                    <img src="koganeibus.jpg" alt="Musashi-Koganei Bus Terminal" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('koganeibus1.jpg')">
+                    <img src="koganeibus1.jpg" alt="Musashi-Koganei Bus Terminal" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('koganeiplatform.jpg')">
+                    <img src="koganeiplatform.jpg" alt="Musashi-Koganei Platform" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('koganeiplatform1.jpg')">
+                    <img src="koganeiplatform1.jpg" alt="Musashi-Koganei Platform" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('technos.jpg')">
+                    <img src="technos.jpg" alt="Technos College" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('technos1.jpg')">
+                    <img src="technos1.jpg" alt="Technos College" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('technos2.jpg')">
+                    <img src="technos2.jpg" alt="Technos College" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('technos3.jpg')">
+                    <img src="technos3.jpg" alt="Technos College" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-sm" data-i18n="p2DescLong">A full 3D reconstruction of Musashi-Koganei Station and Technos College campus in Maya. Modelling, texturing and lighting built from photo reference.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3: Photoshop & Pixel Art Gallery -->
+    <div id="modal3" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal3')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p3Title">Pixel Art & Design</h2>
+            
+            <p class="text-xs text-gray-500 mb-2 tracking-wider" data-i18n="clickToEnlarge">CLICK IMAGES TO ENLARGE</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('action_map copy.png')">
+                    <img src="action_map copy.png" alt="Action Map" class="w-full h-28 object-cover pixelated group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('熱中症 copy.jpg')">
+                    <img src="熱中症 copy.jpg" alt="Heatstroke Poster" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('zelda copy.jpg')">
+                    <img src="zelda copy.jpg" alt="Zelda Pixel Art" class="w-full h-28 object-cover pixelated group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('mariojumping copy.png')">
+                    <img src="mariojumping copy.png" alt="Mario Pixel Art" class="w-full h-28 object-cover pixelated group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('random_pokemon copy.jpg')">
+                    <img src="random_pokemon copy.jpg" alt="Pokemon Pixel Art" class="w-full h-28 object-cover pixelated group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-sm" data-i18n="p3DescLong">A collection of graphic design work created in Photoshop, including UI/UX mockups, educational posters, and 8-bit character sprites with a focus on readable silhouettes.</p>
+        </div>
+    </div>
+
+    <!-- Modal 4: TGS 2024 Gallery -->
+    <div id="modal4" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+        <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal4')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
+            <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p4Title">Tokyo Game Show 2024</h2>
+            
+            <p class="text-xs text-gray-500 mb-2 tracking-wider" data-i18n="clickToEnlarge">CLICK IMAGES TO ENLARGE</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DE.CEO.jpg')">
+                    <img src="DE.CEO.jpg" alt="DE CEO" class="w-full h-32 object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DERebeca.jpg')">
+                    <img src="DERebeca.jpg" alt="DE Rebecca" class="w-full h-32 object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DE.magen.jpg')">
+                    <img src="DE.magen.jpg" alt="DE Megan" class="w-full h-32 object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DE.voice_actor.jpg')">
+                    <img src="DE.voice_actor.jpg" alt="DE Voice Actor" class="w-full h-32 object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DE.warframecos.jpg')">
+                    <img src="DE.warframecos.jpg" alt="Warframe Cosplay" class="w-full h-32 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('DE.warframetgs.jpg')">
+                    <img src="DE.warframetgs.jpg" alt="Warframe Booth" class="w-full h-32 object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+            </div>
+            <p class="text-gray-300 mb-6 text-sm leading-relaxed" data-i18n="p4DescLong">After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.</p>
+        </div>
+    </div>
+
+    <!-- i18n Script -->
+    <script>
+        const translations = {
+            en: {
+                name: "M ALASHRAF TOLIMAT",
+                tagline: "GAME PROGRAMMER IN THE MAKING – BRIDGING CODE, CREATIVITY, AND CORE GAMEPLAY",
+                studentAt: "Student at TECHNOS COLLEGE, Tokyo",
+                btnProjects: "VIEW PROJECTS",
+                btnCV: "DOWNLOAD CV",
+                btnDemo: "Play Demo on itch.io",
+                aboutTitle: "ABOUT ME",
+                aboutDesc: "A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.",
+                projectsTitle: "FEATURED WORKS",
+                p1Title: "Sol Frame",
+                p1Desc: "Chicken Invaders style space shooter game.",
+                p1DescLong: "A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.",
+                p2Title: "3D Environments",
+                p2Desc: "3D environmental models including station and campus.",
+                p2DescLong: "A full 3D reconstruction of Musashi-Koganei Station and Technos College campus in Maya. Modelling, texturing and lighting built from photo reference.",
+                p3Title: "Pixel Art & Design",
+                p3Desc: "Character, UI, and level design concepts created in Photoshop.",
+                p3DescLong: "A collection of graphic design work created in Photoshop, including UI/UX mockups, educational posters, and 8-bit character sprites with a focus on readable silhouettes.",
+                p4Title: "Tokyo Game Show 2024",
+                p4Desc: "Meeting the Digital Extremes team after 11 years.",
+                p4DescLong: "After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.",
+                skillsTitle: "SKILLS & LANGUAGES",
+                langAr: "ARABIC",
+                langEn: "ENGLISH",
+                langJa: "JAPANESE",
+                langTr: "TURKISH",
+                btnContactSubmit: "Submit",
+                msgSuccess: "Message sent successfully!",
+                msgError: "Failed to send message. Please try again.",
+                clickToEnlarge: "CLICK IMAGES TO ENLARGE"
+            },
+            ar: {
+                name: "محمد الأشرف طليمات",
+                tagline: "طالب برمجة ألعاب – أدمج بين الأكواد، الإبداع، وأساسيات اللعب",
+                studentAt: "طالب في معهد تيكنوس كوليج، طوكيو",
+                btnProjects: "تصفح المشاريع",
+                btnCV: "تحميل السيرة الذاتية",
+                btnDemo: "تجربة اللعبة على itch.io",
+                aboutTitle: "نبذة عني",
+                aboutDesc: "طالب سوري مقيم في طوكيو ومطور ألعاب طموح. أدرس حالياً في تيكنوس كوليج وأركز على البرمجة باستخدام Unity و C#. أدمج بين التقنيات الحديثة وأدوات الذكاء الاصطناعي لبناء أنظمة ممتعة. مستعد للعمل حضوريًا أو عن بُعد.",
+                projectsTitle: "أبرز الأعمال",
+                p1Title: "سول فريم",
+                p1Desc: "لعبة إطلاق نار فضائية بأسلوب Chicken Invaders.",
+                p1DescLong: "لعبة إطلاق نار كلاسيكية. تم بناء الأنظمة الأساسية باستخدام أدوات مساعدة لتحسين الأكواد. تم التطوير على Unity.",
+                p2Title: "مجسمات بيئية 3D",
+                p2Desc: "تصاميم ثلاثية الأبعاد لمحطة القطار ومبنى المعهد.",
+                p2DescLong: "إعادة بناء ثلاثية الأبعاد كاملة لمحطة موساشي-كوغاني ومعهد تيكنوس في مايا، مع النمذجة والإضاءة اعتمادًا على صور مرجعية.",
+                p3Title: "فن البكسل والتصميم",
+                p3Desc: "تصاميم شخصيات، واجهات، وخرائط مراحل باستخدام فوتوشوب.",
+                p3DescLong: "مجموعة من أعمال التصميم باستخدام فوتوشوب، تشمل ملصقات توعوية، واجهات مستخدم، ورسومات بيكسل لشخصيات ألعاب كلاسيكية.",
+                p4Title: "معرض طوكيو للألعاب 2024",
+                p4Desc: "لقاء فريق Digital Extremes بعد 11 سنة من اللعب.",
+                p4DescLong: "بعد 11 سنة من لعب Warframe ومشاهدة البثوث (Devstreams)، أخيراً قابلت الوجوه التي لطالما رأيتها خلف الشاشة. كان اللقاء أشبه بلم شمل عائلي مليء بالمشاعر بالنسبة لي، وحظيت بمحادثة ملهمة ودافئة مع فريق Digital Extremes.",
+                skillsTitle: "المهارات واللغات",
+                langAr: "العربية",
+                langEn: "الإنجليزية",
+                langJa: "اليابانية",
+                langTr: "التركية",
+                btnContactSubmit: "إرسال",
+                msgSuccess: "تم إرسال الرسالة بنجاح!",
+                msgError: "فشل إرسال الرسالة. حاول مرة أخرى.",
+                clickToEnlarge: "اضغط على الصورة للتكبير"
+            },
+            ja: {
+                name: "エム アルアシュラフ トリマト",
+                tagline: "ゲームプログラマーの卵 – コード、創造性、コアゲームプレイの融合",
+                studentAt: "総合学院テクノスカレッジ在学中 (東京)",
+                btnProjects: "プロジェクトを見る",
+                btnCV: "履歴書ダウンロード",
+                btnDemo: "itch.ioでプレイ",
+                aboutTitle: "自己紹介",
+                aboutDesc: "東京を拠点とするシリア出身の学生。テクノスカレッジでUnityとC#を使ったゲームプログラミングを学んでいます。最新技術を活用して面白いゲームシステムを構築することに注力しています。",
+                projectsTitle: "注目のプロジェクト",
+                p1Title: "ソル・フレーム",
+                p1Desc: "Chicken Invaders風のスペースシューティングゲーム。",
+                p1DescLong: "Chicken Invadersにインスパイアされたクラシックなアーケードシューティング。Unity製。",
+                p2Title: "3D環境モデル",
+                p2Desc: "駅とキャンパスを含む3D環境モデリング。",
+                p2DescLong: "Mayaで制作した武蔵小金井駅とテクノスカレッジの3D再現。写真資料を基にモデリング、テクスチャ、ライティングを構築しました。",
+                p3Title: "ピクセルアート＆デザイン",
+                p3Desc: "Photoshopで作成したキャラクターやレベルデザイン。",
+                p3DescLong: "Photoshopで作成したグラフィックデザイン。ポスター、UIモックアップ、8ビットキャラクターのドット絵などが含まれています。",
+                p4Title: "東京ゲームショウ 2024",
+                p4Desc: "11年越しにDigital Extremesチームとの対面。",
+                p4DescLong: "Warframeをプレイし、Devstreamを見続けて11年。ついに画面の向こう側の開発陣とお会いすることができました。まるで家族との再会のような感動的な瞬間であり、Digital Extremesのチームと非常に刺激的で温かい会話を交わすことができました。",
+                skillsTitle: "スキルとツール",
+                langAr: "アラビア語",
+                langEn: "英語",
+                langJa: "日本語",
+                langTr: "トルコ語",
+                btnContactSubmit: "送信",
+                msgSuccess: "メッセージが送信されました！",
+                msgError: "送信に失敗しました。もう一度お試しください。",
+                clickToEnlarge: "クリックして画像を拡大"
+            },
+            ko: {
+                name: "엠 알아슈라프 토리마트",
+                tagline: "미래의 게임 프로그래머 – 코드, 창의성, 핵심 게임 플레이의 조화",
+                studentAt: "테크노스 대학 재학 중 (도쿄)",
+                btnProjects: "프로젝트 보기",
+                btnCV: "이력서 다운로드",
+                btnDemo: "itch.io에서 플레이",
+                aboutTitle: "자기소개",
+                aboutDesc: "도쿄에 거주하는 시리아 출신 학생입니다. 현재 테크노스 대학에서 Unity와 C#을 중심으로 게임 프로그래밍을 배우고 있습니다.",
+                projectsTitle: "주요 프로젝트",
+                p1Title: "솔 프레임",
+                p1Desc: "Chicken Invaders 스타일의 우주 슈팅 게임.",
+                p1DescLong: "Unity로 제작된 클래식 아케이드 슈팅 게임.",
+                p2Title: "3D 환경 모델링",
+                p2Desc: "역 및 캠퍼스 3D 환경 모델링.",
+                p2DescLong: "Maya로 제작한 무사시코가네이역과 테크노스 대학의 3D 재현. 사진 자료를 바탕으로 모델링, 텍스처, 라이팅을 작업했습니다.",
+                p3Title: "픽셀 아트 및 디자인",
+                p3Desc: "Photoshop으로 제작한 캐릭터 및 레벨 디자인.",
+                p3DescLong: "Photoshop을 사용한 그래픽 디자인 모음. 포스터, UI 디자인 및 8비트 캐릭터 픽셀 아트가 포함되어 있습니다.",
+                p4Title: "도쿄 게임쇼 2024",
+                p4Desc: "11년 만에 Digital Extremes 팀을 만나다.",
+                p4DescLong: "11년 동안 Warframe을 플레이하고 Devstream을 시청한 끝에 드디어 화면 너머의 개발진을 만났습니다. 마치 가족 상봉처럼 감동적이었고, Digital Extremes 팀과 정말 영감을 주는 따뜻한 대화를 나누었습니다.",
+                skillsTitle: "기술 및 언어",
+                langAr: "아랍어",
+                langEn: "영어",
+                langJa: "일본어",
+                langTr: "튀르키예어",
+                btnContactSubmit: "제출",
+                msgSuccess: "메시지가 성공적으로 전송되었습니다!",
+                msgError: "전송에 실패했습니다. 다시 시도해 주세요.",
+                clickToEnlarge: "클릭하여 이미지 확대"
+            }
+        };
+
+        // إضافة أسماء ملفات السيرة الذاتية لكل لغة
+        const cvFiles = {
+            en: 'Resume_English.pdf',
+            ar: 'Resume_Arabic.pdf',
+            ja: 'Resume_Japanese.pdf',
+            ko: 'Resume_Korean.pdf'
+        };
+
+        function setLang(lang) {
+            // التعديل السحري: إعطاء خصائص اتجاه النص الصحيحة للعناصر اللي عم تترجم فقط دون قلب الموقع
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                    el.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                }
+            });
+            
+            const dynName = document.getElementById('dynamicName');
+            dynName.innerText = translations[lang].name;
+            dynName.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            
+            document.documentElement.setAttribute('lang', lang);
+            
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-white');
+                btn.classList.add('text-gray-400');
+            });
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('text-white');
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.remove('text-gray-400');
+
+            // تغيير رابط السيرة الذاتية بناءً على اللغة المختارة
+            const cvLink = document.getElementById('cv-link');
+            if (cvLink && cvFiles[lang]) {
+                cvLink.href = cvFiles[lang];
+                cvLink.setAttribute('download', cvFiles[lang]); // هذه الخاصية تجعل المتصفح يحمل الملف بدلاً من فتحه
+            }
+        }
+
+        // Modals Logic
+        function openModal(id) {
+            const m = document.getElementById(id);
+            if (!m) return;
+            m.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            m.querySelectorAll('img[data-src]').forEach(img => {
+                if (img.dataset.src && !img.dataset.loaded) {
+                    img.src = img.dataset.src;
+                    img.dataset.loaded = '1';
+                }
+            });
+            m.querySelectorAll('video').forEach(v => {
+                v.preload = 'auto';
+                v.play().catch(() => {});
+            });
+        }
+        function closeModal(id) {
+            const m = document.getElementById(id);
+            if (!m) return;
+            m.classList.remove('active');
+            document.body.style.overflow = '';
+            m.querySelectorAll('video').forEach(v => v.pause());
+        }
+        function closeAllModals() {
+            document.querySelectorAll('.modal.active').forEach(m => closeModal(m.id));
+            closeLightbox();
+        }
+
+        // Lightbox Gallery Logic
+        function openLightbox(imgSrc) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            lbImg.src = imgSrc;
+            lb.classList.remove('hidden');
+        }
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('hidden');
+            setTimeout(() => { document.getElementById('lightbox-img').src = ''; }, 300);
+        }
+
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        };
+        
+        document.addEventListener('keydown', e => { 
+            if (e.key === 'Escape') closeAllModals(); 
+        });
+    </script>
+    
+    <!-- Formspree AJAX Setup -->
+    <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contact-form', formId: 'mwlpeqgl' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
