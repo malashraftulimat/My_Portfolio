@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="meta-title">提案書：ダマスカスの残響 — Story &amp; Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:            #0e1014;
+            --panel:          #171b22;
+            --panel-2:        #1d222b;
+            --line:           rgba(255, 255, 255, 0.09);
+            --line-strong:    rgba(255, 255, 255, 0.18);
+            --text:           #e9ecf2;
+            --muted:          #98a1b3;
+            --pink:           #ff3b5c;
+            --blue:           #4db8ff;
+            --gold:           #ffc857;
+        }
+
+        @page { size: A4 landscape; margin: 0; }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #05060a;
+            font-family: 'Noto Sans JP', 'Noto Sans KR', 'Noto Sans Arabic', -apple-system, 'Segoe UI', sans-serif;
+            color: var(--text);
+            line-height: 1.55;
+            font-size: 15.5px;
+            font-feature-settings: "palt" 1;
+            line-break: strict;
+            overflow-wrap: break-word;
+            text-wrap: pretty;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        html[lang="ar"] body { font-family: 'Noto Sans Arabic', 'Noto Sans JP', sans-serif; }
+        html[lang="ko"] body { font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif; }
+
+        /* RTL mirroring */
+        html[dir="rtl"] .bar i { background: linear-gradient(270deg, var(--blue), var(--pink)); }
+        html[dir="rtl"] .runhead, html[dir="rtl"] .footer { letter-spacing: 0; }
+
+        /* ================= Language bar ================= */
+        .langbar {
+            position: fixed;
+            top: 14px;
+            right: 16px;
+            z-index: 100;
+            display: flex;
+            gap: 4px;
+            padding: 5px;
+            background: rgba(14, 16, 20, 0.92);
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+        }
+        .langbar button {
+            font: inherit;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            background: none;
+            border: none;
+            border-radius: 999px;
+            padding: 5px 13px;
+            cursor: pointer;
+            transition: color 0.15s, background 0.15s;
+        }
+        .langbar button:hover { color: var(--text); }
+        .langbar button[aria-pressed="true"] {
+            color: #fff;
+            background: var(--pink);
+        }
+
+        /* ================= Pages (A4 landscape) ================= */
+        .page {
+            width: min(297mm, 100%);
+            min-height: 210mm;
+            padding: 12mm 14mm;
+            margin: 16px auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background:
+                repeating-linear-gradient(0deg, transparent 0 23px, rgba(255,255,255,0.015) 23px 24px),
+                radial-gradient(120% 80% at 100% 0%, #1b2130 0%, #0e1014 60%);
+            border: 1px solid var(--line-strong);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+        }
+
+        /* Running header */
+        .runhead {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding-bottom: 7px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+        }
+        .runhead b { color: var(--pink); }
+
+        /* ================= Cover ================= */
+        .cover { justify-content: space-between; }
+        .cover .cover-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .cover .cover-top .conf {
+            color: var(--pink);
+            border: 1px solid rgba(255,59,92,0.4);
+            border-radius: 999px;
+            padding: 3px 12px;
+        }
+        .cover-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            min-height: 0;
+        }
+        .cover .cover-main {
+            flex: 1 1 auto;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .cover .brand {
+            font-family: 'DotGothic16', 'Noto Sans KR', 'Noto Sans Arabic', monospace;
+            font-size: 13px;
+            letter-spacing: 0.26em;
+            color: var(--muted);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .cover .brand b { color: var(--pink); }
+        .cover h1 {
+            font-family: 'DotGothic16', 'Noto Sans KR', 'Noto Sans Arabic', monospace;
+            font-size: 72px;
+            line-height: 1.06;
+            margin: 0;
+            letter-spacing: 0.03em;
+            color: #fff;
+        }
+        .cover h1 .accent { color: var(--pink); }
+        .cover .rule {
+            width: 96px; height: 4px;
+            background: var(--pink);
+            margin: 22px 0;
+        }
+        .cover .vision-tag {
+            font-size: 20px;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .cover .subtitle {
+            margin-top: 12px;
+            font-size: 15.5px;
+            color: var(--muted);
+            max-width: 56%;
+        }
+        .cover .chips { margin-top: 24px; }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            justify-content: start;
+            gap: 12px 40px;
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line-strong);
+        }
+        .stats b {
+            display: block;
+            font-family: 'DotGothic16', 'Noto Sans KR', 'Noto Sans Arabic', monospace;
+            font-size: 27px;
+            line-height: 1.1;
+            color: #fff;
+        }
+        .stats span { font-size: 12px; letter-spacing: 0.08em; color: var(--muted); }
+
+        /* ================= Pixel character card (Malik) — from 2dchar.jpg ================= */
+        .px-figure {
+            position: relative;
+            flex: 0 0 178px;
+            align-self: center;
+            margin: 0;
+            width: 178px;
+            padding: 18px 15px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            background:
+                radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,0.045), transparent 62%),
+                var(--panel);
+            border: 1px solid var(--line-strong);
+            border-radius: 4px;
+            box-shadow: 0 22px 48px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.03);
+            z-index: 5;
+        }
+        /* frame accents */
+        .px-figure::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: 16px; right: 16px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pink), transparent);
+        }
+        .px-figure::after {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid var(--line);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .px-char {
+            display: block;
+            width: 108px;
+            height: 263px;
+            object-fit: contain;
+            transform-origin: 50% 100%;
+            animation: px-idle 3.4s ease-in-out infinite;
+            filter: drop-shadow(0 12px 16px rgba(0,0,0,0.6));
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .px-caption {
+            width: 100%;
+            padding-top: 11px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.85;
+            letter-spacing: normal;
+            color: var(--muted);
+        }
+        /* simple idle: breathe + gentle sway */
+        @keyframes px-idle {
+            0%, 100% { transform: translateY(0)    rotate(0deg); }
+            50%      { transform: translateY(-5px) rotate(0.7deg); }
+        }
+
+        /* ================= Chips ================= */
+        .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+        .chips span {
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            border: 1px solid var(--line);
+            background: rgba(255,255,255,0.02);
+            border-radius: 999px;
+            padding: 3px 12px;
+        }
+        .chips span b { color: var(--text); font-weight: 500; }
+
+        /* ================= Layout decks ================= */
+        .deck { display: grid; gap: 10px; align-content: start; }
+        .deck.two   { grid-template-columns: 1fr 1fr; }
+        .deck.three { grid-template-columns: repeat(3, 1fr); }
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+
+        /* ================= Table of contents ================= */
+        .toc a {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .toc a:last-child { border-bottom: none; }
+        .toc .num {
+            font-family: 'DotGothic16', monospace;
+            color: var(--pink);
+            font-size: 13px;
+            flex: none;
+        }
+        .toc .t { font-size: 15.5px; font-weight: 500; }
+        .toc .d {
+            flex: 1;
+            border-bottom: 1px dotted var(--line-strong);
+            transform: translateY(-3px);
+        }
+        .toc .pg { color: var(--muted); font-size: 13px; flex: none; }
+
+        .lead {
+            font-size: 15.5px;
+            color: var(--muted);
+            margin: 0 0 16px;
+        }
+
+        /* ================= Cards ================= */
+        section {
+            position: relative;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-top: 2px solid var(--line-strong);
+            border-radius: 3px;
+            padding: 12px 15px 14px;
+            break-inside: avoid;
+        }
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 0 0 12px;
+        }
+        h2::before {
+            content: "";
+            width: 10px; height: 10px;
+            background: var(--blue);
+            box-shadow: 2px 2px 0 rgba(77,184,255,0.3);
+            flex: none;
+        }
+
+        p { margin: 0 0 9px; }
+        p:last-child { margin-bottom: 0; }
+
+        /* Narrative timeline */
+        .story-block {
+            position: relative;
+            padding-block: 0;
+            padding-inline: 20px 0;
+            border-inline-start: 1px solid var(--line-strong);
+            padding-bottom: 12px;
+        }
+        .story-block:last-child { padding-bottom: 0; }
+        .story-block::before {
+            content: "";
+            position: absolute;
+            inset-inline-start: -4px; top: 5px;
+            width: 7px; height: 7px;
+            background: var(--ink);
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+        }
+        .chapter-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 2px;
+            letter-spacing: 0.02em;
+        }
+        .story-block p { font-size: 14.5px; }
+
+        /* Lists */
+        ul { list-style: none; padding: 0; margin: 0; }
+        li {
+            position: relative;
+            padding-inline-start: 18px;
+            margin-bottom: 9px;
+            font-size: 14.5px;
+        }
+        li:last-child { margin-bottom: 0; }
+        li::before {
+            content: "▸";
+            position: absolute;
+            inset-inline-start: 0; top: 0;
+            color: var(--blue);
+            font-size: 13px;
+        }
+        html[dir="rtl"] li::before { content: "◂"; }
+
+        .highlight { color: var(--blue); font-weight: 500; }
+        .danger    { color: var(--pink); font-weight: 500; }
+        .hope      { color: var(--gold); font-weight: 500; }
+
+        /* Progress */
+        .progress { margin-bottom: 10px; }
+        .progress:last-child { margin-bottom: 0; }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        .progress-label b { color: var(--text); font-weight: 500; }
+        .bar {
+            height: 6px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .bar i {
+            display: block;
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--blue), var(--pink));
+        }
+
+        .quote {
+            border-inline-start: 3px solid var(--blue);
+            padding: 2px 0;
+            padding-inline-start: 12px;
+            font-size: 14.5px;
+        }
+
+        /* ============ Roadmap ============ */
+        .roadmap { margin-top: 2px; }
+        .milestone {
+            display: grid;
+            grid-template-columns: 78px 1fr;
+            gap: 14px;
+        }
+        .milestone .when {
+            font-family: 'DotGothic16', monospace;
+            font-size: 13px;
+            color: var(--gold);
+            text-align: end;
+            padding-top: 1px;
+            letter-spacing: 0.04em;
+        }
+        .milestone .what {
+            position: relative;
+            padding-inline-start: 20px;
+            padding-bottom: 10px;
+            border-inline-start: 1px solid var(--line-strong);
+        }
+        .milestone:last-child .what { padding-bottom: 0; }
+        .milestone .what::before {
+            content: "";
+            position: absolute;
+            inset-inline-start: -4px; top: 5px;
+            width: 7px; height: 7px;
+            background: var(--ink);
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+        }
+        .milestone.done .what::before { border-color: var(--gold); }
+        .milestone.active .what::before { border-color: var(--pink); background: var(--pink); }
+        .milestone h3 {
+            font-size: 14.5px;
+            font-weight: 700;
+            margin: 0 0 2px;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .milestone h3 .tag {
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 1px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--line-strong);
+            color: var(--muted);
+        }
+        .milestone.done h3 .tag   { color: var(--gold); border-color: rgba(255,200,87,0.4); }
+        .milestone.active h3 .tag { color: var(--pink); border-color: rgba(255,59,92,0.45); }
+        .milestone p { font-size: 13px; color: var(--muted); margin: 0; }
+
+        /* ============ Team & Contact ============ */
+        .person { display: flex; gap: 12px; align-items: flex-start; }
+        .person + .person { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+        .mono {
+            flex: none;
+            width: 40px; height: 40px;
+            display: grid; place-items: center;
+            font-family: 'DotGothic16', 'Noto Sans KR', 'Noto Sans Arabic', monospace;
+            font-size: 17px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--pink), #7d1026);
+            border-radius: 3px;
+        }
+        .person .pname { font-size: 15px; font-weight: 700; }
+        .person .prole { font-size: 12.5px; color: var(--gold); letter-spacing: 0.04em; }
+        .person .pdesc { font-size: 13.5px; color: var(--muted); margin: 4px 0 0; }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 28px;
+        }
+        .contact .c {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid var(--line);
+            padding: 8px 0;
+            font-size: 14.5px;
+        }
+        .contact .c .k { color: var(--muted); letter-spacing: 0.06em; }
+        .contact .c .v { color: var(--text); font-family: 'DotGothic16', monospace; }
+        .contact .c a.v { text-decoration: none; }
+        .contact .c a.v:hover { color: var(--pink); text-decoration: underline; }
+
+        .closing { text-align: center; padding: 6px 0 2px; }
+        .closing .big {
+            font-family: 'DotGothic16', 'Noto Sans KR', 'Noto Sans Arabic', monospace;
+            font-size: 22px;
+            color: var(--gold);
+            letter-spacing: 0.03em;
+        }
+        .closing .sig {
+            margin-top: 10px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        /* ================= Footer ================= */
+        .footer {
+            margin-top: 12px;
+            padding-top: 9px;
+            border-top: 2px solid var(--line-strong);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 11.5px;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+        .footer .tag { color: var(--pink); }
+        .footer .pn { font-family: 'DotGothic16', monospace; }
+
+        /* ================= Accessibility ================= */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+        ::selection { background: var(--pink); color: #fff; }
+
+        /* ================= Responsive (screen only) ================= */
+        @media screen { html { scroll-behavior: smooth; } }
+        @media screen and (max-width: 900px) {
+            .page { width: 100%; min-height: 0; padding: 22px 18px; margin: 8px; }
+            .deck.two, .deck.three { grid-template-columns: 1fr; }
+            .span-2, .span-3 { grid-column: auto; }
+            .cover h1 { font-size: 44px; }
+            .cover .subtitle { max-width: 100%; }
+            .cover-body { flex-direction: column; align-items: center; gap: 18px; }
+            .cover .px-figure { flex: none; width: 200px; }
+            .cover .px-char { width: 96px; height: 234px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .runhead { flex-wrap: wrap; gap: 4px 12px; }
+            .milestone { grid-template-columns: 1fr; gap: 2px; }
+            .milestone .when { text-align: start; }
+            .contact { grid-template-columns: 1fr; }
+            .footer { flex-wrap: wrap; justify-content: flex-start; gap: 4px 14px; }
+            .langbar { position: static; margin: 10px 8px 0 auto; width: max-content; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .px-char { animation: none; }
+        }
+
+        /* ================= Print ================= */
+        @media print {
+            .langbar { display: none; }
+            body { background: #fff; color: #111; }
+            .page {
+                margin: 0; border: none; box-shadow: none;
+                min-height: 0; width: 297mm; height: 210mm;
+                background: #fff;
+                break-after: page; page-break-after: always;
+            }
+            .page:last-child { break-after: auto; page-break-after: auto; }
+            .runhead { border-bottom-color: #ddd; color: #555; }
+            .runhead b { color: #b30030; }
+            .cover { background: #fff; }
+            h1, h1 .accent, li, p, .toc a, .toc .t, .story-block p { color: #111; }
+            .cover .brand, .cover .cover-top { color: #555; }
+            .cover .brand b, .footer .tag, .toc .num { color: #b30030; }
+            .vision-tag, .chapter-title, .hope { color: #8a6d00; }
+            .highlight { color: #0b5d8a; }
+            .danger { color: #b30030; }
+            .lead { color: #555; }
+            .px-figure { background: #fff; border-color: #ccc; box-shadow: none; }
+            .px-figure::before { background: #b30030; }
+            .px-figure::after { border-color: #ddd; }
+            .px-caption { color: #555; border-top-color: #ddd; }
+            .stats { border-top-color: #ddd; }
+            .stats b { color: #111; }
+            .stats span { color: #555; }
+            section { background: #fff; border: 1px solid #ccc; border-top: 2px solid #111; }
+            .chips span { border-color: #ccc; color: #555; background: none; }
+            .chips span b { color: #111; }
+            h2::before { background: #111; box-shadow: none; }
+            .story-block { border-inline-start-color: #ccc; }
+            .story-block::before { background: #fff; border-color: #0b5d8a; }
+            .milestone .when { color: #8a6d00; }
+            .milestone .what { border-inline-start-color: #ccc; }
+            .milestone .what::before { background: #fff; border-color: #0b5d8a; }
+            .milestone.done .what::before { border-color: #8a6d00; }
+            .milestone.active .what::before { border-color: #b30030; background: #b30030; }
+            .milestone h3 .tag { color: #555; border-color: #bbb; }
+            .milestone.done h3 .tag { color: #8a6d00; border-color: #c9a94a; }
+            .milestone.active h3 .tag { color: #b30030; border-color: #d98a9f; }
+            .milestone p { color: #333; }
+            .person + .person { border-top-color: #ddd; }
+            .person .pname { color: #111; }
+            .person .prole { color: #8a6d00; }
+            .person .pdesc { color: #555; }
+            .mono { background: #b30030; }
+            .contact .c { border-bottom-color: #ddd; }
+            .contact .c .k { color: #555; }
+            .contact .c .v { color: #111; }
+            .closing .big { color: #8a6d00; }
+            .closing .sig { color: #555; }
+            .bar { background: #e5e5e5; }
+            .bar i { background: #111; }
+            .footer { border-top-color: #111; color: #555; }
+            .toc a { border-bottom-color: #ddd; }
+            .toc .d { border-bottom-color: #bbb; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="langbar" role="group" aria-label="Language selection / 言語 / اللغة / 언어">
+        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+        <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+    </div>
+
+<main>
+
+    <!-- ============ PAGE 1 · COVER ============ -->
+    <article class="page cover" aria-label="表紙">
+        <div class="cover-top">
+            <span data-t="cover.studio">ASHRAF STUDIOS — Game Proposal</span>
+            <span class="conf" data-t="cover.conf">Confidential · 企画提案書</span>
+        </div>
+
+        <div class="cover-body">
+        <div class="cover-main">
+            <div class="brand"><b>ARCHIVE_77</b> // STORY &amp; DESIGN BRIEF</div>
+            <h1 data-th="game.title">ダマスカスの<br><span class="accent">残響</span></h1>
+            <div class="rule"></div>
+            <div class="vision-tag" data-t="cover.vision">「小さなゲームが運ぶ、大きな真実。」</div>
+            <p class="subtitle" data-t="cover.subtitle">Celeste の精密さと、記憶をめぐる叙情。一人の少年が廃墟を登り、失われた都市の「残響」を頼りに家を目指す 2D プラットフォーマー。</p>
+
+            <div class="chips">
+                <span data-th="chip.genre"><b>ジャンル</b> 2D プラットフォーマー</span>
+                <span data-th="chip.engine"><b>エンジン</b> Unity</span>
+                <span data-th="chip.experience"><b>体験</b> 叙情・生存・記憶</span>
+                <span data-th="chip.audience"><b>対象</b> Celeste / Gris ファン</span>
+            </div>
+
+            <div class="stats">
+                <div><b>6</b><span data-t="stat.chapters">章構成</span></div>
+                <div><b>3</b><span data-t="stat.mechanics">主要メカニクス</span></div>
+                <div><b>1</b><span data-t="stat.dev">コア開発者</span></div>
+                <div><b data-t="stat.releaseValue">後日発表</b><span data-t="stat.release">リリース目標</span></div>
+            </div>
+        </div>
+
+        <figure class="px-figure">
+            <img class="px-char" src="malik.png" alt="">
+            <figcaption class="px-caption" data-t="cover.charCaption">想定される主人公の姿を描いた架空のキャラクター</figcaption>
+        </figure>
+        </div>
+
+        <footer class="footer">
+            <div>&copy; 2026 ASHRAF_STUDIOS</div>
+            <div class="tag" data-t="footer.tag">「あと一回。家に帰るために。」</div>
+            <div class="pn">01 / 04</div>
+        </footer>
+    </article>
+
+    <!-- ============ PAGE 2 · CONTENTS + NARRATIVE ============ -->
+    <article class="page" id="narrative" aria-label="目次と物語">
+        <div class="runhead">
+            <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
+            <span data-t="runhead.narrative">01 · 目次 / 物語の軌跡</span>
+        </div>
+
+        <div class="deck two" style="flex: 1;">
+            <div>
+                <h2 data-t="h.exec">エグゼクティブ・サマリー</h2>
+                <p class="lead" data-t="lead.exec">本提案は、シリア・ダマスカスを舞台にした叙情的な 2D プラットフォーマー「ダマスカスの残響」の企画概要です。失われた都市の記憶を「残響」として可視化する独自のメカニクスと、Celeste に学ぶ精密な操作性を両輪とし、短くも密度の高い体験を目指します。</p>
+
+                <h2 style="margin-top: 18px;" data-t="h.toc">目次 — Table of Contents</h2>
+                <nav class="toc" aria-label="目次">
+                    <a href="#narrative"><span class="num">01</span><span class="t" data-t="toc.1">物語の軌跡 — Narrative Arc</span><span class="d"></span><span class="pg">02</span></a>
+                    <a href="#systems"><span class="num">02</span><span class="t" data-t="toc.2">システム・アート・独自の価値</span><span class="d"></span><span class="pg">03</span></a>
+                    <a href="#roadmap"><span class="num">03</span><span class="t" data-t="toc.3">開発状況とロードマップ</span><span class="d"></span><span class="pg">04</span></a>
+                    <a href="#team"><span class="num">04</span><span class="t" data-t="toc.4">チーム・協力体制・お問い合わせ</span><span class="d"></span><span class="pg">04</span></a>
+                </nav>
+            </div>
+
+            <div>
+                <h2 data-t="h.narrative">物語の軌跡 — Narrative Arc</h2>
+                <section>
+                    <div class="story-block">
+                        <div class="chapter-title" data-t="ch1.title">第1章 ／ 幼少期（平和）</div>
+                        <p data-th="ch1.body">マリックはジャスミンの香るダマスカスの旧市街で黄金の凧を追いかけます。世界は<span class="hope">温かい黄色の光</span>と隣人たちの笑い声に満ちていました。</p>
+                    </div>
+                    <div class="story-block">
+                        <div class="chapter-title" data-t="ch2.title">第2–3章 ／ 紛争と激化</div>
+                        <p data-th="ch2.body">空が灰色に染まり、鳥の歌声はノイズに取って代わられます。マリックは都市が砕け散るのを目の当たりにします。現実が裂け、彼は「残響（エコー）」— 砂塵に覆われる前の都市の姿を見る能力に目覚めます。</p>
+                    </div>
+                    <div class="story-block">
+                        <div class="chapter-title" data-t="ch3.title">第4章 ／ 喪失と別れ</div>
+                        <p data-th="ch3.body">巨大な<span class="danger">「サイレンス」</span>が発生。マリックは影の壁によって家族と引き離されます。崩れゆく廃墟を登り、かすかに聞こえる母の子守唄の「残響」を頼りに進まなければなりません。</p>
+                    </div>
+                    <div class="story-block">
+                        <div class="chapter-title" data-t="ch4.title">第5–6章 ／ 脱出と内省</div>
+                        <p data-th="ch4.body">重力が壊れた「デッドゾーン」を登り詰め、マリックは山頂に立ち、影の都市を振り返ります。石の建物は消えても、<span class="hope">記憶の中にある真実</span>は決して壊れないことに気づきます。</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>&copy; 2026 ASHRAF_STUDIOS // ARCHIVE_77</div>
+            <div class="tag" data-t="footer.tag">「あと一回。家に帰るために。」</div>
+            <div class="pn">02 / 04</div>
+        </footer>
+    </article>
+
+    <!-- ============ PAGE 3 · SYSTEMS ============ -->
+    <article class="page" id="systems" aria-label="システムと開発">
+        <div class="runhead">
+            <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
+            <span data-t="runhead.systems">02 · Systems, Art &amp; Studio</span>
+        </div>
+
+        <h2 data-t="h.systemsPage">システム・アート・独自の価値</h2>
+        <p class="lead" data-t="lead.systems">メカニクスは物語の言語。操作のひとつひとつが「記憶を取り戻す」行為に直結します。</p>
+
+        <div class="deck three">
+            <section>
+                <h2 data-t="h.mechanics">システムとメカニクス</h2>
+                <ul>
+                    <li data-th="mec1"><span class="highlight">エコー同期：</span>音のパルスが、過去にのみ存在した足場を出現させる。</li>
+                    <li data-th="mec2"><span class="highlight">テンポラル・クライム：</span>特定の瓦礫の時間を巻き戻し、上昇路を作る。</li>
+                    <li data-th="mec3"><span class="highlight">シャドウ・ステルス：</span>光の中に留まり、「サイレンス」のドローンを回避。</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-t="h.art">アートと感情</h2>
+                <p data-th="art.p1"><span class="highlight">Celeste</span> の精密な操作感に着想を得た、<span class="danger">生存のための闘争</span>をプラットフォームアクションで表現。</p>
+                <p data-th="art.p2">アクセントカラーが感情を導く：<span class="hope">希望</span>、<span class="danger">危険</span>、そして<span class="highlight">哀愁</span>。</p>
+                <div class="quote" style="margin-top: 10px;" data-t="art.quote">ピクセルの解像度を保ちながら、光と粒子で叙情を描く。</div>
+            </section>
+
+            <section>
+                <h2 data-t="h.dev">開発状況</h2>
+                <div class="quote" style="margin-bottom: 12px;" data-t="dev.note">基盤（Unity の習得と基本プロトタイプ）は進行中です。その他の実装・コンテンツはまだ計画段階です。</div>
+                <div class="progress">
+                    <div class="progress-label"><span data-t="dev.p1">フェーズ1 · Unity習得</span><b data-t="dev.statusActive">進行中</b></div>
+                    <div class="bar"><i style="width:30%"></i></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-label"><span data-t="dev.p2">フェーズ2 · 同期プロトタイプ</span><b data-t="dev.status">計画</b></div>
+                    <div class="bar"><i style="width:0%"></i></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-label"><span data-t="dev.p3">フェーズ3 · レベル1「街路」</span><b data-t="dev.status">計画</b></div>
+                    <div class="bar"><i style="width:0%"></i></div>
+                </div>
+                <div class="progress">
+                    <div class="progress-label"><span data-t="dev.p4">ビルド安定性</span><b data-t="dev.status">計画</b></div>
+                    <div class="bar"><i style="width:0%"></i></div>
+                </div>
+            </section>
+
+            <section>
+                <h2 data-t="h.philosophy">核心的な理念</h2>
+                <div class="quote" data-th="philosophy">高く登るほど真実が見えてくる「垂直の物語」。最小限の対話により、<span class="highlight">ゲームプレイそのもの</span>がシリアの人々の不屈の精神を語ります。</div>
+            </section>
+
+            <section>
+                <h2 data-t="h.usp">独自の価値 — USP</h2>
+                <p data-th="usp"><span class="highlight">Celeste スタイルの精密さ</span>で重厚な物語を届ける、磨き上げられた体験。これは単なるゲームではなく、消し去ることを拒む記憶のためのデジタル・モニュメントです。</p>
+            </section>
+
+            <section>
+                <h2 data-t="h.positioning">ポジショニング</h2>
+                <ul>
+                    <li data-th="pos1"><span class="highlight">Celeste：</span>精密な操作感の基準。</li>
+                    <li data-th="pos2"><span class="highlight">Gris：</span>色と音楽による感情表現。</li>
+                    <li data-th="pos3"><span class="highlight">Inside / Limbo：</span>語らない物語の緊張感。</li>
+                </ul>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <div>&copy; 2026 ASHRAF_STUDIOS // ARCHIVE_77</div>
+            <div class="tag" data-t="footer.tag">「あと一回。家に帰るために。」</div>
+            <div class="pn">03 / 04</div>
+        </footer>
+    </article>
+
+    <!-- ============ PAGE 4 · ROADMAP + TEAM + CONTACT ============ -->
+    <article class="page" id="roadmap" aria-label="ロードマップとチーム">
+        <div class="runhead">
+            <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
+            <span data-t="runhead.roadmap">03 · Roadmap / Team / Contact</span>
+        </div>
+
+        <div class="deck two">
+            <section id="roadmap-list">
+                <h2 data-t="h.roadmap">開発ロードマップ — Milestones</h2>
+                <div class="roadmap">
+                    <div class="milestone active">
+                        <div class="when">2026 Q2</div>
+                        <div class="what">
+                            <h3 data-th="ms1.h">基盤構築 <span class="tag">進行中</span></h3>
+                            <p data-t="ms1.p">Unity 習得と、移動・ジャンプ・カメラのコアプロトタイプを確立する。</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <div class="when">2027 Q4</div>
+                        <div class="what">
+                            <h3 data-th="ms2.h">残響システムの実装 <span class="tag">計画</span></h3>
+                            <p data-t="ms2.p">「エコー同期」と「テンポラル・クライム」を統合し、操作感を検証。</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <div class="when" data-t="ms3.when">後日発表</div>
+                        <div class="what">
+                            <h3 data-th="ms3.h">レベル1「街路」 <span class="tag">計画</span></h3>
+                            <p data-t="ms3.p">物語の導入となる街路レベルを制作。チュートリアルと初期アートを確定。</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <div class="when" data-t="ms4.when">後日発表</div>
+                        <div class="what">
+                            <h3 data-th="ms4.h">垂直スライス <span class="tag">計画</span></h3>
+                            <p data-t="ms4.p">山頂までの体験を一気通貫で接続し、デモ可能なビルドを完成。</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <div class="when" data-t="ms5.when">後日発表</div>
+                        <div class="what">
+                            <h3 data-th="ms5.h">本編制作 <span class="tag">計画</span></h3>
+                            <p data-t="ms5.p">全六章のレベルデザインとアート、サウンドを制作。</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <div class="when" data-t="ms6.when">後日発表</div>
+                        <div class="what">
+                            <h3 data-th="ms6.h">仕上げとリリース <span class="tag">計画</span></h3>
+                            <p data-t="ms6.p">ベータテスト、ローカライズ、最適化を経てリリース目標。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="display: grid; gap: 14px; align-content: start;">
+                <section id="team">
+                    <h2 data-t="h.team">チーム体制</h2>
+                    <div class="person">
+                        <div class="mono">A7</div>
+                        <div>
+                            <div class="pname" data-th="person1.name">ASHRAF <span style="color: var(--muted); font-weight: 400;">／ ARCHIVE_77</span></div>
+                            <div class="prole" data-t="person1.role">代表 — 企画・開発・デザイン</div>
+                            <p class="pdesc" data-t="person1.desc">コンセプト設計、Unity 実装、レベルデザイン、アートディレクションを一貫して担当。</p>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="mono">♪</div>
+                        <div>
+                            <div class="pname" data-th="person2.name">サウンド＆音楽 <span style="color: var(--muted); font-weight: 400;">（募集中）</span></div>
+                            <div class="prole" data-t="person2.role">外部パートナー</div>
+                            <p class="pdesc" data-t="person2.desc">「残響」を支える環境音と、母の子守唄をモチーフにした楽曲を担当。</p>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="mono">+</div>
+                        <div>
+                            <div class="pname" data-th="person3.name">追加メンバー <span style="color: var(--muted); font-weight: 400;">（募集中）</span></div>
+                            <div class="prole" data-t="person3.role">アート／QA／ローカライズ</div>
+                            <p class="pdesc" data-t="person3.desc">制作フェーズに応じて、ピクセルアート・テスト・翻訳を募集。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 data-t="h.ask">お願いしたいこと — The Ask</h2>
+                    <ul>
+                        <li data-th="ask1"><span class="highlight">パブリッシャー：</span>資金援助とマーケティング支援を求めています。</li>
+                        <li data-th="ask2"><span class="highlight">コラボレーター：</span>サウンド・ピクセルアートの協業パートナー。</li>
+                        <li data-th="ask3"><span class="highlight">コミュニティ：</span>プレイテスト参加とフィードバック。</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <section class="full-width" style="margin-top: 12px;">
+            <h2 data-t="h.contact">お問い合わせ — Contact</h2>
+            <div class="contact">
+                <div class="c"><span class="k">Email</span><a class="v" href="mailto:ashraftmtbus@gmail.com">ashraftmtbus@gmail.com</a></div>
+                <div class="c"><span class="k">itch.io</span><a class="v" href="https://7asanki.itch.io" target="_blank" rel="noopener">7asanki.itch.io</a></div>
+            </div>
+        </section>
+
+        <div class="closing">
+            <div class="big" data-t="closing.big">小さなゲームが運ぶ、大きな真実。</div>
+            <div class="sig" data-t="closing.sig">ASHRAF STUDIOS // ARCHIVE_77 — Thank you for reading</div>
+        </div>
+
+        <footer class="footer">
+            <div>&copy; 2026 ASHRAF_STUDIOS // ARCHIVE_77</div>
+            <div class="tag" data-t="footer.tag">「あと一回。家に帰るために。」</div>
+            <div class="pn">04 / 04</div>
+        </footer>
+    </article>
+
+</main>
+
+<script>
+    const I18N = {
+        en: {
+            "meta.title": "Echoes of Damascus — Story & Design",
+            "cover.studio": "ASHRAF STUDIOS — Game Proposal",
+            "cover.conf": "Confidential · Game Proposal",
+            "game.title": "Echoes of<br><span class=\"accent\">Damascus</span>",
+            "cover.vision": "\u201CA small game carrying a great truth.\u201D",
+            "cover.subtitle": "The precision of Celeste, and a lyricism about memory. A 2D platformer in which a boy climbs the ruins and follows the \u201Cechoes\u201D of a lost city to find his way home.",
+            "cover.charCaption": "An imagined character concept for the potential hero",
+            "chip.genre": "<b>Genre</b> 2D Platformer",
+            "chip.engine": "<b>Engine</b> Unity",
+            "chip.experience": "<b>Experience</b> Lyrical · Survival · Memory",
+            "chip.audience": "<b>For</b> fans of Celeste / Gris",
+            "stat.chapters": "Chapters",
+            "stat.mechanics": "Core Mechanics",
+            "stat.dev": "Core Developer",
+            "stat.release": "Target Release",
+            "stat.releaseValue": "TBA",
+            "footer.tag": "\u201COne more try. To go home.\u201D",
+            "runhead.doc": "<b>Echoes of Damascus</b> — Story & Design",
+            "runhead.narrative": "01 · Contents / Narrative Arc",
+            "h.exec": "Executive Summary",
+            "lead.exec": "This proposal outlines \u201CEchoes of Damascus,\u201D a lyrical 2D platformer set in Damascus, Syria. Driven by a unique mechanic that visualizes a lost city\u2019s memories as \u201Cechoes,\u201D and by the precision of Celeste, it aims for a short yet densely layered experience.",
+            "h.toc": "Table of Contents",
+            "toc.1": "Narrative Arc",
+            "toc.2": "Systems, Art & Unique Value",
+            "toc.3": "Development Status & Roadmap",
+            "toc.4": "Team, Partners & Contact",
+            "h.narrative": "Narrative Arc",
+            "ch1.title": "Chapter 1 — Childhood (Peace)",
+            "ch1.body": "Malik chases a golden kite through the jasmine-scented old city of Damascus. The world is filled with <span class=\"hope\">warm yellow light</span> and the laughter of neighbours.",
+            "ch2.title": "Chapters 2–3 — Conflict and Escalation",
+            "ch2.body": "The sky turns grey, and birdsong gives way to noise. Malik witnesses the city shattering. Reality cracks, and he awakens to the power of \u201CEchoes\u201D — seeing the city as it was before the dust swallowed it.",
+            "ch3.title": "Chapter 4 — Loss and Farewell",
+            "ch3.body": "A vast <span class=\"danger\">\u201CSilence\u201D</span> occurs. A wall of shadow separates Malik from his family. He must climb the crumbling ruins, guided by the faint \u201Cecho\u201D of his mother\u2019s lullaby.",
+            "ch4.title": "Chapters 5–6 — Escape and Reflection",
+            "ch4.body": "Climbing through the \u201CDead Zone\u201D where gravity is broken, Malik stands at the summit and looks back at the shadowed city. He realizes that even if the stone buildings vanish, <span class=\"hope\">the truth held in memory</span> never breaks.",
+            "runhead.systems": "02 · Systems, Art & Studio",
+            "h.systemsPage": "Systems, Art & Unique Value",
+            "lead.systems": "Mechanics are the language of the story. Every action ties directly to the act of reclaiming memory.",
+            "h.mechanics": "Systems & Mechanics",
+            "mec1": "<span class=\"highlight\">Echo Sync:</span> a pulse of sound reveals platforms that existed only in the past.",
+            "mec2": "<span class=\"highlight\">Temporal Rewind:</span> rewind certain rubble to create a path upward.",
+            "mec3": "<span class=\"highlight\">Shadow Stealth:</span> stay in the light and avoid the drones of the \u201CSilence.\u201D",
+            "h.art": "Art & Emotion",
+            "art.p1": "Inspired by the precise feel of <span class=\"highlight\">Celeste</span>, it expresses the <span class=\"danger\">struggle to survive</span> through platform action.",
+            "art.p2": "Accent colours guide emotion: <span class=\"hope\">hope</span>, <span class=\"danger\">danger</span>, and <span class=\"highlight\">melancholy</span>.",
+            "art.quote": "Keeping pixel resolution while painting lyricism with light and particles.",
+            "h.dev": "Development Status",
+            "dev.p1": "Phase 1 · Learning Unity",
+            "dev.p2": "Phase 2 · Sync Prototype",
+            "dev.p3": "Phase 3 · Level 1 \u201CStreet\u201D",
+            "dev.p4": "Build Stability",
+            "dev.note": "The foundation (learning Unity and the basic prototype) is in progress. All other implementation and content is still at the planning stage.",
+            "dev.status": "Planned",
+            "dev.statusActive": "In Progress",
+            "h.philosophy": "Core Philosophy",
+            "philosophy": "A \u201Cvertical narrative\u201D in which the higher you climb, the more truth is revealed. With minimal dialogue, <span class=\"highlight\">the gameplay itself</span> speaks to the resilience of the Syrian people.",
+            "h.usp": "Unique Value — USP",
+            "usp": "A polished experience that delivers a profound story with <span class=\"highlight\">Celeste-grade precision</span>. This is not merely a game, but a digital monument to a memory that refuses to be erased.",
+            "h.positioning": "Positioning",
+            "pos1": "<span class=\"highlight\">Celeste:</span> the benchmark of precise feel.",
+            "pos2": "<span class=\"highlight\">Gris:</span> emotion through colour and music.",
+            "pos3": "<span class=\"highlight\">Inside / Limbo:</span> the tension of a story left untold.",
+            "runhead.roadmap": "03 · Roadmap / Team / Contact",
+            "h.roadmap": "Development Roadmap — Milestones",
+            "ms1.h": "Foundation <span class=\"tag\">In Progress</span>",
+            "ms1.p": "Learning Unity and establishing the core prototype for movement, jumping and camera.",
+            "ms2.h": "Echo System <span class=\"tag\">Planned</span>",
+            "ms2.p": "Integrating \u201CEcho Sync\u201D and \u201CTemporal Rewind\u201D and validating the feel of control.",
+            "ms3.h": "Level 1 \u201CStreet\u201D <span class=\"tag\">Planned</span>",
+            "ms3.p": "Building the street level that opens the story. Locking tutorial and initial art.",
+            "ms3.when": "TBA",
+            "ms4.h": "Vertical Slice <span class=\"tag\">Planned</span>",
+            "ms4.p": "Connecting the journey to the summit end-to-end and completing a demoable build.",
+            "ms4.when": "TBA",
+            "ms5.h": "Production <span class=\"tag\">Planned</span>",
+            "ms5.p": "Level design, art and sound for all six chapters.",
+            "ms5.when": "TBA",
+            "ms6.h": "Polish & Release <span class=\"tag\">Planned</span>",
+            "ms6.p": "Beta testing, localization and optimization, targeting release.",
+            "ms6.when": "TBA",
+            "h.team": "Team",
+            "person1.name": "ASHRAF <span style=\"color: var(--muted); font-weight: 400;\">／ ARCHIVE_77</span>",
+            "person1.role": "Lead — Design, Development & Art",
+            "person1.desc": "Handles concept design, Unity implementation, level design and art direction end to end.",
+            "person2.name": "Sound & Music <span style=\"color: var(--muted); font-weight: 400;\">(Open)</span>",
+            "person2.role": "External Partner",
+            "person2.desc": "Responsible for the ambient sound supporting the \u201Cechoes\u201D and music built on the mother\u2019s lullaby.",
+            "person3.name": "Additional Members <span style=\"color: var(--muted); font-weight: 400;\">(Open)</span>",
+            "person3.role": "Art / QA / Localization",
+            "person3.desc": "Seeking pixel artists, testers and translators as production phases require.",
+            "h.ask": "The Ask",
+            "ask1": "<span class=\"highlight\">Publisher:</span> seeking funding and marketing support.",
+            "ask2": "<span class=\"highlight\">Collaborators:</span> partners for sound and pixel art.",
+            "ask3": "<span class=\"highlight\">Community:</span> playtest participation and feedback.",
+            "h.contact": "Contact",
+            "closing.big": "A small game carrying a great truth.",
+            "closing.sig": "ASHRAF STUDIOS // ARCHIVE_77 — Thank you for reading"
+        },
+
+        ar: {
+            "meta.title": "أصداء دمشق — القصة والتصميم",
+            "cover.studio": "ASHRAF STUDIOS — عرض لعبة",
+            "cover.conf": "سري · عرض لعبة",
+            "game.title": "أصداء<br><span class=\"accent\">دمشق</span>",
+            "cover.vision": "«لعبة صغيرة تحمل حقيقة كبيرة.»",
+            "cover.subtitle": "دقة Celeste، وشاعرية حول الذاكرة. لعبة منصّات ثنائية الأبعاد يتسلّق فيها صبيّ الأطلال ويتتبّع «أصداء» مدينة مفقودة ليجد طريقه إلى البيت.",
+            "cover.charCaption": "شخصية تخيلية عن شكل البطل المحتمل",
+            "chip.genre": "<b>النوع</b> لعبة منصّات ثنائية الأبعاد",
+            "chip.engine": "<b>المحرّك</b> Unity",
+            "chip.experience": "<b>التجربة</b> شاعري · نجاة · ذاكرة",
+            "chip.audience": "<b>الجمهور</b> عشّاق Celeste / Gris",
+            "stat.chapters": "فصول",
+            "stat.mechanics": "ميكانيكيات أساسية",
+            "stat.dev": "مطوّر أساسي",
+            "stat.release": "الإصدار المستهدف",
+            "stat.releaseValue": "يُعلن لاحقًا",
+            "footer.tag": "«محاولة أخيرة. لأعود إلى البيت.»",
+            "runhead.doc": "<b>أصداء دمشق</b> — القصة والتصميم",
+            "runhead.narrative": "01 · المحتويات / قوس الحكاية",
+            "h.exec": "الملخّص التنفيذي",
+            "lead.exec": "يقدّم هذا العرض «أصداء دمشق»، لعبة منصّات ثنائية الأبعاد شاعرية تدور في دمشق بسوريا. تقوم على ميكانيكية فريدة تُظهر ذكريات مدينة مفقودة كـ«أصداء»، وعلى دقة Celeste، لتصنع تجربة قصيرة غنية بالطبقات.",
+            "h.toc": "جدول المحتويات",
+            "toc.1": "قوس الحكاية",
+            "toc.2": "الأنظمة والفن والقيمة الفريدة",
+            "toc.3": "حالة التطوير وخطة الطريق",
+            "toc.4": "الفريق والشراكات والتواصل",
+            "h.narrative": "قوس الحكاية",
+            "ch1.title": "الفصل 1 — الطفولة (سلام)",
+            "ch1.body": "يطارد مالك طائرة ورقية ذهبية في مدينة دمشق القديمة العابقة برائحة الياسمين. كان العالم يفيض بـ<span class=\"hope\">ضوء أصفر دافئ</span> وضحكات الجيران.",
+            "ch2.title": "الفصلان 2–3 — الصراع والتصاعد",
+            "ch2.body": "تغدو السماء رمادية، ويحلّ الضجيج محلّ تغريد الطيور. يشهد مالك تحطّم المدينة. يتشقّق الواقع، ويستيقظ على قدرة «الأصداء» — أن يرى المدينة كما كانت قبل أن يبتلعها الغبار.",
+            "ch3.title": "الفصل 4 — الفقد والوداع",
+            "ch3.body": "يحدث <span class=\"danger\">«صمت»</span> هائل. يفصل جدار من الظلّ مالك عن عائلته. عليه أن يتسلّق الأطلال المنهارة، مسترشدًا بـ«صدى» خافت لتهويدة أمّه.",
+            "ch4.title": "الفصلان 5–6 — الهروب والتأمّل",
+            "ch4.body": "بعد أن يصعد عبر «المنطقة الميتة» حيث تنكسر الجاذبية، يقف مالك على القمّة وينظر إلى المدينة المظلّلة. يدرك أنه حتى لو تلاشت مباني الحجر، فإنّ <span class=\"hope\">الحقيقة في الذاكرة</span> لا تنكسر أبدًا.",
+            "runhead.systems": "02 · الأنظمة والفن والاستوديو",
+            "h.systemsPage": "الأنظمة والفن والقيمة الفريدة",
+            "lead.systems": "الميكانيكيات هي لغة الحكاية. كل فعل يرتبط مباشرة بفعل استعادة الذاكرة.",
+            "h.mechanics": "الأنظمة والميكانيكيات",
+            "mec1": "<span class=\"highlight\">مزامنة الصدى:</span> نبضة صوت تُظهر منصّات لم تكن موجودة إلا في الماضي.",
+            "mec2": "<span class=\"highlight\">إرجاع الزمن:</span> أعِد الزمن لبعض الأنقاض لتصنع طريقًا إلى الأعلى.",
+            "mec3": "<span class=\"highlight\">تخفّي الظل:</span> ابقَ في الضوء وتجنّب طائرات «الصمت».",
+            "h.art": "الفنّ والمشاعر",
+            "art.p1": "مستوحاة من الإحساس الدقيق في <span class=\"highlight\">Celeste</span>، تعبّر عن <span class=\"danger\">الصراع من أجل البقاء</span> عبر أكشن المنصّات.",
+            "art.p2": "ترشد الألوان المميّزة المشاعر: <span class=\"hope\">الأمل</span>، <span class=\"danger\">الخطر</span>، و<span class=\"highlight\">الشجن</span>.",
+            "art.quote": "الحفاظ على دقة البكسل مع رسم الشاعرية بالضوء والجزيئات.",
+            "h.dev": "حالة التطوير",
+            "dev.p1": "المرحلة 1 · إتقان Unity",
+            "dev.p2": "المرحلة 2 · نموذج المزامنة",
+            "dev.p3": "المرحلة 3 · المستوى 1 «الشارع»",
+            "dev.p4": "استقرار البناء",
+            "dev.note": "الأساس (إتقان Unity والنموذج الأولي الأساسي) قيد التنفيذ. أما بقية التنفيذ والمحتوى فلا يزال في مرحلة التخطيط.",
+            "dev.status": "مخطط",
+            "dev.statusActive": "قيد التنفيذ",
+            "h.philosophy": "الفلسفة الجوهرية",
+            "philosophy": "«حكاية عمودية» كلّما ارتفعت فيها انكشف المزيد من الحقيقة. بأقلّ قدر من الحوار، <span class=\"highlight\">اللعب نفسه</span> يحكي صمود الشعب السوري.",
+            "h.usp": "القيمة الفريدة — USP",
+            "usp": "تجربة مصقولة تقدّم حكاية عميقة بـ<span class=\"highlight\">دقة على مستوى Celeste</span>. هذه ليست مجرّد لعبة، بل نصب رقمي لذكرى ترفض المحو.",
+            "h.positioning": "التموضع",
+            "pos1": "<span class=\"highlight\">Celeste:</span> معيار الإحساس الدقيق.",
+            "pos2": "<span class=\"highlight\">Gris:</span> المشاعر عبر اللون والموسيقى.",
+            "pos3": "<span class=\"highlight\">Inside / Limbo:</span> توتّر حكاية تُروى بالتلميح.",
+            "runhead.roadmap": "03 · خطة الطريق / الفريق / التواصل",
+            "h.roadmap": "خطة تطوير اللعبة — المعالم",
+            "ms1.h": "البناء الأساسي <span class=\"tag\">قيد التنفيذ</span>",
+            "ms1.p": "إتقان Unity وبناء النموذج الأساسي للحركة والقفز والكاميرا.",
+            "ms2.h": "نظام الصدى <span class=\"tag\">مخطط</span>",
+            "ms2.p": "دمج «مزامنة الصدى» و«إرجاع الزمن» والتحقّق من إحساس التحكّم.",
+            "ms3.h": "المستوى 1 «الشارع» <span class=\"tag\">مخطط</span>",
+            "ms3.p": "بناء مستوى الشارع الذي يفتتح الحكاية. تثبيت الشرح والفنّ الأولي.",
+            "ms3.when": "يُعلن لاحقًا",
+            "ms4.h": "الشريحة العمودية <span class=\"tag\">مخطّط</span>",
+            "ms4.p": "ربط الرحلة إلى القمّة من البداية إلى النهاية وإكمال بناء قابل للعرض.",
+            "ms4.when": "يُعلن لاحقًا",
+            "ms5.h": "الإنتاج <span class=\"tag\">مخطّط</span>",
+            "ms5.p": "تصميم المستويات والفنّ والصوت للفصول الستّة كاملة.",
+            "ms5.when": "يُعلن لاحقًا",
+            "ms6.h": "الصقل والإصدار <span class=\"tag\">مخطّط</span>",
+            "ms6.p": "اختبار بيتا والتعريب والتحسين استعدادًا للإصدار.",
+            "ms6.when": "يُعلن لاحقًا",
+            "h.team": "الفريق",
+            "person1.name": "ASHRAF <span style=\"color: var(--muted); font-weight: 400;\">／ ARCHIVE_77</span>",
+            "person1.role": "القائد — التصميم والتطوير والفنّ",
+            "person1.desc": "يتولّى تصميم الفكرة وتنفيذ Unity وتصميم المستويات والإدارة الفنية من البداية إلى النهاية.",
+            "person2.name": "الصوت والموسيقى <span style=\"color: var(--muted); font-weight: 400;\">(متاح)</span>",
+            "person2.role": "شريك خارجي",
+            "person2.desc": "مسؤول عن الصوت المحيطي الذي يدعم «الأصداء» والموسيقى المبنية على تهويدة الأمّ.",
+            "person3.name": "أعضاء إضافيون <span style=\"color: var(--muted); font-weight: 400;\">(متاح)</span>",
+            "person3.role": "الفنّ / ضمان الجودة / التعريب",
+            "person3.desc": "نبحث عن فنانين بكسل ومختبِرين ومترجمين حسب مراحل الإنتاج.",
+            "h.ask": "المطلوب",
+            "ask1": "<span class=\"highlight\">ناشر:</span> نبحث عن تمويل ودعم تسويقي.",
+            "ask2": "<span class=\"highlight\">شركاء:</span> شركاء في الصوت والفنّ البكسلي.",
+            "ask3": "<span class=\"highlight\">المجتمع:</span> مشاركة في الاختبار وتقديم الملاحظات.",
+            "h.contact": "التواصل",
+            "closing.big": "لعبة صغيرة تحمل حقيقة كبيرة.",
+            "closing.sig": "ASHRAF STUDIOS // ARCHIVE_77 — شكرًا لقراءتكم"
+        },
+
+        ko: {
+            "meta.title": "다마스쿠스의 잔향 — 스토리 & 디자인",
+            "cover.studio": "ASHRAF STUDIOS — 게임 기획",
+            "cover.conf": "대외비 · 게임 기획서",
+            "game.title": "다마스쿠스의<br><span class=\"accent\">잔향</span>",
+            "cover.vision": "「작은 게임이 전하는 큰 진실.」",
+            "cover.subtitle": "Celeste의 정밀함과 기억을 둘러싼 서정성. 한 소년이 폐허를 오르며 사라진 도시의 ‘잔향’을 따라 집으로 향하는 2D 플랫포머.",
+            "cover.charCaption": "예상되는 주인공의 모습을 그린 가상 캐릭터",
+            "chip.genre": "<b>장르</b> 2D 플랫포머",
+            "chip.engine": "<b>엔진</b> Unity",
+            "chip.experience": "<b>체험</b> 서정 · 생존 · 기억",
+            "chip.audience": "<b>대상</b> Celeste / Gris 팬",
+            "stat.chapters": "챕터",
+            "stat.mechanics": "핵심 메커니즘",
+            "stat.dev": "핵심 개발자",
+            "stat.release": "출시 목표",
+            "stat.releaseValue": "추후 발표",
+            "footer.tag": "「한 번만 더. 집으로 돌아가기 위해.」",
+            "runhead.doc": "<b>다마스쿠스의 잔향</b> — 스토리 & 디자인",
+            "runhead.narrative": "01 · 목차 / 서사 흐름",
+            "h.exec": "요약",
+            "lead.exec": "본 제안서는 시리아 다마스쿠스를 배경으로 한 서정적 2D 플랫포머 「다마스쿠스의 잔향」의 개요입니다. 사라진 도시의 기억을 ‘잔향’으로 시각화하는 독자적 메커니즘과 Celeste의 정밀한 조작감을 축으로, 짧지만 밀도 높은 경험을 지향합니다.",
+            "h.toc": "목차",
+            "toc.1": "서사 흐름",
+            "toc.2": "시스템 · 아트 · 고유 가치",
+            "toc.3": "개발 현황과 로드맵",
+            "toc.4": "팀 · 협업 · 문의",
+            "h.narrative": "서사 흐름",
+            "ch1.title": "제1장 — 유년기 (평화)",
+            "ch1.body": "말릭은 재스민 향이 감도는 다마스쿠스 구시가지에서 황금 연을 쫓습니다. 세계는 <span class=\"hope\">따뜻한 노란 빛</span>과 이웃들의 웃음소리로 가득했습니다.",
+            "ch2.title": "제2–3장 — 분쟁과 격화",
+            "ch2.body": "하늘이 잿빛으로 물들고, 새소리는 소음으로 바뀝니다. 말릭은 도시가 부서지는 것을 목격합니다. 현실이 갈라지고, 그는 먼지가 삼키기 전 도시를 보는 ‘잔향’의 능력에 눈뜹니다.",
+            "ch3.title": "제4장 — 상실과 이별",
+            "ch3.body": "거대한 <span class=\"danger\">‘침묵’</span>이 발생합니다. 그림자 벽이 말릭과 가족을 갈라놓습니다. 그는 무너지는 폐허를 오르며, 희미하게 들리는 어머니 자장가의 ‘잔향’을 따라야 합니다.",
+            "ch4.title": "제5–6장 — 탈출과 성찰",
+            "ch4.body": "중력이 무너진 ‘데드 존’을 오른 말릭은 산정에 서서 그림자 도시를 돌아봅니다. 돌건물이 사라져도 <span class=\"hope\">기억 속의 진실</span>은 결코 부서지지 않음을 깨닫습니다.",
+            "runhead.systems": "02 · 시스템 · 아트 · 스튜디오",
+            "h.systemsPage": "시스템 · 아트 · 고유 가치",
+            "lead.systems": "메커니즘은 이야기의 언어입니다. 모든 조작이 ‘기억을 되찾는’ 행위와 직결됩니다.",
+            "h.mechanics": "시스템과 메커니즘",
+            "mec1": "<span class=\"highlight\">에코 동기화:</span> 소리의 파동이 과거에만 존재했던 발판을 드러냅니다.",
+            "mec2": "<span class=\"highlight\">시간 되감기:</span> 특정 잔해의 시간을 되돌려 상승 경로를 만듭니다.",
+            "mec3": "<span class=\"highlight\">그림자 잠행:</span> 빛 속에 머물며 ‘침묵’의 드론을 피합니다.",
+            "h.art": "아트와 감정",
+            "art.p1": "<span class=\"highlight\">Celeste</span>의 정밀한 조작감에서 착안해, <span class=\"danger\">생존을 위한 투쟁</span>을 플랫폼 액션으로 표현합니다.",
+            "art.p2": "강조 색이 감정을 이끕니다: <span class=\"hope\">희망</span>, <span class=\"danger\">위험</span>, 그리고 <span class=\"highlight\">애수</span>.",
+            "art.quote": "픽셀 해상도를 유지하면서 빛과 입자로 서정을 그립니다.",
+            "h.dev": "개발 현황",
+            "dev.p1": "페이즈 1 · Unity 습득",
+            "dev.p2": "페이즈 2 · 동기화 프로토타입",
+            "dev.p3": "페이즈 3 · 레벨 1 「거리」",
+            "dev.p4": "빌드 안정성",
+            "dev.note": "기반(Unity 습득과 기본 프로토타입)은 진행 중입니다. 그 밖의 구현과 콘텐츠는 아직 계획 단계입니다.",
+            "dev.status": "계획",
+            "dev.statusActive": "진행 중",
+            "h.philosophy": "핵심 이념",
+            "philosophy": "높이 오를수록 진실이 드러나는 ‘수직의 이야기’. 최소한의 대사로, <span class=\"highlight\">게임플레이 그 자체</span>가 시리아 사람들의 불굴의 정신을 말합니다.",
+            "h.usp": "고유 가치 — USP",
+            "usp": "<span class=\"highlight\">Celeste급 정밀함</span>으로 깊은 이야기를 전하는, 잘 벼려진 경험. 이것은 단순한 게임이 아니라, 지워지기를 거부하는 기억을 위한 디지털 기념비입니다.",
+            "h.positioning": "포지셔닝",
+            "pos1": "<span class=\"highlight\">Celeste:</span> 정밀한 조작감의 기준.",
+            "pos2": "<span class=\"highlight\">Gris:</span> 색과 음악으로 표현하는 감정.",
+            "pos3": "<span class=\"highlight\">Inside / Limbo:</span> 말하지 않는 이야기의 긴장감.",
+            "runhead.roadmap": "03 · 로드맵 / 팀 / 문의",
+            "h.roadmap": "개발 로드맵 — 마일스톤",
+            "ms1.h": "기반 구축 <span class=\"tag\">진행 중</span>",
+            "ms1.p": "Unity 습득과 이동·점프·카메라의 코어 프로토타입 확립.",
+            "ms2.h": "잔향 시스템 구현 <span class=\"tag\">계획</span>",
+            "ms2.p": "‘에코 동기화’와 ‘시간 되감기’를 통합하고 조작감을 검증.",
+            "ms3.h": "레벨 1 「거리」 <span class=\"tag\">계획</span>",
+            "ms3.p": "이야기의 도입이 되는 거리 레벨 제작. 튜토리얼과 초기 아트 확정.",
+            "ms3.when": "추후 발표",
+            "ms4.h": "버티컬 슬라이스 <span class=\"tag\">계획</span>",
+            "ms4.p": "산정까지의 경험을 하나로 연결해 데모 가능한 빌드 완성.",
+            "ms4.when": "추후 발표",
+            "ms5.h": "본편 제작 <span class=\"tag\">계획</span>",
+            "ms5.p": "전 6장의 레벨 디자인과 아트, 사운드 제작.",
+            "ms5.when": "추후 발표",
+            "ms6.h": "마무리와 출시 <span class=\"tag\">계획</span>",
+            "ms6.p": "베타 테스트, 현지화, 최적화를 거쳐 출시 목표.",
+            "ms6.when": "추후 발표",
+            "h.team": "팀 구성",
+            "person1.name": "ASHRAF <span style=\"color: var(--muted); font-weight: 400;\">／ ARCHIVE_77</span>",
+            "person1.role": "리드 — 기획·개발·디자인",
+            "person1.desc": "컨셉 설계, Unity 구현, 레벨 디자인, 아트 디렉션을 총괄.",
+            "person2.name": "사운드 & 음악 <span style=\"color: var(--muted); font-weight: 400;\">(모집 중)</span>",
+            "person2.role": "외부 파트너",
+            "person2.desc": "‘잔향’을 뒷받침하는 환경음과 어머니의 자장가를 모티프로 한 음악 담당.",
+            "person3.name": "추가 멤버 <span style=\"color: var(--muted); font-weight: 400;\">(모집 중)</span>",
+            "person3.role": "아트 / QA / 현지화",
+            "person3.desc": "제작 단계에 따라 픽셀 아트·테스트·번역 인력을 모집.",
+            "h.ask": "요청 사항",
+            "ask1": "<span class=\"highlight\">퍼블리셔:</span> 자금 지원과 마케팅 지원을 구합니다.",
+            "ask2": "<span class=\"highlight\">협업:</span> 사운드·픽셀 아트 파트너.",
+            "ask3": "<span class=\"highlight\">커뮤니티:</span> 플레이테스트 참여와 피드백.",
+            "h.contact": "문의",
+            "closing.big": "작은 게임이 전하는 큰 진실.",
+            "closing.sig": "ASHRAF STUDIOS // ARCHIVE_77 — 읽어주셔서 감사합니다"
+        }
+    };
+
+    // Capture the original Japanese content from the DOM
+    const originals = { t: {}, h: {} };
+    document.querySelectorAll('[data-t]').forEach(el => { originals.t[el.dataset.t] = el.textContent; });
+    document.querySelectorAll('[data-th]').forEach(el => { originals.h[el.dataset.th] = el.innerHTML; });
+    const originalTitle = document.getElementById('meta-title').textContent;
+
+    function setLang(lang) {
+        const html = document.documentElement;
+        html.lang = lang;
+        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+        const dict = (lang === 'ja') ? null : I18N[lang];
+
+        document.querySelectorAll('[data-t]').forEach(el => {
+            const k = el.dataset.t;
+            el.textContent = dict ? (dict[k] ?? originals.t[k]) : originals.t[k];
+        });
+        document.querySelectorAll('[data-th]').forEach(el => {
+            const k = el.dataset.th;
+            el.innerHTML = dict ? (dict[k] ?? originals.h[k]) : originals.h[k];
+        });
+
+        document.getElementById('meta-title').textContent = dict ? (dict['meta.title'] ?? originalTitle) : originalTitle;
+
+        document.querySelectorAll('.langbar button').forEach(b => {
+            b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+        });
+        try { localStorage.setItem('echos-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.langbar button').forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    // Initial language: saved preference, else Japanese
+    let saved = 'ja';
+    try { saved = localStorage.getItem('echos-lang') || 'ja'; } catch (e) {}
+    if (saved !== 'ja') setLang(saved);
+</script>
+</body>
+</html>
