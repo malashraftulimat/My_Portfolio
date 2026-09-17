@@ -91,7 +91,7 @@
     <section class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
-                <img src="MY-PHOTO.JPG" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'">
+                <img src="my-photo.jpg" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'">
             </div>
             
             <div class="flex-1 text-center md:text-start">
@@ -108,59 +108,119 @@
         <div class="max-w-7xl mx-auto">
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Project 1 (Unity) -->
-                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal1')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 overflow-hidden relative">
-                        <img src="solframe-thumb.gif" alt="Sol Frame" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider">GIF</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project 5 (GDD / Echoes of Damascus) -->
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('echos.html', '_blank')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="malik.png" alt="Echoes of Damascus" loading="lazy" class="w-full h-full object-contain p-2 group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GDD</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p1Title">Sol Frame</h4>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">GDD</span>
+                            <span class="border border-gray-600 px-2 py-1 rounded">Game Design</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
+                    </div>
+                </div>
+
+                <!-- Project 1 (Unity) -->
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal1')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 overflow-hidden relative">
+                        <img src="solframe-thumb.gif" alt="Sol Frame" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GIF</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
                     <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
-                        <span class="border border-gray-600 px-2 py-1 rounded">Unity</span>
-                        <span class="border border-gray-600 px-2 py-1 rounded">C#</span>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">Unity</span>
+                            <span class="border border-gray-600 px-2 py-1 rounded">C#</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
                 <!-- Project 2 (3D Maya) -->
-                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal2')">
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal2')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="technos1.jpg" alt="3D Model" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                        <img src="technos1.jpg" alt="3D Model" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-images text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p2Title">3D Environments</h4>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
                     <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
-                        <span class="border border-gray-600 px-2 py-1 rounded">3D</span>
-                        <span class="border border-gray-600 px-2 py-1 rounded">Maya</span>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">3D</span>
+                            <span class="border border-gray-600 px-2 py-1 rounded">Maya</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
                 <!-- Project 3 (Photoshop) -->
-                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal3')">
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal3')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="action_map copy.png" alt="Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated" onerror="this.style.display='none'">
-                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                        <img src="action_map copy.png" alt="Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-images text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p3Title">Pixel Art & Design</h4>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
                     <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
-                        <span class="border border-gray-600 px-2 py-1 rounded">Photoshop</span>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">Photoshop</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
                 
                 <!-- Project 4 (TGS 2024 / Networking) -->
-                <div class="bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 transition duration-300" onclick="openModal('modal4')">
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal4')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="DE.CEO.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover object-top" onerror="this.style.display='none'">
-                        <span class="absolute bottom-2 right-2 bg-black/70 text-xs px-2 py-1 rounded font-mono tracking-wider text-white">GALLERY</span>
+                        <img src="DE.CEO.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <!-- Hover Overlay -->
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-images text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white" data-i18n="p4Title">Tokyo Game Show 2024</h4>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
                     <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
-                    <div class="flex gap-2 text-xs font-mono text-gray-400 border-t border-gray-700 pt-3">
-                        <span class="border border-gray-600 px-2 py-1 rounded">Event</span>
-                        <span class="border border-gray-600 px-2 py-1 rounded">Networking</span>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">Event</span>
+                            <span class="border border-gray-600 px-2 py-1 rounded">Networking</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
             </div>
@@ -173,24 +233,24 @@
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
             
             <div class="flex flex-col md:flex-row gap-8">
-                <!-- Skills Box Icons -->
+                <!-- Skills Box Icons (Hover removed as per request) -->
                 <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-gamepad text-3xl text-gray-300 mb-2"></i>
                         <span class="text-sm text-gray-400 font-bold">Game Dev</span>
                         <span class="text-xs text-gray-500 mt-1">Unity</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-code text-3xl text-gray-300 mb-2"></i>
                         <span class="text-sm text-gray-400 font-bold">Code</span>
                         <span class="text-xs text-gray-500 mt-1">C#</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-pen-ruler text-3xl text-gray-300 mb-2"></i>
                         <span class="text-sm text-gray-400 font-bold">Design</span>
                         <span class="text-xs text-gray-500 mt-1">Maya / PS</span>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center transition hover:bg-gray-800">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-volume-high text-3xl text-gray-300 mb-2"></i>
                         <span class="text-sm text-gray-400 font-bold">Audio</span>
                         <span class="text-xs text-gray-500 mt-1">Cubase</span>
@@ -420,6 +480,8 @@
                 p4Title: "Tokyo Game Show 2024",
                 p4Desc: "Meeting the Digital Extremes team after 11 years.",
                 p4DescLong: "After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.",
+                p5Title: "Echoes of Damascus",
+                p5Desc: "A lyrical 2D platformer GDD & proposal featuring multi-language support.",
                 skillsTitle: "SKILLS & LANGUAGES",
                 langAr: "ARABIC",
                 langEn: "ENGLISH",
@@ -452,6 +514,8 @@
                 p4Title: "معرض طوكيو للألعاب 2024",
                 p4Desc: "لقاء فريق Digital Extremes بعد 11 سنة من اللعب.",
                 p4DescLong: "بعد 11 سنة من لعب Warframe ومشاهدة البثوث (Devstreams)، أخيراً قابلت الوجوه التي لطالما رأيتها خلف الشاشة. كان اللقاء أشبه بلم شمل عائلي مليء بالمشاعر بالنسبة لي، وحظيت بمحادثة ملهمة ودافئة مع فريق Digital Extremes.",
+                p5Title: "أصداء دمشق",
+                p5Desc: "عرض تقديمي (GDD) للعبة منصات ثنائية الأبعاد تدعم لغات متعددة.",
                 skillsTitle: "المهارات واللغات",
                 langAr: "العربية",
                 langEn: "الإنجليزية",
@@ -484,6 +548,8 @@
                 p4Title: "東京ゲームショウ 2024",
                 p4Desc: "11年越しにDigital Extremesチームとの対面。",
                 p4DescLong: "Warframeをプレイし、Devstreamを見続けて11年。ついに画面の向こう側の開発陣とお会いすることができました。まるで家族との再会のような感動的な瞬間であり、Digital Extremesのチームと非常に刺激的で温かい会話を交わすことができました。",
+                p5Title: "ダマスカスの残響",
+                p5Desc: "多言語対応の叙情的な2Dプラットフォーマー企画書（GDD）。",
                 skillsTitle: "スキルとツール",
                 langAr: "アラビア語",
                 langEn: "英語",
@@ -516,6 +582,8 @@
                 p4Title: "도쿄 게임쇼 2024",
                 p4Desc: "11년 만에 Digital Extremes 팀을 만나다.",
                 p4DescLong: "11년 동안 Warframe을 플레이하고 Devstream을 시청한 끝에 드디어 화면 너머의 개발진을 만났습니다. 마치 가족 상봉처럼 감동적이었고, Digital Extremes 팀과 정말 영감을 주는 따뜻한 대화를 나누었습니다.",
+                p5Title: "다마스쿠스의 잔향",
+                p5Desc: "다국어를 지원하는 서정적인 2D 플랫포머 기획서(GDD).",
                 skillsTitle: "기술 및 언어",
                 langAr: "아랍어",
                 langEn: "영어",
