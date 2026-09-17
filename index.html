@@ -111,7 +111,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Project 5 (GDD / Echoes of Damascus) -->
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('echos.html', '_blank')">
+                <!-- تمت إضافة المزامنة للغة هنا أيضاً عند الضغط مباشرة -->
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('echos.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="malik.png" alt="Echoes of Damascus" loading="lazy" class="w-full h-full object-contain p-2 group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
                         <!-- Hover Overlay -->
@@ -634,6 +635,9 @@
                 cvLink.href = cvFiles[lang];
                 cvLink.setAttribute('download', cvFiles[lang]); // هذه الخاصية تجعل المتصفح يحمل الملف بدلاً من فتحه
             }
+
+            // ميزة مزامنة اللغة مع المواقع الفرعية (مثل echos.html)
+            try { localStorage.setItem('echos-lang', lang); } catch (e) {}
         }
 
         // Modals Logic
