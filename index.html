@@ -111,7 +111,6 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Project 5 (GDD / Echoes of Damascus) -->
-                <!-- تمت إضافة المزامنة للغة هنا أيضاً عند الضغط مباشرة -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('echos.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="malik.png" alt="Echoes of Damascus" loading="lazy" class="w-full h-full object-contain p-2 group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
@@ -234,7 +233,7 @@
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
             
             <div class="flex flex-col md:flex-row gap-8">
-                <!-- Skills Box Icons (Hover removed as per request) -->
+                <!-- Skills Box Icons -->
                 <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-gamepad text-3xl text-gray-300 mb-2"></i>
@@ -411,7 +410,7 @@
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
                 </div>
                 <div class="group relative overflow-hidden rounded cursor-pointer bg-gray-900" onclick="openLightbox('random_pokemon copy.jpg')">
-                    <img src="random_pokemon copy.jpg" alt="Pokemon Pixel Art" class="w-full h-28 object-cover pixelated group-hover:scale-105 transition duration-300">
+                    <img src="random_pokemon copy.jpg" alt="Pokemon Pixel Art" class="w-full h-28 object-cover group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
                 </div>
             </div>
@@ -456,8 +455,23 @@
         </div>
     </div>
 
-    <!-- i18n Script -->
+    <!-- i18n & Main Script -->
     <script>
+        // Disable browser scroll restoration and force the page to start from the top
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.addEventListener('beforeunload', function () {
+            window.scrollTo(0, 0);
+        });
+
+        window.addEventListener('load', function () {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+
         const translations = {
             en: {
                 name: "M ALASHRAF TOLIMAT",
@@ -597,7 +611,6 @@
             }
         };
 
-        // إضافة أسماء ملفات السيرة الذاتية لكل لغة
         const cvFiles = {
             en: 'Resume_English.pdf',
             ar: 'Resume_Arabic.pdf',
@@ -606,7 +619,6 @@
         };
 
         function setLang(lang) {
-            // التعديل السحري: إعطاء خصائص اتجاه النص الصحيحة للعناصر اللي عم تترجم فقط دون قلب الموقع
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
@@ -629,14 +641,11 @@
             document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('text-white');
             document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.remove('text-gray-400');
 
-            // تغيير رابط السيرة الذاتية بناءً على اللغة المختارة
             const cvLink = document.getElementById('cv-link');
             if (cvLink && cvFiles[lang]) {
                 cvLink.href = cvFiles[lang];
-                cvLink.setAttribute('download', cvFiles[lang]); // هذه الخاصية تجعل المتصفح يحمل الملف بدلاً من فتحه
             }
 
-            // ميزة مزامنة اللغة مع المواقع الفرعية (مثل echos.html)
             try { localStorage.setItem('echos-lang', lang); } catch (e) {}
         }
 
@@ -674,6 +683,7 @@
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lightbox-img');
             lbImg.src = imgSrc;
+            lb.classList.add('hidden'); // Fixed bug: Should be removed hidden to show
             lb.classList.remove('hidden');
         }
         function closeLightbox() {
