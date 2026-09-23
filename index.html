@@ -209,9 +209,10 @@
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('Barjees_GDD.html', '_blank')">
+                <!-- سكشن البرجيس المعدل مع تمرير اللغة (LocalStorage) -->
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('Barjees_GDD.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="BarjeesBG.png" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
+                        <img src="BarjeesBG.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
@@ -491,7 +492,6 @@
                 p4DescLong: "After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.",
                 p5Title: "Echoes of Damascus",
                 p5Desc: "A lyrical 2D platformer GDD & proposal featuring multi-language support.",
-                // New Project Translations
                 p6Title: "Barjees Board Game",
                 p6Desc: "A complete Game Design Document modernizing the traditional board game.",
                 skillsTitle: "SKILLS & LANGUAGES",
@@ -528,7 +528,6 @@
                 p4DescLong: "بعد 11 سنة من لعب Warframe ومشاهدة البثوث (Devstreams)، أخيراً قابلت الوجوه التي لطالما رأيتها خلف الشاشة. كان اللقاء أشبه بلم شمل عائلي مليء بالمشاعر بالنسبة لي، وحظيت بمحادثة ملهمة ودافئة مع فريق Digital Extremes.",
                 p5Title: "أصداء دمشق",
                 p5Desc: "عرض تقديمي (GDD) للعبة منصات ثنائية الأبعاد تدعم لغات متعددة.",
-                // New Project Translations
                 p6Title: "لعبة البرجيس",
                 p6Desc: "وثيقة تصميم متكاملة (GDD) لتحديث لعبة الطاولة التراثية البرجيس.",
                 skillsTitle: "المهارات واللغات",
@@ -565,7 +564,6 @@
                 p4DescLong: "Warframeをプレイし、Devstreamを見続けて11年。ついに画面の向こう側の開発陣とお会いすることができました。まるで家族との再会のような感動的な瞬間であり、Digital Extremesのチームと非常に刺激的で温かい会話を交わすことができました。",
                 p5Title: "ダマスカスの残響",
                 p5Desc: "多言語対応の叙情的な2Dプラットフォーマー企画書（GDD）。",
-                // New Project Translations
                 p6Title: "バルジース (伝統的ボードゲーム)",
                 p6Desc: "中東の伝統的なボードゲーム「バルジース」を現代化したゲームデザインドキュメント（GDD）。",
                 skillsTitle: "スキルとツール",
@@ -602,7 +600,6 @@
                 p4DescLong: "11년 동안 Warframe을 플레이하고 Devstream을 시청한 끝에 드디어 화면 너머의 개발진을 만났습니다. 마치 가족 상봉처럼 감동적이었고, Digital Extremes 팀과 정말 영감을 주는 따뜻한 대화를 나누었습니다.",
                 p5Title: "다마스쿠스의 잔향",
                 p5Desc: "다국어를 지원하는 서정적인 2D 플랫포머 기획서(GDD).",
-                // New Project Translations
                 p6Title: "바르지스 (전통 보드게임)",
                 p6Desc: "전통 보드게임 바르지스를 현대화한 종합적인 게임 기획서(GDD).",
                 skillsTitle: "기술 및 언어",
@@ -689,7 +686,6 @@
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lightbox-img');
             lbImg.src = imgSrc;
-            lb.classList.add('hidden'); // Fixed bug: Should be removed hidden to show
             lb.classList.remove('hidden');
         }
         function closeLightbox() {
