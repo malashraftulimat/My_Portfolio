@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M ALASHRAF TOLIMAT | Game Developer</title>
-    <!-- Tailwind CSS & FontAwesome for Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -52,7 +51,6 @@
 </head>
 <body class="antialiased min-h-screen relative">
 
-    <!-- Navbar & Language Switcher -->
     <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-40">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="font-bold text-sm sm:text-xl tracking-wider text-accent flex items-center gap-2 shrink-0">
@@ -70,7 +68,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="pt-32 pb-16 px-4 text-center">
         <img src="7aSanki.png" alt="Logo" class="w-48 h-auto mx-auto mb-6 object-contain drop-shadow-[0_0_15px_rgba(255,106,0,0.3)]" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
         
@@ -87,7 +84,6 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
@@ -103,18 +99,15 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-16 px-4">
         <div class="max-w-7xl mx-auto">
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Project 5 (GDD / Echoes of Damascus) -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('echos.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="malik.png" alt="Echoes of Damascus" loading="lazy" class="w-full h-full object-contain p-2 group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
@@ -133,11 +126,9 @@
                     </div>
                 </div>
 
-                <!-- Project 1 (Unity) -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal1')">
                     <div class="h-40 bg-gray-900 rounded mb-4 overflow-hidden relative">
                         <img src="solframe-thumb.gif" alt="Sol Frame" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-play text-xl ml-1"></i>
@@ -156,11 +147,9 @@
                     </div>
                 </div>
 
-                <!-- Project 2 (3D Maya) -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal2')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="technos1.jpg" alt="3D Model" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-images text-xl"></i>
@@ -179,11 +168,9 @@
                     </div>
                 </div>
 
-                <!-- Project 3 (Photoshop) -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal3')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="action_map copy.png" alt="Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-images text-xl"></i>
@@ -201,11 +188,9 @@
                     </div>
                 </div>
                 
-                <!-- Project 4 (TGS 2024 / Networking) -->
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal4')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="DE.CEO.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <!-- Hover Overlay -->
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-images text-xl"></i>
@@ -223,17 +208,37 @@
                         <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
+
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('Barjees_GDD.html', '_blank')">
+                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
+                        <img src="barjees_thumb.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
+                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GDD</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
+                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
+                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
+                        <div class="flex gap-2 text-xs font-mono text-gray-400">
+                            <span class="border border-gray-600 px-2 py-1 rounded">GDD</span>
+                            <span class="border border-gray-600 px-2 py-1 rounded">Board Game</span>
+                        </div>
+                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Skills & Languages -->
     <section class="py-12 px-4 bg-cardBg/30 border-y border-gray-800">
         <div class="max-w-6xl mx-auto">
             <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
             
             <div class="flex flex-col md:flex-row gap-8">
-                <!-- Skills Box Icons -->
                 <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
                         <i class="fa-solid fa-gamepad text-3xl text-gray-300 mb-2"></i>
@@ -257,7 +262,6 @@
                     </div>
                 </div>
 
-                <!-- Language Bars -->
                 <div class="flex-1 bg-cardBg p-6 rounded-lg border border-gray-800 flex flex-col justify-center">
                     <ul class="space-y-4 text-sm font-bold text-gray-300">
                         <li class="flex items-center gap-4">
@@ -290,10 +294,8 @@
         </div>
     </section>
 
-    <!-- Footer / Contact Form -->
     <footer class="py-16 px-4 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardBg/50 p-8 rounded-lg border border-gray-800">
-            <!-- AJAX Contact Form (Formspree) -->
             <form id="contact-form" class="flex flex-col gap-3 w-full">
                 <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
                 <div data-fs-error style="display: none;" class="bg-red-900/50 text-red-400 p-3 text-sm rounded border border-red-700 font-bold" data-i18n="msgError">Failed to send message.</div>
@@ -307,7 +309,6 @@
                 </button>
             </form>
 
-            <!-- Email & Socials -->
             <div class="text-center flex flex-col items-center gap-4 border-t md:border-t-0 md:border-s border-gray-700 pt-6 md:pt-0">
                 <a href="mailto:ashraftmtbus@gmail.com" class="text-gray-300 hover:text-white transition font-mono text-sm md:text-base">ashraftmtbus@gmail.com</a>
                 <div class="flex gap-6 text-3xl text-gray-400 mt-2">
@@ -318,14 +319,11 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX OVERLAY -->
     <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-4xl transition">&times;</button>
         <img id="lightbox-img" src="" class="pixelated-zoom-box rounded-lg shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
-    <!-- Modals -->
-    <!-- Modal 1: Sol Frame -->
     <div id="modal1" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-2xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal1')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
@@ -340,7 +338,6 @@
         </div>
     </div>
 
-    <!-- Modal 2: 3D Maya Gallery -->
     <div id="modal2" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal2')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
@@ -385,7 +382,6 @@
         </div>
     </div>
 
-    <!-- Modal 3: Photoshop & Pixel Art Gallery -->
     <div id="modal3" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal3')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
@@ -418,7 +414,6 @@
         </div>
     </div>
 
-    <!-- Modal 4: TGS 2024 Gallery -->
     <div id="modal4" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal4')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
@@ -455,7 +450,6 @@
         </div>
     </div>
 
-    <!-- i18n & Main Script -->
     <script>
         // Disable browser scroll restoration and force the page to start from the top
         if ('scrollRestoration' in history) {
@@ -497,6 +491,9 @@
                 p4DescLong: "After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.",
                 p5Title: "Echoes of Damascus",
                 p5Desc: "A lyrical 2D platformer GDD & proposal featuring multi-language support.",
+                // New Project Translations
+                p6Title: "Barjees Board Game",
+                p6Desc: "A complete Game Design Document modernizing the traditional board game.",
                 skillsTitle: "SKILLS & LANGUAGES",
                 langAr: "ARABIC",
                 langEn: "ENGLISH",
@@ -531,6 +528,9 @@
                 p4DescLong: "بعد 11 سنة من لعب Warframe ومشاهدة البثوث (Devstreams)، أخيراً قابلت الوجوه التي لطالما رأيتها خلف الشاشة. كان اللقاء أشبه بلم شمل عائلي مليء بالمشاعر بالنسبة لي، وحظيت بمحادثة ملهمة ودافئة مع فريق Digital Extremes.",
                 p5Title: "أصداء دمشق",
                 p5Desc: "عرض تقديمي (GDD) للعبة منصات ثنائية الأبعاد تدعم لغات متعددة.",
+                // New Project Translations
+                p6Title: "لعبة البرجيس",
+                p6Desc: "وثيقة تصميم متكاملة (GDD) لتحديث لعبة الطاولة التراثية البرجيس.",
                 skillsTitle: "المهارات واللغات",
                 langAr: "العربية",
                 langEn: "الإنجليزية",
@@ -565,6 +565,9 @@
                 p4DescLong: "Warframeをプレイし、Devstreamを見続けて11年。ついに画面の向こう側の開発陣とお会いすることができました。まるで家族との再会のような感動的な瞬間であり、Digital Extremesのチームと非常に刺激的で温かい会話を交わすことができました。",
                 p5Title: "ダマスカスの残響",
                 p5Desc: "多言語対応の叙情的な2Dプラットフォーマー企画書（GDD）。",
+                // New Project Translations
+                p6Title: "バルジース (伝統的ボードゲーム)",
+                p6Desc: "中東の伝統的なボードゲーム「バルジース」を現代化したゲームデザインドキュメント（GDD）。",
                 skillsTitle: "スキルとツール",
                 langAr: "アラビア語",
                 langEn: "英語",
@@ -599,6 +602,9 @@
                 p4DescLong: "11년 동안 Warframe을 플레이하고 Devstream을 시청한 끝에 드디어 화면 너머의 개발진을 만났습니다. 마치 가족 상봉처럼 감동적이었고, Digital Extremes 팀과 정말 영감을 주는 따뜻한 대화를 나누었습니다.",
                 p5Title: "다마스쿠스의 잔향",
                 p5Desc: "다국어를 지원하는 서정적인 2D 플랫포머 기획서(GDD).",
+                // New Project Translations
+                p6Title: "바르지스 (전통 보드게임)",
+                p6Desc: "전통 보드게임 바르지스를 현대화한 종합적인 게임 기획서(GDD).",
                 skillsTitle: "기술 및 언어",
                 langAr: "아랍어",
                 langEn: "영어",
@@ -703,7 +709,6 @@
         });
     </script>
     
-    <!-- Formspree AJAX Setup -->
     <script>
         window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
         formspree('initForm', { formElement: '#contact-form', formId: 'mwlpeqgl' });
