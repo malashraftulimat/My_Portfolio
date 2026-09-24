@@ -209,7 +209,7 @@
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('Barjees_GDD.html', '_blank')">
+                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('Barjees_GDD.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
                         <img src="BarjeesBG.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
@@ -333,7 +333,8 @@
             </video>
             <p class="text-gray-300 mb-6 text-sm" data-i18n="p1DescLong">A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.</p>
             <div class="flex flex-wrap gap-4">
-                <a href="https://7asanki.itch.io/solframe" target="_blank" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition" data-i18n="btnDemo">Play Demo on itch.io</a>
+                <a href="https://7asanki.itch.io/solframe" target="_blank" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-play"></i><span data-i18n="btnDemo">Play Demo on itch.io</span></a>
+                <a href="solframe_gdd.html" target="_blank" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-file-lines"></i><span data-i18n="btnGDD">Read Full GDD</span></a>
             </div>
         </div>
     </div>
@@ -474,6 +475,7 @@
                 btnProjects: "VIEW PROJECTS",
                 btnCV: "DOWNLOAD CV",
                 btnDemo: "Play Demo on itch.io",
+                btnGDD: "Read Full GDD",
                 aboutTitle: "ABOUT ME",
                 aboutDesc: "A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.",
                 projectsTitle: "FEATURED WORKS",
@@ -510,6 +512,7 @@
                 btnProjects: "تصفح المشاريع",
                 btnCV: "تحميل السيرة الذاتية",
                 btnDemo: "تجربة اللعبة على itch.io",
+                btnGDD: "قراءة وثيقة التصميم",
                 aboutTitle: "نبذة عني",
                 aboutDesc: "طالب سوري مقيم في طوكيو ومطور ألعاب طموح. أدرس حالياً في تيكنوس كوليج وأركز على البرمجة باستخدام Unity و C#. أدمج بين التقنيات الحديثة وأدوات الذكاء الاصطناعي لبناء أنظمة ممتعة. مستعد للعمل حضوريًا أو عن بُعد.",
                 projectsTitle: "أبرز الأعمال",
@@ -546,6 +549,7 @@
                 btnProjects: "プロジェクトを見る",
                 btnCV: "履歴書ダウンロード",
                 btnDemo: "itch.ioでプレイ",
+                btnGDD: "企画書を読む",
                 aboutTitle: "自己紹介",
                 aboutDesc: "東京を拠点とするシリア出身の学生。テクノスカレッジでUnityとC#を使ったゲームプログラミングを学んでいます。最新技術を活用して面白いゲームシステムを構築することに注力しています。",
                 projectsTitle: "注目のプロジェクト",
@@ -582,6 +586,7 @@
                 btnProjects: "프로젝트 보기",
                 btnCV: "이력서 다운로드",
                 btnDemo: "itch.io에서 플레이",
+                btnGDD: "기획서 보기",
                 aboutTitle: "자기소개",
                 aboutDesc: "도쿄에 거주하는 시리아 출신 학생입니다. 현재 테크노스 대학에서 Unity와 C#을 중심으로 게임 프로그래밍을 배우고 있습니다.",
                 projectsTitle: "주요 프로젝트",
@@ -648,7 +653,12 @@
                 cvLink.href = cvFiles[lang];
             }
 
-            try { localStorage.setItem('echos-lang', lang); } catch (e) {}
+            // Share the selected language with every GDD so they open in the same language
+            try {
+                localStorage.setItem('echos-lang', lang);      // Echoes of Damascus
+                localStorage.setItem('solgdd.lang', lang);     // Sol Frame
+                localStorage.setItem('barjees_lang', lang === 'ja' ? 'jp' : lang);    // Barjees (uses 'jp' for Japanese)
+            } catch (e) {}
         }
 
         // Modals Logic
@@ -702,6 +712,9 @@
         document.addEventListener('keydown', e => { 
             if (e.key === 'Escape') closeAllModals(); 
         });
+
+        // Initialize language on load so static HTML matches the active language
+        setLang('en');
     </script>
     
     <script>
