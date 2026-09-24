@@ -245,6 +245,15 @@
         .orokin-bg--a { background-image: url("orokin-bg.svg"); opacity: 0.72; }
         .orokin-bg--b { background-image: url("orokin-bg-2.svg"); opacity: 0; }
 
+        /* Portrait phones/tablets get their OWN artwork (separate files from the
+           desktop scenes). Both mobile scenes mirror the desktop layout: scene A
+           is a single mirrored pair, scene B is a 2x2 mirrored grid. */
+        @media (max-aspect-ratio: 1/1) {
+            .orokin-bg--a { background-image: url("orokin-bg-mobile.svg"); }
+            .orokin-bg--b { background-image: url("orokin-bg-mobile-2.svg"); }
+            body { background-size: auto, auto, 76px 76px; }
+        }
+
         /* ===== Orokin Lotus emblem shapes ===== */
         .nav-lotus { width: 1.6em; height: 1.6em; flex: none; }
         .oro-divider {
@@ -994,23 +1003,29 @@
             const b = document.querySelector('.orokin-bg--b');
             if (!a || !b) return;
 
-            const BASE = 0.72;
+            // Phones/portrait need a touch more presence: the fixed artwork is
+            // the main visual and the content is narrower.
+            const portrait = window.matchMedia('(max-aspect-ratio: 1/1)');
+            function baseOpacity() { return portrait.matches ? 0.9 : 0.72; }
             let ticking = false;
 
             function update() {
                 const max = document.documentElement.scrollHeight - window.innerHeight;
                 const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+                const BASE = baseOpacity();
 
                 // crossfade between scene A (top) and scene B (bottom)
                 a.style.opacity = (BASE * (1 - p)).toFixed(3);
                 b.style.opacity = (BASE * p).toFixed(3);
 
-                // parallax drift in opposite directions + gentle rotation
+                // parallax drift + gentle scale. NOTE: no rotation here — the
+                // artwork is mirrored left/right, and rotating the whole layer
+                // would tilt the two sides in opposite directions and break that
+                // symmetry. Pure translate + scale keeps it perfectly mirrored.
                 const y = p * -80;
-                const rot = (p - 0.5) * 8;
                 const scale = 1 + p * 0.10;
-                a.style.transform = 'translate3d(0,' + y + 'px,0) rotate(' + rot + 'deg) scale(' + scale + ')';
-                b.style.transform = 'translate3d(0,' + (-y) + 'px,0) rotate(' + (-rot) + 'deg) scale(' + scale + ')';
+                a.style.transform = 'translate3d(0,' + y + 'px,0) scale(' + scale + ')';
+                b.style.transform = 'translate3d(0,' + (-y) + 'px,0) scale(' + scale + ')';
 
                 ticking = false;
             }
@@ -1019,6 +1034,7 @@
                 if (!ticking) { requestAnimationFrame(update); ticking = true; }
             }, { passive: true });
             window.addEventListener('resize', update);
+            if (portrait.addEventListener) portrait.addEventListener('change', update);
             update();
         })();
     </script>
