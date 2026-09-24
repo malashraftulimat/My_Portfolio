@@ -27,7 +27,7 @@
   /* ---------- Language bar ---------- */
   .langbar{
     position:fixed;top:14px;right:16px;z-index:100;
-    display:flex;gap:4px;padding:5px;border-radius:999px;
+    display:flex;direction:ltr;gap:4px;padding:5px;border-radius:999px;
     background:rgba(28,22,16,.86);backdrop-filter:blur(9px);
     box-shadow:0 8px 22px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);
   }
@@ -623,10 +623,10 @@ section{scroll-margin-top:92px;}
 <body>
 
 <div class="langbar" role="group" aria-label="Language">
+  <button data-lang="ar">AR</button>
   <button data-lang="en" class="active">EN</button>
-  <button data-lang="jp">日本語</button>
-  <button data-lang="ar">العربية</button>
-  <button data-lang="ko">한국어</button>
+  <button data-lang="jp">JP</button>
+  <button data-lang="ko">KO</button>
 </div>
 
 <div class="wrap">

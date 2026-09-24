@@ -40,9 +40,11 @@
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  /* starfield */
-  body::before{
+  /* starfield — two parallax layers that slowly drift and twinkle */
+  body::before,body::after{
     content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  }
+  body::before{
     background-image:radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.6),transparent),
       radial-gradient(1px 1px at 70% 60%,rgba(255,255,255,.4),transparent),
       radial-gradient(1.5px 1.5px at 40% 80%,rgba(126,250,255,.5),transparent),
@@ -50,7 +52,91 @@
       radial-gradient(1px 1px at 10% 70%,rgba(196,77,255,.4),transparent),
       radial-gradient(1px 1px at 55% 10%,rgba(255,255,255,.35),transparent);
     background-size:600px 600px,700px 700px,800px 800px,900px 900px,1000px 1000px,1100px 1100px;
-    opacity:.45;
+    opacity:.5;
+    animation:starDrift 170s linear infinite;
+  }
+  body::after{
+    background-image:radial-gradient(1px 1px at 30% 20%,rgba(143,251,255,.55),transparent),
+      radial-gradient(1px 1px at 80% 70%,rgba(255,255,255,.4),transparent),
+      radial-gradient(2px 2px at 60% 45%,rgba(255,213,74,.35),transparent);
+    background-size:340px 340px,520px 520px,760px 760px;
+    opacity:.35;
+    animation:starDrift2 95s linear infinite,twinkle 7s ease-in-out infinite alternate;
+  }
+  @keyframes starDrift{
+    from{background-position:0 0,0 0,0 0,0 0,0 0,0 0}
+    to{background-position:0 -600px,0 -700px,0 -800px,0 -900px,0 -1000px,0 -1100px}
+  }
+  @keyframes starDrift2{
+    from{background-position:0 0,0 0,0 0}
+    to{background-position:0 -340px,0 -520px,0 -760px}
+  }
+  @keyframes twinkle{from{opacity:.2}to{opacity:.5}}
+
+  /* retro background planet */
+  .fx-planet{
+    position:fixed;top:7%;right:-130px;width:380px;height:380px;border-radius:50%;
+    z-index:-1;pointer-events:none;opacity:.16;
+    background:radial-gradient(circle at 34% 28%,#9ffcff 0%,#2490c4 32%,#123a63 62%,#071528 100%);
+    box-shadow:0 0 90px rgba(0,212,255,.35),inset -34px -24px 70px rgba(0,0,0,.65);
+  }
+  .fx-planet::after{
+    content:"";position:absolute;left:50%;top:50%;width:158%;height:54px;
+    transform:translate(-50%,-50%) rotate(-20deg);border-radius:50%;
+    border:2px solid rgba(143,251,255,.55);box-shadow:0 0 22px rgba(0,212,255,.45);
+  }
+
+  /* drifting comet */
+  .fx-comet{
+    position:fixed;top:14%;left:-12%;width:160px;height:2px;z-index:-1;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.9));
+    border-radius:2px;filter:drop-shadow(0 0 6px rgba(143,251,255,.9));
+    opacity:0;animation:comet 15s linear infinite;
+  }
+  .fx-comet::after{
+    content:"";position:absolute;right:-3px;top:-2px;width:7px;height:7px;border-radius:50%;
+    background:#fff;box-shadow:0 0 12px 3px rgba(143,251,255,.9);
+  }
+  @keyframes comet{
+    0%{opacity:0;transform:translate3d(0,0,0) rotate(18deg)}
+    8%{opacity:.9}
+    58%{opacity:.9}
+    70%{opacity:0}
+    100%{opacity:0;transform:translate3d(140vw,58vh,0) rotate(18deg)}
+  }
+
+  /* hero — CRT scanlines + synthwave perspective grid */
+  header.hero::before{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);
+    opacity:.55;mix-blend-mode:multiply;
+  }
+  header.hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(180deg,transparent 0%,rgba(0,212,255,.06) 55%,rgba(255,42,109,.14) 100%),
+      repeating-linear-gradient(90deg,rgba(0,212,255,.22) 0 1px,transparent 1px 64px),
+      repeating-linear-gradient(0deg,rgba(0,212,255,.18) 0 1px,transparent 1px 34px);
+    transform:perspective(340px) rotateX(66deg) scaleX(1.5);
+    transform-origin:bottom center;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 60%);
+            mask-image:linear-gradient(180deg,transparent,#000 60%);
+    opacity:.6;
+  }
+  header.hero .hero-inner{z-index:2}
+
+  @media(max-width:760px){
+    .fx-planet{width:220px;height:220px;right:-100px;opacity:.12}
+    .fx-comet,.fx-comet.b,.fx-comet.c{display:none}
+    .fx-roid{opacity:.22}
+    .fx-crt{opacity:.28}
+    .fx-beams,.fx-galaxy,.fx-ufo.alt{display:none}
+    .fx-sun{width:360px;height:360px;bottom:-190px;opacity:.24}
+    .fx-stars{opacity:.45}
+    header.hero::after{opacity:.4}
+  }
+  @media (prefers-reduced-motion:reduce){
+    body::before,body::after,.fx-comet,.fx-comet.b,.fx-comet.c,.fx-nebula,.fx-roid,.fx-warp,.fx-crt::before,header.hero::after,.logo,figure::before,.fx-stars,.fx-galaxy,.fx-sun,.fx-beams,.fx-ufo{animation:none}
   }
   a{color:var(--cyan-soft);text-decoration:none}
   a:hover{text-decoration:underline}
@@ -266,7 +352,240 @@
   }
   .lang-demo-msg b{font-family:'Orbitron';letter-spacing:.08em}
 
+  /* ================= RETRO-SPACE FX LAYER ================= */
+
+  /* drifting nebula clouds (behind the starfield) */
+  .fx-nebula{
+    position:fixed;inset:-30%;z-index:-2;pointer-events:none;opacity:.6;filter:blur(42px);
+    background:
+      radial-gradient(38% 30% at 22% 28%,rgba(0,212,255,.30),transparent 70%),
+      radial-gradient(34% 30% at 80% 64%,rgba(196,77,255,.26),transparent 70%),
+      radial-gradient(40% 34% at 55% 88%,rgba(255,42,109,.20),transparent 70%);
+    animation:nebulaDrift 70s ease-in-out infinite alternate;
+  }
+  @keyframes nebulaDrift{
+    from{transform:translate3d(-3%,-2%,0) scale(1)}
+    to{transform:translate3d(3%,2%,0) scale(1.14)}
+  }
+
+  /* global CRT overlay + sweeping scanline + vignette */
+  .fx-crt{
+    position:fixed;inset:0;z-index:9999;pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px);
+    mix-blend-mode:multiply;opacity:.4;
+  }
+  .fx-crt::before{
+    content:"";position:absolute;left:0;right:0;height:22%;
+    background:linear-gradient(180deg,transparent,rgba(126,250,255,.05),transparent);
+    animation:crtSweep 9s linear infinite;
+  }
+  .fx-crt::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(130% 120% at 50% 45%,transparent 55%,rgba(0,0,0,.62));
+  }
+  @keyframes crtSweep{from{top:-24%}to{top:112%}}
+
+  /* tumbling asteroids */
+  .fx-roid{
+    position:fixed;top:22%;left:0;width:24px;height:24px;z-index:-1;pointer-events:none;opacity:.5;
+    background:radial-gradient(circle at 34% 30%,#4a556e,#161d2e 72%);
+    clip-path:polygon(52% 2%,80% 20%,100% 56%,70% 100%,28% 92%,0 54%,12% 16%);
+    box-shadow:0 0 16px rgba(0,212,255,.25);
+    animation:roid 46s linear infinite;
+  }
+  .fx-roid.alt{width:15px;height:15px;top:64%;opacity:.32;animation-duration:62s;animation-delay:-18s}
+  @keyframes roid{
+    from{transform:translate3d(-12vw,0,0) rotate(0)}
+    to{transform:translate3d(114vw,-24vh,0) rotate(380deg)}
+  }
+
+  /* hero warp streaks */
+  .fx-warp{
+    position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;overflow:hidden;
+    background-image:
+      linear-gradient(180deg,transparent,rgba(143,251,255,.85),transparent),
+      linear-gradient(180deg,transparent,rgba(0,212,255,.7),transparent),
+      linear-gradient(180deg,transparent,rgba(255,255,255,.7),transparent);
+    background-size:2px 130px,2px 190px,1px 90px;
+    background-repeat:no-repeat;
+    animation:warpFall 3.4s linear infinite;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 28%,#000 72%,transparent);
+  }
+  @keyframes warpFall{
+    0%{background-position:12% -30%,68% -42%,85% -18%}
+    100%{background-position:12% 132%,68% 142%,85% 122%}
+  }
+
+  /* scroll the synthwave grid toward the viewer */
+  header.hero::after{animation:gridMove 5.5s linear infinite}
+  @keyframes gridMove{
+    from{background-position:0 0,0 0,0 0}
+    to{background-position:0 0,0 0,0 -68px}
+  }
+
+  /* neon-flicker wordmark */
+  .logo{animation:logoFlicker 5s ease-in-out infinite}
+  @keyframes logoFlicker{
+    0%,100%{text-shadow:2px 0 rgba(255,42,109,.45),-2px 0 rgba(0,212,255,.45),0 0 12px rgba(255,213,74,.55),0 0 42px rgba(255,213,74,.25)}
+    45%{text-shadow:2px 0 rgba(255,42,109,.45),-2px 0 rgba(0,212,255,.45),0 0 15px rgba(255,213,74,.72),0 0 56px rgba(255,213,74,.35)}
+    50%{text-shadow:1px 0 rgba(255,42,109,.3),-1px 0 rgba(0,212,255,.3),0 0 8px rgba(255,213,74,.4),0 0 30px rgba(255,213,74,.2)}
+  }
+
+  /* section chrome glow */
+  .rule{background:linear-gradient(90deg,var(--cyan),var(--magenta) 46%,transparent);box-shadow:0 0 14px rgba(0,212,255,.35)}
+  .sec-num{color:var(--cyan-soft);box-shadow:inset 0 0 12px rgba(0,212,255,.18),0 0 10px rgba(0,212,255,.15)}
+  section h2{text-shadow:0 0 18px rgba(0,212,255,.25)}
+
+  /* ================= EXTRA LIVING BACKGROUND ================= */
+
+  /* brighter twinkling foreground stars */
+  .fx-stars{
+    position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.6;
+    background-image:
+      radial-gradient(2px 2px at 10% 20%,#fff,transparent),
+      radial-gradient(2.5px 2.5px at 25% 65%,#bffcff,transparent),
+      radial-gradient(1.5px 1.5px at 40% 35%,#fff,transparent),
+      radial-gradient(2px 2px at 55% 80%,#ffe9a8,transparent),
+      radial-gradient(2px 2px at 70% 25%,#fff,transparent),
+      radial-gradient(1.5px 1.5px at 85% 55%,#cffbff,transparent),
+      radial-gradient(2px 2px at 92% 12%,#fff,transparent),
+      radial-gradient(1.5px 1.5px at 15% 88%,#fff,transparent);
+    background-size:620px 620px;
+    animation:bigTwinkle 5.5s ease-in-out infinite alternate;
+  }
+  @keyframes bigTwinkle{from{opacity:.3}to{opacity:.85}}
+
+  /* color-shifting nebula */
+  .fx-nebula{animation:nebulaDrift 70s ease-in-out infinite alternate,nebulaHue 45s linear infinite}
+  @keyframes nebulaHue{
+    from{filter:blur(42px) hue-rotate(0deg)}
+    to{filter:blur(42px) hue-rotate(45deg)}
+  }
+
+  /* rotating distant galaxy */
+  .fx-galaxy{
+    position:fixed;top:-12%;left:-10%;width:540px;height:540px;z-index:-2;pointer-events:none;
+    opacity:.22;filter:blur(8px);border-radius:50%;
+    background:conic-gradient(from 0deg,transparent 0 18%,rgba(0,212,255,.4) 30%,transparent 46%,rgba(196,77,255,.4) 60%,transparent 76%,rgba(255,255,255,.35) 86%,transparent 100%);
+    -webkit-mask-image:radial-gradient(circle,#000 0 34%,transparent 70%);
+            mask-image:radial-gradient(circle,#000 0 34%,transparent 70%);
+    animation:galaxySpin 130s linear infinite;
+  }
+  @keyframes galaxySpin{to{transform:rotate(360deg)}}
+
+  /* retro synthwave sun (glows at the base of the viewport) */
+  .fx-sun{
+    position:fixed;left:50%;bottom:-270px;width:580px;height:580px;border-radius:50%;
+    transform:translateX(-50%);z-index:-2;pointer-events:none;opacity:.34;
+    background:
+      repeating-linear-gradient(0deg,rgba(18,22,39,0) 0 10px,rgba(18,22,39,.92) 10px 17px),
+      radial-gradient(circle at 50% 42%,#fff2b0 0%,#ffd54a 22%,#ff9a2a 46%,#ff2a6d 72%,#c44dff 100%);
+    -webkit-mask-image:linear-gradient(0deg,#000 62%,transparent);
+            mask-image:linear-gradient(0deg,#000 62%,transparent);
+    box-shadow:0 0 130px rgba(255,154,42,.35);
+    animation:sunPulse 9s ease-in-out infinite;
+  }
+  @keyframes sunPulse{
+    0%,100%{opacity:.28;filter:brightness(1)}
+    50%{opacity:.42;filter:brightness(1.14)}
+  }
+
+  /* aurora light beams */
+  .fx-beams{
+    position:fixed;inset:-20%;z-index:-2;pointer-events:none;opacity:.35;filter:blur(30px);
+    background:
+      linear-gradient(115deg,transparent 20%,rgba(0,212,255,.16) 32%,transparent 44%),
+      linear-gradient(95deg,transparent 55%,rgba(196,77,255,.14) 66%,transparent 78%),
+      linear-gradient(135deg,transparent 70%,rgba(255,42,109,.12) 80%,transparent 92%);
+    animation:beamDrift 24s ease-in-out infinite alternate;
+  }
+  @keyframes beamDrift{
+    from{transform:translate3d(-4%,0,0) rotate(-2deg)}
+    to{transform:translate3d(4%,-2%,0) rotate(2deg)}
+  }
+
+  /* extra shooting stars */
+  .fx-comet.b{top:42%;animation-duration:19s;animation-delay:-6s}
+  .fx-comet.c{top:68%;animation-duration:24s;animation-delay:-15s}
+
+  /* drifting UFOs */
+  .fx-ufo{
+    position:fixed;top:34%;left:-8%;width:46px;height:14px;z-index:-1;pointer-events:none;opacity:.45;
+    border-radius:50%;background:linear-gradient(180deg,#8ffbff,#1f7fae 60%,#0c2338);
+    box-shadow:0 0 18px rgba(0,212,255,.4);animation:ufo 40s linear infinite;
+  }
+  .fx-ufo::before{
+    content:"";position:absolute;left:50%;top:-9px;width:22px;height:12px;transform:translateX(-50%);
+    border-radius:50% 50% 40% 40%;
+    background:radial-gradient(circle at 50% 30%,rgba(255,213,74,.95),rgba(255,154,42,.5) 60%,transparent 75%);
+  }
+  .fx-ufo::after{
+    content:"";position:absolute;left:50%;top:6px;width:74px;height:20px;transform:translateX(-50%);
+    border-radius:50%;filter:blur(3px);
+    background:radial-gradient(ellipse at center,rgba(143,251,255,.35),transparent 70%);
+  }
+  .fx-ufo.alt{top:72%;width:34px;height:11px;opacity:.3;animation-duration:54s;animation-delay:-22s}
+  @keyframes ufo{
+    0%{transform:translate3d(-10vw,0,0)}
+    50%{transform:translate3d(50vw,-3vh,0)}
+    100%{transform:translate3d(115vw,2vh,0)}
+  }
+
+  /* ================= HUD FRAMES ================= */
+  .card,.pillar,.sector,.wep,.stat,.tablewrap,.callout,.lang-demo,figure{position:relative}
+  .card,.pillar,.sector,.wep,.stat,.tablewrap,.callout,.lang-demo{
+    box-shadow:0 8px 30px rgba(0,0,0,.35),0 0 0 1px rgba(0,212,255,.07),0 0 24px rgba(0,212,255,.07);
+  }
+  .card::after,.pillar::after,.sector::after,.wep::after,.stat::after,
+  .tablewrap::after,.callout::after,.lang-demo::after{
+    content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:.55;
+    transition:opacity .22s ease;
+    background-image:
+      linear-gradient(var(--cyan-soft),var(--cyan-soft)),linear-gradient(var(--cyan-soft),var(--cyan-soft)),
+      linear-gradient(var(--cyan-soft),var(--cyan-soft)),linear-gradient(var(--cyan-soft),var(--cyan-soft)),
+      linear-gradient(var(--cyan-soft),var(--cyan-soft)),linear-gradient(var(--cyan-soft),var(--cyan-soft)),
+      linear-gradient(var(--cyan-soft),var(--cyan-soft)),linear-gradient(var(--cyan-soft),var(--cyan-soft));
+    background-repeat:no-repeat;
+    background-size:14px 2px,2px 14px,14px 2px,2px 14px,14px 2px,2px 14px,14px 2px,2px 14px;
+    background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;
+  }
+  .card:hover::after,.pillar:hover::after,.sector:hover::after,.wep:hover::after,
+  .callout:hover::after,.lang-demo:hover::after{opacity:1}
+
+  /* framed figures / images */
+  figure{
+    border:1px solid rgba(0,212,255,.28);border-radius:14px;padding:10px 10px 4px;
+    background:linear-gradient(160deg,rgba(20,26,44,.65),rgba(11,15,28,.55));
+    box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 24px rgba(0,212,255,.08);
+  }
+  figure img{
+    border-radius:8px;border:1px solid rgba(0,212,255,.35);
+    box-shadow:0 0 0 1px rgba(0,212,255,.25),0 0 30px rgba(0,212,255,.22),0 12px 40px rgba(0,0,0,.55);
+  }
+  figure::after{
+    content:"";position:absolute;inset:-1px;pointer-events:none;border-radius:14px;opacity:.85;
+    background-image:
+      linear-gradient(var(--cyan),var(--cyan)),linear-gradient(var(--cyan),var(--cyan)),
+      linear-gradient(var(--cyan),var(--cyan)),linear-gradient(var(--cyan),var(--cyan)),
+      linear-gradient(var(--cyan),var(--cyan)),linear-gradient(var(--cyan),var(--cyan)),
+      linear-gradient(var(--cyan),var(--cyan)),linear-gradient(var(--cyan),var(--cyan));
+    background-repeat:no-repeat;
+    background-size:22px 2px,2px 22px,22px 2px,2px 22px,22px 2px,2px 22px,22px 2px,2px 22px;
+    background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;
+  }
+  figure::before{
+    content:"";position:absolute;left:10px;right:10px;top:10px;height:2px;pointer-events:none;z-index:2;
+    background:linear-gradient(90deg,transparent,var(--cyan-soft),transparent);
+    animation:scanLine 4.5s linear infinite;
+  }
+  @keyframes scanLine{0%{top:10px;opacity:.9}100%{top:calc(100% - 12px);opacity:0}}
+  figcaption{color:var(--cyan-soft);font-family:'Orbitron','Noto Sans JP',sans-serif;font-size:11px;letter-spacing:.12em}
+  body.lang-ar figcaption,body.lang-ja figcaption,body.lang-ko figcaption{font-family:inherit;letter-spacing:0}
+
   @media print{
+    .fx-planet,.fx-comet,.fx-comet.b,.fx-comet.c,.fx-nebula,.fx-roid,.fx-crt,.fx-warp,.fx-stars,.fx-galaxy,.fx-sun,.fx-beams,.fx-ufo{display:none}
+    body::before,body::after,header.hero::before,header.hero::after{display:none}
     nav.toc{display:none}
     .shell{grid-template-columns:1fr}
     body{background:#fff;color:#111}
@@ -276,11 +595,25 @@
 </style>
 </head>
 <body>
+<div class="fx-nebula" aria-hidden="true"></div>
+<div class="fx-planet" aria-hidden="true"></div>
+<div class="fx-roid" aria-hidden="true"></div>
+<div class="fx-roid alt" aria-hidden="true"></div>
+<div class="fx-comet" aria-hidden="true"></div>
+<div class="fx-crt" aria-hidden="true"></div>
+<div class="fx-stars" aria-hidden="true"></div>
+<div class="fx-galaxy" aria-hidden="true"></div>
+<div class="fx-sun" aria-hidden="true"></div>
+<div class="fx-beams" aria-hidden="true"></div>
+<div class="fx-comet b" aria-hidden="true"></div>
+<div class="fx-comet c" aria-hidden="true"></div>
+<div class="fx-ufo" aria-hidden="true"></div>
+<div class="fx-ufo alt" aria-hidden="true"></div>
 <div class="site-lang" role="group" aria-label="Language">
   <button type="button" class="site-lang-btn" data-site-lang="ar">AR</button>
+  <button type="button" class="site-lang-btn is-active" data-site-lang="en">EN</button>
   <button type="button" class="site-lang-btn" data-site-lang="ja">JP</button>
   <button type="button" class="site-lang-btn" data-site-lang="ko">KO</button>
-  <button type="button" class="site-lang-btn is-active" data-site-lang="en">EN</button>
 </div>
 <div class="shell">
 
@@ -317,6 +650,7 @@
   <main>
     <header class="hero">
       <img class="cover" src="solframe_gdd_assets/keyart.png" alt="SOL Frame key art">
+      <div class="fx-warp" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="kicker">GAME DESIGN DOCUMENT · v1.0</div>
         <h1 class="logo">SOL FRAME<small>SOL DEFENSE PROTOCOL</small></h1>

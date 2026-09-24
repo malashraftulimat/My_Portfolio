@@ -54,6 +54,7 @@
             right: 16px;
             z-index: 100;
             display: flex;
+            direction: ltr;
             gap: 4px;
             padding: 5px;
             background: rgba(14, 16, 20, 0.92);
@@ -578,6 +579,214 @@
             .px-char { animation: none; }
         }
 
+        /* ================= Atmosphere (screen only) ================= */
+        .echo-bg, .echo-grain { display: none; }
+        @media screen {
+            main { position: relative; z-index: 1; }
+
+            /* ---- backdrop root ---- */
+            .echo-bg {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            /* echo ripples — expanding sound-waves */
+            .echo-ripples { position: absolute; left: 50%; top: 36%; }
+            .echo-ripples i {
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px; height: 12px;
+                border-radius: 50%;
+                border: 1.5px solid rgba(255,200,87,.55);
+                opacity: 0;
+                animation: echoRipple 11s ease-out infinite;
+            }
+            .echo-ripples i:nth-child(2) { border-color: rgba(255,59,92,.5); animation-delay: 3.6s; }
+            .echo-ripples i:nth-child(3) { border-color: rgba(77,184,255,.5); animation-delay: 7.2s; }
+            @keyframes echoRipple {
+                0%   { width: 12px;   height: 12px;   opacity: 0; }
+                10%  { opacity: .55; }
+                100% { width: 1150px; height: 1150px; opacity: 0; }
+            }
+
+            /* warm lantern glows */
+            .echo-glow { position: absolute; inset: 0; }
+            .echo-glow::before, .echo-glow::after {
+                content: "";
+                position: absolute;
+                width: 62vmax; height: 62vmax;
+                border-radius: 50%;
+                filter: blur(64px);
+                opacity: .16;
+            }
+            .echo-glow::before {
+                left: -18%; top: -14%;
+                background: radial-gradient(circle, rgba(255,200,87,.95), transparent 60%);
+                animation: glowDrift 32s ease-in-out infinite alternate;
+            }
+            .echo-glow::after {
+                right: -22%; bottom: -22%;
+                background: radial-gradient(circle, rgba(255,59,92,.85), transparent 62%);
+                animation: glowDrift 40s ease-in-out infinite alternate-reverse;
+            }
+            @keyframes glowDrift {
+                from { transform: translate3d(-3%,-2%,0) scale(1); }
+                to   { transform: translate3d(4%,3%,0) scale(1.16); }
+            }
+
+            /* drifting jasmine / memory motes */
+            .echo-motes {
+                position: absolute; inset: 0;
+                opacity: .55;
+                background-image:
+                    radial-gradient(2px 2px at 12% 88%, rgba(255,200,87,.8), transparent),
+                    radial-gradient(1.5px 1.5px at 32% 62%, rgba(255,255,255,.7), transparent),
+                    radial-gradient(2px 2px at 55% 95%, rgba(255,59,92,.7), transparent),
+                    radial-gradient(1.5px 1.5px at 72% 70%, rgba(255,200,87,.7), transparent),
+                    radial-gradient(2px 2px at 88% 90%, rgba(77,184,255,.7), transparent),
+                    radial-gradient(1.5px 1.5px at 44% 40%, rgba(255,255,255,.5), transparent);
+                background-size: 440px 440px;
+                animation: moteRise 34s linear infinite, moteDrift 12s ease-in-out infinite alternate;
+            }
+            @keyframes moteRise { from { background-position: 0 0; } to { background-position: 0 -440px; } }
+            @keyframes moteDrift { from { transform: translateX(-1%); } to { transform: translateX(1%); } }
+
+            /* night sky — twinkling stars + crescent moon */
+            .echo-sky { position: absolute; inset: 0; }
+            .echo-stars {
+                position: absolute; inset: 0;
+                opacity: .7;
+                background-image:
+                    radial-gradient(1.5px 1.5px at 8% 14%, rgba(255,255,255,.9), transparent),
+                    radial-gradient(1px 1px at 22% 26%, rgba(255,255,255,.7), transparent),
+                    radial-gradient(1.6px 1.6px at 36% 9%, rgba(255,240,200,.9), transparent),
+                    radial-gradient(1px 1px at 48% 30%, rgba(255,255,255,.6), transparent),
+                    radial-gradient(1.4px 1.4px at 62% 16%, rgba(200,225,255,.85), transparent),
+                    radial-gradient(1px 1px at 74% 34%, rgba(255,255,255,.6), transparent),
+                    radial-gradient(1.7px 1.7px at 88% 11%, rgba(255,240,200,.9), transparent),
+                    radial-gradient(1px 1px at 16% 44%, rgba(255,255,255,.5), transparent),
+                    radial-gradient(1.2px 1.2px at 92% 40%, rgba(255,255,255,.6), transparent);
+                background-size: 420px 420px;
+                animation: starTwinkle 5s ease-in-out infinite alternate, starRise 90s linear infinite;
+            }
+            @keyframes starTwinkle { from { opacity: .35; } to { opacity: .85; } }
+            @keyframes starRise { from { background-position: 0 0; } to { background-position: 0 -420px; } }
+            .echo-moon {
+                position: absolute; top: 9%; right: 13%;
+                width: clamp(84px, 9vw, 132px); height: auto;
+                filter: drop-shadow(0 0 26px rgba(255,216,138,.45));
+                animation: moonGlow 7s ease-in-out infinite;
+            }
+            @keyframes moonGlow {
+                0%, 100% { filter: drop-shadow(0 0 22px rgba(255,216,138,.35)); }
+                50%      { filter: drop-shadow(0 0 38px rgba(255,216,138,.6)); }
+            }
+
+            /* Damascus skyline silhouette */
+            .echo-skyline {
+                position: absolute; left: 0; right: 0; bottom: 0;
+                height: min(30vh, 280px);
+                opacity: .95;
+            }
+            .echo-skyline svg { display: block; width: 100%; height: 100%; }
+
+            /* cinematic film grain */
+            .echo-grain {
+                display: block;
+                position: fixed; inset: -50%;
+                z-index: 2; pointer-events: none;
+                opacity: .05; mix-blend-mode: overlay;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+                animation: grainShift .6s steps(3) infinite;
+            }
+            @keyframes grainShift {
+                0%   { transform: translate3d(0,0,0); }
+                33%  { transform: translate3d(-2%,1%,0); }
+                66%  { transform: translate3d(1%,-2%,0); }
+                100% { transform: translate3d(0,0,0); }
+            }
+
+            /* ---- page & card ornamentation ---- */
+            .page {
+                background-image:
+                    repeating-linear-gradient(45deg, rgba(255,200,87,.05) 0 1px, transparent 1px 26px),
+                    repeating-linear-gradient(-45deg, rgba(255,200,87,.05) 0 1px, transparent 1px 26px),
+                    repeating-linear-gradient(0deg, transparent 0 23px, rgba(255,255,255,0.015) 23px 24px),
+                    radial-gradient(120% 80% at 100% 0%, #1b2130 0%, #0e1014 60%);
+            }
+            .page::before {
+                content: "";
+                position: absolute; inset: 7px;
+                border: 1px solid rgba(255,200,87,.20);
+                border-radius: 3px;
+                pointer-events: none;
+                z-index: 3;
+                opacity: .85;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23ffc857' stroke-width='1.1'%3E%3Crect x='4.5' y='4.5' width='15' height='15'/%3E%3Crect x='4.5' y='4.5' width='15' height='15' transform='rotate(45 12 12)'/%3E%3C/g%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: top 9px left 9px, top 9px right 9px, bottom 9px left 9px, bottom 9px right 9px;
+                background-size: 18px 18px;
+            }
+            .page::after {
+                content: "";
+                position: absolute; top: 7px; left: 50%; transform: translate(-50%,-50%);
+                width: 22px; height: 22px; pointer-events: none; z-index: 3;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23ffc857'%3E%3Crect x='5' y='5' width='14' height='14'/%3E%3Crect x='5' y='5' width='14' height='14' transform='rotate(45 12 12)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+                opacity: .9;
+            }
+            section {
+                background:
+                    linear-gradient(180deg, rgba(255,200,87,.035), transparent 26%),
+                    var(--panel);
+                border-inline-start: 2px solid rgba(255,200,87,.28);
+            }
+            /* 8-point khatim stars at each card corner */
+            section::before {
+                content: "";
+                position: absolute; inset: 0;
+                pointer-events: none; z-index: 2;
+                opacity: .6;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23ffc857' stroke-width='1.1'%3E%3Crect x='4.5' y='4.5' width='15' height='15'/%3E%3Crect x='4.5' y='4.5' width='15' height='15' transform='rotate(45 12 12)'/%3E%3C/g%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: top 7px left 7px, top 7px right 7px, bottom 7px left 7px, bottom 7px right 7px;
+                background-size: 13px 13px;
+            }
+            /* centered khatim on the top rule */
+            section::after {
+                content: "";
+                position: absolute; top: -1px; left: 50%; transform: translate(-50%,-50%);
+                width: 15px; height: 15px; pointer-events: none; z-index: 3;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23ffc857'%3E%3Crect x='5' y='5' width='14' height='14'/%3E%3Crect x='5' y='5' width='14' height='14' transform='rotate(45 12 12)'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+                opacity: .85;
+            }
+            h2::after {
+                content: ""; flex: 1; height: 1px; margin-inline-start: 10px;
+                background: linear-gradient(90deg, var(--line-strong), transparent);
+            }
+            html[dir="rtl"] h2::after { background: linear-gradient(270deg, var(--line-strong), transparent); }
+
+            /* golden aura for the pixel hero */
+            .px-figure {
+                box-shadow: 0 22px 48px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.03), 0 0 44px rgba(255,200,87,.10);
+            }
+            .px-char { animation: px-idle 3.4s ease-in-out infinite, px-aura 4.5s ease-in-out infinite; }
+            @keyframes px-aura {
+                0%, 100% { filter: drop-shadow(0 12px 16px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(255,200,87,.25)); }
+                50%      { filter: drop-shadow(0 12px 16px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(255,200,87,.5)); }
+            }
+            .cover h1 { text-shadow: 0 0 28px rgba(255,59,92,.28); }
+
+            @media (prefers-reduced-motion: reduce) {
+                .echo-ripples i, .echo-glow::before, .echo-glow::after,
+                .echo-motes, .echo-grain, .echo-stars, .echo-moon { animation: none; }
+            }
+        }
+
         /* ================= Print ================= */
         @media print {
             .langbar { display: none; }
@@ -641,11 +850,199 @@
 </head>
 <body>
 
+    <div class="echo-bg" aria-hidden="true">
+        <div class="echo-glow"></div>
+        <div class="echo-sky">
+            <div class="echo-stars"></div>
+            <svg class="echo-moon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <mask id="echoMoon2">
+                        <rect width="120" height="120" fill="#000"/>
+                        <circle cx="60" cy="60" r="46" fill="#fff"/>
+                        <circle cx="86" cy="46" r="42" fill="#000"/>
+                    </mask>
+                </defs>
+                <circle cx="60" cy="60" r="46" fill="#ffd88a" mask="url(#echoMoon2)"/>
+            </svg>
+        </div>
+        <div class="echo-ripples"><i></i><i></i><i></i></div>
+        <div class="echo-motes"></div>
+        <div class="echo-skyline">
+            <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="echoHorizon" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#ffc857" stop-opacity="0"/>
+                        <stop offset="1" stop-color="#ffb347" stop-opacity=".32"/>
+                    </linearGradient>
+                    <radialGradient id="echoMosqueGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0" stop-color="#ffd88a" stop-opacity=".22"/>
+                        <stop offset="1" stop-color="#ffd88a" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="echoHaze" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#ffb347" stop-opacity="0"/>
+                        <stop offset="1" stop-color="#ffb347" stop-opacity=".20"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- warm dusk horizon -->
+                <rect x="0" y="110" width="1440" height="190" fill="url(#echoHorizon)"/>
+
+                <!-- Mount Qasioun — the ridge overlooking Damascus -->
+                <path d="M0,252 L0,198 C140,188 320,150 540,118 C650,103 720,138 820,150 C920,162 980,124 1080,128 C1200,133 1310,168 1440,178 L1440,252 Z" fill="#20222f" opacity=".95"/>
+                <!-- a nearer, darker slope for depth -->
+                <path d="M0,252 L0,214 C160,206 300,178 470,168 C600,160 720,176 860,180 C1000,184 1140,196 1440,204 L1440,252 Z" fill="#151621" opacity=".9"/>
+                <!-- atmospheric haze at the foot of the mountain -->
+                <rect x="0" y="150" width="1440" height="110" fill="url(#echoHaze)"/>
+                <!-- slope lights (Qasioun at night) -->
+                <g fill="#ffc857" opacity=".55">
+                    <circle cx="300" cy="158" r="1.6"/>
+                    <circle cx="380" cy="150" r="1.3"/>
+                    <circle cx="450" cy="140" r="1.6"/>
+                    <circle cx="560" cy="128" r="1.8"/>
+                    <circle cx="640" cy="136" r="1.4"/>
+                    <circle cx="720" cy="146" r="1.5"/>
+                    <circle cx="1000" cy="136" r="1.6"/>
+                    <circle cx="1080" cy="138" r="1.8"/>
+                    <circle cx="1180" cy="146" r="1.4"/>
+                    <circle cx="1300" cy="164" r="1.5"/>
+                    <circle cx="1380" cy="172" r="1.4"/>
+                </g>
+
+                <!-- distant minarets on the ridge -->
+                <g fill="#151625">
+                    <rect x="300" y="122" width="8" height="130"/>
+                    <ellipse cx="304" cy="122" rx="8" ry="8"/>
+                    <polygon points="300,122 308,122 304,104"/>
+                    <rect x="1120" y="134" width="8" height="118"/>
+                    <ellipse cx="1124" cy="134" rx="8" ry="8"/>
+                    <polygon points="1120,134 1128,134 1124,118"/>
+                    <ellipse cx="980" cy="212" rx="42" ry="26"/>
+                </g>
+
+                <!-- spotlight behind the Umayyad Mosque -->
+                <ellipse cx="740" cy="200" rx="240" ry="130" fill="url(#echoMosqueGlow)"/>
+
+                <!-- ================= NEAR CITY ================= -->
+                <g fill="#0b0c14">
+
+                    <!-- left old-city houses -->
+                    <rect x="20" y="214" width="86" height="38"/>
+                    <ellipse cx="63" cy="214" rx="26" ry="16"/>
+                    <rect x="114" y="186" width="104" height="66"/>
+                    <rect x="120" y="204" width="30" height="22"/>
+                    <rect x="158" y="204" width="30" height="22"/>
+                    <rect x="226" y="200" width="86" height="52"/>
+                    <ellipse cx="269" cy="200" rx="28" ry="18"/>
+
+                    <!-- Minaret A -->
+                    <rect x="324" y="112" width="10" height="140"/>
+                    <rect x="317" y="150" width="24" height="5"/>
+                    <rect x="317" y="128" width="24" height="5"/>
+                    <polygon points="324,112 334,112 329,90"/>
+                    <rect x="327" y="84" width="3" height="8"/>
+
+                    <rect x="350" y="196" width="96" height="56"/>
+                    <rect x="456" y="204" width="92" height="48"/>
+                    <rect x="556" y="190" width="80" height="62"/>
+
+                    <!-- ===== Umayyad Mosque ===== -->
+                    <!-- courtyard arcade -->
+                    <rect x="600" y="216" width="280" height="36"/>
+                    <ellipse cx="620" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="652" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="684" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="716" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="764" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="796" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="828" cy="216" rx="14" ry="11"/>
+                    <ellipse cx="860" cy="216" rx="14" ry="11"/>
+                    <!-- prayer hall + great dome -->
+                    <rect x="640" y="188" width="200" height="64"/>
+                    <ellipse cx="740" cy="188" rx="86" ry="60"/>
+                    <rect x="738" y="112" width="4" height="16"/>
+                    <circle cx="740" cy="110" r="4"/>
+                    <!-- Minaret of the Bride (left) -->
+                    <rect x="604" y="120" width="10" height="132"/>
+                    <rect x="597" y="158" width="24" height="5"/>
+                    <rect x="597" y="136" width="24" height="5"/>
+                    <polygon points="604,120 614,120 609,96"/>
+                    <rect x="607.5" y="90" width="3" height="8"/>
+                    <!-- Minaret of Jesus (right, taller) -->
+                    <rect x="858" y="96" width="11" height="156"/>
+                    <rect x="851" y="140" width="25" height="5"/>
+                    <rect x="851" y="112" width="25" height="5"/>
+                    <polygon points="858,96 869,96 863.5,72"/>
+                    <rect x="862" y="66" width="3" height="8"/>
+
+                    <!-- right old-city houses -->
+                    <rect x="900" y="196" width="96" height="56"/>
+                    <ellipse cx="948" cy="196" rx="30" ry="18"/>
+                    <rect x="1002" y="182" width="104" height="70"/>
+                    <rect x="1010" y="202" width="28" height="22"/>
+                    <rect x="1048" y="202" width="28" height="22"/>
+
+                    <!-- Minaret B -->
+                    <rect x="1116" y="108" width="10" height="144"/>
+                    <rect x="1109" y="146" width="24" height="5"/>
+                    <rect x="1109" y="124" width="24" height="5"/>
+                    <polygon points="1116,108 1126,108 1121,86"/>
+                    <rect x="1119.5" y="80" width="3" height="8"/>
+
+                    <rect x="1140" y="200" width="86" height="52"/>
+                    <ellipse cx="1183" cy="200" rx="28" ry="18"/>
+                    <rect x="1232" y="190" width="100" height="62"/>
+
+                    <!-- Minaret C (tall) -->
+                    <rect x="1340" y="104" width="10" height="148"/>
+                    <rect x="1333" y="142" width="24" height="5"/>
+                    <rect x="1333" y="120" width="24" height="5"/>
+                    <polygon points="1340,104 1350,104 1345,82"/>
+                    <rect x="1343.5" y="76" width="3" height="8"/>
+
+                    <rect x="1362" y="210" width="66" height="42"/>
+
+                    <!-- cypress trees -->
+                    <path d="M340,252 C332,214 334,190 340,168 C346,190 348,214 340,252 Z"/>
+                    <path d="M544,252 C537,220 539,200 544,182 C549,200 551,220 544,252 Z"/>
+                    <path d="M1130,252 C1123,220 1125,200 1130,182 C1135,200 1137,220 1130,252 Z"/>
+                    <path d="M1356,252 C1350,224 1352,206 1356,190 C1360,206 1362,224 1356,252 Z"/>
+                </g>
+
+                <!-- warm lit windows -->
+                <g fill="#ffd88a" opacity=".82">
+                    <rect x="32" y="222" width="6" height="10"/><rect x="52" y="222" width="6" height="10"/><rect x="72" y="222" width="6" height="10"/>
+                    <rect x="124" y="196" width="6" height="10"/><rect x="142" y="196" width="6" height="10"/><rect x="178" y="196" width="6" height="10"/>
+                    <rect x="124" y="224" width="6" height="10"/><rect x="160" y="224" width="6" height="10"/><rect x="196" y="224" width="6" height="10"/>
+                    <rect x="236" y="212" width="6" height="10"/><rect x="256" y="212" width="6" height="10"/><rect x="286" y="212" width="6" height="10"/>
+                    <rect x="236" y="234" width="6" height="10"/><rect x="272" y="234" width="6" height="10"/>
+                    <rect x="360" y="208" width="6" height="10"/><rect x="380" y="208" width="6" height="10"/><rect x="416" y="208" width="6" height="10"/>
+                    <rect x="360" y="232" width="6" height="10"/><rect x="398" y="232" width="6" height="10"/><rect x="432" y="232" width="6" height="10"/>
+                    <rect x="466" y="214" width="6" height="10"/><rect x="486" y="214" width="6" height="10"/><rect x="524" y="214" width="6" height="10"/>
+                    <rect x="566" y="202" width="6" height="10"/><rect x="586" y="202" width="6" height="10"/><rect x="606" y="202" width="6" height="10"/>
+                    <rect x="566" y="228" width="6" height="10"/><rect x="606" y="228" width="6" height="10"/>
+                    <rect x="910" y="208" width="6" height="10"/><rect x="930" y="208" width="6" height="10"/><rect x="968" y="208" width="6" height="10"/>
+                    <rect x="910" y="232" width="6" height="10"/><rect x="948" y="232" width="6" height="10"/><rect x="982" y="232" width="6" height="10"/>
+                    <rect x="1016" y="194" width="6" height="10"/><rect x="1036" y="194" width="6" height="10"/><rect x="1072" y="194" width="6" height="10"/><rect x="1092" y="194" width="6" height="10"/>
+                    <rect x="1016" y="226" width="6" height="10"/><rect x="1054" y="226" width="6" height="10"/><rect x="1092" y="226" width="6" height="10"/>
+                    <rect x="1150" y="212" width="6" height="10"/><rect x="1170" y="212" width="6" height="10"/><rect x="1200" y="212" width="6" height="10"/>
+                    <rect x="1150" y="234" width="6" height="10"/><rect x="1186" y="234" width="6" height="10"/>
+                    <rect x="1242" y="202" width="6" height="10"/><rect x="1262" y="202" width="6" height="10"/><rect x="1298" y="202" width="6" height="10"/>
+                    <rect x="1242" y="228" width="6" height="10"/><rect x="1280" y="228" width="6" height="10"/><rect x="1314" y="228" width="6" height="10"/>
+                    <rect x="1372" y="220" width="6" height="10"/><rect x="1392" y="220" width="6" height="10"/>
+                </g>
+
+                <!-- ground -->
+                <rect x="0" y="252" width="1440" height="48" fill="#05060a"/>
+            </svg>
+        </div>
+    </div>
+    <div class="echo-grain" aria-hidden="true"></div>
+
     <div class="langbar" role="group" aria-label="Language selection / 言語 / اللغة / 언어">
-        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
-        <button type="button" data-lang="en" aria-pressed="false">English</button>
-        <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
-        <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+        <button type="button" data-lang="ar" aria-pressed="false">AR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ja" aria-pressed="true">JP</button>
+        <button type="button" data-lang="ko" aria-pressed="false">KO</button>
     </div>
 
 <main>
