@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <g id="hex">
+      <path d="M0 -60 L52 -30 L52 30 L0 60 L-52 30 L-52 -30 Z"/>
+    </g>
+    <g id="petal">
+      <path d="M0 -14 C 8 -24 8 -34 0 -42 C -8 -34 -8 -24 0 -14 Z"/>
+    </g>
+
+    <g id="cluster2">
+      <rect x="-250" y="-250" width="500" height="500" transform="rotate(45)" stroke="#4a4a86" stroke-opacity="0.40" stroke-width="2"/>
+      <rect x="-184" y="-184" width="368" height="368" transform="rotate(22.5)" fill="#363669" fill-opacity="0.20" stroke="#5a5a9e" stroke-opacity="0.45" stroke-width="2"/>
+      <rect x="-130" y="-130" width="260" height="260" transform="rotate(45)" fill="#29294f" fill-opacity="0.32" stroke="#6a6ab0" stroke-opacity="0.40" stroke-width="1.5"/>
+
+      <g stroke="#5a5a9e" stroke-opacity="0.40" stroke-width="2">
+        <rect x="-360" y="-50" width="100" height="100" transform="rotate(45 -310 0)"/>
+        <rect x="260" y="-50" width="100" height="100" transform="rotate(45 310 0)"/>
+        <rect x="-50" y="-360" width="100" height="100" transform="rotate(45 0 -310)"/>
+        <rect x="-50" y="260" width="100" height="100" transform="rotate(45 0 310)"/>
+      </g>
+      <g fill="#3a3a6e" fill-opacity="0.28">
+        <rect x="-315" y="-32" width="64" height="64" transform="rotate(45 -283 0)"/>
+        <rect x="251" y="-32" width="64" height="64" transform="rotate(45 283 0)"/>
+        <rect x="-32" y="-315" width="64" height="64" transform="rotate(45 0 -283)"/>
+        <rect x="-32" y="251" width="64" height="64" transform="rotate(45 0 283)"/>
+      </g>
+
+      <g transform="rotate(45)">
+        <use href="#hex" transform="scale(1.25)" stroke="#e8d9a0" stroke-opacity="0.8" stroke-width="4"/>
+        <use href="#hex" transform="scale(1.04)" stroke="#e8d9a0" stroke-opacity="0.45" stroke-width="2.5"/>
+        <use href="#hex" transform="scale(0.86)" fill="#1a1a22" stroke="#e8d9a0" stroke-opacity="0.75" stroke-width="2"/>
+      </g>
+      <circle cx="0" cy="0" r="6" fill="#e8d9a0"/>
+      <g stroke="#e8d9a0" stroke-opacity="0.85" stroke-width="2.5" stroke-linecap="round">
+        <use href="#petal" transform="rotate(0)"/>
+        <use href="#petal" transform="rotate(60)"/>
+        <use href="#petal" transform="rotate(120)"/>
+        <use href="#petal" transform="rotate(180)"/>
+        <use href="#petal" transform="rotate(240)"/>
+        <use href="#petal" transform="rotate(300)"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- top/bottom smoky wisps, mirrored -->
+  <g fill="#2c2c35" opacity="0.5">
+    <path d="M0 0 C 170 80 270 220 240 380 C 220 240 120 140 0 90 Z"/>
+    <path d="M1920 0 C 1750 80 1650 220 1680 380 C 1700 240 1800 140 1920 90 Z"/>
+    <path d="M0 1080 C 170 1000 270 860 240 700 C 220 840 120 940 0 990 Z"/>
+    <path d="M1920 1080 C 1750 1000 1650 860 1680 700 C 1700 840 1800 940 1920 990 Z"/>
+  </g>
+
+  <!-- four corner clusters, mirrored -->
+  <use href="#cluster2" transform="translate(1540 270) scale(0.62)"/>
+  <use href="#cluster2" transform="translate(380 270) scale(-0.62 0.62)"/>
+  <use href="#cluster2" transform="translate(1540 810) scale(0.62)"/>
+  <use href="#cluster2" transform="translate(380 810) scale(-0.62 0.62)"/>
+</svg>

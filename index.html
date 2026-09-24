@@ -24,9 +24,20 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@500;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #11151c; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        body {
+            background-color: #11151c;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(212,175,55,0.10), transparent 42%),
+                radial-gradient(circle at 88% 92%, rgba(0,224,255,0.08), transparent 45%),
+                radial-gradient(circle at 85% 12%, rgba(138,92,255,0.07), transparent 40%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='108' height='108' viewBox='0 0 108 108'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.10' stroke-width='1'%3E%3Crect x='34' y='34' width='40' height='40'/%3E%3Crect x='34' y='34' width='40' height='40' transform='rotate(45 54 54)'/%3E%3Ccircle cx='54' cy='54' r='5'/%3E%3Crect x='-20' y='-20' width='40' height='40'/%3E%3Crect x='-20' y='-20' width='40' height='40' transform='rotate(45 0 0)'/%3E%3Crect x='88' y='-20' width='40' height='40'/%3E%3Crect x='88' y='-20' width='40' height='40' transform='rotate(45 108 0)'/%3E%3Crect x='-20' y='88' width='40' height='40'/%3E%3Crect x='-20' y='88' width='40' height='40' transform='rotate(45 0 108)'/%3E%3Crect x='88' y='88' width='40' height='40'/%3E%3Crect x='88' y='88' width='40' height='40' transform='rotate(45 108 108)'/%3E%3C/g%3E%3Cg fill='none' stroke='%2300e0ff' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M0 54h30M78 54h30M54 0v30M54 78v30'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: auto, auto, auto, 108px 108px;
+            background-attachment: fixed;
+        }
         html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
         .neon-border { border: 1px solid rgba(255, 106, 0, 0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
         .skill-box { border: 1px solid rgba(255, 106, 0, 0.5); }
@@ -47,14 +58,260 @@
             max-height: 80vh !important;
             min-width: 350px;
         }
+
+        /* ================= OROKIN DAMASCUS AESTHETIC ================= */
+        :root {
+            --accent2: #00e0ff;
+            --void: #00e0ff;
+            --void2: #8a5cff;
+            --gold-1: #f6e6a8;
+            --gold-2: #d4af37;
+            --gold-3: #8a6d1f;
+            --gold-grad: linear-gradient(135deg, #f6e6a8 0%, #d4af37 45%, #8a6d1f 100%);
+            --gold-line: rgba(212, 175, 55, 0.35);
+        }
+
+        /* Orbitron for Latin headings & logo */
+        .gamer-font,
+        html[lang="en"] h1,
+        html[lang="en"] h2,
+        html[lang="en"] h3,
+        html[lang="en"] h4 {
+            font-family: 'Orbitron', 'Inter', sans-serif;
+            letter-spacing: 0.06em;
+        }
+
+        /* 8-bit pixel font for HUD tags / badges (Latin only) */
+        html[lang="en"] #projects .font-mono {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.5rem;
+            line-height: 1.7;
+        }
+
+        /* Orokin gold metallic text helper */
+        .oro-gold {
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Animated Orokin energy gradient on the name */
+        #dynamicName {
+            background: linear-gradient(90deg, #d4af37, #f6e6a8, #00e0ff, #8a5cff, #ff6a00, #d4af37);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientSlide 12s linear infinite;
+            filter: drop-shadow(0 0 16px rgba(212,175,55,0.35));
+        }
+        @keyframes gradientSlide { to { background-position: 300% 0; } }
+
+        /* Warframe void-energy pulse */
+        @keyframes oroPulse {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(0,224,255,0.35)); }
+            50%      { filter: drop-shadow(0 0 12px rgba(0,224,255,0.75)); }
+        }
+
+        /* Section titles: 8-point star + gold energy underline */
+        section h3 { position: relative; }
+        section h3::before {
+            content: '\2726  ';
+            color: var(--gold-2);
+            text-shadow: 0 0 10px rgba(212,175,55,0.9);
+        }
+        section h3::after {
+            content: '';
+            display: block;
+            width: 72px;
+            height: 2px;
+            margin-top: 8px;
+            background: linear-gradient(90deg, var(--gold-2), rgba(255,106,0,0.8), transparent);
+        }
+
+        /* ===== Project cards: Warframe chamfer + Orokin gold hairline ===== */
+        #projects .group {
+            position: relative;
+            border-radius: 0 !important;
+            border-color: transparent !important;
+            clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+        }
+        #projects .group::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid var(--gold-line);
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            pointer-events: none;
+            z-index: 5;
+        }
+        #projects .group::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M14 5H47V38' stroke='%23d4af37' stroke-width='2'/%3E%3Cpath d='M22 12H40V30' stroke='%2300e0ff' stroke-opacity='0.85' stroke-width='1.5'/%3E%3Cpath d='M47 5L31 21' stroke='%23d4af37' stroke-opacity='0.5' stroke-width='1'/%3E%3Ccircle cx='47' cy='5' r='2' fill='%23d4af37'/%3E%3C/g%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M38 47H5V14' stroke='%23d4af37' stroke-width='2'/%3E%3Cpath d='M30 40H12V22' stroke='%2300e0ff' stroke-opacity='0.85' stroke-width='1.5'/%3E%3Cpath d='M5 47L21 31' stroke='%23d4af37' stroke-opacity='0.5' stroke-width='1'/%3E%3Ccircle cx='5' cy='47' r='2' fill='%23d4af37'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: top right, bottom left;
+            background-size: 52px 52px, 52px 52px;
+            opacity: 0;
+            transform: translate(8px, -8px);
+            transition: opacity .3s ease, transform .3s ease;
+            pointer-events: none;
+            z-index: 6;
+        }
+        #projects .group:hover {
+            transform: translateY(-4px);
+            filter: drop-shadow(0 0 14px rgba(0,224,255,0.35)) drop-shadow(0 0 6px rgba(212,175,55,0.35));
+        }
+        #projects .group:hover::after { opacity: 1; transform: translate(0, 0); }
+        #projects .group > div:first-child { border: 1px solid rgba(212,175,55,0.25); }
+
+        /* tag badges -> Orokin gold */
+        #projects span.border {
+            border-color: rgba(212,175,55,0.45) !important;
+            color: #e9d9a6;
+        }
+
+        /* ===== Orokin chamfered buttons ===== */
+        a.bg-accent,
+        header a.border,
+        .modal a.bg-accent,
+        .modal a.border {
+            border-radius: 0 !important;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+        a.bg-accent:hover {
+            box-shadow: 0 0 20px rgba(255,106,0,0.6), 0 0 8px rgba(0,224,255,0.35);
+            animation: oroPulse 1.6s ease-in-out infinite;
+        }
+
+        /* ===== Modals as Orokin vessels ===== */
+        .modal > div {
+            border-radius: 0 !important;
+            clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+            background-image: linear-gradient(180deg, rgba(212,175,55,0.06), transparent 30%);
+        }
+
+        /* skill boxes -> gold-framed */
+        .skill-box { border-color: rgba(212,175,55,0.4) !important; }
+        .skill-box i { color: var(--gold-2); }
+
+        /* profile photo: gold energy ring */
+        .profile-frame {
+            border-color: var(--gold-2) !important;
+            box-shadow: 0 0 22px rgba(212,175,55,0.4), 0 0 40px rgba(0,224,255,0.15);
+        }
+
+        /* logo in Orokin gold */
+        nav .gamer-font {
+            color: var(--gold-2) !important;
+            text-shadow: 0 0 10px rgba(212,175,55,0.5);
+        }
+
+        /* nav: fused gold/void energy underline */
+        nav::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-2), var(--void), var(--accent), transparent);
+            opacity: 0.8;
+        }
+
+        /* ===== Orokin kaleidoscope background (Lotus wallpaper ref) ===== */
+        body > header,
+        body > section,
+        body > footer,
+        body > .oro-divider { position: relative; z-index: 1; }
+        .orokin-bg {
+            position: fixed;
+            top: -8%;
+            left: -8%;
+            width: 116%;
+            height: 116%;
+            z-index: 0;
+            pointer-events: none;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .orokin-bg--a { background-image: url("orokin-bg.svg"); opacity: 0.72; }
+        .orokin-bg--b { background-image: url("orokin-bg-2.svg"); opacity: 0; }
+
+        /* ===== Orokin Lotus emblem shapes ===== */
+        .nav-lotus { width: 1.6em; height: 1.6em; flex: none; }
+        .oro-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 24px;
+        }
+        .oro-line { flex: 1; height: 1px; }
+        .oro-line:first-child { background: linear-gradient(90deg, transparent, var(--gold-line)); }
+        .oro-line:last-child { background: linear-gradient(270deg, transparent, var(--gold-line)); }
+        .oro-emblem {
+            width: 38px;
+            height: 38px;
+            color: var(--gold-2);
+            filter: drop-shadow(0 0 7px rgba(212,175,55,0.65));
+            animation: oroPulse 3.2s ease-in-out infinite;
+            flex: none;
+        }
+
+        /* Gamer CRT scanlines + screen vignette */
+        .crt-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 70;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.035) 0px,
+                rgba(255,255,255,0.035) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            mix-blend-mode: overlay;
+        }
+        .screen-vignette {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 69;
+            box-shadow: inset 0 0 160px rgba(0,0,0,0.55);
+        }
     </style>
 </head>
 <body class="antialiased min-h-screen relative">
 
+    <div class="orokin-bg orokin-bg--a" aria-hidden="true"></div>
+    <div class="orokin-bg orokin-bg--b" aria-hidden="true"></div>
+    <div class="screen-vignette" aria-hidden="true"></div>
+    <div class="crt-overlay" aria-hidden="true"></div>
+
     <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-40">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="font-bold text-sm sm:text-xl tracking-wider text-accent flex items-center gap-2 shrink-0">
-                <i class="fa-solid fa-gamepad"></i>
+            <a href="#" class="gamer-font font-bold text-sm sm:text-xl tracking-wider text-accent flex items-center gap-2 shrink-0">
+                <svg class="nav-lotus" viewBox="0 0 100 100" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+                        <path d="M50 28C58 42 58 62 50 74C42 62 42 42 50 28Z"/>
+                        <path d="M50 44C38 32 24 28 12 32C26 38 40 46 50 56"/>
+                        <path d="M50 44C62 32 76 28 88 32C74 38 60 46 50 56"/>
+                        <path d="M50 62C40 72 30 78 20 80C34 74 44 68 50 58"/>
+                        <path d="M50 62C60 72 70 78 80 80C66 74 56 68 50 58"/>
+                        <circle cx="50" cy="50" r="4" fill="currentColor" stroke="none"/>
+                    </g>
+                </svg>
                 <span class="hidden sm:inline">M ALASHRAF TOLIMAT</span>
                 <span class="sm:hidden">M A T</span>
             </a>
@@ -84,9 +341,22 @@
         </div>
     </header>
 
+    <div class="oro-divider" aria-hidden="true">
+        <span class="oro-line"></span>
+        <svg class="oro-emblem" viewBox="0 0 100 100">
+            <g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M50 30C58 44 58 62 50 74C42 62 42 44 50 30Z"/>
+                <path d="M50 44C38 32 24 28 12 32C26 38 40 46 50 56"/>
+                <path d="M50 44C62 32 76 28 88 32C74 38 60 46 50 56"/>
+                <circle cx="50" cy="50" r="4.5" fill="currentColor" stroke="none"/>
+            </g>
+        </svg>
+        <span class="oro-line"></span>
+    </div>
+
     <section class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div class="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
+            <div class="profile-frame flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
                 <img src="MY-PHOTO.JPG" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'">
             </div>
             
@@ -170,7 +440,7 @@
 
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal3')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="action_map copy.png" alt="Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <img src="zelda copy.jpg" alt="Zelda Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-images text-xl"></i>
@@ -190,7 +460,7 @@
                 
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal4')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="DE.CEO.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
+                        <img src="DE.warframetgs.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-images text-xl"></i>
@@ -211,7 +481,7 @@
 
                 <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('Barjees_GDD.html', '_blank')">
                     <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="BarjeesBG.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
+                        <img src="BarjeesBG.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" style="object-position: center 40%;" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
                             <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
                                 <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
@@ -715,6 +985,42 @@
 
         // Initialize language on load so static HTML matches the active language
         setLang('en');
+    </script>
+
+    <script>
+        // Scroll-driven "live" Orokin background: crossfade + parallax between two mirrored scenes
+        (function () {
+            const a = document.querySelector('.orokin-bg--a');
+            const b = document.querySelector('.orokin-bg--b');
+            if (!a || !b) return;
+
+            const BASE = 0.72;
+            let ticking = false;
+
+            function update() {
+                const max = document.documentElement.scrollHeight - window.innerHeight;
+                const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+
+                // crossfade between scene A (top) and scene B (bottom)
+                a.style.opacity = (BASE * (1 - p)).toFixed(3);
+                b.style.opacity = (BASE * p).toFixed(3);
+
+                // parallax drift in opposite directions + gentle rotation
+                const y = p * -80;
+                const rot = (p - 0.5) * 8;
+                const scale = 1 + p * 0.10;
+                a.style.transform = 'translate3d(0,' + y + 'px,0) rotate(' + rot + 'deg) scale(' + scale + ')';
+                b.style.transform = 'translate3d(0,' + (-y) + 'px,0) rotate(' + (-rot) + 'deg) scale(' + scale + ')';
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) { requestAnimationFrame(update); ticking = true; }
+            }, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
     </script>
     
     <script>
