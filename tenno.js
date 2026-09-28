@@ -674,6 +674,7 @@ var tenno = new function(){
     var preloading = false;
     var active = false;
     var restoreList = [];
+    var renderCache = Object.create(null);
 
     var BASE = 44; // native reference height of the glyph set
     var SIZE_MULT = 1.0; // Tenno glyph scale
@@ -708,7 +709,22 @@ var tenno = new function(){
         return c;
     }
 
+    function makeWordImage(entry) {
+        var img = document.createElement('img');
+        img.src = entry.url;
+        img.alt = '';
+        img.style.width = entry.w + 'px';
+        img.style.height = entry.h + 'px';
+        img.style.verticalAlign = entry.va + 'px';
+        img.className = 'tenno-word';
+        return img;
+    }
+
     function renderWord(word, scale, color) {
+        var key = word + '|' + scale.toFixed(4) + '|' + color;
+        var cached = renderCache[key];
+        if (cached) return makeWordImage(cached);
+
         var dim = tenno.getWordDimensions(word);
         var w = Math.max(1, dim[0]);
         var h = Math.max(1, dim[1]);
@@ -767,7 +783,20 @@ var tenno = new function(){
         out.style.height = cssH + 'px';
         out.style.verticalAlign = (baselineInCrop - cssH) + 'px';
         out.className = 'tenno-word';
-        return out;
+
+        // Cache the finished bitmap so repeated words reuse it instead of
+        // re-rendering the glyphs every time.
+        try {
+            renderCache[key] = {
+                url: out.toDataURL('image/png'),
+                w: (sw / dpr),
+                h: cssH,
+                va: (baselineInCrop - cssH)
+            };
+            return makeWordImage(renderCache[key]);
+        } catch (e) {
+            return out; // tainted canvas: fall back to the rendered element
+        }
     }
 
     var SKIP_TAGS = {
