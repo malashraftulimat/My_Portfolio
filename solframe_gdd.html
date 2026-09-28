@@ -2594,6 +2594,7 @@ window.SOL_KO = {
 };
 
 </script>
+<script src="solframe_gdd_tr.js"></script>
 <script>
 /* SOL FRAME — GDD site-wide localization engine (EN ⇄ JA).
    Whole-page language switching. Keys are the normalized English textContent
@@ -3208,6 +3209,7 @@ window.SOL_KO = {
 
   var AR = (typeof window !== 'undefined' && window.SOL_AR) ? window.SOL_AR : {};
   var KO = (typeof window !== 'undefined' && window.SOL_KO) ? window.SOL_KO : {};
+  var TR = (typeof window !== 'undefined' && window.SOL_TR) ? window.SOL_TR : {};
 
   var ALT = {
     "SOL Frame key art": "ソルフレーム キーアート",
@@ -3228,6 +3230,13 @@ window.SOL_KO = {
     "IRIS, the SOL Command AI": "아이리스 — 솔 사령부 AI",
     "SOL Frame gameplay": "솔 프레임 게임플레이",
     "SOL Frame cover": "솔 프레임 커버"
+  };
+
+  var ALT_TR = {
+    "SOL Frame key art": "SOL Frame ana görsel",
+    "IRIS, the SOL Command AI": "IRIS — SOL Komuta yapay zekâsı",
+    "SOL Frame gameplay": "SOL Frame oynanış",
+    "SOL Frame cover": "SOL Frame kapak"
   };
 
   var CONTAINER = ('section div p ul ol li table thead tbody tr td th h1 h2 h3 h4 h5 h6 nav header main figure figcaption body a').split(' ');
@@ -3264,13 +3273,14 @@ window.SOL_KO = {
     en: document.title,
     ja: 'ソルフレーム — ゲームデザインドキュメント',
     ar: 'سول فريم — وثيقة تصميم اللعبة',
-    ko: '솔 프레임 — 게임 디자인 문서'
+    ko: '솔 프레임 — 게임 디자인 문서',
+    tr: 'SOL Frame — Oyun Tasarım Belgesi'
   };
 
   function apply(lang) {
-    if (['en', 'ja', 'ar', 'ko'].indexOf(lang) === -1) lang = 'en';
-    var dict = lang === 'ja' ? DICT : lang === 'ar' ? AR : lang === 'ko' ? KO : null;
-    var altDict = lang === 'ja' ? ALT : lang === 'ar' ? ALT_AR : lang === 'ko' ? ALT_KO : null;
+    if (['en', 'ja', 'ar', 'ko', 'tr'].indexOf(lang) === -1) lang = 'en';
+    var dict = lang === 'ja' ? DICT : lang === 'ar' ? AR : lang === 'ko' ? KO : lang === 'tr' ? TR : null;
+    var altDict = lang === 'ja' ? ALT : lang === 'ar' ? ALT_AR : lang === 'ko' ? ALT_KO : lang === 'tr' ? ALT_TR : null;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('lang-ja', lang === 'ja');
@@ -3296,7 +3306,7 @@ window.SOL_KO = {
 
   var saved = 'en';
   try { saved = localStorage.getItem('solgdd.lang') || 'en'; } catch (e) {}
-  apply(['en', 'ja', 'ar', 'ko'].indexOf(saved) !== -1 ? saved : 'en');
+  apply(['en', 'ja', 'ar', 'ko', 'tr'].indexOf(saved) !== -1 ? saved : 'en');
 })();
 
 </script>

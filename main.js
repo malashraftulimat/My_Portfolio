@@ -302,6 +302,78 @@
                 hlStack: "Unity + C#",
                 hlLocation: "도쿄",
                 hlOpen: "채용 가능"
+            },
+            tr: {
+                name: "M ALASHRAF TOLIMAT",
+                tagline: "YETİŞMEKTE OLAN OYUN PROGRAMCISI – KODU, YARATICILIĞI VE TEMEL OYNANIŞI BİRLEŞTİRİYOR",
+                studentAt: "TECHNOS COLLEGE, Tokyo öğrencisi",
+                btnProjects: "PROJELERİ GÖR",
+                btnCV: "CV İNDİR",
+                btnDemo: "itch.io'da Demoyu Oyna",
+                btnGDD: "Tam GDD'yi Oku",
+                aboutTitle: "HAKKIMDA",
+                aboutDesc: "Tokyo'da yaşayan Suriyeli bir öğrenci ve hevesli bir oyun geliştiricisiyim. Şu anda Technos College'da Unity ve C# ile oyun programlama üzerine eğitim alıyorum. İlgi çekici oynanış sistemleri kurmak için modern teknolojileri ve yapay zekâ araçlarını birleştiriyorum. Hem ofiste hem de uzaktan çalışmaya hazırım.",
+                aboutHobby: "Ekrandan uzakta plastik maketler — özellikle Macross mecha — yapıyorum. Birine başladığımda saatler kaybolur ve çevremi tamamen unuturum.",
+                projectsTitle: "ÖNE ÇIKAN ÇALIŞMALAR",
+                p1Title: "Sol Frame",
+                p1Desc: "Chicken Invaders tarzı uzay nişancı oyunu.",
+                p1DescLong: "Chicken Invaders tarzı oynanıştan esinlenen klasik arcade uzay nişancısı. Unity ile geliştirildi.",
+                p2Title: "3D Ortamlar",
+                p2Desc: "İstasyon ve kampüs dahil 3D ortam modelleri.",
+                p2DescLong: "Maya'da Musashi-Koganei İstasyonu ve Technos College kampüsünün tam 3D yeniden yapımı. Modelleme, doku ve aydınlatma fotoğraf referansından oluşturuldu.",
+                p3Title: "Piksel Sanatı ve Tasarım",
+                p3Desc: "Photoshop'ta oluşturulan karakter, arayüz ve seviye tasarımı konseptleri.",
+                p3DescLong: "Photoshop'ta oluşturulan grafik tasarım çalışmaları; arayüz/UX maketleri, eğitici posterler ve okunaklı siluetlere odaklanan 8-bit karakter sprite'ları içerir.",
+                p4Title: "Tokyo Oyun Fuarı 2024",
+                p4Desc: "11 yıl sonra Digital Extremes ekibiyle tanışmak.",
+                p4DescLong: "11 yıl boyunca Warframe oynayıp Devstream'leri izledikten sonra nihayet ekranın arkasındaki yüzlerle tanıştım. İçten bir aile buluşması gibiydi ve Digital Extremes ekibiyle son derece ilham verici, sıcak bir sohbet ettim.",
+                p5Title: "Şam'ın Yankıları",
+                p5Desc: "Çok dilli destek sunan lirik bir 2D platform oyunu GDD ve teklifi.",
+                p6Title: "Barjees Kutu Oyunu",
+                p6Desc: "Geleneksel kutu oyununu modernleştiren eksiksiz bir Oyun Tasarım Belgesi.",
+                skillsTitle: "YETENEKLER VE DİLLER",
+                skills_GameDev: "Oyun Geliştirme",
+                skills_Code: "Kod",
+                skills_Design: "Tasarım",
+                skills_Audio: "Ses",
+                skills_PCBuild: "PC Toplama",
+                skills_TechRepair: "Teknik Onarım",
+                chip_Gameplay: "Oynanış",
+                chip_AITools: "YZ Araçları",
+                chip_UIUX: "Arayüz/UX",
+                chip_SoundDesign: "Ses Tasarımı",
+                chip_Assembly: "Montaj",
+                chip_Teardown: "Söküm",
+                chip_Upgrades: "Yükseltme",
+                chip_HardwareFix: "Donanım Onarımı",
+                chip_SoftwareFix: "Yazılım Onarımı",
+                chip_Diagnostics: "Teşhis",
+                langAr: "ARAPÇA",
+                langEn: "İNGİLİZCE",
+                langJa: "JAPONCA",
+                langTr: "TÜRKÇE",
+                btnContactSubmit: "Gönder",
+                msgSuccess: "Mesaj başarıyla gönderildi!",
+                msgError: "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+                clickToEnlarge: "BÜYÜTMEK İÇİN GÖRSELE TIKLAYIN",
+                navHome: "ANA SAYFA",
+                navAbout: "HAKKIMDA",
+                navProjects: "PROJELER",
+                navSkills: "YETENEKLER",
+                navContact: "İLETİŞİM",
+                captchaRobot: "Ben robot değilim",
+                captchaQuestion: "Çöz",
+                captchaOk: "Doğrulandı",
+                captchaWrong: "Yanlış cevap, tekrar deneyin.",
+                captchaRequired: "Lütfen doğrulamayı tamamlayın.",
+                levelNative: "Ana dil",
+                levelConversational: "Konuşma",
+                levelJlpt: "JLPT N2",
+                levelC1: "Yeterlilik Sınavı C1",
+                hlLanguages: "4 Dil",
+                hlStack: "Unity + C#",
+                hlLocation: "Tokyo, Japonya",
+                hlOpen: "İşe açık"
             }
         };
 
@@ -309,7 +381,8 @@
             en: 'Resume_English.pdf',
             ar: 'Resume_Arabic.pdf',
             ja: 'Resume_Japanese.pdf',
-            ko: 'Resume_Korean.pdf'
+            ko: 'Resume_Korean.pdf',
+            tr: 'Resume_Turkish.pdf'
         };
 
         function setLang(lang) {
@@ -346,6 +419,7 @@
                 en: { flag: 'https://flagcdn.com/24x18/gb.png', short: 'EN' },
                 ja: { flag: 'https://flagcdn.com/24x18/jp.png', short: 'JP' },
                 ko: { flag: 'https://flagcdn.com/24x18/kr.png', short: 'KO' },
+                tr: { flag: 'https://flagcdn.com/24x18/tr.png', short: 'TR' },
                 tt: { flag: 'tenno-flag.png', short: 'TT' }
             };
             const meta = langMeta[lang];
@@ -389,7 +463,7 @@
             }[e.key];
             if (!resolve || !e.newValue) return;
             const lang = resolve(e.newValue);
-            if (['en', 'ar', 'ja', 'ko'].indexOf(lang) === -1) return;
+            if (['en', 'ar', 'ja', 'ko', 'tr'].indexOf(lang) === -1) return;
             if (lang !== document.documentElement.getAttribute('lang')) setLang(lang);
         });
 
