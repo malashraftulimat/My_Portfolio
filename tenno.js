@@ -709,21 +709,22 @@ var tenno = new function(){
         return c;
     }
 
-    function makeWordImage(entry) {
-        var img = document.createElement('img');
-        img.src = entry.url;
-        img.alt = '';
-        img.style.width = entry.w + 'px';
-        img.style.height = entry.h + 'px';
-        img.style.verticalAlign = entry.va + 'px';
-        img.className = 'tenno-word';
-        return img;
+    function copyWordCanvas(src) {
+        var cv = document.createElement('canvas');
+        cv.width = src.width;
+        cv.height = src.height;
+        cv.getContext('2d').drawImage(src, 0, 0);
+        cv.style.width = src.style.width;
+        cv.style.height = src.style.height;
+        cv.style.verticalAlign = src.style.verticalAlign;
+        cv.className = 'tenno-word';
+        return cv;
     }
 
     function renderWord(word, scale, color) {
         var key = word + '|' + scale.toFixed(4) + '|' + color;
         var cached = renderCache[key];
-        if (cached) return makeWordImage(cached);
+        if (cached) return copyWordCanvas(cached);
 
         var dim = tenno.getWordDimensions(word);
         var w = Math.max(1, dim[0]);
@@ -785,18 +786,10 @@ var tenno = new function(){
         out.className = 'tenno-word';
 
         // Cache the finished bitmap so repeated words reuse it instead of
-        // re-rendering the glyphs every time.
-        try {
-            renderCache[key] = {
-                url: out.toDataURL('image/png'),
-                w: (sw / dpr),
-                h: cssH,
-                va: (baselineInCrop - cssH)
-            };
-            return makeWordImage(renderCache[key]);
-        } catch (e) {
-            return out; // tainted canvas: fall back to the rendered element
-        }
+        // re-rendering the glyphs every time. Storing the canvas (instead of
+        // a data URL) avoids image-decoding stalls when the words are inserted.
+        renderCache[key] = out;
+        return out;
     }
 
     var SKIP_TAGS = {
