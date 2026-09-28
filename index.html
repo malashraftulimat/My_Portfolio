@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M ALASHRAF TOLIMAT | Game Developer</title>
+
+    <!-- SEO -->
+    <meta name="description" content="M Alashraf Tolimat — game programmer and Unity/C# developer based in Tokyo. Portfolio of games, 3D environments, and technical projects.">
+    <meta name="author" content="M Alashraf Tolimat">
+    <meta name="theme-color" content="#11151c">
+    <link rel="canonical" href="https://malashraftulimat.github.io/My_Portfolio/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="M ALASHRAF TOLIMAT">
+    <meta property="og:title" content="M ALASHRAF TOLIMAT | Game Developer">
+    <meta property="og:description" content="Game programmer and Unity/C# developer based in Tokyo. Portfolio of games, 3D environments, and technical projects.">
+    <meta property="og:url" content="https://malashraftulimat.github.io/My_Portfolio/">
+    <meta property="og:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M ALASHRAF TOLIMAT | Game Developer">
+    <meta name="twitter:description" content="Game programmer and Unity/C# developer based in Tokyo.">
+    <meta name="twitter:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+
+    <!-- Preconnect for third-party assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="tailwind.config.js?v=2"></script>
@@ -11,6 +42,25 @@
     <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="style.css?v=4">
+
+    <!-- Structured data: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "M Alashraf Tolimat",
+      "jobTitle": "Game Developer",
+      "url": "https://malashraftulimat.github.io/My_Portfolio/",
+      "image": "https://malashraftulimat.github.io/My_Portfolio/og-image.png",
+      "email": "mailto:ashraftmtbus@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Tokyo", "addressCountry": "JP" },
+      "knowsAbout": ["Unity", "C#", "Game Programming", "Game Design"],
+      "sameAs": [
+        "https://github.com/malashraftulimat",
+        "https://7asanki.itch.io/"
+      ]
+    }
+    </script>
 </head>
 <body class="antialiased min-h-screen relative">
 
@@ -363,9 +413,9 @@
                 <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
                 <div data-fs-error style="display: none;" class="bg-red-900/50 text-red-400 p-3 text-sm rounded border border-red-700 font-bold" data-i18n="msgError">Failed to send message.</div>
 
-                <input type="text" name="name" placeholder="Name" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
-                <input type="email" name="email" placeholder="Email" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
-                <textarea name="message" placeholder="Message" rows="3" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded resize-none"></textarea>
+                <input type="text" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
+                <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
+                <textarea name="message" placeholder="Message" aria-label="Message" rows="3" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded resize-none"></textarea>
 
                 <!-- Cloudflare Turnstile CAPTCHA (existing widget).
                      Site key is public and lives here; the SECRET key must be entered in

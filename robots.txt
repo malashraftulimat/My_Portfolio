@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malashraftulimat.github.io/My_Portfolio/sitemap.xml
