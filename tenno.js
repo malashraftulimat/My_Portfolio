@@ -676,7 +676,7 @@ var tenno = new function(){
     var restoreList = [];
 
     var BASE = 44; // native reference height of the glyph set
-    var SIZE_MULT = 0.5; // render Tenno glyphs at half size
+    var SIZE_MULT = 0.575; // Tenno glyph scale (half size +15%)
 
     function preload(cb) {
         if (glyphsReady) { cb(); return; }
