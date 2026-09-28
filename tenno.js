@@ -675,7 +675,8 @@ var tenno = new function(){
     var active = false;
     var restoreList = [];
 
-    var BASE = 44; // native reference height of the glyph set (Tenno rendered at half size)
+    var BASE = 44; // native reference height of the glyph set
+    var SIZE_MULT = 0.5; // render Tenno glyphs at half size
 
     function preload(cb) {
         if (glyphsReady) { cb(); return; }
@@ -752,7 +753,7 @@ var tenno = new function(){
         var text = node.nodeValue;
         var parent = node.parentNode;
         var color = colorFor(parent);
-        var scale = (parseFloat(getComputedStyle(parent).fontSize) || 16) / BASE;
+        var scale = ((parseFloat(getComputedStyle(parent).fontSize) || 16) / BASE) * SIZE_MULT;
 
         var parts = text.split(/(\s+)/);
         var frag = document.createDocumentFragment();
