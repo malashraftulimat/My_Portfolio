@@ -385,7 +385,11 @@
             padding: 6px 12px;
             color: #9aa4b2;
             letter-spacing: 0.05em;
+            white-space: nowrap;
             transition: color 0.25s ease;
+        }
+        @media (max-width: 1023px) {
+            .nav-link { padding: 6px 6px; font-size: 12px; letter-spacing: 0; }
         }
         .nav-link::after {
             content: "";
