@@ -195,6 +195,7 @@
         /* ===== Modals as Orokin vessels ===== */
         .modal > div {
             border-radius: 0 !important;
+            max-height: calc(100vh - 8rem) !important;
             clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
             background-image: linear-gradient(180deg, rgba(212,175,55,0.06), transparent 30%);
         }
@@ -366,6 +367,7 @@
         a, button { transition: transform 0.15s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
         a:active, button:active { transform: scale(0.95); }
         [onclick]:active { transform: scale(0.985); }
+        #lightbox > div:active { transform: none !important; }
 
         /* Modal entrance */
         @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -448,7 +450,7 @@
     <div class="screen-vignette" aria-hidden="true"></div>
     <div class="crt-overlay" aria-hidden="true"></div>
 
-    <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-40">
+    <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-[70]">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#top" class="gamer-font font-bold text-base sm:text-2xl tracking-wider text-accent flex items-center gap-2 shrink-0">
                 <img src="7aSanki-crest.png" alt="" class="nav-lotus">
@@ -815,12 +817,16 @@
         </div>
     </footer>
 
-    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-gray-400 hover:text-white text-4xl transition">&times;</button>
-        <img id="lightbox-img" src="" class="pixelated-zoom-box rounded-lg shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col items-center justify-center px-4 pb-4 pt-24 cursor-pointer select-none" onclick="if(event.target===this) closeLightbox()">
+        <div class="relative inline-block max-w-full cursor-default">
+            <img id="lightbox-img" src="" draggable="false" class="pixelated-zoom-box rounded-lg shadow-2xl block max-h-[calc(100vh-9rem)] w-auto select-none">
+            <button onclick="closeLightbox()" aria-label="Close" class="absolute top-1 right-1 w-12 h-12 flex items-center justify-center group">
+                <span class="bg-accent group-hover:bg-accentHover text-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-xl leading-none transition">&times;</span>
+            </button>
+        </div>
     </div>
 
-    <div id="modal1" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div id="modal1" class="modal fixed inset-0 z-50 items-center justify-center px-4 pb-4 pt-24" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-2xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal1')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p1Title">Sol Frame</h2>
@@ -835,7 +841,7 @@
         </div>
     </div>
 
-    <div id="modal2" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div id="modal2" class="modal fixed inset-0 z-50 items-center justify-center px-4 pb-4 pt-24" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal2')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p2Title">3D Environments</h2>
@@ -879,7 +885,7 @@
         </div>
     </div>
 
-    <div id="modal3" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div id="modal3" class="modal fixed inset-0 z-50 items-center justify-center px-4 pb-4 pt-24" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal3')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p3Title">Pixel Art & Design</h2>
@@ -911,7 +917,7 @@
         </div>
     </div>
 
-    <div id="modal4" class="modal fixed inset-0 z-50 items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div id="modal4" class="modal fixed inset-0 z-50 items-center justify-center px-4 pb-4 pt-24" role="dialog" aria-modal="true">
         <div class="bg-cardBg w-full max-w-3xl rounded-lg border border-gray-700 relative p-6 max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('modal4')" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">&times;</button>
             <h2 class="text-2xl font-bold mb-4 text-white" data-i18n="p4Title">Tokyo Game Show 2024</h2>
