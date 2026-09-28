@@ -676,7 +676,7 @@ var tenno = new function(){
     var restoreList = [];
 
     var BASE = 44; // native reference height of the glyph set
-    var SIZE_MULT = 0.77; // Tenno glyph scale
+    var SIZE_MULT = 1.0; // Tenno glyph scale
 
     function preload(cb) {
         if (glyphsReady) { cb(); return; }
@@ -730,11 +730,44 @@ var tenno = new function(){
         ctx.fillRect(0, 0, cv.width, cv.height);
         ctx.globalCompositeOperation = 'source-over';
 
-        cv.style.width = (w * scale) + 'px';
-        cv.style.height = (h * scale) + 'px';
-        cv.style.verticalAlign = (-(h - dim[2]) * scale) + 'px';
-        cv.className = 'tenno-word';
-        return cv;
+        // Crop the transparent padding around the glyphs. The layout box is
+        // much taller than the visible ink (rotated glyphs), so leaving it
+        // uncropped inflates every line's height.
+        var sx = 0, sy = 0, sw = cv.width, sh = cv.height;
+        try {
+            var data = ctx.getImageData(0, 0, cv.width, cv.height).data;
+            var minX = cv.width, minY = cv.height, maxX = -1, maxY = -1;
+            for (var y = 0; y < cv.height; y++) {
+                var row = y * cv.width * 4;
+                for (var x = 0; x < cv.width; x++) {
+                    if (data[row + x * 4 + 3] > 8) {
+                        if (x < minX) minX = x;
+                        if (x > maxX) maxX = x;
+                        if (y < minY) minY = y;
+                        if (y > maxY) maxY = y;
+                    }
+                }
+            }
+            if (maxX >= 0) {
+                sx = minX; sy = minY;
+                sw = maxX - minX + 1;
+                sh = maxY - minY + 1;
+            }
+        } catch (e) { /* keep the full canvas if pixel access is unavailable */ }
+
+        var out = document.createElement('canvas');
+        out.width = sw;
+        out.height = sh;
+        out.getContext('2d').drawImage(cv, sx, sy, sw, sh, 0, 0, sw, sh);
+
+        // Keep the glyphs sitting on the text baseline after cropping.
+        var baselineInCrop = (dim[2] * scale * dpr - sy) / dpr;
+        var cssH = sh / dpr;
+        out.style.width = (sw / dpr) + 'px';
+        out.style.height = cssH + 'px';
+        out.style.verticalAlign = (baselineInCrop - cssH) + 'px';
+        out.className = 'tenno-word';
+        return out;
     }
 
     var SKIP_TAGS = {
