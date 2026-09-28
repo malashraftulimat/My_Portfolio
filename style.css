@@ -189,6 +189,17 @@
         }
         .tenno-word { display: inline-block; }
 
+        /* Tenno (TT) mode: render with the tenObet font instead of canvas glyphs */
+        @font-face {
+            font-family: 'tenObet';
+            src: url('tennobet.ttf') format('truetype');
+            font-display: swap;
+        }
+        body.tenno-active,
+        body.tenno-active :not(i):not(code):not(input):not(textarea):not(select):not(option):not([data-tenno-skip]):not([data-tenno-skip] *) {
+            font-family: 'tenObet', 'Inter', sans-serif !important;
+        }
+
         /* In Tenno mode, shrink the brand to keep the nav links + language menu on screen */
         body.tenno-active .nav-brand-full { display: none !important; }
         body.tenno-active .nav-brand-short { display: inline !important; }

@@ -313,7 +313,6 @@
         };
 
         function setLang(lang) {
-            if (window.Tenno) window.Tenno.disable();
             const applyKey = (lang === 'tt') ? 'en' : lang;
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -376,8 +375,8 @@
                 localStorage.setItem('barjees_lang', applyKey === 'ja' ? 'jp' : applyKey);    // Barjees (uses 'jp' for Japanese)
             } catch (e) {}
 
-            // Tenno script mode: transliterate the (English) content
-            if (lang === 'tt' && window.Tenno) window.Tenno.enable();
+            // Tenno script mode: render the (English) content with the tenObet font
+            document.body.classList.toggle('tenno-active', lang === 'tt');
         }
 
         // Bidirectional sync: if a GDD (or another tab) changes its stored
