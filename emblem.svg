@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Alashraf Tolimat Damascus emblem">
+  <defs>
+    <!-- ===== metal palettes ===== -->
+    <linearGradient id="eGold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="128">
+      <stop offset="0" stop-color="#f6e6a8"/>
+      <stop offset="0.45" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#8a6d1f"/>
+    </linearGradient>
+    <linearGradient id="eTeal" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="128">
+      <stop offset="0" stop-color="#9fe7da"/>
+      <stop offset="0.5" stop-color="#2f7d78"/>
+      <stop offset="1" stop-color="#103432"/>
+    </linearGradient>
+    <linearGradient id="eFlame" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="0" y2="0">
+      <stop offset="0" stop-color="#ff6a00"/>
+      <stop offset="1" stop-color="#ffc46b"/>
+    </linearGradient>
+
+    <!-- ===== silhouette + chevron plates ===== -->
+    <clipPath id="eShield">
+      <polygon points="64,5 117,42 117,86 64,123 11,86 11,42"/>
+    </clipPath>
+    <clipPath id="eChev">
+      <path d="M64 12L112 60V73L64 25L16 73V60Z"/>
+      <path d="M64 30L101 67V77L64 40L27 77V67Z"/>
+      <path d="M64 47L90 73V82L64 56L38 82V73Z"/>
+    </clipPath>
+
+    <!-- ===== Damascus: displace straight bands into wavy marbled steel ===== -->
+    <filter id="eDamascus" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="turbulence" baseFrequency="0.009 0.05" numOctaves="2" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="eDamascusSoft" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="turbulence" baseFrequency="0.012 0.06" numOctaves="2" seed="4" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- ================= DAMASCUS RELIC BODY ================= -->
+  <g clip-path="url(#eShield)">
+    <rect x="0" y="0" width="128" height="128" fill="#1b1607"/>
+    <g filter="url(#eDamascus)" fill="none" stroke="url(#eGold)" stroke-width="3.2" opacity="0.75">
+      <path d="M-14 4H142M-14 13H142M-14 22H142M-14 31H142M-14 40H142M-14 49H142M-14 58H142M-14 67H142M-14 76H142M-14 85H142M-14 94H142M-14 103H142M-14 112H142M-14 121H142M-14 130H142"/>
+    </g>
+    <g filter="url(#eDamascus)" fill="none" stroke="#f8edc2" stroke-width="0.9" opacity="0.45">
+      <path d="M-14 8H142M-14 17H142M-14 26H142M-14 35H142M-14 44H142M-14 53H142M-14 62H142M-14 71H142M-14 80H142M-14 89H142M-14 98H142M-14 107H142M-14 116H142M-14 125H142"/>
+    </g>
+  </g>
+
+  <!-- ================= CRISP RELIC FRAME ================= -->
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="64,5 117,42 117,86 64,123 11,86 11,42" stroke="url(#eGold)" stroke-width="3"/>
+    <polygon points="64,15 108,46 108,82 64,113 20,82 20,46" stroke="url(#eGold)" stroke-width="1.2" opacity="0.55"/>
+
+    <!-- ================= LAYERED VOID CHEVRON PLATES (your emblem) ================= -->
+    <path d="M64 12L112 60V73L64 25L16 73V60Z" fill="url(#eTeal)" stroke="url(#eGold)" stroke-width="1.7"/>
+    <path d="M64 30L101 67V77L64 40L27 77V67Z" fill="url(#eTeal)" stroke="url(#eGold)" stroke-width="1.5"/>
+    <path d="M64 47L90 73V82L64 56L38 82V73Z" fill="url(#eTeal)" stroke="url(#eGold)" stroke-width="1.3"/>
+    <!-- woven Damascus grain over the teal plates -->
+    <g clip-path="url(#eChev)">
+      <g filter="url(#eDamascusSoft)" fill="none" stroke="#c9f7ee" stroke-width="1" opacity="0.5">
+        <path d="M0 16H128M0 24H128M0 32H128M0 40H128M0 48H128M0 56H128M0 64H128M0 72H128M0 80H128M0 88H128"/>
+      </g>
+    </g>
+    <path d="M64 47L90 73V82L64 56L38 82V73Z" fill="none" stroke="#00e0ff" stroke-width="1.6" opacity="0.85"/>
+
+    <!-- ================= LOTUS CORE ================= -->
+    <path d="M64 66 C71 77 71 88 64 100 C57 88 57 77 64 66 Z"
+          fill="url(#eGold)" fill-opacity="0.30" stroke="url(#eGold)" stroke-width="2.5"/>
+    <path d="M64 85 C54 77 44 74 34 78 C44 83 54 88 64 96" stroke="url(#eGold)" stroke-width="2.4"/>
+    <path d="M64 85 C74 77 84 74 94 78 C84 83 74 88 64 96" stroke="url(#eGold)" stroke-width="2.4"/>
+    <path d="M64 96 C57 102 52 109 50 115" stroke="url(#eGold)" stroke-width="1.9"/>
+    <path d="M64 96 C71 102 76 109 78 115" stroke="url(#eGold)" stroke-width="1.9"/>
+    <circle cx="64" cy="84" r="4.4" fill="url(#eGold)" stroke="none"/>
+
+    <!-- ================= ORANGE FILIGREE FLAMES ================= -->
+    <path d="M22 62 C7 66 1 79 7 94 C12 83 20 77 31 81" stroke="url(#eFlame)" stroke-width="2.2"/>
+    <path d="M106 62 C121 66 127 79 121 94 C116 83 108 77 97 81" stroke="url(#eFlame)" stroke-width="2.2"/>
+    <path d="M7 94 C2 90 3 82 9 80" stroke="url(#eFlame)" stroke-width="1.6"/>
+    <path d="M121 94 C126 90 125 82 119 80" stroke="url(#eFlame)" stroke-width="1.6"/>
+    <path d="M14 50 C4 43 -1 30 6 17 C11 27 20 33 29 30 C21 38 20 45 25 51" stroke="url(#eFlame)" stroke-width="1.8" opacity="0.95"/>
+    <path d="M114 50 C124 43 129 30 122 17 C117 27 108 33 99 30 C107 38 108 45 103 51" stroke="url(#eFlame)" stroke-width="1.8" opacity="0.95"/>
+    <circle cx="7" cy="94" r="2.3" fill="#ff6a00" stroke="none"/>
+    <circle cx="121" cy="94" r="2.3" fill="#ff6a00" stroke="none"/>
+    <circle cx="6" cy="17" r="1.9" fill="#ffc46b" stroke="none"/>
+    <circle cx="122" cy="17" r="1.9" fill="#ffc46b" stroke="none"/>
+  </g>
+</svg>

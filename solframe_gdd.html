@@ -301,18 +301,41 @@
     header.hero .cover{max-height:340px;opacity:.45}
   }
   /* language switcher */
-  /* language switcher */
   .site-lang{
-    position:fixed;top:14px;right:16px;z-index:100;display:flex;gap:6px;direction:ltr;
-    background:rgba(26,32,54,.92);border:1px solid var(--line);border-radius:999px;
-    padding:4px;backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.45);
+    position:fixed;top:14px;right:16px;z-index:100;direction:ltr;
   }
-  .site-lang-btn{
+  .site-lang-toggle{
+    display:flex;align-items:center;gap:8px;
     font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;cursor:pointer;
-    border:none;background:transparent;color:var(--muted);padding:6px 13px;border-radius:999px;transition:.18s;
+    background:rgba(26,32,54,.92);border:1px solid var(--line);border-radius:999px;
+    color:var(--text);padding:8px 14px;transition:.18s;
+    backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.45);
+  }
+  .site-lang-toggle:hover{border-color:var(--cyan-soft);color:var(--cyan-soft)}
+  .site-lang-caret{font-size:9px;opacity:.7}
+  .site-lang-menu{
+    position:absolute;top:calc(100% + 8px);right:0;min-width:178px;padding:6px;
+    display:flex;flex-direction:column;gap:2px;
+    background:rgba(26,32,54,.97);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 16px 38px rgba(0,0,0,.55);backdrop-filter:blur(8px);
+  }
+  .site-lang-menu[hidden]{display:none;}
+  .site-lang-btn{
+    display:flex;align-items:center;gap:10px;width:100%;
+    font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.1em;cursor:pointer;
+    border:none;background:transparent;color:var(--muted);padding:9px 10px;border-radius:9px;transition:.18s;text-align:left;
   }
   .site-lang-btn:hover{color:var(--cyan-soft)}
   .site-lang-btn.is-active{background:var(--cyan-soft);color:#05060d;font-weight:700}
+  .lang-flag{display:inline-block;width:20px;height:15px;border-radius:2px;object-fit:cover;vertical-align:middle;flex:none}
+  .lang-code{margin-left:auto;font-size:9px;letter-spacing:.08em;opacity:.7}
+
+  /* ===== Smooth motion ===== */
+  html{scroll-behavior:smooth}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .site-lang-menu:not([hidden]){animation:dropIn .2s ease}
+  a,button{transition:transform .15s ease,color .2s ease,background .2s ease,border-color .2s ease}
+  a:active,button:active{transform:scale(.95)}
   body.lang-ja{font-family:'Noto Sans JP','Rajdhani',sans-serif}
   body.lang-ja h1,body.lang-ja h2,body.lang-ja h3,body.lang-ja h4,body.lang-ja .logo,body.lang-ja .sec-head h2{font-family:'Noto Sans JP','Orbitron',sans-serif;letter-spacing:0}
   body.lang-ar{font-family:'Cairo','Rajdhani',sans-serif}
@@ -610,10 +633,17 @@
 <div class="fx-ufo" aria-hidden="true"></div>
 <div class="fx-ufo alt" aria-hidden="true"></div>
 <div class="site-lang" role="group" aria-label="Language">
-  <button type="button" class="site-lang-btn" data-site-lang="ar">AR</button>
-  <button type="button" class="site-lang-btn is-active" data-site-lang="en">EN</button>
-  <button type="button" class="site-lang-btn" data-site-lang="ja">JP</button>
-  <button type="button" class="site-lang-btn" data-site-lang="ko">KO</button>
+  <button type="button" class="site-lang-toggle" id="site-lang-toggle" aria-haspopup="true" aria-expanded="false">
+    <img class="lang-flag" id="site-lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15">
+    <span id="site-lang-label">EN</span>
+    <span class="site-lang-caret">▾</span>
+  </button>
+  <div class="site-lang-menu" id="site-lang-menu" hidden>
+    <button type="button" class="site-lang-btn" data-site-lang="ar"><img class="lang-flag" src="https://flagcdn.com/24x18/sa.png" alt="العربية" width="20" height="15"><span>العربية</span><span class="lang-code">AR</span></button>
+    <button type="button" class="site-lang-btn is-active" data-site-lang="en"><img class="lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15"><span>English</span><span class="lang-code">EN</span></button>
+    <button type="button" class="site-lang-btn" data-site-lang="ja"><img class="lang-flag" src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15"><span>日本語</span><span class="lang-code">JP</span></button>
+    <button type="button" class="site-lang-btn" data-site-lang="ko"><img class="lang-flag" src="https://flagcdn.com/24x18/kr.png" alt="한국어" width="20" height="15"><span>한국어</span><span class="lang-code">KO</span></button>
+  </div>
 </div>
 <div class="shell">
 
@@ -3268,11 +3298,41 @@ window.SOL_KO = {
     document.querySelectorAll('.site-lang-btn').forEach(function (b) {
       b.classList.toggle('is-active', b.getAttribute('data-site-lang') === lang);
     });
+    var LANG_META = {
+      ar: { flag: 'https://flagcdn.com/24x18/sa.png', short: 'AR' }, en: { flag: 'https://flagcdn.com/24x18/gb.png', short: 'EN' },
+      ja: { flag: 'https://flagcdn.com/24x18/jp.png', short: 'JP' }, ko: { flag: 'https://flagcdn.com/24x18/kr.png', short: 'KO' }
+    };
+    var meta = LANG_META[lang];
+    if (meta) {
+      var curFlag = document.getElementById('site-lang-flag');
+      var curLabel = document.getElementById('site-lang-label');
+      if (curFlag) curFlag.src = meta.flag;
+      if (curLabel) curLabel.textContent = meta.short;
+    }
     try { localStorage.setItem('solgdd.lang', lang); } catch (e) {}
   }
 
+  var siteLangToggle = document.getElementById('site-lang-toggle');
+  var siteLangMenu = document.getElementById('site-lang-menu');
+  function closeSiteLangMenu() {
+    if (!siteLangMenu) return;
+    siteLangMenu.hidden = true;
+    if (siteLangToggle) siteLangToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (siteLangToggle && siteLangMenu) {
+    siteLangToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      siteLangMenu.hidden = !siteLangMenu.hidden;
+      siteLangToggle.setAttribute('aria-expanded', String(!siteLangMenu.hidden));
+    });
+    document.addEventListener('click', function (e) {
+      if (!siteLangMenu.hidden && !siteLangMenu.contains(e.target) && !siteLangToggle.contains(e.target)) closeSiteLangMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSiteLangMenu(); });
+  }
+
   document.querySelectorAll('.site-lang-btn').forEach(function (b) {
-    b.addEventListener('click', function () { apply(b.getAttribute('data-site-lang')); });
+    b.addEventListener('click', function () { apply(b.getAttribute('data-site-lang')); closeSiteLangMenu(); });
   });
 
   var saved = 'en';

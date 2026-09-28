@@ -25,6 +25,8 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@500;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         body {
             background-color: #11151c;
@@ -61,6 +63,8 @@
 
         /* ================= OROKIN DAMASCUS AESTHETIC ================= */
         :root {
+            --accent: #ff6a00;
+            --accentHover: #cc5500;
             --accent2: #00e0ff;
             --void: #00e0ff;
             --void2: #8a5cff;
@@ -195,9 +199,44 @@
             background-image: linear-gradient(180deg, rgba(212,175,55,0.06), transparent 30%);
         }
 
-        /* skill boxes -> gold-framed */
-        .skill-box { border-color: rgba(212,175,55,0.4) !important; }
-        .skill-box i { color: var(--gold-2); }
+        /* skill boxes -> gold-framed, chamfered (not interactive, no hover) */
+        .skill-box {
+            border-color: rgba(212,175,55,0.4) !important;
+            border-radius: 0 !important;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+        }
+        .skill-box i { color: var(--gold-2); filter: drop-shadow(0 0 8px rgba(212,175,55,0.5)); }
+
+        /* ===== Language proficiency meters ===== */
+        .lang-track {
+            height: 9px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.20);
+            overflow: hidden;
+        }
+        .lang-fill {
+            position: relative;
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--gold-2), var(--accent));
+            box-shadow: 0 0 12px rgba(255,106,0,0.45);
+            animation: langGrow 1.1s cubic-bezier(0.22,0.61,0.36,1) both;
+        }
+        .lang-fill::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 8px #ffb347;
+        }
+        @keyframes langGrow { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
+        @media (prefers-reduced-motion: reduce) { .lang-fill { animation: none; } }
 
         /* profile photo: gold energy ring */
         .profile-frame {
@@ -255,7 +294,26 @@
         }
 
         /* ===== Orokin Lotus emblem shapes ===== */
-        .nav-lotus { width: 1.6em; height: 1.6em; flex: none; }
+        .nav-lotus {
+            height: 2.3em;
+            width: auto;
+            flex: none;
+            filter: drop-shadow(0 0 5px rgba(212,175,55,0.55)) drop-shadow(0 0 12px rgba(255,106,0,0.28));
+            animation: oroPulse 3.6s ease-in-out infinite;
+        }
+        /* Big emblem above the name: larger presence + gentle float */
+        .hero-emblem {
+            filter: drop-shadow(0 0 18px rgba(255,106,0,0.32)) drop-shadow(0 0 38px rgba(212,175,55,0.22));
+            animation: heroFloat 7s ease-in-out infinite;
+            will-change: transform;
+        }
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-12px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-emblem, .nav-lotus { animation: none; }
+        }
         .oro-divider {
             display: flex;
             align-items: center;
@@ -299,6 +357,88 @@
             z-index: 69;
             box-shadow: inset 0 0 160px rgba(0,0,0,0.55);
         }
+
+        /* ===== Smooth motion ===== */
+        html { scroll-behavior: smooth; }
+        [id] { scroll-margin-top: 92px; }
+
+        /* Press feedback on every clickable element */
+        a, button { transition: transform 0.15s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+        a:active, button:active { transform: scale(0.95); }
+        [onclick]:active { transform: scale(0.985); }
+
+        /* Modal entrance */
+        @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes modalPopIn { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: none; } }
+        .modal.active { animation: modalFadeIn 0.25s ease; }
+        .modal.active > div { animation: modalPopIn 0.32s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        #lightbox:not(.hidden) { animation: modalFadeIn 0.25s ease; }
+        #lightbox:not(.hidden) #lightbox-img { animation: modalPopIn 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+        /* Language dropdown entrance */
+        @keyframes dropIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+        #lang-menu:not(.hidden) { animation: dropIn 0.18s ease; }
+
+        /* Section nav links */
+        .nav-link {
+            position: relative;
+            padding: 6px 12px;
+            color: #9aa4b2;
+            letter-spacing: 0.05em;
+            transition: color 0.25s ease;
+        }
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 0;
+            height: 2px;
+            border-radius: 2px;
+            background: #ff6a00;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after,
+        .nav-link.active::after { transform: scaleX(1); }
+        .nav-link.active { color: #fff; }
+        html[dir="rtl"] .nav-link::after { transform-origin: right; }
+
+        /* Embedded viewer: GPU slide + fade; iframe reveals after the panel settles */
+        #viewer {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translate3d(0, 30px, 0);
+            will-change: opacity, transform;
+            transition: opacity 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        visibility 0s linear 0.32s;
+        }
+        #viewer.viewer-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1),
+                        visibility 0s;
+        }
+        #viewer-frame { opacity: 0; transition: opacity 0.4s ease; }
+        #viewer.content-ready #viewer-frame { opacity: 1; }
+        #viewer-loading { opacity: 1; transition: opacity 0.3s ease; }
+        #viewer.content-ready #viewer-loading { opacity: 0; pointer-events: none; }
+        .viewer-spinner {
+            width: 46px; height: 46px;
+            border: 3px solid rgba(255, 106, 0, 0.25);
+            border-top-color: #ff6a00;
+            border-radius: 50%;
+            animation: viewerSpin 0.8s linear infinite;
+        }
+        @keyframes viewerSpin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="antialiased min-h-screen relative">
@@ -310,32 +450,48 @@
 
     <nav class="fixed top-0 w-full bg-darkBg/90 backdrop-blur border-b border-gray-800 z-40">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="gamer-font font-bold text-sm sm:text-xl tracking-wider text-accent flex items-center gap-2 shrink-0">
-                <svg class="nav-lotus" viewBox="0 0 100 100" aria-hidden="true">
-                    <g fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-                        <path d="M50 28C58 42 58 62 50 74C42 62 42 42 50 28Z"/>
-                        <path d="M50 44C38 32 24 28 12 32C26 38 40 46 50 56"/>
-                        <path d="M50 44C62 32 76 28 88 32C74 38 60 46 50 56"/>
-                        <path d="M50 62C40 72 30 78 20 80C34 74 44 68 50 58"/>
-                        <path d="M50 62C60 72 70 78 80 80C66 74 56 68 50 58"/>
-                        <circle cx="50" cy="50" r="4" fill="currentColor" stroke="none"/>
-                    </g>
-                </svg>
-                <span class="hidden sm:inline">M ALASHRAF TOLIMAT</span>
-                <span class="sm:hidden">M A T</span>
+            <a href="#top" class="gamer-font font-bold text-base sm:text-2xl tracking-wider text-accent flex items-center gap-2 shrink-0">
+                <img src="7aSanki-crest.png" alt="" class="nav-lotus">
+                <span class="hidden lg:inline">M ALASHRAF TOLIMAT</span>
+                <span class="lg:hidden">M A T</span>
             </a>
-            <div dir="ltr" class="flex items-center gap-2 sm:gap-3 text-sm font-semibold text-gray-400">
-                <i class="fa-solid fa-globe"></i>
-                <button onclick="setLang('ar')" class="hover:text-white transition lang-btn" data-lang="ar">AR</button> |
-                <button onclick="setLang('en')" class="hover:text-white transition text-white lang-btn" data-lang="en">EN</button> |
-                <button onclick="setLang('ja')" class="hover:text-white transition lang-btn" data-lang="ja">JP</button> |
-                <button onclick="setLang('ko')" class="hover:text-white transition lang-btn" data-lang="ko">KO</button>
+            <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
+                <a href="#top" data-nav class="nav-link" data-i18n="navHome">HOME</a>
+                <a href="#about" data-nav class="nav-link" data-i18n="navAbout">ABOUT</a>
+                <a href="#projects" data-nav class="nav-link" data-i18n="navProjects">PROJECTS</a>
+                <a href="#skills" data-nav class="nav-link" data-i18n="navSkills">SKILLS</a>
+                <a href="#contact" data-nav class="nav-link" data-i18n="navContact">CONTACT</a>
+            </div>
+            <div dir="ltr" class="relative lang-dropdown">
+                <button type="button" id="lang-toggle" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white border border-gray-700 hover:border-accent rounded px-3 py-2 transition">
+                    <i class="fa-solid fa-globe"></i>
+                    <img id="lang-current-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15" class="inline-block rounded-[2px] align-middle">
+                    <span id="lang-current-label">EN</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-gray-500"></i>
+                </button>
+                <ul id="lang-menu" class="hidden absolute right-0 mt-2 w-44 bg-cardBg border border-gray-700 rounded-lg shadow-2xl overflow-hidden text-sm font-semibold z-50">
+                    <li><button onclick="setLang('ar')" class="lang-btn w-full flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition text-left" data-lang="ar"><img src="https://flagcdn.com/24x18/sa.png" alt="العربية" width="20" height="15" class="inline-block rounded-[2px]"><span>العربية</span><span class="ml-auto text-[10px] tracking-wider text-gray-500">AR</span></button></li>
+                    <li><button onclick="setLang('en')" class="lang-btn w-full flex items-center gap-3 px-4 py-2.5 text-white hover:bg-gray-800 transition text-left" data-lang="en"><img src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15" class="inline-block rounded-[2px]"><span>English</span><span class="ml-auto text-[10px] tracking-wider text-gray-500">EN</span></button></li>
+                    <li><button onclick="setLang('ja')" class="lang-btn w-full flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition text-left" data-lang="ja"><img src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15" class="inline-block rounded-[2px]"><span>日本語</span><span class="ml-auto text-[10px] tracking-wider text-gray-500">JP</span></button></li>
+                    <li><button onclick="setLang('ko')" class="lang-btn w-full flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition text-left" data-lang="ko"><img src="https://flagcdn.com/24x18/kr.png" alt="한국어" width="20" height="15" class="inline-block rounded-[2px]"><span>한국어</span><span class="ml-auto text-[10px] tracking-wider text-gray-500">KO</span></button></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 pb-16 px-4 text-center">
-        <img src="7aSanki.png" alt="Logo" class="w-48 h-auto mx-auto mb-6 object-contain drop-shadow-[0_0_15px_rgba(255,106,0,0.3)]" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
+    <!-- Embedded content viewer: opens GDDs / CVs below the fixed header -->
+    <div id="viewer" class="fixed left-0 right-0 bottom-0 z-30 bg-darkBg flex-col">
+        <button onclick="closeViewer()" class="absolute top-4 left-4 z-20 bg-accent hover:bg-accentHover text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg" aria-label="Back to portfolio" title="Back to portfolio">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </button>
+        <div id="viewer-loading" class="absolute inset-0 z-10 flex items-center justify-center bg-darkBg">
+            <div class="viewer-spinner"></div>
+        </div>
+        <iframe id="viewer-frame" title="Embedded content" class="relative flex-1 w-full border-0 bg-white block"></iframe>
+    </div>
+
+    <header id="top" class="pt-32 pb-16 px-4 text-center">
+        <img src="7aSanki.png" alt="Logo" class="hero-emblem w-64 h-auto mx-auto mb-6 object-contain" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide" id="dynamicName">M ALASHRAF TOLIMAT</h1>
         
@@ -344,9 +500,9 @@
         </p>
         <p class="text-accent mb-8" data-i18n="studentAt">Student at TECHNOS COLLEGE, Tokyo</p>
 
-        <div class="flex justify-center gap-4">
+        <div class="flex flex-wrap justify-center gap-4">
             <a href="#projects" class="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded font-bold transition flex items-center gap-2" data-i18n="btnProjects">VIEW PROJECTS</a>
-            <a id="cv-link" href="Resume_English.pdf" target="_blank" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
+            <a id="cv-link" href="Resume_English.pdf" data-viewer="CV" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
         </div>
     </header>
 
@@ -363,7 +519,7 @@
         <span class="oro-line"></span>
     </div>
 
-    <section class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
+    <section id="about" class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div class="profile-frame flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
                 <img src="MY-PHOTO.JPG" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'">
@@ -373,6 +529,9 @@
                 <h3 class="text-2xl font-bold mb-4 text-white uppercase tracking-wider" data-i18n="aboutTitle">ABOUT ME</h3>
                 <p class="text-gray-300 leading-relaxed text-sm md:text-base" data-i18n="aboutDesc">
                     A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.
+                </p>
+                <p class="text-gray-400 leading-relaxed text-sm md:text-base mt-3" data-i18n="aboutHobby">
+                    Away from the screen I build plastic model kits — especially Macross mecha. Once I start one, hours disappear and I completely forget my surroundings.
                 </p>
             </div>
         </div>
@@ -384,128 +543,140 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; window.open('echos.html', '_blank')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="malik.png" alt="Echoes of Damascus" loading="lazy" class="w-full h-full object-contain p-2 group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; openViewer('echos.html', 'ECHOES OF DAMASCUS');">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-book-open absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-book-open text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GDD</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">GDD</span>
-                            <span class="border border-gray-600 px-2 py-1 rounded">Game Design</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Game Design</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal1')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 overflow-hidden relative">
-                        <img src="solframe-thumb.gif" alt="Sol Frame" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-play text-xl ml-1"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal1')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-gamepad absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-gamepad text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GIF</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GAME</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">Unity</span>
-                            <span class="border border-gray-600 px-2 py-1 rounded">C#</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">Unity</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">C#</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal2')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="technos1.jpg" alt="3D Model" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-images text-xl"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal2')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-cube absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-cube text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">3D</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">3D</span>
-                            <span class="border border-gray-600 px-2 py-1 rounded">Maya</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">3D</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Maya</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal3')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="zelda copy.jpg" alt="Zelda Pixel Art" loading="lazy" class="w-full h-full object-cover pixelated group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-images text-xl"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal3')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-palette absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-palette text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">ART</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">Photoshop</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">Photoshop</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
                 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="openModal('modal4')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="DE.warframetgs.jpg" alt="TGS 2024" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.style.display='none'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-images text-xl"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal4')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-camera-retro absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-camera-retro text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GALLERY</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">EVENT</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">Event</span>
-                            <span class="border border-gray-600 px-2 py-1 rounded">Networking</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">Event</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Networking</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
-                <div class="group bg-cardBg rounded-lg p-4 neon-border cursor-pointer hover:-translate-y-1 hover:border-accent transition duration-300" onclick="window.open('Barjees_GDD.html', '_blank')">
-                    <div class="h-40 bg-gray-900 rounded mb-4 flex items-center justify-center overflow-hidden relative">
-                        <img src="BarjeesBG.jpg" alt="Barjees GDD" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" style="object-position: center 40%;" onerror="this.src='https://via.placeholder.com/300x160/1b222c/ff6a00?text=Barjees'">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center z-10">
-                            <div class="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition duration-300 shadow-lg">
-                                <i class="fa-solid fa-arrow-up-right-from-square text-xl"></i>
-                            </div>
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openViewer('Barjees_GDD.html', 'BARJEES');">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-chess-board absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-chess-board text-xl"></i>
                         </div>
-                        <span class="absolute bottom-2 right-2 bg-black/80 text-xs px-2 py-1 rounded font-mono tracking-wider text-white z-20">GDD</span>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
-                    <p class="text-sm text-gray-400 mb-4 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
-                    <div class="flex justify-between items-center border-t border-gray-700 pt-3">
-                        <div class="flex gap-2 text-xs font-mono text-gray-400">
-                            <span class="border border-gray-600 px-2 py-1 rounded">GDD</span>
-                            <span class="border border-gray-600 px-2 py-1 rounded">Board Game</span>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Board Game</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
                         </div>
-                        <span class="text-gray-500 group-hover:text-accent transition"><i class="fa-solid fa-circle-chevron-right text-lg"></i></span>
                     </div>
                 </div>
 
@@ -513,59 +684,100 @@
         </div>
     </section>
 
-    <section class="py-12 px-4 bg-cardBg/30 border-y border-gray-800">
+    <section id="skills" class="py-24 px-4 bg-cardBg/30 border-y border-gray-800">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
-            
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
-                        <i class="fa-solid fa-gamepad text-3xl text-gray-300 mb-2"></i>
-                        <span class="text-sm text-gray-400 font-bold">Game Dev</span>
-                        <span class="text-xs text-gray-500 mt-1">Unity</span>
+            <h3 class="text-2xl font-bold mb-5 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-gamepad text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_GameDev">Game Dev</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
-                        <i class="fa-solid fa-code text-3xl text-gray-300 mb-2"></i>
-                        <span class="text-sm text-gray-400 font-bold">Code</span>
-                        <span class="text-xs text-gray-500 mt-1">C#</span>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-code text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_Code">Code</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">OOP</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
-                        <i class="fa-solid fa-pen-ruler text-3xl text-gray-300 mb-2"></i>
-                        <span class="text-sm text-gray-400 font-bold">Design</span>
-                        <span class="text-xs text-gray-500 mt-1">Maya / PS</span>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-pen-ruler text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_Design">Design</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Maya</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Photoshop</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_UIUX">UI/UX</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center">
-                        <i class="fa-solid fa-volume-high text-3xl text-gray-300 mb-2"></i>
-                        <span class="text-sm text-gray-400 font-bold">Audio</span>
-                        <span class="text-xs text-gray-500 mt-1">Cubase</span>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-volume-high text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_Audio">Audio</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Cubase</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoundDesign">Sound Design</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-computer text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_PCBuild">PC Building</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Assembly">Assembly</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Teardown">Teardown</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Upgrades">Upgrades</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
+                        <i class="fa-solid fa-screwdriver-wrench text-3xl text-accent mb-3"></i>
+                        <span class="text-base text-gray-200 font-bold" data-i18n="skills_TechRepair">Tech Repair</span>
+                        <div class="flex flex-wrap justify-center gap-1.5 mt-4">
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_HardwareFix">Hardware Fix</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoftwareFix">Software Fix</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Diagnostics">Diagnostics</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex-1 bg-cardBg p-6 rounded-lg border border-gray-800 flex flex-col justify-center">
-                    <ul class="space-y-4 text-sm font-bold text-gray-300">
-                        <li class="flex items-center gap-4">
-                            <span class="w-32" data-i18n="langAr">ARABIC</span>
-                            <div class="flex-1 flex gap-1 h-2">
-                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div>
-                            </div>
+                <div class="bg-cardBg p-6 sm:p-8 rounded-lg border border-gray-800 flex flex-col">
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-gray-400 pb-5 mb-6 border-b border-gray-800">
+                        <span class="flex items-center"><i class="fa-solid fa-location-dot text-accent mr-2"></i><span data-i18n="hlLocation">Tokyo, Japan</span></span>
+                        <span class="flex items-center text-green-400"><i class="fa-solid fa-circle text-[6px] mr-2"></i><span data-i18n="hlOpen">Open to work</span></span>
+                    </div>
+                    <div class="flex items-center gap-2 mb-5">
+                        <i class="fa-solid fa-language text-accent"></i>
+                        <span class="gamer-font text-xs uppercase tracking-[0.25em] text-gray-400" data-i18n="hlLanguages">4 Languages</span>
+                    </div>
+                    <ul class="space-y-6 text-sm font-bold text-gray-300">
+                        <li class="flex items-center gap-3 sm:gap-5">
+                            <img src="https://flagcdn.com/24x18/sa.png" alt="Arabic" width="24" height="18" class="rounded-[2px] flex-none">
+                            <span class="w-20 sm:w-28 text-gray-200" data-i18n="langAr">ARABIC</span>
+                            <span class="hidden sm:inline-flex items-center justify-center w-40 whitespace-nowrap text-[10px] font-mono uppercase tracking-wider text-accent/90 border border-accent/25 bg-accent/5 rounded px-2 py-0.5 flex-none" data-i18n="levelNative">Native</span>
+                            <div class="flex-1 lang-track"><div class="lang-fill" style="width:100%"></div></div>
                         </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-32" data-i18n="langEn">ENGLISH</span>
-                            <div class="flex-1 flex gap-1 h-2">
-                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
-                            </div>
+                        <li class="flex items-center gap-3 sm:gap-5">
+                            <img src="https://flagcdn.com/24x18/gb.png" alt="English" width="24" height="18" class="rounded-[2px] flex-none">
+                            <span class="w-20 sm:w-28 text-gray-200" data-i18n="langEn">ENGLISH</span>
+                            <span class="hidden sm:inline-flex items-center justify-center w-40 whitespace-nowrap text-[10px] font-mono uppercase tracking-wider text-accent/90 border border-accent/25 bg-accent/5 rounded px-2 py-0.5 flex-none" data-i18n="levelConversational">Conversational</span>
+                            <div class="flex-1 lang-track"><div class="lang-fill" style="width:60%"></div></div>
                         </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-32" data-i18n="langJa">JAPANESE</span>
-                            <div class="flex-1 flex gap-1 h-2">
-                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
-                            </div>
+                        <li class="flex items-center gap-3 sm:gap-5">
+                            <img src="https://flagcdn.com/24x18/jp.png" alt="Japanese" width="24" height="18" class="rounded-[2px] flex-none">
+                            <span class="w-20 sm:w-28 text-gray-200" data-i18n="langJa">JAPANESE</span>
+                            <span class="hidden sm:inline-flex items-center justify-center w-40 whitespace-nowrap text-[10px] font-mono uppercase tracking-wider text-accent/90 border border-accent/25 bg-accent/5 rounded px-2 py-0.5 flex-none" data-i18n="levelJlpt">JLPT N2</span>
+                            <div class="flex-1 lang-track"><div class="lang-fill" style="width:80%"></div></div>
                         </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-32" data-i18n="langTr">TURKISH</span>
-                            <div class="flex-1 flex gap-1 h-2">
-                                <div class="bg-white w-1/5 rounded-sm"></div><div class="bg-white w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div><div class="bg-gray-700 w-1/5 rounded-sm"></div>
-                            </div>
+                        <li class="flex items-center gap-3 sm:gap-5">
+                            <img src="https://flagcdn.com/24x18/tr.png" alt="Turkish" width="24" height="18" class="rounded-[2px] flex-none">
+                            <span class="w-20 sm:w-28 text-gray-200" data-i18n="langTr">TURKISH</span>
+                            <span class="hidden sm:inline-flex items-center justify-center w-40 whitespace-nowrap text-[10px] font-mono uppercase tracking-wider text-accent/90 border border-accent/25 bg-accent/5 rounded px-2 py-0.5 flex-none" data-i18n="levelC1">Proficiency Exam C1</span>
+                            <div class="flex-1 lang-track"><div class="lang-fill" style="width:80%"></div></div>
                         </li>
                     </ul>
                 </div>
@@ -573,7 +785,7 @@
         </div>
     </section>
 
-    <footer class="py-16 px-4 max-w-6xl mx-auto">
+    <footer id="contact" class="py-16 px-4 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardBg/50 p-8 rounded-lg border border-gray-800">
             <form id="contact-form" class="flex flex-col gap-3 w-full">
                 <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
@@ -582,17 +794,22 @@
                 <input type="text" name="name" placeholder="Name" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
                 <input type="email" name="email" placeholder="Email" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded">
                 <textarea name="message" placeholder="Message" rows="3" required data-fs-field class="bg-transparent border border-gray-700 p-2 text-sm text-white focus:outline-none focus:border-accent rounded resize-none"></textarea>
-                
+
+                <!-- Cloudflare Turnstile CAPTCHA (existing widget).
+                     Site key is public and lives here; the SECRET key must be entered in
+                     Formspree -> your form -> Settings -> Turnstile (server-side verification). -->
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAFF4YFw1RjVLrNOm" data-action="contact" data-theme="dark"></div>
+
                 <button type="submit" data-fs-submit-btn class="border border-gray-600 hover:border-accent hover:text-white text-gray-300 text-xs py-2 px-4 rounded w-max transition">
                     <span data-i18n="btnContactSubmit">Submit</span>
                 </button>
             </form>
 
             <div class="text-center flex flex-col items-center gap-4 border-t md:border-t-0 md:border-s border-gray-700 pt-6 md:pt-0">
-                <a href="mailto:ashraftmtbus@gmail.com" class="text-gray-300 hover:text-white transition font-mono text-sm md:text-base">ashraftmtbus@gmail.com</a>
+                <span class="text-gray-300 font-mono text-sm md:text-base cursor-default select-all">ashraftmtbus@gmail.com</span>
                 <div class="flex gap-6 text-3xl text-gray-400 mt-2">
-                    <a href="https://github.com/malashraftulimat" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://7asanki.itch.io/" target="_blank" class="hover:text-accent transition"><i class="fa-brands fa-itch-io"></i></a>
+                    <a href="https://github.com/malashraftulimat" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://7asanki.itch.io/" class="hover:text-accent transition"><i class="fa-brands fa-itch-io"></i></a>
                 </div>
             </div>
         </div>
@@ -612,8 +829,8 @@
             </video>
             <p class="text-gray-300 mb-6 text-sm" data-i18n="p1DescLong">A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.</p>
             <div class="flex flex-wrap gap-4">
-                <a href="https://7asanki.itch.io/solframe" target="_blank" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-play"></i><span data-i18n="btnDemo">Play Demo on itch.io</span></a>
-                <a href="solframe_gdd.html" target="_blank" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-file-lines"></i><span data-i18n="btnGDD">Read Full GDD</span></a>
+                <a href="https://itch.io/embed/4681703" data-viewer="ITCH DEMO" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-play"></i><span data-i18n="btnDemo">Play Demo on itch.io</span></a>
+                <a href="solframe_gdd.html" data-viewer="SOL FRAME GDD" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-file-lines"></i><span data-i18n="btnGDD">Read Full GDD</span></a>
             </div>
         </div>
     </div>
@@ -757,6 +974,7 @@
                 btnGDD: "Read Full GDD",
                 aboutTitle: "ABOUT ME",
                 aboutDesc: "A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.",
+                aboutHobby: "Away from the screen I build plastic model kits — especially Macross mecha. Once I start one, hours disappear and I completely forget my surroundings.",
                 projectsTitle: "FEATURED WORKS",
                 p1Title: "Sol Frame",
                 p1Desc: "Chicken Invaders style space shooter game.",
@@ -775,6 +993,22 @@
                 p6Title: "Barjees Board Game",
                 p6Desc: "A complete Game Design Document modernizing the traditional board game.",
                 skillsTitle: "SKILLS & LANGUAGES",
+                skills_GameDev: "Game Dev",
+                skills_Code: "Code",
+                skills_Design: "Design",
+                skills_Audio: "Audio",
+                skills_PCBuild: "PC Building",
+                skills_TechRepair: "Tech Repair",
+                chip_Gameplay: "Gameplay",
+                chip_AITools: "AI Tools",
+                chip_UIUX: "UI/UX",
+                chip_SoundDesign: "Sound Design",
+                chip_Assembly: "Assembly",
+                chip_Teardown: "Teardown",
+                chip_Upgrades: "Upgrades",
+                chip_HardwareFix: "Hardware Fix",
+                chip_SoftwareFix: "Software Fix",
+                chip_Diagnostics: "Diagnostics",
                 langAr: "ARABIC",
                 langEn: "ENGLISH",
                 langJa: "JAPANESE",
@@ -782,7 +1016,25 @@
                 btnContactSubmit: "Submit",
                 msgSuccess: "Message sent successfully!",
                 msgError: "Failed to send message. Please try again.",
-                clickToEnlarge: "CLICK IMAGES TO ENLARGE"
+                clickToEnlarge: "CLICK IMAGES TO ENLARGE",
+                navHome: "HOME",
+                navAbout: "ABOUT",
+                navProjects: "PROJECTS",
+                navSkills: "SKILLS",
+                navContact: "CONTACT",
+                captchaRobot: "I'm not a robot",
+                captchaQuestion: "Solve",
+                captchaOk: "Verified",
+                captchaWrong: "Incorrect answer, try again.",
+                captchaRequired: "Please complete the verification.",
+                levelNative: "Native",
+                levelConversational: "Conversational",
+                levelJlpt: "JLPT N2",
+                levelC1: "Proficiency Exam C1",
+                hlLanguages: "4 Languages",
+                hlStack: "Unity + C#",
+                hlLocation: "Tokyo, Japan",
+                hlOpen: "Open to work"
             },
             ar: {
                 name: "محمد الأشرف طليمات",
@@ -794,6 +1046,7 @@
                 btnGDD: "قراءة وثيقة التصميم",
                 aboutTitle: "نبذة عني",
                 aboutDesc: "طالب سوري مقيم في طوكيو ومطور ألعاب طموح. أدرس حالياً في تيكنوس كوليج وأركز على البرمجة باستخدام Unity و C#. أدمج بين التقنيات الحديثة وأدوات الذكاء الاصطناعي لبناء أنظمة ممتعة. مستعد للعمل حضوريًا أو عن بُعد.",
+                aboutHobby: "بعيدًا عن الشاشة، أبني مجسمات بلاستيكية — وخصوصًا روبوتات ماكروس. عندما أبدأ في تجميع أحدها، تمرّ الساعات دون أن أشعر وأنسى ما حولي تمامًا.",
                 projectsTitle: "أبرز الأعمال",
                 p1Title: "سول فريم",
                 p1Desc: "لعبة إطلاق نار فضائية بأسلوب Chicken Invaders.",
@@ -812,6 +1065,22 @@
                 p6Title: "لعبة البرجيس",
                 p6Desc: "وثيقة تصميم متكاملة (GDD) لتحديث لعبة الطاولة التراثية البرجيس.",
                 skillsTitle: "المهارات واللغات",
+                skills_GameDev: "تطوير الألعاب",
+                skills_Code: "البرمجة",
+                skills_Design: "التصميم",
+                skills_Audio: "الصوت",
+                skills_PCBuild: "تجميع الحواسيب",
+                skills_TechRepair: "إصلاح الأجهزة",
+                chip_Gameplay: "أسلوب اللعب",
+                chip_AITools: "أدوات الذكاء الاصطناعي",
+                chip_UIUX: "واجهة/تجربة المستخدم",
+                chip_SoundDesign: "تصميم الصوت",
+                chip_Assembly: "التجميع",
+                chip_Teardown: "التفكيك",
+                chip_Upgrades: "الترقيات",
+                chip_HardwareFix: "إصلاح العتاد",
+                chip_SoftwareFix: "إصلاح البرمجيات",
+                chip_Diagnostics: "التشخيص",
                 langAr: "العربية",
                 langEn: "الإنجليزية",
                 langJa: "اليابانية",
@@ -819,7 +1088,25 @@
                 btnContactSubmit: "إرسال",
                 msgSuccess: "تم إرسال الرسالة بنجاح!",
                 msgError: "فشل إرسال الرسالة. حاول مرة أخرى.",
-                clickToEnlarge: "اضغط على الصورة للتكبير"
+                clickToEnlarge: "اضغط على الصورة للتكبير",
+                navHome: "الرئيسية",
+                navAbout: "نبذة",
+                navProjects: "المشاريع",
+                navSkills: "المهارات",
+                navContact: "تواصل",
+                captchaRobot: "أنا لست روبوتًا",
+                captchaQuestion: "حل",
+                captchaOk: "تم التحقق",
+                captchaWrong: "إجابة خاطئة، حاول مرة أخرى.",
+                captchaRequired: "يرجى إكمال عملية التحقق.",
+                levelNative: "لغة أم",
+                levelConversational: "محادثة",
+                levelJlpt: "JLPT N2",
+                levelC1: "اختبار كفاءة C1",
+                hlLanguages: "4 لغات",
+                hlStack: "Unity + C#",
+                hlLocation: "طوكيو، اليابان",
+                hlOpen: "متاح للعمل"
             },
             ja: {
                 name: "エム アルアシュラフ トリマト",
@@ -831,6 +1118,7 @@
                 btnGDD: "企画書を読む",
                 aboutTitle: "自己紹介",
                 aboutDesc: "東京を拠点とするシリア出身の学生。テクノスカレッジでUnityとC#を使ったゲームプログラミングを学んでいます。最新技術を活用して面白いゲームシステムを構築することに注力しています。",
+                aboutHobby: "画面から離れているときは、プラモデル、とくにマクロスのメカを作っています。作り始めると時間があっという間に過ぎ、周りを忘れてしまうほど夢中になります。",
                 projectsTitle: "注目のプロジェクト",
                 p1Title: "ソル・フレーム",
                 p1Desc: "Chicken Invaders風のスペースシューティングゲーム。",
@@ -849,6 +1137,22 @@
                 p6Title: "バルジース (伝統的ボードゲーム)",
                 p6Desc: "中東の伝統的なボードゲーム「バルジース」を現代化したゲームデザインドキュメント（GDD）。",
                 skillsTitle: "スキルとツール",
+                skills_GameDev: "ゲーム開発",
+                skills_Code: "コード",
+                skills_Design: "デザイン",
+                skills_Audio: "オーディオ",
+                skills_PCBuild: "PC組み立て",
+                skills_TechRepair: "修理・整備",
+                chip_Gameplay: "ゲームプレイ",
+                chip_AITools: "AIツール",
+                chip_UIUX: "UI/UX",
+                chip_SoundDesign: "サウンドデザイン",
+                chip_Assembly: "組み立て",
+                chip_Teardown: "分解",
+                chip_Upgrades: "アップグレード",
+                chip_HardwareFix: "ハードウェア修理",
+                chip_SoftwareFix: "ソフトウェア修理",
+                chip_Diagnostics: "診断",
                 langAr: "アラビア語",
                 langEn: "英語",
                 langJa: "日本語",
@@ -856,7 +1160,25 @@
                 btnContactSubmit: "送信",
                 msgSuccess: "メッセージが送信されました！",
                 msgError: "送信に失敗しました。もう一度お試しください。",
-                clickToEnlarge: "クリックして画像を拡大"
+                clickToEnlarge: "クリックして画像を拡大",
+                navHome: "ホーム",
+                navAbout: "自己紹介",
+                navProjects: "プロジェクト",
+                navSkills: "スキル",
+                navContact: "お問い合わせ",
+                captchaRobot: "私はロボットではありません",
+                captchaQuestion: "計算",
+                captchaOk: "確認済み",
+                captchaWrong: "答えが違います。もう一度お試しください。",
+                captchaRequired: "認証を完了してください。",
+                levelNative: "ネイティブ",
+                levelConversational: "日常会話",
+                levelJlpt: "日本語能力試験 N2",
+                levelC1: "語学検定 C1",
+                hlLanguages: "4言語",
+                hlStack: "Unity + C#",
+                hlLocation: "東京",
+                hlOpen: "仕事募集中"
             },
             ko: {
                 name: "엠 알아슈라프 토리마트",
@@ -868,6 +1190,7 @@
                 btnGDD: "기획서 보기",
                 aboutTitle: "자기소개",
                 aboutDesc: "도쿄에 거주하는 시리아 출신 학생입니다. 현재 테크노스 대학에서 Unity와 C#을 중심으로 게임 프로그래밍을 배우고 있습니다.",
+                aboutHobby: "화면 밖에서는 프라모델, 특히 마크로스 메카를 만듭니다. 하나를 만들기 시작하면 시간이 순식간에 지나가고 주변을 완전히 잊어버립니다.",
                 projectsTitle: "주요 프로젝트",
                 p1Title: "솔 프레임",
                 p1Desc: "Chicken Invaders 스타일의 우주 슈팅 게임.",
@@ -886,6 +1209,22 @@
                 p6Title: "바르지스 (전통 보드게임)",
                 p6Desc: "전통 보드게임 바르지스를 현대화한 종합적인 게임 기획서(GDD).",
                 skillsTitle: "기술 및 언어",
+                skills_GameDev: "게임 개발",
+                skills_Code: "코드",
+                skills_Design: "디자인",
+                skills_Audio: "오디오",
+                skills_PCBuild: "PC 조립",
+                skills_TechRepair: "기술 수리",
+                chip_Gameplay: "게임플레이",
+                chip_AITools: "AI 도구",
+                chip_UIUX: "UI/UX",
+                chip_SoundDesign: "사운드 디자인",
+                chip_Assembly: "조립",
+                chip_Teardown: "분해",
+                chip_Upgrades: "업그레이드",
+                chip_HardwareFix: "하드웨어 수리",
+                chip_SoftwareFix: "소프트웨어 수리",
+                chip_Diagnostics: "진단",
                 langAr: "아랍어",
                 langEn: "영어",
                 langJa: "일본어",
@@ -893,7 +1232,25 @@
                 btnContactSubmit: "제출",
                 msgSuccess: "메시지가 성공적으로 전송되었습니다!",
                 msgError: "전송에 실패했습니다. 다시 시도해 주세요.",
-                clickToEnlarge: "클릭하여 이미지 확대"
+                clickToEnlarge: "클릭하여 이미지 확대",
+                navHome: "홈",
+                navAbout: "소개",
+                navProjects: "프로젝트",
+                navSkills: "기술",
+                navContact: "연락처",
+                captchaRobot: "저는 로봇이 아닙니다",
+                captchaQuestion: "계산",
+                captchaOk: "확인됨",
+                captchaWrong: "답이 틀렸습니다. 다시 시도하세요.",
+                captchaRequired: "인증을 완료해 주세요.",
+                levelNative: "원어민",
+                levelConversational: "일상 회화",
+                levelJlpt: "JLPT N2",
+                levelC1: "어학 시험 C1",
+                hlLanguages: "4개 언어",
+                hlStack: "Unity + C#",
+                hlLocation: "도쿄",
+                hlOpen: "채용 가능"
             }
         };
 
@@ -926,6 +1283,21 @@
             });
             document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('text-white');
             document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.remove('text-gray-400');
+
+            // Update the language dropdown trigger
+            const langMeta = {
+                ar: { flag: 'https://flagcdn.com/24x18/sa.png', short: 'AR' },
+                en: { flag: 'https://flagcdn.com/24x18/gb.png', short: 'EN' },
+                ja: { flag: 'https://flagcdn.com/24x18/jp.png', short: 'JP' },
+                ko: { flag: 'https://flagcdn.com/24x18/kr.png', short: 'KO' }
+            };
+            const meta = langMeta[lang];
+            if (meta) {
+                const curFlag = document.getElementById('lang-current-flag');
+                const curLabel = document.getElementById('lang-current-label');
+                if (curFlag) curFlag.src = meta.flag;
+                if (curLabel) curLabel.textContent = meta.short;
+            }
 
             const cvLink = document.getElementById('cv-link');
             if (cvLink && cvFiles[lang]) {
@@ -969,6 +1341,51 @@
             closeLightbox();
         }
 
+        // Embedded viewer (keeps the header visible above GDDs / CVs)
+        let viewerRevealTimer = null;
+        function openViewer(url, title) {
+            const viewer = document.getElementById('viewer');
+            const frame = document.getElementById('viewer-frame');
+            if (!viewer || !frame || !url) return;
+            syncViewerTop();
+            viewer.classList.remove('content-ready');
+            if (frame.getAttribute('src') !== url) frame.setAttribute('src', url);
+            // animate the panel in on the next frame, then reveal content once it has settled
+            requestAnimationFrame(() => viewer.classList.add('viewer-open'));
+            clearTimeout(viewerRevealTimer);
+            viewerRevealTimer = setTimeout(() => viewer.classList.add('content-ready'), 270);
+            document.body.style.overflow = 'hidden';
+        }
+        function closeViewer() {
+            const viewer = document.getElementById('viewer');
+            const frame = document.getElementById('viewer-frame');
+            if (!viewer) return;
+            viewer.classList.remove('viewer-open');
+            viewer.classList.remove('content-ready');
+            clearTimeout(viewerRevealTimer);
+            document.body.style.overflow = '';
+            setTimeout(function () {
+                if (!viewer.classList.contains('viewer-open') && frame) frame.src = 'about:blank';
+            }, 420);
+        }
+        function syncViewerTop() {
+            const nav = document.querySelector('nav');
+            const viewer = document.getElementById('viewer');
+            if (nav && viewer) viewer.style.top = nav.offsetHeight + 'px';
+        }
+        window.addEventListener('resize', syncViewerTop);
+        window.addEventListener('load', syncViewerTop);
+        syncViewerTop();
+
+        // Route marked links into the embedded viewer instead of leaving the page
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('[data-viewer]');
+            if (!link) return;
+            e.preventDefault();
+            closeAllModals();
+            openViewer(link.getAttribute('href'), link.getAttribute('data-viewer'));
+        });
+
         // Lightbox Gallery Logic
         function openLightbox(imgSrc) {
             const lb = document.getElementById('lightbox');
@@ -989,8 +1406,93 @@
         };
         
         document.addEventListener('keydown', e => { 
-            if (e.key === 'Escape') closeAllModals(); 
+            if (e.key === 'Escape') { closeAllModals(); closeViewer(); }
         });
+
+        // Language dropdown open/close
+        (function () {
+            const toggle = document.getElementById('lang-toggle');
+            const menu = document.getElementById('lang-menu');
+            if (!toggle || !menu) return;
+            function closeMenu() {
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const isHidden = menu.classList.toggle('hidden');
+                toggle.setAttribute('aria-expanded', String(!isHidden));
+            });
+            menu.querySelectorAll('button').forEach(function (b) {
+                b.addEventListener('click', closeMenu);
+            });
+            document.addEventListener('click', function (e) {
+                if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+            });
+        })();
+
+        // Highlight the nav link for the section currently in view
+        (function () {
+            const links = Array.from(document.querySelectorAll('[data-nav]'));
+            const pairs = links
+                .map(function (l) { return { link: l, section: document.querySelector(l.getAttribute('href')) }; })
+                .filter(function (p) { return p.section; });
+            if (!pairs.length) return;
+
+            function setActive(link) {
+                links.forEach(function (l) { l.classList.toggle('active', l === link); });
+            }
+
+            function onScroll() {
+                // at the very bottom, always light up the last section (footer/contact)
+                const bottomReached = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+                if (bottomReached) {
+                    setActive(pairs[pairs.length - 1].link);
+                    return;
+                }
+                const line = window.innerHeight * 0.35;
+                let current = pairs[0];
+                for (let i = 0; i < pairs.length; i++) {
+                    if (pairs[i].section.getBoundingClientRect().top <= line) current = pairs[i];
+                }
+                setActive(current.link);
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            onScroll();
+        })();
+
+        // If a section is opened from the header while the viewer is showing,
+        // close the viewer so the smooth scroll actually lands on the section.
+        document.querySelectorAll('[data-nav]').forEach(function (link) {
+            link.addEventListener('click', function () { closeViewer(); });
+        });
+
+        // CAPTCHA is handled by Cloudflare Turnstile (see the .cf-turnstile widget in the
+        // contact form). Formspree verifies the cf-turnstile-response token server-side when
+        // the Turnstile secret is configured for the form in the Formspree dashboard.
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+            const resetWidget = function () {
+                try { if (window.turnstile && turnstile.reset) turnstile.reset(); } catch (e) {}
+            };
+            // Turnstile tokens are single-use: refresh the widget on manual reset...
+            form.addEventListener('reset', resetWidget);
+            // ...and after a successful submit, so the next message can be sent.
+            const ok = form.querySelector('[data-fs-success]');
+            if (ok && window.MutationObserver) {
+                new MutationObserver(function () {
+                    if (ok.style.display !== 'none') resetWidget();
+                }).observe(ok, { attributes: true, attributeFilter: ['style', 'class'] });
+            }
+        })();
 
         // Initialize language on load so static HTML matches the active language
         setLang('en');

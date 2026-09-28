@@ -25,20 +25,44 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px 90px;}
 
   /* ---------- Language bar ---------- */
+  /* Language bar keeps the same fixed position in every language. */
   .langbar{
     position:fixed;top:14px;right:16px;z-index:100;
-    display:flex;direction:ltr;gap:4px;padding:5px;border-radius:999px;
-    background:rgba(28,22,16,.86);backdrop-filter:blur(9px);
-    box-shadow:0 8px 22px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);
+    direction:ltr;
   }
-  /* Language bar keeps the same fixed position in every language. */
-  .langbar button{
-    border:none;background:transparent;color:#f2e7d2;cursor:pointer;
+  .langbar-toggle{
+    display:flex;align-items:center;gap:8px;
+    border:1px solid rgba(255,255,255,.18);background:rgba(28,22,16,.86);color:#f2e7d2;cursor:pointer;
     font-family:Verdana,Geneva,sans-serif;font-size:.76rem;font-weight:600;
-    padding:7px 13px;border-radius:999px;letter-spacing:.02em;transition:.18s;
+    padding:8px 14px;border-radius:999px;letter-spacing:.02em;transition:.18s;
+    backdrop-filter:blur(9px);box-shadow:0 8px 22px rgba(0,0,0,.28);
   }
-  .langbar button:hover{background:rgba(255,255,255,.14);}
-  .langbar button.active{background:var(--gold);color:#241a12;}
+  .langbar-toggle:hover{border-color:var(--gold);}
+  .langbar-caret{font-size:.58rem;opacity:.7;}
+  .lang-menu{
+    position:absolute;top:calc(100% + 8px);right:0;min-width:176px;padding:6px;
+    display:flex;flex-direction:column;gap:2px;
+    background:rgba(28,22,16,.97);border:1px solid rgba(255,255,255,.18);border-radius:14px;
+    box-shadow:0 16px 38px rgba(0,0,0,.4);backdrop-filter:blur(9px);
+  }
+  .lang-menu[hidden]{display:none;}
+  .lang-menu button{
+    display:flex;align-items:center;gap:10px;width:100%;
+    border:none;background:transparent;color:#f2e7d2;cursor:pointer;
+    font-family:Verdana,Geneva,sans-serif;font-size:.82rem;font-weight:600;
+    padding:8px 10px;border-radius:9px;letter-spacing:.02em;transition:.18s;text-align:left;
+  }
+  .lang-menu button:hover{background:rgba(255,255,255,.14);}
+  .lang-menu button.active{background:var(--gold);color:#241a12;}
+  .lang-flag{display:inline-block;width:20px;height:15px;border-radius:2px;object-fit:cover;vertical-align:middle;flex:none;}
+  .lang-code{margin-left:auto;font-size:.62rem;letter-spacing:.08em;opacity:.7;}
+
+  /* ---------- Smooth motion ---------- */
+  html{scroll-behavior:smooth;}
+  @keyframes dropIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
+  .lang-menu:not([hidden]){animation:dropIn .2s ease;}
+  a,button{transition:transform .15s ease,color .2s ease,background .2s ease,border-color .2s ease;}
+  a:active,button:active{transform:scale(.95);}
 
   /* ---------- Cover ---------- */
   .cover{
@@ -623,10 +647,17 @@ section{scroll-margin-top:92px;}
 <body>
 
 <div class="langbar" role="group" aria-label="Language">
-  <button data-lang="ar">AR</button>
-  <button data-lang="en" class="active">EN</button>
-  <button data-lang="jp">JP</button>
-  <button data-lang="ko">KO</button>
+  <button type="button" class="langbar-toggle" id="langbar-toggle" aria-haspopup="true" aria-expanded="false">
+    <img class="lang-flag" id="langbar-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15">
+    <span id="langbar-label">EN</span>
+    <span class="langbar-caret">▾</span>
+  </button>
+  <div class="lang-menu" id="lang-menu" hidden>
+    <button data-lang="ar"><img class="lang-flag" src="https://flagcdn.com/24x18/sa.png" alt="العربية" width="20" height="15"><span>العربية</span><span class="lang-code">AR</span></button>
+    <button data-lang="en" class="active"><img class="lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15"><span>English</span><span class="lang-code">EN</span></button>
+    <button data-lang="jp"><img class="lang-flag" src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15"><span>日本語</span><span class="lang-code">JP</span></button>
+    <button data-lang="ko"><img class="lang-flag" src="https://flagcdn.com/24x18/kr.png" alt="한국어" width="20" height="15"><span>한국어</span><span class="lang-code">KO</span></button>
+  </div>
 </div>
 
 <div class="wrap">
@@ -1790,17 +1821,48 @@ function setLang(lang){
   // Arabic flips the page to RTL, but the language bar itself stays
   // anchored in the same place via the base .langbar rules.
   document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-  document.querySelectorAll('.langbar button')
+  document.querySelectorAll('.langbar [data-lang]')
     .forEach(b=>b.classList.toggle('active', b.dataset.lang === lang));
+  const langMeta = {
+    ar:{flag:'https://flagcdn.com/24x18/sa.png',short:'AR'}, en:{flag:'https://flagcdn.com/24x18/gb.png',short:'EN'},
+    jp:{flag:'https://flagcdn.com/24x18/jp.png',short:'JP'}, ko:{flag:'https://flagcdn.com/24x18/kr.png',short:'KO'}
+  };
+  const meta = langMeta[lang];
+  if(meta){
+    const curFlag = document.getElementById('langbar-flag');
+    const curLabel = document.getElementById('langbar-label');
+    if(curFlag) curFlag.src = meta.flag;
+    if(curLabel) curLabel.textContent = meta.short;
+  }
   document.title = (lang === 'ar') ? 'برجيس — وثيقة تصميم اللعبة'
                  : (lang === 'jp') ? 'バルシース — ゲームデザインドキュメント'
                  : (lang === 'ko') ? '바르지스 — 게임 디자인 문서'
                  : 'Barjees — Game Design Document';
   try{ localStorage.setItem('barjees_lang', lang); }catch(e){}
 }
-document.querySelectorAll('.langbar button').forEach(b=>{
-  b.addEventListener('click', ()=>setLang(b.dataset.lang));
+document.querySelectorAll('.langbar [data-lang]').forEach(b=>{
+  b.addEventListener('click', ()=>{ setLang(b.dataset.lang); closeLangMenu(); });
 });
+
+/* Language dropdown open/close */
+const langToggle = document.getElementById('langbar-toggle');
+const langMenu = document.getElementById('lang-menu');
+function closeLangMenu(){
+  if(!langMenu) return;
+  langMenu.hidden = true;
+  if(langToggle) langToggle.setAttribute('aria-expanded','false');
+}
+if(langToggle && langMenu){
+  langToggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    langMenu.hidden = !langMenu.hidden;
+    langToggle.setAttribute('aria-expanded', String(!langMenu.hidden));
+  });
+  document.addEventListener('click', (e)=>{
+    if(!langMenu.hidden && !langMenu.contains(e.target) && !langToggle.contains(e.target)) closeLangMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLangMenu(); });
+}
 
 
 
