@@ -214,11 +214,14 @@
   .pill.orange{color:#ffc07a;border-color:rgba(255,154,42,.35)}
 
   /* tables */
-  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-  table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
-  /* Section 06 — Controls: let the action tables fit their boxes (no scrollbars) */
-  #controls .tablewrap{overflow-x:hidden}
-  #controls table{min-width:0}
+  .tablewrap{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;min-width:0;font-size:14.5px}
+  th,td{word-break:break-word}
+  @media(max-width:560px){
+    table{font-size:12.5px}
+    th{padding:9px 10px;font-size:9px}
+    td{padding:8px 10px}
+  }
   th{
     font-family:'Orbitron';font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
     color:var(--cyan);text-align:left;padding:12px 14px;background:rgba(0,212,255,.06);
