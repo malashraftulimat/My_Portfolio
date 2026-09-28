@@ -618,6 +618,17 @@
     .card,.pillar,.sector,.wep,.tablewrap,.stat{border-color:#ccc;background:#fff}
     h1,h2,h3,h4,.logo{color:#111!important;text-shadow:none!important}
   }
+
+  /* ---------- Tenno (TT) script mode ---------- */
+  @font-face {
+    font-family: 'tenObet';
+    src: url('tennobet.ttf') format('truetype');
+    font-display: swap;
+  }
+  body.tenno-active,
+  body.tenno-active :not(i):not(code):not(pre):not(input):not(textarea):not(select):not(option):not(svg):not(svg *) {
+    font-family: 'tenObet', sans-serif !important;
+  }
 </style>
 </head>
 <body>
@@ -3278,14 +3289,17 @@ window.SOL_KO = {
   };
 
   function apply(lang) {
-    if (['en', 'ja', 'ar', 'ko', 'tr'].indexOf(lang) === -1) lang = 'en';
-    var dict = lang === 'ja' ? DICT : lang === 'ar' ? AR : lang === 'ko' ? KO : lang === 'tr' ? TR : null;
-    var altDict = lang === 'ja' ? ALT : lang === 'ar' ? ALT_AR : lang === 'ko' ? ALT_KO : lang === 'tr' ? ALT_TR : null;
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.body.classList.toggle('lang-ja', lang === 'ja');
-    document.body.classList.toggle('lang-ar', lang === 'ar');
-    document.body.classList.toggle('lang-ko', lang === 'ko');
+    if (['en', 'ja', 'ar', 'ko', 'tr', 'tt'].indexOf(lang) === -1) lang = 'en';
+    var isTenno = lang === 'tt';
+    var base = isTenno ? 'en' : lang;
+    var dict = base === 'ja' ? DICT : base === 'ar' ? AR : base === 'ko' ? KO : base === 'tr' ? TR : null;
+    var altDict = base === 'ja' ? ALT : base === 'ar' ? ALT_AR : base === 'ko' ? ALT_KO : base === 'tr' ? ALT_TR : null;
+    document.documentElement.lang = base;
+    document.documentElement.dir = base === 'ar' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('lang-ja', base === 'ja');
+    document.body.classList.toggle('lang-ar', base === 'ar');
+    document.body.classList.toggle('lang-ko', base === 'ko');
+    document.body.classList.toggle('tenno-active', isTenno);
     units.forEach(function (u) {
       var v = dict ? dict[u.key] : null;
       u.el.innerHTML = v || u.en;
@@ -3294,7 +3308,7 @@ window.SOL_KO = {
       var v = altDict ? altDict[o.en] : null;
       o.el.setAttribute('alt', v || o.en);
     });
-    document.title = TITLES[lang] || TITLES.en;
+    document.title = TITLES[base] || TITLES.en;
     try { localStorage.setItem('solgdd.lang', lang); } catch (e) {}
   }
 
@@ -3306,7 +3320,7 @@ window.SOL_KO = {
 
   var saved = 'en';
   try { saved = localStorage.getItem('solgdd.lang') || 'en'; } catch (e) {}
-  apply(['en', 'ja', 'ar', 'ko', 'tr'].indexOf(saved) !== -1 ? saved : 'en');
+  apply(['en', 'ja', 'ar', 'ko', 'tr', 'tt'].indexOf(saved) !== -1 ? saved : 'en');
 })();
 
 </script>

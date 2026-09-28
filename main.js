@@ -444,9 +444,10 @@
 
             // Share the selected language with every GDD so they open in the same language
             try {
-                localStorage.setItem('echos-lang', applyKey);      // Echoes of Damascus
-                localStorage.setItem('solgdd.lang', applyKey);     // Sol Frame
-                localStorage.setItem('barjees_lang', applyKey === 'ja' ? 'jp' : applyKey);    // Barjees (uses 'jp' for Japanese)
+                const syncLang = (lang === 'tt') ? 'tt' : applyKey;
+                localStorage.setItem('echos-lang', syncLang);      // Echoes of Damascus
+                localStorage.setItem('solgdd.lang', syncLang);     // Sol Frame
+                localStorage.setItem('barjees_lang', syncLang === 'ja' ? 'jp' : syncLang);    // Barjees (uses 'jp' for Japanese)
             } catch (e) {}
 
             // Tenno script mode: render the (English) content with the tenObet font
@@ -463,7 +464,7 @@
             }[e.key];
             if (!resolve || !e.newValue) return;
             const lang = resolve(e.newValue);
-            if (['en', 'ar', 'ja', 'ko', 'tr'].indexOf(lang) === -1) return;
+            if (['en', 'ar', 'ja', 'ko', 'tr', 'tt'].indexOf(lang) === -1) return;
             if (lang !== document.documentElement.getAttribute('lang')) setLang(lang);
         });
 

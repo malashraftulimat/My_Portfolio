@@ -642,6 +642,17 @@ section{scroll-margin-top:92px;}
 @media (max-height:460px) and (orientation:landscape){
   .langbar{top:8px;bottom:auto;right:10px;}
 }
+
+/* ---------- Tenno (TT) script mode ---------- */
+@font-face {
+  font-family: 'tenObet';
+  src: url('tennobet.ttf') format('truetype');
+  font-display: swap;
+}
+body.tenno-active,
+body.tenno-active :not(i):not(code):not(pre):not(input):not(textarea):not(select):not(option):not(svg):not(svg *) {
+  font-family: 'tenObet', sans-serif !important;
+}
 </style>
 </head>
 <body>
@@ -2007,20 +2018,23 @@ const I18N = {
    2. LANGUAGE SWITCHING
    ============================================================ */
 function setLang(lang){
-  const dict = I18N[lang] || I18N.en;
+  const isTenno = (lang === 'tt');
+  const applyLang = isTenno ? 'en' : lang;
+  const dict = I18N[applyLang] || I18N.en;
+  document.body.classList.toggle('tenno-active', isTenno);
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
     if(dict[k] != null) el.innerHTML = dict[k];
     else if(I18N.en[k] != null) el.innerHTML = I18N.en[k];
   });
-  document.documentElement.lang = lang;
+  document.documentElement.lang = applyLang;
   // Arabic flips the page to RTL, but the language bar itself stays
   // anchored in the same place via the base .langbar rules.
-  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-  document.title = (lang === 'ar') ? 'برجيس — وثيقة تصميم اللعبة'
-                 : (lang === 'jp') ? 'バルシース — ゲームデザインドキュメント'
-                 : (lang === 'ko') ? '바르지스 — 게임 디자인 문서'
-                 : (lang === 'tr') ? 'Barjees — Oyun Tasarım Belgesi'
+  document.documentElement.dir = (applyLang === 'ar') ? 'rtl' : 'ltr';
+  document.title = (applyLang === 'ar') ? 'برجيس — وثيقة تصميم اللعبة'
+                 : (applyLang === 'jp') ? 'バルシース — ゲームデザインドキュメント'
+                 : (applyLang === 'ko') ? '바르지스 — 게임 디자인 문서'
+                 : (applyLang === 'tr') ? 'Barjees — Oyun Tasarım Belgesi'
                  : 'Barjees — Game Design Document';
   try{ localStorage.setItem('barjees_lang', lang); }catch(e){}
 }
@@ -2205,7 +2219,7 @@ const DIAGRAMS = [
 (function init(){
   let saved='en';
   try{ saved = localStorage.getItem('barjees_lang') || 'en'; }catch(e){}
-  if(!I18N[saved]) saved='en';
+  if(saved !== 'tt' && !I18N[saved]) saved='en';
   setLang(saved);
 })();
 </script>

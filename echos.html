@@ -884,6 +884,16 @@
             .toc a { border-bottom-color: #ddd; }
             .toc .d { border-bottom-color: #bbb; }
         }
+        /* ---------- Tenno (TT) script mode ---------- */
+        @font-face {
+            font-family: 'tenObet';
+            src: url('tennobet.ttf') format('truetype');
+            font-display: swap;
+        }
+        body.tenno-active,
+        body.tenno-active :not(i):not(code):not(pre):not(input):not(textarea):not(select):not(option):not(svg):not(svg *) {
+            font-family: 'tenObet', sans-serif !important;
+        }
     </style>
 </head>
 <body>
@@ -1776,10 +1786,13 @@
 
     function setLang(lang) {
         const html = document.documentElement;
-        html.lang = lang;
-        html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        const isTenno = (lang === 'tt');
+        const applyLang = isTenno ? 'en' : lang;
+        html.lang = applyLang;
+        html.dir = (applyLang === 'ar') ? 'rtl' : 'ltr';
+        document.body.classList.toggle('tenno-active', isTenno);
 
-        const dict = (lang === 'ja') ? null : I18N[lang];
+        const dict = (applyLang === 'ja') ? null : I18N[applyLang];
 
         document.querySelectorAll('[data-t]').forEach(el => {
             const k = el.dataset.t;
