@@ -306,6 +306,12 @@
         }
         @media (prefers-reduced-motion: reduce) {
             .hero-emblem, .nav-lotus { animation: none; }
+            #dynamicName { animation: none; }
+            .oro-emblem { animation: none; }
+            .modal.active, .modal.active > div,
+            #lightbox:not(.hidden), #lightbox:not(.hidden) #lightbox-img,
+            #lang-menu:not(.hidden) { animation: none; }
+            .viewer-spinner { animation: none; }
         }
         .oro-divider {
             display: flex;

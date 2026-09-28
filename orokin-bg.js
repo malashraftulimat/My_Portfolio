@@ -8,7 +8,16 @@
             // Phones/portrait need a touch more presence: the fixed artwork is
             // the main visual and the content is narrower.
             const portrait = window.matchMedia('(max-aspect-ratio: 1/1)');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             function baseOpacity() { return portrait.matches ? 0.9 : 0.72; }
+
+            // Respect reduced motion: show a single static scene, no parallax.
+            if (reducedMotion.matches) {
+                a.style.opacity = baseOpacity().toFixed(3);
+                b.style.opacity = '0';
+                return;
+            }
+
             let ticking = false;
 
             function update() {
