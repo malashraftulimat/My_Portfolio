@@ -1327,6 +1327,13 @@
             const cvLink = document.getElementById('cv-link');
             if (cvLink && cvFiles[applyKey]) {
                 cvLink.href = cvFiles[applyKey];
+
+                // If a CV is currently open in the embedded viewer, switch it live too
+                const frame = document.getElementById('viewer-frame');
+                const src = frame ? (frame.getAttribute('src') || '') : '';
+                if (/^Resume_[^/]*\.pdf$/i.test(src)) {
+                    frame.setAttribute('src', cvFiles[applyKey]);
+                }
             }
 
             // Share the selected language with every GDD so they open in the same language
