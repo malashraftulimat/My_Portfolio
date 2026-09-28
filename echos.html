@@ -1076,20 +1076,6 @@
     </div>
     <div class="echo-grain" aria-hidden="true"></div>
 
-    <div class="langbar" role="group" aria-label="Language selection / 言語 / اللغة / 언어">
-        <button type="button" class="langbar-toggle" id="langbar-toggle" aria-haspopup="true" aria-expanded="false">
-            <img class="lang-flag" id="langbar-flag" src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15">
-            <span id="langbar-label">JP</span>
-            <span class="langbar-caret">▾</span>
-        </button>
-        <div class="lang-menu" id="lang-menu" hidden>
-            <button type="button" data-lang="ar" aria-pressed="false"><img class="lang-flag" src="https://flagcdn.com/24x18/sa.png" alt="العربية" width="20" height="15"><span>العربية</span><span class="lang-code">AR</span></button>
-            <button type="button" data-lang="en" aria-pressed="false"><img class="lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15"><span>English</span><span class="lang-code">EN</span></button>
-            <button type="button" data-lang="ja" aria-pressed="true"><img class="lang-flag" src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15"><span>日本語</span><span class="lang-code">JP</span></button>
-            <button type="button" data-lang="ko" aria-pressed="false"><img class="lang-flag" src="https://flagcdn.com/24x18/kr.png" alt="한국어" width="20" height="15"><span>한국어</span><span class="lang-code">KO</span></button>
-        </div>
-    </div>
-
 <main>
 
     <!-- ============ PAGE 1 · COVER ============ -->
@@ -1706,48 +1692,14 @@
 
         document.getElementById('meta-title').textContent = dict ? (dict['meta.title'] ?? originalTitle) : originalTitle;
 
-        document.querySelectorAll('.langbar [data-lang]').forEach(b => {
-            b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
-        });
-        const langMeta = {
-            ar: { flag: 'https://flagcdn.com/24x18/sa.png', short: 'AR' },
-            en: { flag: 'https://flagcdn.com/24x18/gb.png', short: 'EN' },
-            ja: { flag: 'https://flagcdn.com/24x18/jp.png', short: 'JP' },
-            ko: { flag: 'https://flagcdn.com/24x18/kr.png', short: 'KO' }
-        };
-        const meta = langMeta[lang];
-        if (meta) {
-            const curFlag = document.getElementById('langbar-flag');
-            const curLabel = document.getElementById('langbar-label');
-            if (curFlag) curFlag.src = meta.flag;
-            if (curLabel) curLabel.textContent = meta.short;
-        }
         try { localStorage.setItem('echos-lang', lang); } catch (e) {}
     }
 
-    document.querySelectorAll('.langbar [data-lang]').forEach(btn => {
-        btn.addEventListener('click', () => { setLang(btn.dataset.lang); closeLangMenu(); });
+    // Language is controlled from the portfolio header (index.html). React to
+    // changes made there while this page is embedded or open.
+    window.addEventListener('storage', (e) => {
+        if (e.key === 'echos-lang' && e.newValue) setLang(e.newValue);
     });
-
-    // Language dropdown open/close
-    const langToggle = document.getElementById('langbar-toggle');
-    const langMenu = document.getElementById('lang-menu');
-    function closeLangMenu() {
-        if (!langMenu) return;
-        langMenu.hidden = true;
-        if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
-    }
-    if (langToggle && langMenu) {
-        langToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langMenu.hidden = !langMenu.hidden;
-            langToggle.setAttribute('aria-expanded', String(!langMenu.hidden));
-        });
-        document.addEventListener('click', (e) => {
-            if (!langMenu.hidden && !langMenu.contains(e.target) && !langToggle.contains(e.target)) closeLangMenu();
-        });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLangMenu(); });
-    }
 
     // Initial language: saved preference, else Japanese
     let saved = 'ja';

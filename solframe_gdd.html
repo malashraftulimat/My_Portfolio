@@ -629,19 +629,6 @@
 <div class="fx-comet c" aria-hidden="true"></div>
 <div class="fx-ufo" aria-hidden="true"></div>
 <div class="fx-ufo alt" aria-hidden="true"></div>
-<div class="site-lang" role="group" aria-label="Language">
-  <button type="button" class="site-lang-toggle" id="site-lang-toggle" aria-haspopup="true" aria-expanded="false">
-    <img class="lang-flag" id="site-lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15">
-    <span id="site-lang-label">EN</span>
-    <span class="site-lang-caret">▾</span>
-  </button>
-  <div class="site-lang-menu" id="site-lang-menu" hidden>
-    <button type="button" class="site-lang-btn" data-site-lang="ar"><img class="lang-flag" src="https://flagcdn.com/24x18/sa.png" alt="العربية" width="20" height="15"><span>العربية</span><span class="lang-code">AR</span></button>
-    <button type="button" class="site-lang-btn is-active" data-site-lang="en"><img class="lang-flag" src="https://flagcdn.com/24x18/gb.png" alt="English" width="20" height="15"><span>English</span><span class="lang-code">EN</span></button>
-    <button type="button" class="site-lang-btn" data-site-lang="ja"><img class="lang-flag" src="https://flagcdn.com/24x18/jp.png" alt="日本語" width="20" height="15"><span>日本語</span><span class="lang-code">JP</span></button>
-    <button type="button" class="site-lang-btn" data-site-lang="ko"><img class="lang-flag" src="https://flagcdn.com/24x18/kr.png" alt="한국어" width="20" height="15"><span>한국어</span><span class="lang-code">KO</span></button>
-  </div>
-</div>
 <div class="shell">
 
   <!-- ================= TOC ================= -->
@@ -3292,44 +3279,13 @@ window.SOL_KO = {
       o.el.setAttribute('alt', v || o.en);
     });
     document.title = TITLES[lang] || TITLES.en;
-    document.querySelectorAll('.site-lang-btn').forEach(function (b) {
-      b.classList.toggle('is-active', b.getAttribute('data-site-lang') === lang);
-    });
-    var LANG_META = {
-      ar: { flag: 'https://flagcdn.com/24x18/sa.png', short: 'AR' }, en: { flag: 'https://flagcdn.com/24x18/gb.png', short: 'EN' },
-      ja: { flag: 'https://flagcdn.com/24x18/jp.png', short: 'JP' }, ko: { flag: 'https://flagcdn.com/24x18/kr.png', short: 'KO' }
-    };
-    var meta = LANG_META[lang];
-    if (meta) {
-      var curFlag = document.getElementById('site-lang-flag');
-      var curLabel = document.getElementById('site-lang-label');
-      if (curFlag) curFlag.src = meta.flag;
-      if (curLabel) curLabel.textContent = meta.short;
-    }
     try { localStorage.setItem('solgdd.lang', lang); } catch (e) {}
   }
 
-  var siteLangToggle = document.getElementById('site-lang-toggle');
-  var siteLangMenu = document.getElementById('site-lang-menu');
-  function closeSiteLangMenu() {
-    if (!siteLangMenu) return;
-    siteLangMenu.hidden = true;
-    if (siteLangToggle) siteLangToggle.setAttribute('aria-expanded', 'false');
-  }
-  if (siteLangToggle && siteLangMenu) {
-    siteLangToggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      siteLangMenu.hidden = !siteLangMenu.hidden;
-      siteLangToggle.setAttribute('aria-expanded', String(!siteLangMenu.hidden));
-    });
-    document.addEventListener('click', function (e) {
-      if (!siteLangMenu.hidden && !siteLangMenu.contains(e.target) && !siteLangToggle.contains(e.target)) closeSiteLangMenu();
-    });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSiteLangMenu(); });
-  }
-
-  document.querySelectorAll('.site-lang-btn').forEach(function (b) {
-    b.addEventListener('click', function () { apply(b.getAttribute('data-site-lang')); closeSiteLangMenu(); });
+  // Language is controlled from the portfolio header (index.html). React to
+  // changes made there while this page is embedded or open.
+  window.addEventListener('storage', function (e) {
+    if (e.key === 'solgdd.lang' && e.newValue) apply(e.newValue);
   });
 
   var saved = 'en';
