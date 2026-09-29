@@ -387,6 +387,8 @@
 
         function setLang(lang) {
             const applyKey = (lang === 'tt') ? 'en' : lang;
+            const prevLang = document.documentElement.getAttribute('lang');
+            const langChanged = !!prevLang && prevLang !== lang;
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -452,6 +454,14 @@
 
             // Tenno script mode: render the (English) content with the tenObet font
             document.body.classList.toggle('tenno-active', lang === 'tt');
+
+            // Changing language reflows the whole page (especially RTL), so send
+            // the visitor back to the top for a clean read. Skipped on the initial
+            // setLang('en') run so deep links / hash loads keep their position.
+            if (langChanged) {
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+            }
         }
 
         // Bidirectional sync: if a GDD (or another tab) changes its stored
