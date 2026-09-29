@@ -443,4 +443,356 @@
             animation: viewerSpin 0.8s linear infinite;
         }
         @keyframes viewerSpin { to { transform: rotate(360deg); } }
+
+        /* ================= TENNO DAMASCUS AESTHETIC (alternate theme) =================
+           Activated by body.theme-tenno (toggled in main.js). Layers watered
+           Damascus-steel artwork, Tennobet script columns and an imperial
+           gold / void palette over the default Orokin look. */
+        body.theme-tenno {
+            --accent: #c9a227;
+            --accentHover: #a9861c;
+            --accent2: #9fd8e0;
+            --void: #9fd8e0;
+            --void2: #7a6bb5;
+            --gold-1: #f0e6bc;
+            --gold-2: #c9a227;
+            --gold-3: #7c6413;
+            --gold-grad: linear-gradient(135deg, #f0e6bc 0%, #c9a227 45%, #7c6413 100%);
+            --gold-line: rgba(201, 162, 39, 0.35);
+            background-color: #05070c;
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(159,216,224,0.10), transparent 42%),
+                radial-gradient(circle at 88% 92%, rgba(232,217,160,0.08), transparent 45%),
+                radial-gradient(circle at 85% 12%, rgba(159,176,194,0.07), transparent 40%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='0.07' stroke-width='1'%3E%3Ccircle cx='60' cy='60' r='30'/%3E%3Ccircle cx='60' cy='60' r='44' stroke-dasharray='2 7'/%3E%3C/g%3E%3Cpath d='M0 60 q30 -16 60 0 t60 0' fill='none' stroke='%239fb0c2' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: auto, auto, auto, 120px 120px;
+            background-attachment: fixed;
+        }
+
+        /* Swap the fixed scenes to the Tenno Damascus artwork */
+        body.theme-tenno .orokin-bg--a { background-image: url("tenno-bg.svg?v=2"); }
+        body.theme-tenno .orokin-bg--b { background-image: url("tenno-bg-2.svg?v=2"); }
+        @media (max-aspect-ratio: 1/1) {
+            body.theme-tenno .orokin-bg--a { background-image: url("tenno-bg-mobile.svg?v=2"); }
+            body.theme-tenno .orokin-bg--b { background-image: url("tenno-bg-mobile-2.svg?v=2"); }
+            body.theme-tenno { background-size: auto, auto, auto, 84px 84px; }
+        }
+
+        /* ===== Tennobet script columns (the Tenno language, drawn as texture) ===== */
+        .tenno-script { display: none; }
+        body.theme-tenno .tenno-script {
+            display: block;
+            position: fixed;
+            inset: 0;
+            z-index: 5;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        body.theme-tenno .tenno-script__col {
+            position: absolute;
+            top: -4%;
+            bottom: -4%;
+            font-family: 'tenObet', 'Inter', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: 0.42em;
+            white-space: nowrap;
+            writing-mode: vertical-rl;
+            color: rgba(232, 217, 160, 0.13);
+            text-shadow: 0 0 14px rgba(159, 216, 224, 0.14);
+            user-select: none;
+        }
+        .tenno-script__col--l { left: 12px; }
+        .tenno-script__col--r { right: 12px; transform: rotate(180deg); }
+        @media (max-width: 900px) { body.theme-tenno .tenno-script { display: none; } }
+
+        /* ===== Palette remap for the compiled Tailwind accent classes ===== */
+        body.theme-tenno .text-accent { color: #d9b64e !important; }
+        body.theme-tenno .bg-accent,
+        body.theme-tenno .group:hover .group-hover\:bg-accent { background-color: #c9a227 !important; color: #0a0f18 !important; }
+        body.theme-tenno .hover\:bg-accentHover:hover,
+        body.theme-tenno .group:hover .group-hover\:bg-accentHover { background-color: #a9861c !important; }
+        body.theme-tenno .border-accent,
+        body.theme-tenno .hover\:border-accent:hover,
+        body.theme-tenno .focus\:border-accent:focus { border-color: #c9a227 !important; }
+        body.theme-tenno .hover\:border-accent\/60:hover { border-color: rgba(201, 162, 39, 0.6) !important; }
+        body.theme-tenno .border-accent\/25 { border-color: rgba(201, 162, 39, 0.25) !important; }
+        body.theme-tenno .border-accent\/30 { border-color: rgba(201, 162, 39, 0.30) !important; }
+        body.theme-tenno .bg-accent\/10,
+        body.theme-tenno .group:hover .group-hover\:bg-accent\/10 { background-color: rgba(201, 162, 39, 0.10) !important; }
+        body.theme-tenno .bg-accent\/5 { background-color: rgba(201, 162, 39, 0.05) !important; }
+        body.theme-tenno .text-accent\/80 { color: rgba(217, 182, 78, 0.8) !important; }
+        body.theme-tenno .text-accent\/90 { color: rgba(217, 182, 78, 0.9) !important; }
+        body.theme-tenno .hover\:text-accent:hover,
+        body.theme-tenno .group:hover .group-hover\:text-accent { color: #d9b64e !important; }
+        body.theme-tenno .group:hover .group-hover\:text-accent\/10 { color: rgba(201, 162, 39, 0.10) !important; }
+        body.theme-tenno .from-accent {
+            --tw-gradient-from: #c9a227 var(--tw-gradient-from-position);
+            --tw-gradient-to: rgba(201, 162, 39, 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        body.theme-tenno .hover\:shadow-\[0_18px_40px_-12px_rgba\(255\2c 106\2c 0\2c 0\.4\)\]:hover {
+            box-shadow: 0 18px 40px -12px rgba(201, 162, 39, 0.45) !important;
+        }
+        body.theme-tenno .group:hover .group-hover\:shadow-\[0_0_30px_rgba\(255\2c 106\2c 0\2c 0\.5\)\] {
+            box-shadow: 0 0 30px rgba(201, 162, 39, 0.5) !important;
+        }
+        /* inline card glow uses the old ember rgba -> remap */
+        body.theme-tenno #projects .group > .pointer-events-none {
+            background: radial-gradient(120% 90% at 50% 0%, rgba(201, 162, 39, 0.14), transparent 60%) !important;
+        }
+
+        /* Other hard-coded ember bits in the base sheet */
+        body.theme-tenno .nav-link::after { background: var(--accent); }
+        body.theme-tenno #dynamicName {
+            background-image: linear-gradient(90deg, #c9a227, #f0e6bc, #9fd8e0, #7a6bb5, #c9a227);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 16px rgba(159, 216, 224, 0.30));
+        }
+        body.theme-tenno .viewer-spinner {
+            border-color: rgba(201, 162, 39, 0.25);
+            border-top-color: #c9a227;
+        }
+        body.theme-tenno a.bg-accent:hover {
+            box-shadow: 0 0 20px rgba(201, 162, 39, 0.55), 0 0 8px rgba(159, 216, 224, 0.35);
+        }
+        body.theme-tenno .crt-overlay {
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(232, 217, 160, 0.03) 0px,
+                rgba(232, 217, 160, 0.03) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+        }
+        /* ================= WARFRAME-STYLE ORNAMENTATION (Tenno theme) ================= */
+        /* Oversize the parallax layers so the faster drift never exposes edges */
+        body.theme-tenno .orokin-bg { top: -30%; height: 160%; will-change: transform, opacity; }
+
+        /* Giant Tennobet rune glowing behind the hero — the Tenno language, big */
+        .hero-rune { display: none; }
+        body.theme-tenno .hero-rune {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%);
+            font-family: 'tenObet', 'Inter', sans-serif;
+            font-size: clamp(5rem, 20vw, 18rem);
+            line-height: 1;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            color: rgba(232, 217, 160, 0.07);
+            text-shadow: 0 0 40px rgba(159, 216, 224, 0.20), 0 0 90px rgba(201, 162, 39, 0.14);
+            pointer-events: none;
+            user-select: none;
+            z-index: -1;
+        }
+
+        /* Void-energy bloom behind the header */
+        body.theme-tenno header#top::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 40%, rgba(159,216,224,0.18), rgba(159,216,224,0.05) 38%, transparent 62%);
+        }
+
+        /* Fixed HUD corner brackets (Warframe interface feel) */
+        .tenno-hud { display: none; }
+        body.theme-tenno .tenno-hud { display: block; }
+        .tenno-hud__c {
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            border: 2px solid rgba(201, 162, 39, 0.55);
+            filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.35));
+        }
+        .tenno-hud__c--tl { top: 76px; left: 14px; border-right: 0; border-bottom: 0; }
+        .tenno-hud__c--tr { top: 76px; right: 14px; border-left: 0; border-bottom: 0; }
+        .tenno-hud__c--bl { bottom: 14px; left: 14px; border-right: 0; border-top: 0; }
+        .tenno-hud__c--br { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+        @media (max-width: 900px) { body.theme-tenno .tenno-hud { display: none; } }
+
+        /* Orokin filigree corners on project cards, always lit (not just hover) */
+        body.theme-tenno #projects .group::after { opacity: 0.6; transform: translate(0, 0); }
+        body.theme-tenno #projects .group:hover::after { opacity: 1; }
+        body.theme-tenno #projects .group:hover {
+            filter: drop-shadow(0 0 18px rgba(159,216,224,0.35)) drop-shadow(0 0 8px rgba(201,162,39,0.40));
+        }
+
+        /* Orokin corner notches on skill boxes (non-interactive) */
+        body.theme-tenno .skill-box { position: relative; }
+        body.theme-tenno .skill-box::before,
+        body.theme-tenno .skill-box::after {
+            content: '';
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border: 2px solid rgba(201, 162, 39, 0.8);
+            pointer-events: none;
+        }
+        body.theme-tenno .skill-box::before { top: 4px; left: 4px; border-right: 0; border-bottom: 0; }
+        body.theme-tenno .skill-box::after { bottom: 4px; right: 4px; border-left: 0; border-top: 0; }
+
+        /* Profile photo: chamfered Orokin double frame */
+        body.theme-tenno .profile-frame {
+            border-radius: 0 !important;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.65), 0 0 0 6px #05070c,
+                        0 0 0 7px rgba(201, 162, 39, 0.30),
+                        0 0 26px rgba(159, 216, 224, 0.28), 0 0 46px rgba(201, 162, 39, 0.22);
+        }
+
+        /* Bolder section titles and dividers */
+        body.theme-tenno section h3::before { font-size: 1.05em; text-shadow: 0 0 14px rgba(201, 162, 39, 1); }
+        body.theme-tenno section h3::after {
+            width: 110px;
+            background: linear-gradient(90deg, var(--gold-2), rgba(159, 216, 224, 0.85), transparent);
+        }
+        body.theme-tenno .oro-emblem {
+            width: 46px;
+            height: 46px;
+            filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.75)) drop-shadow(0 0 22px rgba(159, 216, 224, 0.35));
+        }
+        body.theme-tenno .nav-lotus {
+            filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.7)) drop-shadow(0 0 18px rgba(159, 216, 224, 0.35));
+        }
+
+        /* Warframe HUD trim on buttons: gold inner hairline */
+        body.theme-tenno a.bg-accent,
+        body.theme-tenno header a.border,
+        body.theme-tenno .modal a.bg-accent {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14), 0 0 14px rgba(201, 162, 39, 0.25);
+        }
+
+        /* ================= VOID NEBULA (ref: deep-space energy clouds) ================= */
+        /* Layered cosmic atmosphere drawn ABOVE the orokin artwork so the opaque
+           base of that SVG doesn't hide it. Sits at z-index 0, below page content. */
+        .nebula-bg {
+            position: fixed;
+            inset: -12%;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(58% 44% at 17% 20%, rgba(45, 212, 191, 0.20), transparent 62%),
+                radial-gradient(52% 42% at 83% 16%, rgba(37, 99, 235, 0.24), transparent 64%),
+                radial-gradient(64% 56% at 72% 84%, rgba(34, 211, 238, 0.15), transparent 66%),
+                radial-gradient(46% 42% at 24% 86%, rgba(13, 148, 136, 0.18), transparent 62%),
+                radial-gradient(90% 80% at 50% 45%, transparent 30%, rgba(3, 7, 14, 0.55) 100%);
+            filter: blur(2px) saturate(130%);
+            animation: nebulaDrift 64s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+        @keyframes nebulaDrift {
+            0%   { transform: translate3d(-1.6%, -1.2%, 0) scale(1.06); }
+            100% { transform: translate3d(1.8%, 1.6%, 0) scale(1.14); }
+        }
+
+        /* Starfield: three parallax depths of twinkling points */
+        .starfield {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.85), transparent),
+                radial-gradient(1px 1px at 130px 90px, rgba(186,230,253,0.70), transparent),
+                radial-gradient(1px 1px at 210px 160px, rgba(255,255,255,0.55), transparent),
+                radial-gradient(1px 1px at 60px 220px, rgba(153,246,228,0.60), transparent),
+                radial-gradient(1px 1px at 300px 50px, rgba(255,255,255,0.70), transparent),
+                radial-gradient(2px 2px at 420px 300px, rgba(186,230,253,0.85), transparent),
+                radial-gradient(1px 1px at 520px 180px, rgba(255,255,255,0.60), transparent),
+                radial-gradient(1px 1px at 640px 420px, rgba(153,246,228,0.55), transparent),
+                radial-gradient(1px 1px at 380px 460px, rgba(255,255,255,0.45), transparent);
+            background-size: 700px 520px;
+            opacity: 0.5;
+            animation: starTwinkle 6s ease-in-out infinite alternate;
+        }
+        @keyframes starTwinkle {
+            from { opacity: 0.34; }
+            to   { opacity: 0.62; }
+        }
+
+        /* Horizontal void-energy beam behind the hero (ref: image 2) */
+        .energy-beam {
+            position: absolute;
+            left: 50%;
+            top: 33%;
+            width: 150%;
+            height: 2px;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(56, 189, 248, 0.0) 12%,
+                rgba(125, 211, 252, 0.55) 38%,
+                rgba(224, 242, 254, 0.95) 50%,
+                rgba(125, 211, 252, 0.55) 62%,
+                rgba(56, 189, 248, 0.0) 88%,
+                transparent 100%);
+            box-shadow:
+                0 0 16px 3px rgba(56, 189, 248, 0.55),
+                0 0 54px 12px rgba(37, 99, 235, 0.30),
+                0 0 120px 30px rgba(14, 116, 144, 0.20);
+            animation: beamPulse 5.5s ease-in-out infinite;
+        }
+        .energy-beam::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 280px;
+            height: 280px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(224,242,254,0.42), rgba(56,189,248,0.18) 32%, transparent 68%);
+            mix-blend-mode: screen;
+        }
+        @keyframes beamPulse {
+            0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scaleX(0.92); }
+            50%      { opacity: 1;    transform: translate(-50%, -50%) scaleX(1.04); }
+        }
+
+        /* Wispy nebula tendrils drifting through the hero */
+        .energy-wisp {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+            filter: blur(34px);
+            mix-blend-mode: screen;
+            opacity: 0.5;
+        }
+        .energy-wisp--1 {
+            width: 46vw; height: 16vw;
+            left: -8%; top: 8%;
+            background: radial-gradient(ellipse at center, rgba(45,212,191,0.35), transparent 70%);
+            transform: rotate(-18deg);
+            animation: wispDrift1 26s ease-in-out infinite alternate;
+        }
+        .energy-wisp--2 {
+            width: 40vw; height: 14vw;
+            right: -6%; top: 52%;
+            background: radial-gradient(ellipse at center, rgba(59,130,246,0.34), transparent 70%);
+            transform: rotate(14deg);
+            animation: wispDrift2 32s ease-in-out infinite alternate;
+        }
+        @keyframes wispDrift1 {
+            from { transform: rotate(-18deg) translate3d(0, 0, 0) scale(1);      opacity: 0.35; }
+            to   { transform: rotate(-12deg) translate3d(6%, 8%, 0) scale(1.15); opacity: 0.60; }
+        }
+        @keyframes wispDrift2 {
+            from { transform: rotate(14deg) translate3d(0, 0, 0) scale(1.1);      opacity: 0.30; }
+            to   { transform: rotate(8deg)  translate3d(-7%, -6%, 0) scale(1);     opacity: 0.55; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nebula-bg, .starfield, .energy-beam, .energy-beam::after,
+            .energy-wisp--1, .energy-wisp--2 { animation: none; }
+        }
     

@@ -21,22 +21,32 @@
             let ticking = false;
 
             function update() {
-                const max = document.documentElement.scrollHeight - window.innerHeight;
+                const doc = document.documentElement;
+                const max = doc.scrollHeight - window.innerHeight;
                 const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
                 const BASE = baseOpacity();
+                const tenno = document.body.classList.contains('theme-tenno');
 
-                // crossfade between scene A (top) and scene B (bottom)
-                a.style.opacity = (BASE * (1 - p)).toFixed(3);
-                b.style.opacity = (BASE * p).toFixed(3);
+                // Crossfade completes well before the page ends so the scene
+                // change is actually felt while scrolling, not just at the very
+                // bottom.
+                const cf = Math.min(1, p / (tenno ? 0.45 : 0.80));
+                a.style.opacity = (BASE * (1 - cf)).toFixed(3);
+                b.style.opacity = (BASE * cf).toFixed(3);
 
-                // parallax drift + gentle scale. NOTE: no rotation here — the
-                // artwork is mirrored left/right, and rotating the whole layer
-                // would tilt the two sides in opposite directions and break that
-                // symmetry. Pure translate + scale keeps it perfectly mirrored.
-                const y = p * -80;
-                const scale = 1 + p * 0.10;
-                a.style.transform = 'translate3d(0,' + y + 'px,0) scale(' + scale + ')';
-                b.style.transform = 'translate3d(0,' + (-y) + 'px,0) scale(' + scale + ')';
+                // Strong parallax drift + scale, centred so it shifts both up
+                // and down through the page. NOTE: no rotation/horizontal move —
+                // the artwork is mirrored left/right, so only vertical motion
+                // keeps that symmetry intact. The theme-tenno layer is oversized
+                // (see style.css) to give this drift room without exposing edges.
+                const driftA = tenno ? 190 : 65;
+                const driftB = tenno ? 120 : 40;
+                const grow   = tenno ? 0.34 : 0.14;
+                const yA = (p - 0.5) * 2 * driftA;
+                const yB = (p - 0.5) * 2 * driftB;
+                const scale = 1 + p * grow;
+                a.style.transform = 'translate3d(0,' + yA.toFixed(1) + 'px,0) scale(' + scale.toFixed(4) + ')';
+                b.style.transform = 'translate3d(0,' + yB.toFixed(1) + 'px,0) scale(' + scale.toFixed(4) + ')';
 
                 ticking = false;
             }

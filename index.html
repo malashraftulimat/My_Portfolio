@@ -8,7 +8,7 @@
     <!-- SEO -->
     <meta name="description" content="M Alashraf Tolimat — game programmer and Unity/C# developer based in Tokyo. Portfolio of games, 3D environments, and technical projects.">
     <meta name="author" content="M Alashraf Tolimat">
-    <meta name="theme-color" content="#11151c">
+    <meta name="theme-color" content="#05070c">
     <link rel="canonical" href="https://malashraftulimat.github.io/My_Portfolio/">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
@@ -40,7 +40,7 @@
     <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="tailwind.css?v=1">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=10">
 
     <!-- Structured data: Person -->
     <script type="application/ld+json">
@@ -61,10 +61,22 @@
     }
     </script>
 </head>
-<body class="antialiased min-h-screen relative">
+<body class="antialiased min-h-screen relative theme-tenno">
 
     <div class="orokin-bg orokin-bg--a" aria-hidden="true"></div>
     <div class="orokin-bg orokin-bg--b" aria-hidden="true"></div>
+    <div class="nebula-bg" aria-hidden="true"></div>
+    <div class="starfield" aria-hidden="true"></div>
+    <div class="tenno-script" aria-hidden="true">
+        <span class="tenno-script__col tenno-script__col--l" data-tenno-skip>TENNO DAMASCUS VOID LOTUS TENNO DAMASCUS VOID LOTUS TENNO DAMASCUS VOID LOTUS</span>
+        <span class="tenno-script__col tenno-script__col--r" data-tenno-skip>OROKIN DAMASCUS TENNO OROKIN DAMASCUS TENNO OROKIN DAMASCUS TENNO OROKIN DAMASCUS</span>
+        <div class="tenno-hud">
+            <span class="tenno-hud__c tenno-hud__c--tl"></span>
+            <span class="tenno-hud__c tenno-hud__c--tr"></span>
+            <span class="tenno-hud__c tenno-hud__c--bl"></span>
+            <span class="tenno-hud__c tenno-hud__c--br"></span>
+        </div>
+    </div>
     <div class="screen-vignette" aria-hidden="true"></div>
     <div class="crt-overlay" aria-hidden="true"></div>
 
@@ -82,6 +94,7 @@
                 <a href="#skills" data-nav class="nav-link" data-i18n="navSkills">SKILLS</a>
                 <a href="#contact" data-nav class="nav-link" data-i18n="navContact">CONTACT</a>
             </div>
+            <div class="flex items-center gap-2">
             <div dir="ltr" class="relative lang-dropdown" data-tenno-skip>
                 <button type="button" id="lang-toggle" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white border border-gray-700 hover:border-accent rounded px-3 py-2 transition">
                     <i class="fa-solid fa-globe"></i>
@@ -98,6 +111,7 @@
                     <li><button onclick="setLang('tt')" class="lang-btn w-full flex items-center gap-3 px-4 py-2.5 text-gray-400 hover:text-white hover:bg-gray-800 transition text-left" data-lang="tt"><img src="tenno-flag.png" alt="Tenno" width="20" height="15" class="inline-block rounded-[2px] object-contain" loading="lazy" decoding="async"><span>Tenno</span><span class="ml-auto text-[10px] tracking-wider text-gray-500">TT</span></button></li>
                 </ul>
             </div>
+            </div>
         </div>
     </nav>
 
@@ -112,7 +126,11 @@
         <iframe id="viewer-frame" title="Embedded content" class="relative flex-1 w-full border-0 bg-white block"></iframe>
     </div>
 
-    <header id="top" class="pt-32 pb-16 px-4 text-center">
+    <header id="top" class="relative overflow-hidden pt-32 pb-16 px-4 text-center">
+        <div class="hero-rune" aria-hidden="true" data-tenno-skip>TENNO</div>
+        <div class="energy-beam" aria-hidden="true"></div>
+        <div class="energy-wisp energy-wisp--1" aria-hidden="true"></div>
+        <div class="energy-wisp energy-wisp--2" aria-hidden="true"></div>
         <img src="7aSanki.webp" alt="Logo" class="hero-emblem w-64 h-auto mx-auto mb-6 object-contain" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
         
         <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide" id="dynamicName">M ALASHRAF TOLIMAT</h1>
@@ -318,7 +336,7 @@
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
                             <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity</span>
                             <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay</span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
@@ -326,7 +344,7 @@
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Code">Code</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
                             <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">OOP</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git</span>
                             <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools</span>
                         </div>
                     </div>
@@ -580,9 +598,9 @@
         </div>
     </div>
 
-    <script src="main.js?v=4"></script>
+    <script src="main.js?v=6"></script>
 
-    <script src="orokin-bg.js?v=3"></script>
+    <script src="orokin-bg.js?v=5"></script>
     
     <script src="formspree-init.js?v=2"></script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
