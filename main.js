@@ -29,7 +29,7 @@
                 projectsTitle: "FEATURED WORKS",
                 p1Title: "Sol Frame",
                 p1Desc: "Chicken Invaders style space shooter game.",
-                p1DescLong: "A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.",
+                p1DescLong: "A fast, neon arcade space shooter inspired by Chicken Invaders-style gameplay. Built as a custom HTML5 Canvas + vanilla JavaScript engine — no game engine used.",
                 p2Title: "3D Environments",
                 p2Desc: "3D environmental models including station and campus.",
                 p2DescLong: "A full 3D reconstruction of Musashi-Koganei Station and Technos College campus in Maya. Modelling, texturing and lighting built from photo reference.",
@@ -85,7 +85,16 @@
                 hlLanguages: "4 Languages",
                 hlStack: "Unity + C#",
                 hlLocation: "Tokyo, Japan",
-                hlOpen: "Open to work"
+                hlOpen: "Open to work",
+                qfStudy: "Technos College · 2026–",
+                projPeriod: "Period",
+                projRole: "Role",
+                projStatus: "Status",
+                projCredits: "Credits",
+                expMo: "mo",
+                expYr: "yrs",
+                projAI: "AI Usage",
+                aiNote: "All concepts, game ideas and creative direction are my own. I use AI as a build tool — to turn those ideas into working code, layouts and documents faster."
             },
             ar: {
                 name: "محمد الأشرف طليمات",
@@ -101,7 +110,7 @@
                 projectsTitle: "أبرز الأعمال",
                 p1Title: "سول فريم",
                 p1Desc: "لعبة إطلاق نار فضائية بأسلوب Chicken Invaders.",
-                p1DescLong: "لعبة إطلاق نار كلاسيكية. تم بناء الأنظمة الأساسية باستخدام أدوات مساعدة لتحسين الأكواد. تم التطوير على Unity.",
+                p1DescLong: "لعبة إطلاق نار نيونية سريعة مستوحاة من Chicken Invaders. بُنيت بمحرك مخصّص HTML5 Canvas + JavaScript — دون استخدام أي محرك ألعاب.",
                 p2Title: "مجسمات بيئية 3D",
                 p2Desc: "تصاميم ثلاثية الأبعاد لمحطة القطار ومبنى المعهد.",
                 p2DescLong: "إعادة بناء ثلاثية الأبعاد كاملة لمحطة موساشي-كوغاني ومعهد تيكنوس في مايا، مع النمذجة والإضاءة اعتمادًا على صور مرجعية.",
@@ -157,7 +166,16 @@
                 hlLanguages: "4 لغات",
                 hlStack: "Unity + C#",
                 hlLocation: "طوكيو، اليابان",
-                hlOpen: "متاح للعمل"
+                hlOpen: "متاح للعمل",
+                qfStudy: "معهد تيكنوس · 2026–",
+                projPeriod: "الفترة",
+                projRole: "الدور",
+                projStatus: "الحالة",
+                projCredits: "حقوق الأصول",
+                expMo: "شهر",
+                expYr: "سنة",
+                projAI: "استخدام الذكاء الاصطناعي",
+                aiNote: "جميع الأفكار والمفاهيم والتوجه الإبداعي من إعدادي. أستخدم الذكاء الاصطناعي كأداة تنفيذ — لتحويل هذه الأفكار إلى أكواد وتصاميم ومستندات جاهزة بسرعة أكبر."
             },
             ja: {
                 name: "エム アルアシュラフ トリマト",
@@ -173,7 +191,7 @@
                 projectsTitle: "注目のプロジェクト",
                 p1Title: "ソル・フレーム",
                 p1Desc: "Chicken Invaders風のスペースシューティングゲーム。",
-                p1DescLong: "Chicken Invadersにインスパイアされたクラシックなアーケードシューティング。Unity製。",
+                p1DescLong: "Chicken Invadersにインスパイアされた高速なネオン調アーケードシューティング。HTML5 Canvas + JavaScriptによる自作エンジンで構築（ゲームエンジン未使用）。",
                 p2Title: "3D環境モデル",
                 p2Desc: "駅とキャンパスを含む3D環境モデリング。",
                 p2DescLong: "Mayaで制作した武蔵小金井駅とテクノスカレッジの3D再現。写真資料を基にモデリング、テクスチャ、ライティングを構築しました。",
@@ -229,7 +247,16 @@
                 hlLanguages: "4言語",
                 hlStack: "Unity + C#",
                 hlLocation: "東京",
-                hlOpen: "仕事募集中"
+                hlOpen: "仕事募集中",
+                qfStudy: "テクノスカレッジ · 2026年〜",
+                projPeriod: "期間",
+                projRole: "役割",
+                projStatus: "状態",
+                projCredits: "クレジット",
+                expMo: "ヶ月",
+                expYr: "年",
+                projAI: "AIの使用",
+                aiNote: "コンセプト・ゲームのアイデア・クリエイティブディレクションはすべて本人によるものです。AIはそれらをコード・レイアウト・ドキュメントとして形にするための制作ツールとして使用しています。"
             },
             ko: {
                 name: "엠 알아슈라프 토리마트",
@@ -245,7 +272,7 @@
                 projectsTitle: "주요 프로젝트",
                 p1Title: "솔 프레임",
                 p1Desc: "Chicken Invaders 스타일의 우주 슈팅 게임.",
-                p1DescLong: "Unity로 제작된 클래식 아케이드 슈팅 게임.",
+                p1DescLong: "Chicken Invaders 스타일에서 영감을 받은 빠른 네온 아케이드 슈팅 게임. HTML5 Canvas + 순수 JavaScript로 자체 제작한 엔진으로 구현(게임 엔진 미사용).",
                 p2Title: "3D 환경 모델링",
                 p2Desc: "역 및 캠퍼스 3D 환경 모델링.",
                 p2DescLong: "Maya로 제작한 무사시코가네이역과 테크노스 대학의 3D 재현. 사진 자료를 바탕으로 모델링, 텍스처, 라이팅을 작업했습니다.",
@@ -301,7 +328,16 @@
                 hlLanguages: "4개 언어",
                 hlStack: "Unity + C#",
                 hlLocation: "도쿄",
-                hlOpen: "채용 가능"
+                hlOpen: "채용 가능",
+                qfStudy: "테크노스 대학 · 2026–",
+                projPeriod: "기간",
+                projRole: "역할",
+                projStatus: "상태",
+                projCredits: "크레딧",
+                expMo: "개월",
+                expYr: "년",
+                projAI: "AI 사용",
+                aiNote: "모든 콘셉트, 게임 아이디어, 창작 방향은 직접 기획한 것입니다. AI는 이를 코드·레이아웃·문서로 구현하는 제작 도구로 활용합니다."
             },
             tr: {
                 name: "M ALASHRAF TOLIMAT",
@@ -317,7 +353,7 @@
                 projectsTitle: "ÖNE ÇIKAN ÇALIŞMALAR",
                 p1Title: "Sol Frame",
                 p1Desc: "Chicken Invaders tarzı uzay nişancı oyunu.",
-                p1DescLong: "Chicken Invaders tarzı oynanıştan esinlenen klasik arcade uzay nişancısı. Unity ile geliştirildi.",
+                p1DescLong: "Chicken Invaders tarzından esinlenen hızlı, neon bir arcade uzay nişancısı. HTML5 Canvas + saf JavaScript ile özel motor olarak geliştirildi — oyun motoru kullanılmadı.",
                 p2Title: "3D Ortamlar",
                 p2Desc: "İstasyon ve kampüs dahil 3D ortam modelleri.",
                 p2DescLong: "Maya'da Musashi-Koganei İstasyonu ve Technos College kampüsünün tam 3D yeniden yapımı. Modelleme, doku ve aydınlatma fotoğraf referansından oluşturuldu.",
@@ -373,7 +409,16 @@
                 hlLanguages: "4 Dil",
                 hlStack: "Unity + C#",
                 hlLocation: "Tokyo, Japonya",
-                hlOpen: "İşe açık"
+                hlOpen: "İşe açık",
+                qfStudy: "Technos College · 2026–",
+                projPeriod: "Dönem",
+                projRole: "Rol",
+                projStatus: "Durum",
+                projCredits: "Katkılar",
+                expMo: "ay",
+                expYr: "yıl",
+                projAI: "YZ Kullanımı",
+                aiNote: "Tüm konseptler, oyun fikirleri ve yaratıcı yön bana aittir. AI'yı bu fikirleri koda, tasarıma ve dokümana dönüştürmek için bir üretim aracı olarak kullanıyorum."
             }
         };
 
@@ -384,6 +429,144 @@
             ko: 'Resume_Korean.pdf',
             tr: 'Resume_Turkish.pdf'
         };
+
+        // Per-project facts shown directly on the cards and in the modals.
+        // These keep the period, role, status and asset credits visible at a glance
+        // (reviewers should not have to open anything to find them).
+        const projectMeta = {
+            en: {
+                echos:    { period: "2026",              role: "Solo — Concept, Design & Documentation", status: "In planning", credits: "Original concept, story, art direction and design by me." },
+                solframe: { period: "Jun – Sep 2026",     role: "Solo — Design, Code, Art & Audio",        status: "In development",   credits: "Custom HTML5 Canvas + JavaScript engine. IRIS voice clips are pre-rendered (16 events × 3 languages). All other code, art and audio by me." },
+                env3d:    { period: "2026",              role: "Solo — Modelling, Texturing & Lighting",  status: "Completed",   credits: "Built from my own photo reference. No third-party assets." },
+                pixelart: { period: "2026",              role: "Solo — Design & Illustration",           status: "Completed",   credits: "Original artwork. Fan-art pieces (Zelda, Mario, Pokémon) are non-commercial studies." },
+                tgs:      { period: "Sep 2024",          role: "Attendee — Networking",                  status: "Event",       credits: "Photos taken by me at the event." },
+                barjees:  { period: "Jul – Sep 2026",     role: "Solo — GDD & modernization of a traditional game",          status: "Completed",   credits: "Barjees is a traditional Syrian board game and part of Syrian cultural heritage. The modernized rules, adaptation and this design document are by me." }
+            },
+            ar: {
+                echos:    { period: "2026",              role: "فردي — الفكرة والتصميم والتوثيق", status: "قيد التخطيط", credits: "الفكرة والقصة والاتجاه الفني والتصميم من إعدادي." },
+                solframe: { period: "يونيو – سبتمبر 2026", role: "فردي — التصميم والبرمجة والفن والصوت", status: "قيد التطوير", credits: "محرك مخصّص HTML5 Canvas + JavaScript. أصوات IRIS مُولّدة مسبقًا (16 حدثًا × 3 لغات). وبقية الأكواد والرسومات والصوت من إعدادي." },
+                env3d:    { period: "2026",              role: "فردي — النمذجة والتكستير والإضاءة", status: "مكتمل", credits: "مبني على صور مرجعية خاصة بي. بدون أصول خارجية." },
+                pixelart: { period: "2026",              role: "فردي — التصميم والرسم", status: "مكتمل", credits: "أعمال أصلية. رسومات المعجبين (Zelda وMario وPokémon) دراسات غير تجارية." },
+                tgs:      { period: "سبتمبر 2024",      role: "حاضر — تواصل", status: "فعالية", credits: "الصور من التقاطي في الفعالية." },
+                barjees:  { period: "يوليو – سبتمبر 2026", role: "فردي — وثيقة تصميم وتحديث لعبة تراثية", status: "مكتمل", credits: "البرجيس لعبة طاولة سورية تراثية ومن التراث السوري. تحديث القواعد والتكييف ووثيقة التصميم من إعدادي." }
+            },
+            ja: {
+                echos:    { period: "2026年",           role: "個人 — 企画・デザイン・ドキュメント", status: "企画中", credits: "コンセプト・ストーリー・アートディレクション・デザインはすべて本人制作。" },
+                solframe: { period: "2026年6月〜9月",     role: "個人 — デザイン・コード・アート・サウンド", status: "開発中", credits: "自作の HTML5 Canvas + JavaScript エンジン。IRISの音声は事前生成（16イベント×3言語）。その他のコード・アート・音声は本人制作。" },
+                env3d:    { period: "2026年",           role: "個人 — モデリング・テクスチャ・ライティング", status: "完成", credits: "自作の写真資料を基に制作。外部アセットは未使用。" },
+                pixelart: { period: "2026年",           role: "個人 — デザイン・イラスト", status: "完成", credits: "オリジナル作品。ファンアート（Zelda・Mario・Pokémon）は非商用の習作。" },
+                tgs:      { period: "2024年9月",         role: "来場 — 交流", status: "イベント", credits: "写真は本人撮影。" },
+                barjees:  { period: "2026年7月〜9月",     role: "個人 — 伝統ゲームのGDD・現代化", status: "完成", credits: "バルジースはシリアの伝統的なボードゲームであり、シリアの文化遺産です。現代化したルール・翻案・本デザインドキュメントは本人制作です。" }
+            },
+            ko: {
+                echos:    { period: "2026",              role: "개인 — 기획·디자인·문서", status: "기획 중", credits: "콘셉트, 스토리, 아트 디렉션, 디자인 모두 직접 제작." },
+                solframe: { period: "2026년 6월 – 9월",   role: "개인 — 디자인·코드·아트·사운드", status: "개발 중", credits: "자체 제작한 HTML5 Canvas + JavaScript 엔진. IRIS 음성은 사전 생성(16개 이벤트 × 3개 언어). 그 외 코드·아트·음성은 직접 제작." },
+                env3d:    { period: "2026",              role: "개인 — 모델링·텍스처·라이팅", status: "완성", credits: "직접 촬영한 사진 자료를 기반으로 제작. 외부 에셋 미사용." },
+                pixelart: { period: "2026",              role: "개인 — 디자인·일러스트", status: "완성", credits: "원작 작품. 팬아트(Zelda·Mario·Pokémon)는 비상업적 습작." },
+                tgs:      { period: "2024년 9월",         role: "참관 — 네트워킹", status: "이벤트", credits: "사진은 직접 촬영." },
+                barjees:  { period: "2026년 7월 – 9월",   role: "개인 — 전통 게임 GDD 및 현대화", status: "완성", credits: "바르지스는 시리아 전통 보드게임이자 시리아 문화유산입니다. 현대화한 규칙, 각색, 본 기획서는 직접 제작했습니다." }
+            },
+            tr: {
+                echos:    { period: "2026",              role: "Tek kişi — Konsept, Tasarım ve Dokümantasyon", status: "Planlanıyor", credits: "Konsept, hikâye, sanat yönetimi ve tasarım tamamen bana ait." },
+                solframe: { period: "Haz – Eyl 2026",     role: "Tek kişi — Tasarım, Kod, Sanat ve Ses", status: "Geliştiriliyor", credits: "Özel HTML5 Canvas + JavaScript motoru. IRIS sesleri önceden üretildi (16 olay × 3 dil). Diğer tüm kod, sanat ve ses bana ait." },
+                env3d:    { period: "2026",              role: "Tek kişi — Modelleme, Doku ve Aydınlatma", status: "Tamamlandı", credits: "Kendi fotoğraf referansımdan üretildi. Üçüncü taraf varlık yok." },
+                pixelart: { period: "2026",              role: "Tek kişi — Tasarım ve İllüstrasyon", status: "Tamamlandı", credits: "Özgün çalışmalar. Hayran sanatı (Zelda, Mario, Pokémon) ticari olmayan denemelerdir." },
+                tgs:      { period: "Eyl 2024",          role: "Katılımcı — Networking", status: "Etkinlik", credits: "Fotoğraflar etkinlikte tarafımdan çekildi." },
+                barjees:  { period: "Tem – Eyl 2026",     role: "Tek kişi — Geleneksel oyun GDD ve modernizasyonu", status: "Tamamlandı", credits: "Barjees, Suriye'nin geleneksel bir kutu oyunu ve Suriye kültürel mirasıdır. Modernize edilmiş kurallar, uyarlama ve bu tasarım belgesi bana aittir." }
+            }
+        };
+
+        // How AI was used on each project. The creative idea and direction are always the
+        // author's own; AI is disclosed purely as a build/implementation tool.
+        const aiMeta = {
+            en: {
+                echos:    { aiFlag: "AI-assisted", ai: "Idea, story and design direction are mine. AI was used as a build tool to write and lay out the document." },
+                solframe: { aiFlag: "AI-assisted", ai: "Game design, systems and art direction are mine. AI was used as a coding assistant; the engine, gameplay tuning and final decisions are mine." },
+                env3d:    { aiFlag: "AI-assisted", ai: "Modelling, texturing and composition are mine. AI assisted with reference research and workflow." },
+                pixelart: {},
+                tgs:      {},
+                barjees:  { aiFlag: "AI-assisted", ai: "The adaptation, modernized rules and document are mine. AI was used as a build tool to write and lay out the document." }
+            },
+            ar: {
+                echos:    { aiFlag: "بمساعدة AI", ai: "الفكرة والقصة والتوجه التصميمي من إعدادي. استُخدم الذكاء الاصطناعي كأداة تنفيذ لكتابة المستند وتنسيقه." },
+                solframe: { aiFlag: "بمساعدة AI", ai: "تصميم اللعبة والأنظمة والاتجاه الفني من إعدادي. استُخدم الذكاء الاصطناعي كمساعد برمجي؛ أما المحرك وضبط أسلوب اللعب والقرارات النهائية فمن إعدادي." },
+                env3d:    { aiFlag: "بمساعدة AI", ai: "النمذجة والتكستير والتكوين من إعدادي. ساعد الذكاء الاصطناعي في البحث عن المراجع وتحسين سير العمل." },
+                pixelart: {},
+                tgs:      {},
+                barjees:  { aiFlag: "بمساعدة AI", ai: "التكييف والقواعد المحدّثة والمستند من إعدادي. استُخدم الذكاء الاصطناعي كأداة تنفيذ لكتابة المستند وتنسيقه." }
+            },
+            ja: {
+                echos:    { aiFlag: "AI活用", ai: "企画・ストーリー・デザインの方向性はすべて本人によるものです。AIはドキュメントの執筆・レイアウトを行う制作ツールとして使用しました。" },
+                solframe: { aiFlag: "AI活用", ai: "ゲームデザイン・システム・アートディレクションはすべて本人によるものです。AIはコーディング補助として使用し、エンジン・ゲームバランスの調整・最終判断は本人が行いました。" },
+                env3d:    { aiFlag: "AI活用", ai: "モデリング・テクスチャ・構図は本人によるものです。AIは資料調査と作業効率化の補助に使用しました。" },
+                pixelart: {},
+                tgs:      {},
+                barjees:  { aiFlag: "AI活用", ai: "翻案・現代化したルール・ドキュメントは本人によるものです。AIはドキュメントの執筆・レイアウトの制作ツールとして使用しました。" }
+            },
+            ko: {
+                echos:    { aiFlag: "AI 활용", ai: "기획, 스토리, 디자인 방향은 모두 직접 만든 것입니다. AI는 문서 작성과 레이아웃을 위한 제작 도구로 사용했습니다." },
+                solframe: { aiFlag: "AI 활용", ai: "게임 디자인, 시스템, 아트 방향은 직접 기획했습니다. AI는 코딩 보조로 사용했으며, 엔진과 게임플레이 조정, 최종 결정은 직접 했습니다." },
+                env3d:    { aiFlag: "AI 활용", ai: "모델링, 텍스처, 구도는 직접 작업했습니다. AI는 자료 조사와 작업 효율화를 도왔습니다." },
+                pixelart: {},
+                tgs:      {},
+                barjees:  { aiFlag: "AI 활용", ai: "각색, 현대화한 규칙, 문서는 직접 제작했습니다. AI는 문서 작성과 레이아웃을 위한 제작 도구로 사용했습니다." }
+            },
+            tr: {
+                echos:    { aiFlag: "YZ destekli", ai: "Fikir, hikâye ve tasarım yönü bana aittir. AI, belgeyi yazmak ve düzenlemek için bir üretim aracı olarak kullanıldı." },
+                solframe: { aiFlag: "YZ destekli", ai: "Oyun tasarımı, sistemler ve sanat yönü bana aittir. AI kodlama asistanı olarak kullanıldı; motor, oynanış ayarları ve nihai kararlar bana aittir." },
+                env3d:    { aiFlag: "YZ destekli", ai: "Modelleme, doku ve kompozisyon bana aittir. AI, referans araştırması ve iş akışında yardımcı oldu." },
+                pixelart: {},
+                tgs:      {},
+                barjees:  { aiFlag: "YZ destekli", ai: "Uyarlama, modernize edilmiş kurallar ve belge bana aittir. AI, belgeyi yazmak ve düzenlemek için bir üretim aracı olarak kullanıldı." }
+            }
+        };
+
+        // Only these projects show a status badge. "Completed" and the art/event
+        // sections intentionally omit it.
+        const statusProjects = { echos: true, solframe: true };
+
+        function renderProjectMeta(lang) {
+            const meta = projectMeta[lang] || projectMeta.en;
+            const t = translations[lang] || translations.en;
+            document.querySelectorAll('[data-facts]').forEach(function (el) {
+                const id = el.getAttribute('data-facts');
+                const m = meta[id];
+                if (!m) return;
+                const a = (aiMeta[lang] && aiMeta[lang][id]) || {};
+                el.innerHTML =
+                    '<span class="fact-period">' + m.period + '</span>' +
+                    '<span class="fact-sep">·</span>' +
+                    '<span class="fact-role">' + m.role + '</span>' +
+                    (a.aiFlag ? '<span class="fact-ai">' + a.aiFlag + '</span>' : '') +
+                    (statusProjects[id] && m.status ? '<span class="fact-status">' + m.status + '</span>' : '');
+            });
+            document.querySelectorAll('[data-details]').forEach(function (el) {
+                const id = el.getAttribute('data-details');
+                const m = meta[id];
+                if (!m) return;
+                const a = (aiMeta[lang] && aiMeta[lang][id]) || {};
+                function row(label, value) {
+                    return '<div class="pd-row"><span class="pd-label">' + label + '</span><span class="pd-value">' + value + '</span></div>';
+                }
+                let html =
+                    row(t.projPeriod || 'Period', m.period) +
+                    row(t.projRole || 'Role', m.role);
+                if (statusProjects[id] && m.status) html += row(t.projStatus || 'Status', m.status);
+                if (a.ai) html += row(t.projAI || 'AI Usage', a.ai);
+                html += row(t.projCredits || 'Credits', m.credits);
+                el.innerHTML = html;
+            });
+        }
+
+        function renderSkillExp(lang) {
+            const t = translations[lang] || translations.en;
+            document.querySelectorAll('[data-exp]').forEach(function (el) {
+                const v = el.getAttribute('data-exp');
+                const num = v.replace(/[^0-9.]/g, '');
+                const isMonth = /mo$/.test(v);
+                el.textContent = num + ' ' + (isMonth ? (t.expMo || 'mo') : (t.expYr || 'yrs'));
+            });
+        }
 
         function setLang(lang) {
             const applyKey = (lang === 'tt') ? 'en' : lang;
@@ -403,6 +586,9 @@
             dynName.setAttribute('dir', applyKey === 'ar' ? 'rtl' : 'ltr');
             
             document.documentElement.setAttribute('lang', applyKey);
+
+            renderProjectMeta(applyKey);
+            renderSkillExp(applyKey);
             
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {

@@ -40,7 +40,7 @@
     <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="tailwind.css?v=1">
-    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=12">
 
     <!-- Structured data: Person -->
     <script type="application/ld+json">
@@ -90,8 +90,8 @@
             <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
                 <a href="#top" data-nav class="nav-link" data-i18n="navHome">HOME</a>
                 <a href="#about" data-nav class="nav-link" data-i18n="navAbout">ABOUT</a>
-                <a href="#projects" data-nav class="nav-link" data-i18n="navProjects">PROJECTS</a>
                 <a href="#skills" data-nav class="nav-link" data-i18n="navSkills">SKILLS</a>
+                <a href="#projects" data-nav class="nav-link" data-i18n="navProjects">PROJECTS</a>
                 <a href="#contact" data-nav class="nav-link" data-i18n="navContact">CONTACT</a>
             </div>
             <div class="flex items-center gap-2">
@@ -144,6 +144,13 @@
             <a href="#projects" class="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded font-bold transition flex items-center gap-2" data-i18n="btnProjects">VIEW PROJECTS</a>
             <a id="cv-link" href="Resume_English.pdf" data-viewer="CV" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
         </div>
+
+        <div class="qf-strip" data-tenno-skip>
+            <span class="qf-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="hlLocation">Tokyo, Japan</span></span>
+            <span class="qf-item"><i class="fa-solid fa-graduation-cap"></i><span data-i18n="qfStudy">Technos College · 2026–</span></span>
+            <span class="qf-item"><i class="fa-solid fa-code"></i><span data-i18n="hlStack">Unity + C#</span></span>
+            <span class="qf-item qf-open"><i class="fa-solid fa-circle"></i><span data-i18n="hlOpen">Open to work</span></span>
+        </div>
     </header>
 
     <div class="oro-divider" aria-hidden="true">
@@ -173,153 +180,9 @@
                 <p class="text-gray-400 leading-relaxed text-sm md:text-base mt-3" data-i18n="aboutHobby">
                     Away from the screen I build plastic model kits — especially Macross mecha. Once I start one, hours disappear and I completely forget my surroundings.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-16 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; openViewer('echos.html', 'ECHOES OF DAMASCUS');">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-book-open absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-book-open text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
-                                <span class="border border-gray-700 px-2 py-1 rounded">Game Design</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal1')">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-gamepad absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-gamepad text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GAME</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">Unity</span>
-                                <span class="border border-gray-700 px-2 py-1 rounded">C#</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal2')">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-cube absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-cube text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">3D</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">3D</span>
-                                <span class="border border-gray-700 px-2 py-1 rounded">Maya</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal3')">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-palette absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-palette text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">ART</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">Photoshop</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal4')">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-camera-retro absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-camera-retro text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">EVENT</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">Event</span>
-                                <span class="border border-gray-700 px-2 py-1 rounded">Networking</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openViewer('Barjees_GDD.html', 'BARJEES');">
-                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
-                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
-                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
-                        <i class="fa-solid fa-chess-board absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
-                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
-                            <i class="fa-solid fa-chess-board text-xl"></i>
-                        </div>
-                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
-                    </div>
-                    <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
-                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
-                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
-                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
-                                <span class="border border-gray-700 px-2 py-1 rounded">Board Game</span>
-                            </div>
-                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
-                        </div>
-                    </div>
-                </div>
-
+                <p class="ai-note mt-3" data-i18n="aiNote">
+                    All concepts, game ideas and creative direction are my own. I use AI as a build tool — to turn those ideas into working code, layouts and documents faster.
+                </p>
             </div>
         </div>
     </section>
@@ -334,52 +197,52 @@
                         <i class="fa-solid fa-gamepad text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_GameDev">Game Dev</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity<span class="exp-tag" data-exp="6mo"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#<span class="exp-tag" data-exp="6mo"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay<span class="exp-tag" data-exp="6mo"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-code text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Code">Code</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git<span class="exp-tag" data-exp="1y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools<span class="exp-tag" data-exp="2y"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-pen-ruler text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Design">Design</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Maya</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Photoshop</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_UIUX">UI/UX</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Maya<span class="exp-tag" data-exp="6mo"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Photoshop<span class="exp-tag" data-exp="3y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_UIUX">UI/UX<span class="exp-tag" data-exp="1y"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-volume-high text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Audio">Audio</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Cubase</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoundDesign">Sound Design</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Cubase<span class="exp-tag" data-exp="1y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoundDesign">Sound Design<span class="exp-tag" data-exp="1y"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-computer text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_PCBuild">PC Building</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Assembly">Assembly</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Teardown">Teardown</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Upgrades">Upgrades</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Assembly">Assembly<span class="exp-tag" data-exp="5y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Teardown">Teardown<span class="exp-tag" data-exp="5y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Upgrades">Upgrades<span class="exp-tag" data-exp="5y"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-screwdriver-wrench text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_TechRepair">Tech Repair</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_HardwareFix">Hardware Fix</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoftwareFix">Software Fix</span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Diagnostics">Diagnostics</span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_HardwareFix">Hardware Fix<span class="exp-tag" data-exp="5y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoftwareFix">Software Fix<span class="exp-tag" data-exp="4y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Diagnostics">Diagnostics<span class="exp-tag" data-exp="4y"></span></span>
                         </div>
                     </div>
                 </div>
@@ -420,6 +283,159 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="try { localStorage.setItem('echos-lang', document.documentElement.lang); } catch(e) {}; openViewer('echos.html', 'ECHOES OF DAMASCUS');">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-book-open absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-book-open text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
+                        <div class="proj-facts" data-facts="echos"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Game Design</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal1')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-gamepad absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-gamepad text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GAME</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
+                        <div class="proj-facts" data-facts="solframe"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">HTML5</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">JavaScript</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal2')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-cube absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-cube text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">3D</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
+                        <div class="proj-facts" data-facts="env3d"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">3D</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Maya</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal3')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-palette absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-palette text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">ART</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
+                        <div class="proj-facts" data-facts="pixelart"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">Photoshop</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openModal('modal4')">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-camera-retro absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-camera-retro text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">EVENT</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
+                        <div class="proj-facts" data-facts="tgs"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">Event</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Networking</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative bg-cardBg rounded-xl border border-gray-800 cursor-pointer overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:border-accent/60 hover:shadow-[0_18px_40px_-12px_rgba(255,106,0,0.4)]" onclick="openViewer('Barjees_GDD.html', 'BARJEES');">
+                    <div class="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500" style="background:radial-gradient(120% 90% at 50% 0%, rgba(255,106,0,0.14), transparent 60%);"></div>
+                    <span class="pointer-events-none absolute top-0 left-0 z-20 h-[3px] w-0 bg-gradient-to-r from-accent to-transparent group-hover:w-full transition-all duration-500"></span>
+                    <div class="relative h-32 flex items-center justify-center overflow-hidden border-b border-gray-800 bg-gradient-to-br from-gray-900 via-cardBg to-gray-900">
+                        <i class="fa-solid fa-chess-board absolute text-[110px] text-white/[0.035] group-hover:scale-110 group-hover:text-accent/10 transition duration-700"></i>
+                        <div class="relative w-14 h-14 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] transition duration-300">
+                            <i class="fa-solid fa-chess-board text-xl"></i>
+                        </div>
+                        <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
+                    </div>
+                    <div class="relative p-6">
+                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
+                        <div class="proj-facts" data-facts="barjees"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
+                        <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                            <div class="flex gap-2 text-[11px] font-mono text-gray-500">
+                                <span class="border border-gray-700 px-2 py-1 rounded">GDD</span>
+                                <span class="border border-gray-700 px-2 py-1 rounded">Board Game</span>
+                            </div>
+                            <span class="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -477,7 +493,8 @@
             <video class="w-full rounded mb-4 bg-gray-900 block" poster="solframe-poster.jpg" controls loop muted playsinline preload="none">
                 <source src="solframe.mp4" type="video/mp4">
             </video>
-            <p class="text-gray-300 mb-6 text-sm" data-i18n="p1DescLong">A classic arcade space shooter inspired by Chicken Invaders style gameplay. Developed in Unity.</p>
+            <p class="text-gray-300 mb-6 text-sm" data-i18n="p1DescLong">A fast, neon arcade space shooter inspired by Chicken Invaders-style gameplay. Built as a custom HTML5 Canvas + vanilla JavaScript engine — no game engine used.</p>
+            <div class="proj-details" data-details="solframe"></div>
             <div class="flex flex-wrap gap-4">
                 <a href="https://itch.io/embed/4681703" data-viewer="ITCH DEMO" class="bg-accent hover:bg-accentHover text-white px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-play"></i><span data-i18n="btnDemo">Play Demo on itch.io</span></a>
                 <a href="solframe_gdd.html" data-viewer="SOL FRAME GDD" class="border border-gray-600 hover:border-accent text-accent px-4 py-2 rounded text-xs font-bold uppercase transition flex items-center gap-2"><i class="fa-solid fa-file-lines"></i><span data-i18n="btnGDD">Read Full GDD</span></a>
@@ -526,6 +543,7 @@
                 </div>
             </div>
             <p class="text-gray-300 mb-6 text-sm" data-i18n="p2DescLong">A full 3D reconstruction of Musashi-Koganei Station and Technos College campus in Maya. Modelling, texturing and lighting built from photo reference.</p>
+            <div class="proj-details" data-details="env3d"></div>
         </div>
     </div>
 
@@ -558,6 +576,7 @@
                 </div>
             </div>
             <p class="text-gray-300 mb-6 text-sm" data-i18n="p3DescLong">A collection of graphic design work created in Photoshop, including UI/UX mockups, educational posters, and 8-bit character sprites with a focus on readable silhouettes.</p>
+            <div class="proj-details" data-details="pixelart"></div>
         </div>
     </div>
 
@@ -594,10 +613,11 @@
                 </div>
             </div>
             <p class="text-gray-300 mb-6 text-sm leading-relaxed" data-i18n="p4DescLong">After 11 years of playing Warframe and watching Devstreams, I finally met the faces behind the screen. It felt like a heartfelt family reunion, and I had an incredibly inspiring and warm conversation with the Digital Extremes team.</p>
+            <div class="proj-details" data-details="tgs"></div>
         </div>
     </div>
 
-    <script src="main.js?v=7"></script>
+    <script src="main.js?v=11"></script>
 
     <script src="orokin-bg.js?v=5"></script>
     

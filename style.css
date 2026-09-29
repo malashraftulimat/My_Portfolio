@@ -795,4 +795,99 @@
             .nebula-bg, .starfield, .energy-beam, .energy-beam::after,
             .energy-wisp--1, .energy-wisp--2 { animation: none; }
         }
+
+        /* ===== Quick facts strip (hero) ===== */
+        .qf-strip {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.75rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+        .qf-item { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .qf-item i { color: #ff6a00; font-size: 0.7rem; }
+        .qf-item.qf-open { color: #4ade80; }
+        .qf-item.qf-open i { font-size: 0.45rem; }
+
+        /* ===== Project facts on cards ===== */
+        .proj-facts {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.35rem 0.5rem;
+            margin-bottom: 0.75rem;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .fact-period { color: #ff8a33; }
+        .fact-sep { color: #4b5563; }
+        .fact-role { color: #9ca3af; }
+        .fact-status {
+            margin-inline-start: auto;
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 0.25rem;
+            padding: 0.05rem 0.4rem;
+            white-space: nowrap;
+        }
+        .fact-ai {
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+            border-radius: 0.25rem;
+            padding: 0.05rem 0.4rem;
+            white-space: nowrap;
+        }
+
+        /* ===== Project details in modals ===== */
+        .proj-details {
+            margin: 0 0 1.5rem;
+            border: 1px solid #374151;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: rgba(17, 21, 28, 0.6);
+        }
+        .pd-row {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.6rem 0.9rem;
+            border-bottom: 1px solid #2b3440;
+            font-size: 0.8rem;
+        }
+        .pd-row:last-child { border-bottom: 0; }
+        .pd-label {
+            flex: 0 0 6.5rem;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #ff8a33;
+            padding-top: 0.1rem;
+        }
+        .pd-value { color: #cbd5e1; line-height: 1.5; }
+
+        /* ===== Experience tags on skill chips ===== */
+        .exp-tag {
+            margin-inline-start: 0.35rem;
+            color: #ff8a33;
+            font-weight: 700;
+        }
+
+        /* ===== AI usage disclosure note (about) ===== */
+        .ai-note {
+            border-inline-start: 2px solid rgba(255, 106, 0, 0.5);
+            padding-inline-start: 0.75rem;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 640px) {
+            .pd-row { flex-direction: column; gap: 0.15rem; }
+            .pd-label { flex-basis: auto; }
+        }
     
