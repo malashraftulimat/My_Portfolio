@@ -558,13 +558,27 @@
             });
         }
 
+        // Experience labels are computed from a start date (data-since="YYYY-MM"
+        // or "YYYY-MM-DD"), so they tick up automatically as real time passes.
+        // Under a year it shows months (e.g. "6 mo" -> "7 mo"); after that,
+        // whole years ("1 yr", "2 yrs", ...).
         function renderSkillExp(lang) {
             const t = translations[lang] || translations.en;
-            document.querySelectorAll('[data-exp]').forEach(function (el) {
-                const v = el.getAttribute('data-exp');
-                const num = v.replace(/[^0-9.]/g, '');
-                const isMonth = /mo$/.test(v);
-                el.textContent = num + ' ' + (isMonth ? (t.expMo || 'mo') : (t.expYr || 'yrs'));
+            const now = new Date();
+            document.querySelectorAll('[data-since]').forEach(function (el) {
+                const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(el.getAttribute('data-since') || '');
+                if (!m) { el.textContent = ''; return; }
+                const sy = +m[1], sm = +m[2] - 1, sd = m[3] ? +m[3] : 1;
+                let months = (now.getFullYear() - sy) * 12 + (now.getMonth() - sm);
+                if (now.getDate() < sd) months -= 1; // not a full month yet this cycle
+                if (months < 0) months = 0;
+                if (months < 12) {
+                    el.textContent = months + ' ' + (t.expMo || 'mo');
+                } else {
+                    const years = Math.floor(months / 12);
+                    const unit = (lang === 'en' && years === 1) ? 'yr' : (t.expYr || 'yrs');
+                    el.textContent = years + ' ' + unit;
+                }
             });
         }
 
@@ -576,7 +590,19 @@
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[applyKey] && translations[applyKey][key]) {
-                    el.innerText = translations[applyKey][key];
+                    const value = translations[applyKey][key];
+                    // Preserve child elements (e.g. the .exp-tag inside skill chips);
+                    // update only the label text node when children are present.
+                    if (el.children.length) {
+                        let textNode = null;
+                        for (const n of el.childNodes) {
+                            if (n.nodeType === 3 && n.textContent.trim() !== '') { textNode = n; break; }
+                        }
+                        if (textNode) textNode.textContent = value;
+                        else el.insertBefore(document.createTextNode(value), el.firstChild);
+                    } else {
+                        el.innerText = value;
+                    }
                     el.setAttribute('dir', applyKey === 'ar' ? 'rtl' : 'ltr');
                 }
             });

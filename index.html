@@ -40,7 +40,7 @@
     <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="tailwind.css?v=1">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=16">
 
     <!-- Structured data: Person -->
     <script type="application/ld+json">
@@ -89,7 +89,6 @@
             </a>
             <div class="hidden md:flex items-center gap-1 text-sm font-semibold">
                 <a href="#top" data-nav class="nav-link" data-i18n="navHome">HOME</a>
-                <a href="#about" data-nav class="nav-link" data-i18n="navAbout">ABOUT</a>
                 <a href="#skills" data-nav class="nav-link" data-i18n="navSkills">SKILLS</a>
                 <a href="#projects" data-nav class="nav-link" data-i18n="navProjects">PROJECTS</a>
                 <a href="#contact" data-nav class="nav-link" data-i18n="navContact">CONTACT</a>
@@ -126,30 +125,48 @@
         <iframe id="viewer-frame" title="Embedded content" class="relative flex-1 w-full border-0 bg-white block"></iframe>
     </div>
 
-    <header id="top" class="relative overflow-hidden pt-32 pb-16 px-4 text-center">
+    <header id="top" class="hero">
         <div class="hero-rune" aria-hidden="true" data-tenno-skip>TENNO</div>
         <div class="energy-beam" aria-hidden="true"></div>
         <div class="energy-wisp energy-wisp--1" aria-hidden="true"></div>
         <div class="energy-wisp energy-wisp--2" aria-hidden="true"></div>
-        <img src="7aSanki.webp" alt="Logo" class="hero-emblem w-64 h-auto mx-auto mb-6 object-contain" onerror="this.src='https://via.placeholder.com/150?text=7aSanki'">
-        
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wide" id="dynamicName">M ALASHRAF TOLIMAT</h1>
-        
-        <p class="text-xl md:text-2xl font-light text-gray-300 max-w-2xl mx-auto mb-2" data-i18n="tagline">
-            GAME PROGRAMMER IN THE MAKING – BRIDGING CODE, CREATIVITY, AND CORE GAMEPLAY
-        </p>
-        <p class="text-accent mb-8" data-i18n="studentAt">Student at TECHNOS COLLEGE, Tokyo</p>
 
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#projects" class="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded font-bold transition flex items-center gap-2" data-i18n="btnProjects">VIEW PROJECTS</a>
-            <a id="cv-link" href="Resume_English.pdf" data-viewer="CV" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
-        </div>
+        <div class="hero__inner">
+            <!-- Left: profile -->
+            <aside class="hero-profile">
+                <div class="hero-portrait">
+                    <div class="hero-portrait__inner">
+                        <img src="MY-PHOTO.webp" alt="M Alashraf Tolimat" onerror="this.src='https://via.placeholder.com/300x360/1b222c/ff6a00?text=Photo'" decoding="async">
+                    </div>
+                </div>
+                <h1 class="hero-name" id="dynamicName">エムアルアシュラフ<br>トリマト</h1>
+                <p class="hero-role" data-i18n="studentAt">Student at TECHNOS COLLEGE, Tokyo</p>
+                <p class="hero-tagline" data-i18n="tagline">GAME PROGRAMMER IN THE MAKING – BRIDGING CODE, CREATIVITY, AND CORE GAMEPLAY</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded font-bold transition flex items-center gap-2" data-i18n="btnProjects">VIEW PROJECTS</a>
+                    <a id="cv-link" href="Resume_English.pdf" data-viewer="CV" class="border border-gray-600 hover:border-accent text-white px-6 py-2 rounded transition flex items-center gap-2" data-i18n="btnCV">DOWNLOAD CV</a>
+                </div>
+            </aside>
 
-        <div class="qf-strip" data-tenno-skip>
-            <span class="qf-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="hlLocation">Tokyo, Japan</span></span>
-            <span class="qf-item"><i class="fa-solid fa-graduation-cap"></i><span data-i18n="qfStudy">Technos College · 2026–</span></span>
-            <span class="qf-item"><i class="fa-solid fa-code"></i><span data-i18n="hlStack">Unity + C#</span></span>
-            <span class="qf-item qf-open"><i class="fa-solid fa-circle"></i><span data-i18n="hlOpen">Open to work</span></span>
+            <!-- Right: about me -->
+            <div id="about" class="hero-about">
+                <p class="hero-eyebrow" data-i18n="aboutTitle">ABOUT ME</p>
+                <p class="hero-about__text hero-about__lead" data-i18n="aboutDesc">
+                    A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.
+                </p>
+                <p class="hero-about__text" data-i18n="aboutHobby">
+                    Away from the screen I build plastic model kits — especially Macross mecha. Once I start one, hours disappear and I completely forget my surroundings.
+                </p>
+                <p class="ai-note" data-i18n="aiNote">
+                    All concepts, game ideas and creative direction are my own. I use AI as a build tool — to turn those ideas into working code, layouts and documents faster.
+                </p>
+                <div class="hero-facts" data-tenno-skip>
+                    <span class="hero-fact"><i class="fa-solid fa-location-dot"></i><span data-i18n="hlLocation">Tokyo, Japan</span></span>
+                    <span class="hero-fact"><i class="fa-solid fa-graduation-cap"></i><span data-i18n="qfStudy">Technos College · 2026–</span></span>
+                    <span class="hero-fact"><i class="fa-solid fa-code"></i><span data-i18n="hlStack">Unity + C#</span></span>
+                    <span class="hero-fact hero-fact--open"><i class="fa-solid fa-circle"></i><span data-i18n="hlOpen">Open to work</span></span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -166,27 +183,6 @@
         <span class="oro-line"></span>
     </div>
 
-    <section id="about" class="py-12 px-4 bg-cardBg/40 border-y border-gray-800">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div class="profile-frame flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden border-2 border-accent p-1">
-                <img src="MY-PHOTO.webp" alt="Profile" class="w-full h-full object-cover rounded" onerror="this.src='https://via.placeholder.com/150/1b222c/ff6a00?text=Photo'" loading="lazy" decoding="async">
-            </div>
-            
-            <div class="flex-1 text-center md:text-start">
-                <h3 class="text-2xl font-bold mb-4 text-white uppercase tracking-wider" data-i18n="aboutTitle">ABOUT ME</h3>
-                <p class="text-gray-300 leading-relaxed text-sm md:text-base" data-i18n="aboutDesc">
-                    A Syrian student and aspiring game developer based in Tokyo. Currently studying at Technos College, focusing on game programming with Unity and C#. I blend modern technologies and AI tools to build engaging gameplay systems. Ready to work both on-site and remotely.
-                </p>
-                <p class="text-gray-400 leading-relaxed text-sm md:text-base mt-3" data-i18n="aboutHobby">
-                    Away from the screen I build plastic model kits — especially Macross mecha. Once I start one, hours disappear and I completely forget my surroundings.
-                </p>
-                <p class="ai-note mt-3" data-i18n="aiNote">
-                    All concepts, game ideas and creative direction are my own. I use AI as a build tool — to turn those ideas into working code, layouts and documents faster.
-                </p>
-            </div>
-        </div>
-    </section>
-
     <section id="skills" class="py-24 px-4 bg-cardBg/30 border-y border-gray-800">
         <div class="max-w-6xl mx-auto">
             <h3 class="text-2xl font-bold mb-5 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
@@ -197,61 +193,57 @@
                         <i class="fa-solid fa-gamepad text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_GameDev">Game Dev</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity<span class="exp-tag" data-exp="6mo"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#<span class="exp-tag" data-exp="6mo"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay<span class="exp-tag" data-exp="6mo"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Unity<span class="exp-tag" data-since="2026-03"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">C#<span class="exp-tag" data-since="2026-03"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Gameplay">Gameplay<span class="exp-tag" data-since="2026-03"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-code text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Code">Code</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git<span class="exp-tag" data-exp="1y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools<span class="exp-tag" data-exp="2y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Git<span class="exp-tag" data-since="2026-06"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_AITools">AI Tools<span class="exp-tag" data-since="2024-09"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-pen-ruler text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Design">Design</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Maya<span class="exp-tag" data-exp="6mo"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Photoshop<span class="exp-tag" data-exp="3y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_UIUX">UI/UX<span class="exp-tag" data-exp="1y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Maya<span class="exp-tag" data-since="2026-03"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Photoshop<span class="exp-tag" data-since="2026-03"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_UIUX">UI/UX<span class="exp-tag" data-since="2026-03"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-volume-high text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_Audio">Audio</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Cubase<span class="exp-tag" data-exp="1y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoundDesign">Sound Design<span class="exp-tag" data-exp="1y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5">Cubase<span class="exp-tag" data-since="2026-03"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoundDesign">Sound Design<span class="exp-tag" data-since="2026-03"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-computer text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_PCBuild">PC Building</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Assembly">Assembly<span class="exp-tag" data-exp="5y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Teardown">Teardown<span class="exp-tag" data-exp="5y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Upgrades">Upgrades<span class="exp-tag" data-exp="5y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Assembly">Assembly<span class="exp-tag" data-since="2019-01"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Teardown">Teardown<span class="exp-tag" data-since="2019-01"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Upgrades">Upgrades<span class="exp-tag" data-since="2019-01"></span></span>
                         </div>
                     </div>
                     <div class="flex flex-col items-center justify-center bg-cardBg p-6 rounded-lg skill-box text-center min-h-[150px]">
                         <i class="fa-solid fa-screwdriver-wrench text-3xl text-accent mb-3"></i>
                         <span class="text-base text-gray-200 font-bold" data-i18n="skills_TechRepair">Tech Repair</span>
                         <div class="flex flex-wrap justify-center gap-1.5 mt-4">
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_HardwareFix">Hardware Fix<span class="exp-tag" data-exp="5y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoftwareFix">Software Fix<span class="exp-tag" data-exp="4y"></span></span>
-                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Diagnostics">Diagnostics<span class="exp-tag" data-exp="4y"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_HardwareFix">Hardware Fix<span class="exp-tag" data-since="2019-01"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_SoftwareFix">Software Fix<span class="exp-tag" data-since="2014-01"></span></span>
+                            <span class="text-[10px] font-mono text-gray-400 border border-gray-700 rounded px-2 py-0.5" data-i18n="chip_Diagnostics">Diagnostics<span class="exp-tag" data-since="2014-01"></span></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-cardBg p-6 sm:p-8 rounded-lg border border-gray-800 flex flex-col">
-                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-mono uppercase tracking-wider text-gray-400 pb-5 mb-6 border-b border-gray-800">
-                        <span class="flex items-center"><i class="fa-solid fa-location-dot text-accent mr-2"></i><span data-i18n="hlLocation">Tokyo, Japan</span></span>
-                        <span class="flex items-center text-green-400"><i class="fa-solid fa-circle text-[6px] mr-2"></i><span data-i18n="hlOpen">Open to work</span></span>
-                    </div>
                     <div class="flex items-center gap-2 mb-5">
                         <i class="fa-solid fa-language text-accent"></i>
                         <span class="gamer-font text-xs uppercase tracking-[0.25em] text-gray-400" data-i18n="hlLanguages">4 Languages</span>
@@ -440,7 +432,8 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-16 px-4 max-w-6xl mx-auto">
+    <section id="contact" class="py-16 px-4 max-w-6xl mx-auto">
+        <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="contactTitle">CONTACT</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardBg/50 p-8 rounded-lg border border-gray-800">
             <form id="contact-form" class="flex flex-col gap-3 w-full">
                 <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
@@ -475,7 +468,7 @@
                 </a>
             </div>
         </div>
-    </footer>
+    </section>
 
     <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col items-center justify-center px-4 pb-4 pt-24 cursor-pointer select-none" onclick="if(event.target===this) closeLightbox()">
         <div class="relative inline-block max-w-full cursor-default">
