@@ -73,22 +73,15 @@
 
         /* Animated Orokin energy gradient on the name */
         #dynamicName {
-            background: linear-gradient(90deg, #d4af37, #f6e6a8, #00e0ff, #8a5cff, #ff6a00, #d4af37);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientSlide 12s linear infinite;
-            filter: drop-shadow(0 0 16px rgba(212,175,55,0.35));
-            will-change: background-position;
+            /* Removed animated gradient and glow effect */
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
         }
-        @keyframes gradientSlide { to { background-position: 300% 0; } }
+        
 
         /* Warframe void-energy pulse */
-        @keyframes oroPulse {
-            0%, 100% { filter: drop-shadow(0 0 4px rgba(0,224,255,0.35)); }
-            50%      { filter: drop-shadow(0 0 12px rgba(0,224,255,0.75)); }
-        }
+
 
         /* Section titles: 8-point star + gold energy underline */
         section h3 { position: relative; }
@@ -925,8 +918,6 @@
             /* shadows follow the chamfered silhouette, plus a warm rim glow */
             filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.82))
                     drop-shadow(0 0 16px rgba(255, 106, 0, 0.28));
-            animation: pfpFloat 4s ease-in-out infinite;
-            will-change: transform;
         }
         /* The frame plate — dark metallic with a gold inset rim */
         .hero-portrait::before {
@@ -1146,11 +1137,3 @@
             .pd-label { flex-basis: auto; }
         }
     
-        @keyframes pfpFloat {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-6px) scale(1.02);
-            }
-        }
