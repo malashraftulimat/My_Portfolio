@@ -5,6 +5,24 @@
             font-family: 'Inter', sans-serif;
         }
         html[lang="ar"] body { font-family: 'Cairo', sans-serif; }
+
+        /* ===== Full-page artwork background (static, no motion) ===== */
+        .site-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url("page-bg.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #05070c;
+            transform: translateZ(0);
+        }
+        /* Portrait phones/tablets get the dedicated portrait crop */
+        @media (max-aspect-ratio: 1/1) {
+            .site-bg { background-image: url("page-bg-mobile.webp"); }
+        }
         .neon-border { border: 1px solid rgba(255, 106, 0, 0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
         .skill-box { border: 1px solid rgba(255, 106, 0, 0.5); }
         .modal { display: none; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); }
