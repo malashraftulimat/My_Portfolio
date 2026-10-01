@@ -280,7 +280,7 @@
             height: 263px;
             object-fit: contain;
             transform-origin: 50% 100%;
-            animation: px-idle 3.4s ease-in-out infinite;
+            animation: none;
             filter: drop-shadow(0 12px 16px rgba(0,0,0,0.6));
             user-select: none;
             -webkit-user-drag: none;
@@ -295,12 +295,6 @@
             letter-spacing: normal;
             color: var(--muted);
         }
-        /* simple idle: breathe + gentle sway */
-        @keyframes px-idle {
-            0%, 100% { transform: translateY(0)    rotate(0deg); }
-            50%      { transform: translateY(-5px) rotate(0.7deg); }
-        }
-
         /* ================= Chips ================= */
         .chips { display: flex; flex-wrap: wrap; gap: 6px; }
         .chips span {
@@ -812,17 +806,13 @@
             .px-figure {
                 box-shadow: 0 22px 48px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.03), 0 0 44px rgba(255,200,87,.10);
             }
-            .px-char { animation: px-idle 3.4s ease-in-out infinite, px-aura 4.5s ease-in-out infinite; }
-            @keyframes px-aura {
-                0%, 100% { filter: drop-shadow(0 12px 16px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(255,200,87,.25)); }
-                50%      { filter: drop-shadow(0 12px 16px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(255,200,87,.5)); }
-            }
+            /* static golden glow (no animation) */
+            .px-char { animation: none; filter: drop-shadow(0 12px 16px rgba(0,0,0,.6)) drop-shadow(0 0 16px rgba(255,200,87,.4)); }
             .cover h1 { text-shadow: 0 0 28px rgba(255,59,92,.28); }
 
-            @media (prefers-reduced-motion: reduce) {
-                .echo-ripples i, .echo-glow::before, .echo-glow::after,
-                .echo-motes, .echo-grain, .echo-stars, .echo-moon { animation: none; }
-            }
+            /* Moving backgrounds disabled */
+            .echo-ripples i, .echo-glow::before, .echo-glow::after,
+            .echo-motes, .echo-grain, .echo-stars, .echo-moon { animation: none; }
         }
 
         /* ================= Print ================= */

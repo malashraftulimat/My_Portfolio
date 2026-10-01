@@ -135,9 +135,8 @@
     .fx-stars{opacity:.45}
     header.hero::after{opacity:.4}
   }
-  @media (prefers-reduced-motion:reduce){
-    body::before,body::after,.fx-comet,.fx-comet.b,.fx-comet.c,.fx-nebula,.fx-roid,.fx-warp,.fx-crt::before,header.hero::after,.logo,figure::before,.fx-stars,.fx-galaxy,.fx-sun,.fx-beams,.fx-ufo{animation:none}
-  }
+  /* Moving backgrounds disabled */
+  body::before,body::after,.fx-comet,.fx-comet.b,.fx-comet.c,.fx-nebula,.fx-roid,.fx-warp,.fx-crt::before,header.hero::after,.logo,figure::before,.fx-stars,.fx-galaxy,.fx-sun,.fx-beams,.fx-ufo{animation:none!important}
   a{color:var(--cyan-soft);text-decoration:none}
   a:hover{text-decoration:underline}
   h1,h2,h3,h4{font-family:'Orbitron','Rajdhani',sans-serif;color:var(--white);line-height:1.15;letter-spacing:.02em}
