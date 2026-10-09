@@ -23,7 +23,6 @@
         @media (max-aspect-ratio: 1/1) {
             .site-bg { background-image: url("page-bg-mobile.webp"); }
         }
-        .neon-border { border: 1px solid rgba(255, 106, 0, 0.2); box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
         .skill-box { border: 1px solid rgba(255, 106, 0, 0.5); }
         .modal { display: none; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); }
         .modal.active { display: flex; }
@@ -74,14 +73,6 @@
             line-height: 1.7;
         }
 
-        /* Orokin gold metallic text helper */
-        .oro-gold {
-            background: var(--gold-grad);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
         /* Animated Orokin energy gradient on the name */
         #dynamicName {
             /* Removed animated gradient and glow effect */
@@ -95,13 +86,13 @@
 
 
         /* Section titles: 8-point star + gold energy underline */
-        section h3 { position: relative; }
-        section h3::before {
+        section h2 { position: relative; }
+        section h2::before {
             content: '\2726  ';
             color: var(--gold-2);
             text-shadow: 0 0 10px rgba(212,175,55,0.9);
         }
-        section h3::after {
+        section h2::after {
             content: '';
             display: block;
             width: 72px;
@@ -192,8 +183,6 @@
             border: 1px solid rgba(212,175,55,0.20);
             overflow: hidden;
         }
-        .tenno-word { display: inline-block; }
-
         /* Tenno (TT) mode: render with the tenObet font instead of canvas glyphs */
         @font-face {
             font-family: 'tenObet';
@@ -237,11 +226,6 @@
         @media (prefers-reduced-motion: reduce) { .lang-fill { animation: none; } }
 
         /* profile photo: gold energy ring */
-        .profile-frame {
-            border-color: var(--gold-2) !important;
-            box-shadow: 0 0 22px rgba(212,175,55,0.4), 0 0 40px rgba(0,224,255,0.15);
-        }
-
         /* logo in Orokin gold */
         nav .gamer-font {
             color: var(--gold-2) !important;
@@ -260,37 +244,11 @@
             opacity: 0.8;
         }
 
-        /* ===== Orokin kaleidoscope background (Lotus wallpaper ref) ===== */
+        /* Page content sits above the fixed background layers */
         body > header,
         body > section,
         body > footer,
         body > .oro-divider { position: relative; z-index: 1; }
-        .orokin-bg {
-            display: none;
-            position: fixed;
-            top: -8%;
-            left: -8%;
-            width: 116%;
-            height: 116%;
-            z-index: 0;
-            pointer-events: none;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            opacity: 0;
-            will-change: transform, opacity;
-        }
-        .orokin-bg--a { background-image: url("orokin-bg.svg"); opacity: 0.72; }
-        .orokin-bg--b { background-image: url("orokin-bg-2.svg"); opacity: 0; }
-
-        /* Portrait phones/tablets get their OWN artwork (separate files from the
-           desktop scenes). Both mobile scenes mirror the desktop layout: scene A
-           is a single mirrored pair, scene B is a 2x2 mirrored grid. */
-        @media (max-aspect-ratio: 1/1) {
-            .orokin-bg--a { background-image: url("orokin-bg-mobile.svg"); }
-            .orokin-bg--b { background-image: url("orokin-bg-mobile-2.svg"); }
-            body { background-size: auto, auto, 76px 76px; }
-        }
 
         /* ===== Orokin Lotus emblem shapes ===== */
         .nav-lotus {
@@ -300,18 +258,8 @@
             filter: drop-shadow(0 0 5px rgba(212,175,55,0.55)) drop-shadow(0 0 12px rgba(255,106,0,0.28));
             animation: oroPulse 3.6s ease-in-out infinite;
         }
-        /* Big emblem above the name: larger presence + gentle float */
-        .hero-emblem {
-            filter: drop-shadow(0 0 18px rgba(255,106,0,0.32)) drop-shadow(0 0 38px rgba(212,175,55,0.22));
-            animation: heroFloat 7s ease-in-out infinite;
-            will-change: transform;
-        }
-        @keyframes heroFloat {
-            0%, 100% { transform: translateY(0); }
-            50%      { transform: translateY(-12px); }
-        }
         @media (prefers-reduced-motion: reduce) {
-            .hero-emblem, .nav-lotus { animation: none; }
+            .nav-lotus { animation: none; }
             #dynamicName { animation: none; }
             .oro-emblem { animation: none; }
             .modal.active, .modal.active > div,
@@ -371,6 +319,8 @@
         a, button { transition: transform 0.15s ease, color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
         a:active, button:active { transform: scale(0.95); }
         [onclick]:active { transform: scale(0.985); }
+        /* Keyboard focus ring for div-based interactive cards/thumbs (role=button) */
+        [role="button"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
         #lightbox > div:active { transform: none !important; }
 
         /* Modal entrance */
@@ -468,15 +418,6 @@
             background-color: #05070c;
         }
 
-        /* Swap the fixed scenes to the Tenno Damascus artwork */
-        body.theme-tenno .orokin-bg--a { background-image: url("tenno-bg.svg?v=2"); }
-        body.theme-tenno .orokin-bg--b { background-image: url("tenno-bg-2.svg?v=2"); }
-        @media (max-aspect-ratio: 1/1) {
-            body.theme-tenno .orokin-bg--a { background-image: url("tenno-bg-mobile.svg?v=2"); }
-            body.theme-tenno .orokin-bg--b { background-image: url("tenno-bg-mobile-2.svg?v=2"); }
-            body.theme-tenno { background-size: auto, auto, auto, 84px 84px; }
-        }
-
         /* ===== Tennobet script columns (the Tenno language, drawn as texture) ===== */
         .tenno-script { display: none; }
         body.theme-tenno .tenno-script {
@@ -568,9 +509,6 @@
             );
         }
         /* ================= WARFRAME-STYLE ORNAMENTATION (Tenno theme) ================= */
-        /* Oversize the parallax layers so the faster drift never exposes edges */
-        body.theme-tenno .orokin-bg { top: -30%; height: 160%; will-change: transform, opacity; }
-
         /* Giant Tennobet rune glowing behind the hero — the Tenno language, big */
         .hero-rune { display: none; }
         body.theme-tenno .hero-rune {
@@ -638,18 +576,9 @@
         body.theme-tenno .skill-box::before { top: 4px; left: 4px; border-right: 0; border-bottom: 0; }
         body.theme-tenno .skill-box::after { bottom: 4px; right: 4px; border-left: 0; border-top: 0; }
 
-        /* Profile photo: chamfered Orokin double frame */
-        body.theme-tenno .profile-frame {
-            border-radius: 0 !important;
-            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
-            box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.65), 0 0 0 6px #05070c,
-                        0 0 0 7px rgba(201, 162, 39, 0.30),
-                        0 0 26px rgba(159, 216, 224, 0.28), 0 0 46px rgba(201, 162, 39, 0.22);
-        }
-
         /* Bolder section titles and dividers */
-        body.theme-tenno section h3::before { font-size: 1.05em; text-shadow: 0 0 14px rgba(201, 162, 39, 1); }
-        body.theme-tenno section h3::after {
+        body.theme-tenno section h2::before { font-size: 1.05em; text-shadow: 0 0 14px rgba(201, 162, 39, 1); }
+        body.theme-tenno section h2::after {
             width: 110px;
             background: linear-gradient(90deg, var(--gold-2), rgba(159, 216, 224, 0.85), transparent);
         }
@@ -690,32 +619,6 @@
         @keyframes nebulaDrift {
             0%   { transform: translate3d(-1.6%, -1.2%, 0) scale(1.06); }
             100% { transform: translate3d(1.8%, 1.6%, 0) scale(1.14); }
-        }
-
-        /* Starfield: three parallax depths of twinkling points */
-        .starfield {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background-image:
-                radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.85), transparent),
-                radial-gradient(1px 1px at 130px 90px, rgba(186,230,253,0.70), transparent),
-                radial-gradient(1px 1px at 210px 160px, rgba(255,255,255,0.55), transparent),
-                radial-gradient(1px 1px at 60px 220px, rgba(153,246,228,0.60), transparent),
-                radial-gradient(1px 1px at 300px 50px, rgba(255,255,255,0.70), transparent),
-                radial-gradient(2px 2px at 420px 300px, rgba(186,230,253,0.85), transparent),
-                radial-gradient(1px 1px at 520px 180px, rgba(255,255,255,0.60), transparent),
-                radial-gradient(1px 1px at 640px 420px, rgba(153,246,228,0.55), transparent),
-                radial-gradient(1px 1px at 380px 460px, rgba(255,255,255,0.45), transparent);
-            background-size: 700px 520px;
-            opacity: 0.5;
-            animation: starTwinkle 6s ease-in-out infinite alternate;
-        }
-        @keyframes starTwinkle {
-            from { opacity: 0.34; }
-            to   { opacity: 0.62; }
         }
 
         /* Horizontal void-energy beam behind the hero (ref: image 2) */
@@ -792,26 +695,9 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .nebula-bg, .starfield, .energy-beam, .energy-beam::after,
+            .nebula-bg, .energy-beam, .energy-beam::after,
             .energy-wisp--1, .energy-wisp--2 { animation: none; }
         }
-
-        /* ===== Quick facts strip (hero) ===== */
-        .qf-strip {
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem 1.75rem;
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #94a3b8;
-        }
-        .qf-item { display: inline-flex; align-items: center; gap: 0.5rem; }
-        .qf-item i { color: #ff6a00; font-size: 0.7rem; }
-        .qf-item.qf-open { color: #4ade80; }
-        .qf-item.qf-open i { font-size: 0.45rem; }
 
         /* ===== Project facts on cards ===== */
         .proj-facts {

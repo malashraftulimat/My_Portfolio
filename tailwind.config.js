@@ -1,6 +1,6 @@
 /** Tailwind build config (used by the Tailwind CLI to generate tailwind.css) */
 module.exports = {
-  content: ['./index.html', './404.html', './main.js', './orokin-bg.js'],
+  content: ['./index.html', './404.html', './main.js'],
   theme: {
     extend: {
       colors: {

@@ -1,3 +1,4 @@
+(function () {
 
         // Disable browser scroll restoration and force the page to start from the top
         if ('scrollRestoration' in history) {
@@ -625,11 +626,13 @@
             buttons.forEach(btn => {
                 btn.classList.remove('text-white');
                 btn.classList.add('text-gray-400');
+                btn.setAttribute('aria-pressed', 'false');
             });
             const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
             if (activeBtn) {
                 activeBtn.classList.add('text-white');
                 activeBtn.classList.remove('text-gray-400');
+                activeBtn.setAttribute('aria-pressed', 'true');
             }
 
             // Update the language dropdown trigger
@@ -696,9 +699,11 @@
         });
 
         // Modals Logic
+        let lastFocused = null;
         function openModal(id) {
             const m = document.getElementById(id);
             if (!m) return;
+            lastFocused = document.activeElement;
             m.classList.add('active');
             document.body.style.overflow = 'hidden';
             m.querySelectorAll('img[data-src]').forEach(img => {
@@ -711,13 +716,20 @@
                 v.preload = 'auto';
                 v.play().catch(() => {});
             });
+            const closeBtn = m.querySelector('button[aria-label="Close"]');
+            if (closeBtn && typeof closeBtn.focus === 'function') closeBtn.focus();
         }
         function closeModal(id) {
             const m = document.getElementById(id);
             if (!m) return;
+            const hadFocus = m.contains(document.activeElement);
             m.classList.remove('active');
             document.body.style.overflow = '';
             m.querySelectorAll('video').forEach(v => v.pause());
+            if (hadFocus && lastFocused && typeof lastFocused.focus === 'function' && document.contains(lastFocused)) {
+                lastFocused.focus();
+            }
+            lastFocused = null;
         }
         function closeAllModals() {
             document.querySelectorAll('.modal.active').forEach(m => closeModal(m.id));
@@ -726,27 +738,37 @@
 
         // Embedded viewer (keeps the header visible above GDDs / CVs)
         let viewerRevealTimer = null;
+        let lastFocusedViewer = null;
         function openViewer(url, title) {
             const viewer = document.getElementById('viewer');
             const frame = document.getElementById('viewer-frame');
             if (!viewer || !frame || !url) return;
+            lastFocusedViewer = document.activeElement;
             syncViewerTop();
             viewer.classList.remove('content-ready');
+            if (title) frame.setAttribute('title', title);
             if (frame.getAttribute('src') !== url) frame.setAttribute('src', url);
             // animate the panel in on the next frame, then reveal content once it has settled
             requestAnimationFrame(() => viewer.classList.add('viewer-open'));
             clearTimeout(viewerRevealTimer);
             viewerRevealTimer = setTimeout(() => viewer.classList.add('content-ready'), 270);
             document.body.style.overflow = 'hidden';
+            const closeBtn = viewer.querySelector('button');
+            if (closeBtn && typeof closeBtn.focus === 'function') closeBtn.focus();
         }
         function closeViewer() {
             const viewer = document.getElementById('viewer');
             const frame = document.getElementById('viewer-frame');
             if (!viewer) return;
+            const hadFocus = viewer.contains(document.activeElement);
             viewer.classList.remove('viewer-open');
             viewer.classList.remove('content-ready');
             clearTimeout(viewerRevealTimer);
             document.body.style.overflow = '';
+            if (hadFocus && lastFocusedViewer && typeof lastFocusedViewer.focus === 'function' && document.contains(lastFocusedViewer)) {
+                lastFocusedViewer.focus();
+            }
+            lastFocusedViewer = null;
             setTimeout(function () {
                 if (!viewer.classList.contains('viewer-open') && frame) frame.src = 'about:blank';
             }, 420);
@@ -877,6 +899,32 @@
             }
         })();
 
+        // Make div-based cards/thumbnails keyboard-operable (they use inline onclick)
+        (function () {
+            document.querySelectorAll('#projects [onclick], .modal [onclick]').forEach(function (el) {
+                if (el.tagName === 'BUTTON' || el.tagName === 'A') return;
+                el.setAttribute('role', 'button');
+                if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+            });
+        })();
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const el = e.target.closest && e.target.closest('[role="button"][onclick]');
+            if (!el) return;
+            e.preventDefault();
+            el.click();
+        });
+
         // Initialize language on load so static HTML matches the active language
         setLang('en');
+
+        // Inline handlers in index.html rely on these being global
+        window.setLang = setLang;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.openViewer = openViewer;
+        window.closeViewer = closeViewer;
+        window.openLightbox = openLightbox;
+        window.closeLightbox = closeLightbox;
+})();
     

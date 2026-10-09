@@ -3,6 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="『ダマスカスの残響』企画提案書 — Celeste の精密さと記憶の叙情を軸に、シリア・ダマスカスを舞台とする 2D プラットフォーマーの Story &amp; Design Brief。">
+    <meta name="author" content="M Alashraf Tolimat">
+    <meta name="theme-color" content="#05060a">
+    <link rel="canonical" href="https://malashraftulimat.github.io/My_Portfolio/echos.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="ASHRAF STUDIOS">
+    <meta property="og:title" content="Echoes of Damascus — Story &amp; Design">
+    <meta property="og:description" content="A lyrical 2D platformer proposal set in Damascus — the precision of Celeste, and a city's memories reborn as echoes.">
+    <meta property="og:url" content="https://malashraftulimat.github.io/My_Portfolio/echos.html">
+    <meta property="og:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+    <meta property="og:image:alt" content="Echoes of Damascus — Story &amp; Design proposal cover">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Echoes of Damascus — Story &amp; Design">
+    <meta name="twitter:description" content="A lyrical 2D platformer proposal set in Damascus.">
+    <meta name="twitter:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+
     <title id="meta-title">提案書：ダマスカスの残響 — Story &amp; Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,75 +71,8 @@
         html[dir="rtl"] .bar i { background: linear-gradient(270deg, var(--blue), var(--pink)); }
         html[dir="rtl"] .runhead, html[dir="rtl"] .footer { letter-spacing: 0; }
 
-        /* ================= Language bar ================= */
-        .langbar {
-            position: fixed;
-            top: 14px;
-            right: 16px;
-            z-index: 100;
-            direction: ltr;
-        }
-        .langbar-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font: inherit;
-            font-size: 12px;
-            letter-spacing: 0.04em;
-            color: var(--text);
-            background: rgba(14, 16, 20, 0.92);
-            border: 1px solid var(--line-strong);
-            border-radius: 999px;
-            padding: 7px 14px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(8px);
-            transition: border-color 0.15s, color 0.15s;
-        }
-        .langbar-toggle:hover { border-color: var(--pink); }
-        .langbar-caret { font-size: 9px; color: var(--muted); }
-        .lang-menu {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            min-width: 176px;
-            padding: 6px;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            background: rgba(14, 16, 20, 0.97);
-            border: 1px solid var(--line-strong);
-            border-radius: 14px;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.55);
-            backdrop-filter: blur(8px);
-        }
-        .lang-menu[hidden] { display: none; }
-        .lang-menu button {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            font: inherit;
-            font-size: 13px;
-            letter-spacing: 0.02em;
-            text-align: left;
-            color: var(--muted);
-            background: none;
-            border: none;
-            border-radius: 9px;
-            padding: 8px 10px;
-            cursor: pointer;
-            transition: color 0.15s, background 0.15s;
-        }
-        .lang-menu button:hover { color: var(--text); background: rgba(255,255,255,0.06); }
-        .lang-menu button[aria-pressed="true"] { color: #fff; background: var(--pink); }
-        .lang-flag { display: inline-block; width: 20px; height: 15px; border-radius: 2px; object-fit: cover; vertical-align: middle; flex: none; }
-        .lang-code { margin-left: auto; font-size: 10px; letter-spacing: 0.08em; opacity: 0.7; }
-
         /* ===== Smooth motion ===== */
         html { scroll-behavior: smooth; }
-        @keyframes dropIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-        .lang-menu:not([hidden]) { animation: dropIn 0.2s ease; }
         a, button { transition: transform 0.15s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease; }
         a:active, button:active { transform: scale(0.95); }
 
@@ -590,7 +547,7 @@
         /* ================= Responsive (screen only) ================= */
         @media screen { html { scroll-behavior: smooth; } }
         @media screen and (max-width: 900px) {
-            .page { width: 100%; min-height: 0; padding: 22px 18px; margin: 8px; }
+            .page { width: auto; min-height: 0; padding: 22px 18px; margin: 8px; }
             .deck.two, .deck.three { grid-template-columns: 1fr; }
             .span-2, .span-3 { grid-column: auto; }
             .cover h1 { font-size: 44px; }
@@ -604,7 +561,6 @@
             .milestone .when { text-align: start; }
             .contact { grid-template-columns: 1fr; }
             .footer { flex-wrap: wrap; justify-content: flex-start; gap: 4px 14px; }
-            .langbar { position: static; margin: 10px 8px 0 auto; width: max-content; }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -817,7 +773,6 @@
 
         /* ================= Print ================= */
         @media print {
-            .langbar { display: none; }
             body { background: #fff; color: #111; }
             .page {
                 margin: 0; border: none; box-shadow: none;
@@ -1079,7 +1034,7 @@
 <main>
 
     <!-- ============ PAGE 1 · COVER ============ -->
-    <article class="page cover" aria-label="表紙">
+    <article class="page cover" aria-label="表紙" data-aria="aria.cover">
         <div class="cover-top">
             <span data-t="cover.studio">ASHRAF STUDIOS — Game Proposal</span>
             <span class="conf" data-t="cover.conf">Confidential · 企画提案書</span>
@@ -1109,7 +1064,7 @@
         </div>
 
         <figure class="px-figure">
-            <img class="px-char" src="malik.png" alt="">
+            <img class="px-char" src="malik.png" alt="" width="108" height="263" decoding="async">
             <figcaption class="px-caption" data-t="cover.charCaption">想定される主人公の姿を描いた架空のキャラクター</figcaption>
         </figure>
         </div>
@@ -1122,7 +1077,7 @@
     </article>
 
     <!-- ============ PAGE 2 · CONTENTS + NARRATIVE ============ -->
-    <article class="page" id="narrative" aria-label="目次と物語">
+    <article class="page" id="narrative" aria-label="目次と物語" data-aria="aria.narrative">
         <div class="runhead">
             <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
             <span data-t="runhead.narrative">01 · 目次 / 物語の軌跡</span>
@@ -1134,7 +1089,7 @@
                 <p class="lead" data-t="lead.exec">本提案は、シリア・ダマスカスを舞台にした叙情的な 2D プラットフォーマー「ダマスカスの残響」の企画概要です。失われた都市の記憶を「残響」として可視化する独自のメカニクスと、Celeste に学ぶ精密な操作性を両輪とし、短くも密度の高い体験を目指します。</p>
 
                 <h2 style="margin-top: 18px;" data-t="h.toc">目次 — Table of Contents</h2>
-                <nav class="toc" aria-label="目次">
+                <nav class="toc" aria-label="目次" data-aria="aria.toc">
                     <a href="#narrative"><span class="num">01</span><span class="t" data-t="toc.1">物語の軌跡 — Narrative Arc</span><span class="d"></span><span class="pg">02</span></a>
                     <a href="#systems"><span class="num">02</span><span class="t" data-t="toc.2">システム・アート・独自の価値</span><span class="d"></span><span class="pg">03</span></a>
                     <a href="#roadmap"><span class="num">03</span><span class="t" data-t="toc.3">開発状況とロードマップ</span><span class="d"></span><span class="pg">04</span></a>
@@ -1173,7 +1128,7 @@
     </article>
 
     <!-- ============ PAGE 3 · SYSTEMS ============ -->
-    <article class="page" id="systems" aria-label="システムと開発">
+    <article class="page" id="systems" aria-label="システムと開発" data-aria="aria.systems">
         <div class="runhead">
             <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
             <span data-t="runhead.systems">02 · Systems, Art &amp; Studio</span>
@@ -1248,7 +1203,7 @@
     </article>
 
     <!-- ============ PAGE 4 · ROADMAP + TEAM + CONTACT ============ -->
-    <article class="page" id="roadmap" aria-label="ロードマップとチーム">
+    <article class="page" id="roadmap" aria-label="ロードマップとチーム" data-aria="aria.roadmap">
         <div class="runhead">
             <span data-th="runhead.doc"><b>ダマスカスの残響</b> — Story &amp; Design</span>
             <span data-t="runhead.roadmap">03 · Roadmap / Team / Contact</span>
@@ -1369,6 +1324,11 @@
     const I18N = {
         en: {
             "meta.title": "Echoes of Damascus — Story & Design",
+            "aria.cover": "Cover",
+            "aria.narrative": "Contents and Narrative Arc",
+            "aria.toc": "Table of contents",
+            "aria.systems": "Systems and Development",
+            "aria.roadmap": "Roadmap and Team",
             "cover.studio": "ASHRAF STUDIOS — Game Proposal",
             "cover.conf": "Confidential · Game Proposal",
             "game.title": "Echoes of<br><span class=\"accent\">Damascus</span>",
@@ -1469,6 +1429,11 @@
 
         ar: {
             "meta.title": "أصداء دمشق — القصة والتصميم",
+            "aria.cover": "الغلاف",
+            "aria.narrative": "المحتويات وقوس الحكاية",
+            "aria.toc": "جدول المحتويات",
+            "aria.systems": "الأنظمة والتطوير",
+            "aria.roadmap": "خطة الطريق والفريق",
             "cover.studio": "ASHRAF STUDIOS — عرض لعبة",
             "cover.conf": "سري · عرض لعبة",
             "game.title": "أصداء<br><span class=\"accent\">دمشق</span>",
@@ -1569,6 +1534,11 @@
 
         ko: {
             "meta.title": "다마스쿠스의 잔향 — 스토리 & 디자인",
+            "aria.cover": "표지",
+            "aria.narrative": "목차와 서사 흐름",
+            "aria.toc": "목차",
+            "aria.systems": "시스템과 개발",
+            "aria.roadmap": "로드맵과 팀",
             "cover.studio": "ASHRAF STUDIOS — 게임 기획",
             "cover.conf": "대외비 · 게임 기획서",
             "game.title": "다마스쿠스의<br><span class=\"accent\">잔향</span>",
@@ -1669,6 +1639,11 @@
 
         tr: {
             "meta.title": "Şam'ın Yankıları — Hikâye ve Tasarım",
+            "aria.cover": "Kapak",
+            "aria.narrative": "İçindekiler ve Anlatı Yayı",
+            "aria.toc": "İçindekiler",
+            "aria.systems": "Sistemler ve Geliştirme",
+            "aria.roadmap": "Yol Haritası ve Ekip",
             "cover.studio": "ASHRAF STUDIOS — Oyun Teklifi",
             "cover.conf": "Gizli · Oyun Teklifi",
             "game.title": "Şam'ın<br><span class=\"accent\">Yankıları</span>",
@@ -1769,9 +1744,10 @@
     };
 
     // Capture the original Japanese content from the DOM
-    const originals = { t: {}, h: {} };
+    const originals = { t: {}, h: {}, aria: {} };
     document.querySelectorAll('[data-t]').forEach(el => { originals.t[el.dataset.t] = el.textContent; });
     document.querySelectorAll('[data-th]').forEach(el => { originals.h[el.dataset.th] = el.innerHTML; });
+    document.querySelectorAll('[data-aria]').forEach(el => { originals.aria[el.dataset.aria] = el.getAttribute('aria-label'); });
     const originalTitle = document.getElementById('meta-title').textContent;
 
     function setLang(lang) {
@@ -1791,6 +1767,11 @@
         document.querySelectorAll('[data-th]').forEach(el => {
             const k = el.dataset.th;
             el.innerHTML = dict ? (dict[k] ?? originals.h[k]) : originals.h[k];
+        });
+        document.querySelectorAll('[data-aria]').forEach(el => {
+            const k = el.dataset.aria;
+            const v = dict ? (dict[k] ?? originals.aria[k]) : originals.aria[k];
+            if (v) el.setAttribute('aria-label', v);
         });
 
         document.getElementById('meta-title').textContent = dict ? (dict['meta.title'] ?? originalTitle) : originalTitle;

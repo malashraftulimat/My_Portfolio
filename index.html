@@ -21,6 +21,7 @@
     <meta property="og:description" content="Game programmer and Unity/C# developer based in Tokyo. Portfolio of games, 3D environments, and technical projects.">
     <meta property="og:url" content="https://malashraftulimat.github.io/My_Portfolio/">
     <meta property="og:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+    <meta property="og:image:alt" content="M Alashraf Tolimat — Game Developer portfolio">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -29,6 +30,7 @@
     <meta name="twitter:title" content="M ALASHRAF TOLIMAT | Game Developer">
     <meta name="twitter:description" content="Game programmer and Unity/C# developer based in Tokyo.">
     <meta name="twitter:image" content="https://malashraftulimat.github.io/My_Portfolio/og-image.png">
+    <meta name="twitter:image:alt" content="M Alashraf Tolimat — Game Developer portfolio">
 
     <!-- Preconnect for third-party assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +42,7 @@
     <!-- Cloudflare Turnstile (privacy-friendly CAPTCHA) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="tailwind.css?v=1">
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=19">
     <link rel="preload" as="image" href="page-bg.webp" media="(min-aspect-ratio: 1/1)">
     <link rel="preload" as="image" href="page-bg-mobile.webp" media="(max-aspect-ratio: 1/1)">
 
@@ -65,10 +67,7 @@
 </head>
 <body class="antialiased min-h-screen relative theme-tenno">
 
-    <div class="orokin-bg orokin-bg--a" aria-hidden="true"></div>
-    <div class="orokin-bg orokin-bg--b" aria-hidden="true"></div>
     <div class="nebula-bg" aria-hidden="true"></div>
-    <div class="starfield" aria-hidden="true"></div>
     <div class="site-bg" aria-hidden="true"></div>
     <div class="tenno-script" aria-hidden="true">
         <span class="tenno-script__col tenno-script__col--l" data-tenno-skip>TENNO DAMASCUS VOID LOTUS TENNO DAMASCUS VOID LOTUS TENNO DAMASCUS VOID LOTUS</span>
@@ -125,7 +124,7 @@
         <div id="viewer-loading" class="absolute inset-0 z-10 flex items-center justify-center bg-darkBg">
             <div class="viewer-spinner"></div>
         </div>
-        <iframe id="viewer-frame" title="Embedded content" class="relative flex-1 w-full border-0 bg-white block"></iframe>
+        <iframe id="viewer-frame" title="Embedded content" loading="lazy" allow="fullscreen; autoplay; clipboard-write" referrerpolicy="no-referrer-when-downgrade" class="relative flex-1 w-full border-0 bg-white block"></iframe>
     </div>
 
     <header id="top" class="hero">
@@ -139,10 +138,10 @@
             <aside class="hero-profile">
                 <div class="hero-portrait">
                     <div class="hero-portrait__inner">
-                        <img src="MY-PHOTO.webp" alt="M Alashraf Tolimat" width="300" height="360" onerror="this.src='https://via.placeholder.com/300x360/1b222c/ff6a00?text=Photo'" decoding="async">
+                        <img src="MY-PHOTO.webp" alt="M Alashraf Tolimat" width="300" height="360" decoding="async">
                     </div>
                 </div>
-                <h1 class="hero-name" id="dynamicName">エムアルアシュラフ<br>トリマト</h1>
+                <h1 class="hero-name" id="dynamicName">M ALASHRAF<br>TOLIMAT</h1>
                 <p class="hero-role" data-i18n="studentAt">Student at TECHNOS COLLEGE, Tokyo</p>
                 <p class="hero-tagline" data-i18n="tagline">GAME PROGRAMMER IN THE MAKING – BRIDGING CODE, CREATIVITY, AND CORE GAMEPLAY</p>
                 <div class="hero-actions">
@@ -188,7 +187,7 @@
 
     <section id="skills" class="py-24 px-4 bg-cardBg/30 border-y border-gray-800" style="content-visibility:auto; contain-intrinsic-size:800px">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-2xl font-bold mb-5 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h3>
+            <h2 class="text-2xl font-bold mb-5 uppercase tracking-wider text-white" data-i18n="skillsTitle">SKILLS & LANGUAGES</h2>
 
             <div class="space-y-8">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -284,7 +283,7 @@
 
     <section id="projects" class="py-16 px-4" style="content-visibility:auto; contain-intrinsic-size:1200px">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h3>
+            <h2 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="projectsTitle">FEATURED WORKS</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
@@ -299,7 +298,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p5Title">Echoes of Damascus</h3>
                         <div class="proj-facts" data-facts="echos"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p5Desc">A lyrical 2D platformer GDD & proposal featuring multi-language support.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -323,7 +322,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GAME</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p1Title">Sol Frame</h3>
                         <div class="proj-facts" data-facts="solframe"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p1Desc">Chicken Invaders style game developed with modern assistance.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -347,7 +346,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">3D</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p2Title">3D Environments</h3>
                         <div class="proj-facts" data-facts="env3d"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p2Desc">3D environmental models including station and campus.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -371,7 +370,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">ART</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p3Title">Pixel Art & Design</h3>
                         <div class="proj-facts" data-facts="pixelart"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p3Desc">Character, UI, and level design concepts created in Photoshop.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -394,7 +393,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">EVENT</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p4Title">Tokyo Game Show 2024</h3>
                         <div class="proj-facts" data-facts="tgs"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p4Desc">Meeting the Digital Extremes team after 11 years.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -418,7 +417,7 @@
                         <span class="absolute top-3 right-3 text-[10px] font-mono tracking-[0.18em] uppercase text-accent/80 border border-accent/30 bg-accent/5 rounded px-2 py-1">GDD</span>
                     </div>
                     <div class="relative p-6">
-                        <h4 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h4>
+                        <h3 class="font-semibold text-lg mb-2 text-white group-hover:text-accent transition" data-i18n="p6Title">Barjees (البرجيس)</h3>
                         <div class="proj-facts" data-facts="barjees"></div>
                         <p class="text-sm text-gray-400 leading-relaxed mb-5 h-10 overflow-hidden" data-i18n="p6Desc">A complete Game Design Document for the traditional board game Barjees.</p>
                         <div class="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -436,7 +435,7 @@
     </section>
 
     <section id="contact" class="py-16 px-4 max-w-6xl mx-auto" style="content-visibility:auto; contain-intrinsic-size:400px">
-        <h3 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="contactTitle">CONTACT</h3>
+        <h2 class="text-2xl font-bold mb-8 uppercase tracking-wider text-white" data-i18n="contactTitle">CONTACT</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardBg/50 p-8 rounded-lg border border-gray-800">
             <form id="contact-form" class="flex flex-col gap-3 w-full">
                 <div data-fs-success style="display: none;" class="bg-green-900/50 text-green-400 p-3 text-sm rounded border border-green-700 font-bold" data-i18n="msgSuccess">Message sent successfully!</div>
@@ -613,10 +612,8 @@
         </div>
     </div>
 
-    <script src="main.js?v=11"></script>
+    <script src="main.js?v=12"></script>
 
-    <script src="orokin-bg.js?v=5"></script>
-    
     <script src="formspree-init.js?v=2"></script>
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
