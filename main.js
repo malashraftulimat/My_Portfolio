@@ -44,6 +44,8 @@
                 p5Desc: "A lyrical 2D platformer GDD & proposal featuring multi-language support.",
                 p6Title: "Barjees Board Game",
                 p6Desc: "A complete Game Design Document modernizing the traditional board game.",
+                p7Title: "Warframe 101",
+                p7Desc: "A trilingual interactive beginner's guide to Warframe, built from scratch with vanilla HTML, CSS and JavaScript.",
                 skillsTitle: "SKILLS & LANGUAGES",
                 skills_GameDev: "Game Dev",
                 skills_Code: "Code",
@@ -126,6 +128,8 @@
                 p5Desc: "عرض تقديمي (GDD) للعبة منصات ثنائية الأبعاد تدعم لغات متعددة.",
                 p6Title: "لعبة البرجيس",
                 p6Desc: "وثيقة تصميم متكاملة (GDD) لتحديث لعبة الطاولة التراثية البرجيس.",
+                p7Title: "وورفريم 101",
+                p7Desc: "دليل تفاعلي للمبتدئين في وورفريم بثلاث لغات، مبني من الصفر باستخدام HTML وCSS وJavaScript.",
                 skillsTitle: "المهارات واللغات",
                 skills_GameDev: "تطوير الألعاب",
                 skills_Code: "البرمجة",
@@ -208,6 +212,8 @@
                 p5Desc: "多言語対応の叙情的な2Dプラットフォーマー企画書（GDD）。",
                 p6Title: "バルジース (伝統的ボードゲーム)",
                 p6Desc: "中東の伝統的なボードゲーム「バルジース」を現代化したゲームデザインドキュメント（GDD）。",
+                p7Title: "Warframe 101",
+                p7Desc: "Vanilla HTML/CSS/JavaScriptで一から作った、3言語対応のWarframeインタラクティブ初心者ガイド。",
                 skillsTitle: "スキルとツール",
                 skills_GameDev: "ゲーム開発",
                 skills_Code: "コード",
@@ -290,6 +296,8 @@
                 p5Desc: "다국어를 지원하는 서정적인 2D 플랫포머 기획서(GDD).",
                 p6Title: "바르지스 (전통 보드게임)",
                 p6Desc: "전통 보드게임 바르지스를 현대화한 종합적인 게임 기획서(GDD).",
+                p7Title: "워프레임 101",
+                p7Desc: "바닐라 HTML/CSS/JavaScript로 처음부터 만든 3개 국어 워프레임 초보자 가이드.",
                 skillsTitle: "기술 및 언어",
                 skills_GameDev: "게임 개발",
                 skills_Code: "코드",
@@ -372,6 +380,8 @@
                 p5Desc: "Çok dilli destek sunan lirik bir 2D platform oyunu GDD ve teklifi.",
                 p6Title: "Barjees Kutu Oyunu",
                 p6Desc: "Geleneksel kutu oyununu modernleştiren eksiksiz bir Oyun Tasarım Belgesi.",
+                p7Title: "Warframe 101",
+                p7Desc: "Vanilla HTML, CSS ve JavaScript ile sıfırdan yapılmış, üç dilli etkileşimli Warframe başlangıç rehberi.",
                 skillsTitle: "YETENEKLER VE DİLLER",
                 skills_GameDev: "Oyun Geliştirme",
                 skills_Code: "Kod",
@@ -446,7 +456,8 @@
                 env3d:    { period: "2026",              role: "Solo — Modelling, Texturing & Lighting",  status: "Completed",   credits: "Built from my own photo reference. No third-party assets." },
                 pixelart: { period: "2026",              role: "Solo — Design & Illustration",           status: "Completed",   credits: "Original artwork. Fan-art pieces (Zelda, Mario, Pokémon) are non-commercial studies." },
                 tgs:      { period: "Sep 2024",          role: "Attendee — Networking",                  status: "Event",       credits: "Photos taken by me at the event." },
-                barjees:  { period: "Jul – Sep 2026",     role: "Solo — GDD & modernization of a traditional game",          status: "Completed",   credits: "Barjees is a traditional Syrian board game and part of Syrian cultural heritage. The modernized rules, adaptation and this design document are by me." }
+                barjees:  { period: "Jul – Sep 2026",     role: "Solo — GDD & modernization of a traditional game",          status: "Completed",   credits: "Barjees is a traditional Syrian board game and part of Syrian cultural heritage. The modernized rules, adaptation and this design document are by me." },
+                warframe: { period: "2026",              role: "Solo — Design, Code & Translation", credits: "Original non-commercial fan guide built with vanilla HTML/CSS/JS. Warframe content and images belong to Digital Extremes." }
             },
             ar: {
                 echos:    { period: "2026",              role: "فردي — الفكرة والتصميم والتوثيق", status: "قيد التخطيط", credits: "الفكرة والقصة والاتجاه الفني والتصميم من إعدادي." },
@@ -454,7 +465,8 @@
                 env3d:    { period: "2026",              role: "فردي — النمذجة والتكستير والإضاءة", status: "مكتمل", credits: "مبني على صور مرجعية خاصة بي. بدون أصول خارجية." },
                 pixelart: { period: "2026",              role: "فردي — التصميم والرسم", status: "مكتمل", credits: "أعمال أصلية. رسومات المعجبين (Zelda وMario وPokémon) دراسات غير تجارية." },
                 tgs:      { period: "سبتمبر 2024",      role: "حاضر — تواصل", status: "فعالية", credits: "الصور من التقاطي في الفعالية." },
-                barjees:  { period: "يوليو – سبتمبر 2026", role: "فردي — وثيقة تصميم وتحديث لعبة تراثية", status: "مكتمل", credits: "البرجيس لعبة طاولة سورية تراثية ومن التراث السوري. تحديث القواعد والتكييف ووثيقة التصميم من إعدادي." }
+                barjees:  { period: "يوليو – سبتمبر 2026", role: "فردي — وثيقة تصميم وتحديث لعبة تراثية", status: "مكتمل", credits: "البرجيس لعبة طاولة سورية تراثية ومن التراث السوري. تحديث القواعد والتكييف ووثيقة التصميم من إعدادي." },
+                warframe: { period: "2026", role: "فردي — التصميم والبرمجة والترجمة", credits: "دليل معجبين غير تجاري مبني بـ HTML/CSS/JS الأصلية. محتوى وصور Warframe ملك لشركة Digital Extremes." }
             },
             ja: {
                 echos:    { period: "2026年",           role: "個人 — 企画・デザイン・ドキュメント", status: "企画中", credits: "コンセプト・ストーリー・アートディレクション・デザインはすべて本人制作。" },
@@ -462,7 +474,8 @@
                 env3d:    { period: "2026年",           role: "個人 — モデリング・テクスチャ・ライティング", status: "完成", credits: "自作の写真資料を基に制作。外部アセットは未使用。" },
                 pixelart: { period: "2026年",           role: "個人 — デザイン・イラスト", status: "完成", credits: "オリジナル作品。ファンアート（Zelda・Mario・Pokémon）は非商用の習作。" },
                 tgs:      { period: "2024年9月",         role: "来場 — 交流", status: "イベント", credits: "写真は本人撮影。" },
-                barjees:  { period: "2026年7月〜9月",     role: "個人 — 伝統ゲームのGDD・現代化", status: "完成", credits: "バルジースはシリアの伝統的なボードゲームであり、シリアの文化遺産です。現代化したルール・翻案・本デザインドキュメントは本人制作です。" }
+                barjees:  { period: "2026年7月〜9月",     role: "個人 — 伝統ゲームのGDD・現代化", status: "完成", credits: "バルジースはシリアの伝統的なボードゲームであり、シリアの文化遺産です。現代化したルール・翻案・本デザインドキュメントは本人制作です。" },
+                warframe: { period: "2026年", role: "個人 — デザイン・コード・翻訳", credits: "非営利のファンガイド。Vanilla HTML/CSS/JSで制作。Warframeのコンテンツと画像はDigital Extremesに帰属します。" }
             },
             ko: {
                 echos:    { period: "2026",              role: "개인 — 기획·디자인·문서", status: "기획 중", credits: "콘셉트, 스토리, 아트 디렉션, 디자인 모두 직접 제작." },
@@ -470,7 +483,8 @@
                 env3d:    { period: "2026",              role: "개인 — 모델링·텍스처·라이팅", status: "완성", credits: "직접 촬영한 사진 자료를 기반으로 제작. 외부 에셋 미사용." },
                 pixelart: { period: "2026",              role: "개인 — 디자인·일러스트", status: "완성", credits: "원작 작품. 팬아트(Zelda·Mario·Pokémon)는 비상업적 습작." },
                 tgs:      { period: "2024년 9월",         role: "참관 — 네트워킹", status: "이벤트", credits: "사진은 직접 촬영." },
-                barjees:  { period: "2026년 7월 – 9월",   role: "개인 — 전통 게임 GDD 및 현대화", status: "완성", credits: "바르지스는 시리아 전통 보드게임이자 시리아 문화유산입니다. 현대화한 규칙, 각색, 본 기획서는 직접 제작했습니다." }
+                barjees:  { period: "2026년 7월 – 9월",   role: "개인 — 전통 게임 GDD 및 현대화", status: "완성", credits: "바르지스는 시리아 전통 보드게임이자 시리아 문화유산입니다. 현대화한 규칙, 각색, 본 기획서는 직접 제작했습니다." },
+                warframe: { period: "2026", role: "개인 — 디자인·코드·번역", credits: "비상업적 팬 가이드. 바닐라 HTML/CSS/JS로 제작. Warframe 콘텐츠와 이미지는 Digital Extremes 소유입니다." }
             },
             tr: {
                 echos:    { period: "2026",              role: "Tek kişi — Konsept, Tasarım ve Dokümantasyon", status: "Planlanıyor", credits: "Konsept, hikâye, sanat yönetimi ve tasarım tamamen bana ait." },
@@ -478,7 +492,8 @@
                 env3d:    { period: "2026",              role: "Tek kişi — Modelleme, Doku ve Aydınlatma", status: "Tamamlandı", credits: "Kendi fotoğraf referansımdan üretildi. Üçüncü taraf varlık yok." },
                 pixelart: { period: "2026",              role: "Tek kişi — Tasarım ve İllüstrasyon", status: "Tamamlandı", credits: "Özgün çalışmalar. Hayran sanatı (Zelda, Mario, Pokémon) ticari olmayan denemelerdir." },
                 tgs:      { period: "Eyl 2024",          role: "Katılımcı — Networking", status: "Etkinlik", credits: "Fotoğraflar etkinlikte tarafımdan çekildi." },
-                barjees:  { period: "Tem – Eyl 2026",     role: "Tek kişi — Geleneksel oyun GDD ve modernizasyonu", status: "Tamamlandı", credits: "Barjees, Suriye'nin geleneksel bir kutu oyunu ve Suriye kültürel mirasıdır. Modernize edilmiş kurallar, uyarlama ve bu tasarım belgesi bana aittir." }
+                barjees:  { period: "Tem – Eyl 2026",     role: "Tek kişi — Geleneksel oyun GDD ve modernizasyonu", status: "Tamamlandı", credits: "Barjees, Suriye'nin geleneksel bir kutu oyunu ve Suriye kültürel mirasıdır. Modernize edilmiş kurallar, uyarlama ve bu tasarım belgesi bana aittir." },
+                warframe: { period: "2026", role: "Tek kişi — Tasarım, Kod ve Çeviri", credits: "Ticari olmayan bir hayran rehberi. Vanilla HTML/CSS/JS ile yapıldı. Warframe içeriği ve görselleri Digital Extremes'e aittir." }
             }
         };
 
@@ -672,6 +687,10 @@
                 localStorage.setItem('barjees_lang', syncLang === 'ja' ? 'jp' : syncLang);    // Barjees (uses 'jp' for Japanese)
             } catch (e) {}
 
+            // Warframe guide: share the master language and update it live if open
+            try { localStorage.setItem('wf101-lang', guideLangFrom(applyKey)); } catch (e) {}
+            pushLangToGuide();
+
             // Tenno script mode: render the (English) content with the tenObet font
             document.body.classList.toggle('tenno-active', lang === 'tt');
 
@@ -739,15 +758,36 @@
         // Embedded viewer (keeps the header visible above GDDs / CVs)
         let viewerRevealTimer = null;
         let lastFocusedViewer = null;
+        // The Warframe guide supports en/ja/ar/tr/ko; map anything else (tt) to English.
+        function guideLangFrom(applyKey) {
+            return (applyKey === 'ja' || applyKey === 'ar' || applyKey === 'tr' || applyKey === 'ko') ? applyKey : 'en';
+        }
+        function withGuideLang(url) {
+            if (!/^warframe-101\//.test(url)) return url;
+            const gl = guideLangFrom(document.documentElement.getAttribute('lang'));
+            return url + (url.indexOf('?') === -1 ? '?' : '&') + 'lang=' + gl;
+        }
+        function pushLangToGuide() {
+            const frame = document.getElementById('viewer-frame');
+            if (!frame || !frame.contentWindow) return;
+            if (!/^warframe-101\//.test(frame.getAttribute('src') || '')) return;
+            try {
+                frame.contentWindow.postMessage(
+                    { type: 'wf101-lang', lang: guideLangFrom(document.documentElement.getAttribute('lang')) },
+                    location.origin
+                );
+            } catch (e) {}
+        }
         function openViewer(url, title) {
             const viewer = document.getElementById('viewer');
             const frame = document.getElementById('viewer-frame');
             if (!viewer || !frame || !url) return;
+            const src = withGuideLang(url);
             lastFocusedViewer = document.activeElement;
             syncViewerTop();
             viewer.classList.remove('content-ready');
             if (title) frame.setAttribute('title', title);
-            if (frame.getAttribute('src') !== url) frame.setAttribute('src', url);
+            if (frame.getAttribute('src') !== src) frame.setAttribute('src', src);
             // animate the panel in on the next frame, then reveal content once it has settled
             requestAnimationFrame(() => viewer.classList.add('viewer-open'));
             clearTimeout(viewerRevealTimer);

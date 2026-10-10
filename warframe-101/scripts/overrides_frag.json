@@ -1,0 +1,14 @@
+{
+  "(jump + crouch mid-air), slides, and aim-glide to fly around the map. Mobility isn't a gimmick — it's your main defense against getting surrounded.": {
+    "ja": "(ジャンプ+空中しゃがみ)、スライド、エイムグライドでマップ上を飛び回ります。機動力は単なるギミックではありません。敵に囲まれないための最大の防御手段です。",
+    "ar": "(القفز + الانحناء في الهواء)، والشرائح، والانزلاق على الهدف للتحليق حول الخريطة. الحركة المستمرة ليست مجرد استعراض — إنها وسيلة دفاعك الأساسية لتجنب الحصار."
+  },
+  "Toxin skips Shields entirely and poisons health directly — the classic anti-Corpus bypass.": {
+    "ja": "毒素はシールドを完全に無視して直接ヘルスにダメージを与える。これは古典的な対コーパスのバイパスです。",
+    "ar": "السم (Toxin) يتخطى الدروع (Shields) تماماً ويستنزف الصحة مباشرة - المجازة الكلاسيكية المضادة للجسم."
+  },
+  "Warframe is a marathon, not a sprint. Don't try to learn every system on day one — the game unlocks them gradually for a reason.": {
+    "ja": "Warframeは短距離走ではなくマラソンです。初日にすべてのシステムを理解しようとしないでください。ゲームでは、理由があって徐々にそれらのロックが解除されます。",
+    "ar": "لعبة Warframe أشبه بماراثون، وليست سباق سرعة. لا تحاول فهم كل الأنظمة في اليوم الأول، فاللعبة تفتحه تدريجيًا لسبب ما."
+  }
+}

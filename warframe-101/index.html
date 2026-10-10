@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warframe: The Ultimate Beginner's Guide</title>
+<meta name="description" content="An interactive beginner's guide to Warframe: warframes, weapons, mods, damage types, the star chart, relics and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <div class="nav" id="nav">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-haspopup="true" aria-expanded="false" aria-controls="navMenu">☰</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#basics"><span class="nav-label">Basics</span></a>
+      <a href="#frames"><span class="nav-label">Warframes</span></a>
+      <a href="#combat"><span class="nav-label">Combat</span></a>
+      <a href="#damage"><span class="nav-label">Damage</span></a>
+      <a href="#mods"><span class="nav-label">Mods</span></a>
+      <a href="#star"><span class="nav-label">Star Chart</span></a>
+      <a href="#relics"><span class="nav-label">Relics</span></a>
+      <a href="#progress"><span class="nav-label">Progress</span></a>
+      <a href="#later"><span class="nav-label">Later</span></a>
+      <a href="#quiz"><span class="nav-label">Quiz</span></a>
+    </nav>
+  </div>
+  <a class="brand" href="#top">
+    <span class="brand-mark">◈</span>
+    <span class="brand-text" data-i18n-skip>WARFRAME <b>101</b></span>
+  </a>
+</header>
+<div class="read-progress"><span id="readBar"></span></div>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <span class="tenno-watermark" aria-hidden="true">TENNO</span>
+    <div class="hero-inner">
+      <p class="tenno-tag" aria-hidden="true" title="Welcome, Tenno">WELCOME TENNO</p>
+      <p class="eyebrow">A spoiler-light interactive guide</p>
+      <h1>
+        <span class="h1-intl"><span class="h1-mark">Warframe</span>: The Ultimate Beginner's Guide</span>
+        <span class="h1-ja" data-i18n-skip><span class="h1-mark">ウォーフレーム</span>は初めてですか？まずはここから。</span>
+        <span class="h1-ar" data-i18n-skip>الدليل الشامل للمبتدئين في <span class="h1-mark">وورفريم</span></span>
+        <span class="h1-tr" data-i18n-skip><span class="h1-mark">Warframe</span>: Nihai Başlangıç Rehberi</span>
+        <span class="h1-ko" data-i18n-skip><span class="h1-mark">Warframe</span>: 최고의 초보자 가이드</span>
+      </h1>
+      <p class="lede">
+        Warframe is a free-to-play, third-person <b>looter-shooter</b> where you are a
+        <b>Tenno</b> — a space ninja in a bio-mechanical suit. It is famously deep and
+        famously confusing. This guide walks you through the systems <em>in the order you meet them</em>,
+        with interactive widgets and real game imagery to play with.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#basics">Start the guide ↓</a>
+        <a class="btn ghost" href="#quiz">Skip to the quiz</a>
+      </div>
+      <ul class="hero-facts">
+        <li><b>Free</b> to play</li>
+        <li><b>4-player</b> co-op</li>
+        <li><b>PvE</b> looter-shooter</li>
+        <li><b>2013</b> — still updated</li>
+      </ul>
+    </div>
+    <div class="scroll-hint">scroll</div>
+  </section>
+
+  <!-- ===================== BASICS ===================== -->
+  <section id="basics" class="section">
+    <div class="section-head">
+      <span class="kicker">01 — The Basics</span>
+      <h2>What is Warframe, really?</h2>
+    </div>
+
+    <div class="grid two">
+      <div class="card prose">
+        <h3>The core loop</h3>
+        <p>
+          You pick a mission from the <b>Star Chart</b>, drop in with up to three other players,
+          complete an objective, and extract. Between missions you spend what you earned to
+          get <b>stronger</b>. Then you do it again, on harder planets.
+        </p>
+        <p>
+          The magic is that <b>your gear is the progression</b>. Almost every weapon and
+          Warframe is craftable for free — you farm blueprints and materials, build them in
+          the <b>Foundry</b>, and level them up.
+        </p>
+        <div class="callout">
+          <b>Key mindset:</b> Warframe is a marathon, not a sprint. Don't try to learn every
+          system on day one — the game unlocks them gradually for a reason.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>The loop, visually</h3>
+        <div class="loop" id="loop">
+          <button class="loop-step" data-step="0"><span class="ic">🛰️</span>Pick a mission</button>
+          <span class="loop-arrow">→</span>
+          <button class="loop-step" data-step="1"><span class="ic">⚔️</span>Fight &amp; loot</button>
+          <span class="loop-arrow">→</span>
+          <button class="loop-step" data-step="2"><span class="ic">🧩</span>Get mods &amp; resources</button>
+          <span class="loop-arrow">→</span>
+          <button class="loop-step" data-step="3"><span class="ic">🔨</span>Build in the Foundry</button>
+          <span class="loop-arrow">→</span>
+          <button class="loop-step" data-step="4"><span class="ic">📈</span>Level up gear</button>
+        </div>
+        <p class="loop-detail" id="loopDetail">Select a step above to learn what happens at each stage.</p>
+      </div>
+    </div>
+
+    <div class="grid three mt">
+      <div class="card mini media-card">
+        <img class="card-media" src="img/focus.webp" alt="Focus lens icon representing the Operator" loading="lazy" />
+        <h3>🧑‍🚀 You are the Operator</h3>
+        <p>The <b>Warframes</b> are remote-controlled bio-metal suits. The child who controls them is the <b>Operator</b> (from the ship <i>Zariman 10-0</i>). This is revealed through the story quests — keep going.</p>
+      </div>
+      <div class="card mini media-card">
+        <img class="card-media" src="img/planet_earth.webp" alt="Planet Earth on the Star Chart" loading="lazy" />
+        <h3>🪐 Origin System</h3>
+        <p>You fight across the solar system in ships called <b>Landing Crafts</b>. Your home base between missions is the <b>Orbiter</b>, where the Arsenal, Foundry, Mods and Market live.</p>
+      </div>
+      <div class="card mini media-card">
+        <img class="card-media" src="img/grineer.webp" alt="Grineer faction icon" loading="lazy" />
+        <h3>🤝 Factions</h3>
+        <p>The main enemy factions are the <b>Grineer</b>, <b>Corpus</b>, <b>Infested</b>, <b>Corrupted</b> and <b>Sentient</b>. Each is weak to different damage — meet them all below.</p>
+      </div>
+    </div>
+
+    <h3 class="mt">The five factions you'll fight</h3>
+    <div class="grid five" id="factions"></div>
+  </section>
+
+  <!-- ===================== WARFRAMES ===================== -->
+  <section id="frames" class="section alt">
+    <div class="section-head">
+      <span class="kicker">02 — Your Warframe</span>
+      <h2>Pick your first Warframe</h2>
+      <p class="sub">
+        At the start you choose one of three. Each plays very differently — but <b>none of them is a trap</b>.
+        You can craft the others later. Click a card to compare.
+      </p>
+    </div>
+    <div class="starter" id="starter">
+      <div class="starter-tabs" id="starterTabs"></div>
+      <div class="starter-panel" id="starterPanel"></div>
+    </div>
+  </section>
+
+  <!-- ===================== COMBAT ===================== -->
+  <section id="combat" class="section">
+    <div class="section-head">
+      <span class="kicker">03 — Combat</span>
+      <h2>Moving, shooting, slicing</h2>
+    </div>
+    <div class="grid two">
+      <div class="card prose">
+        <h3>Your loadout</h3>
+        <p>Every Warframe carries three weapons plus a Companion. Learn them below.</p>
+        <p>
+          You are fast on purpose. Use <b>Bullet Jump</b> (jump + crouch mid-air), slides,
+          and aim-glide to fly around the map. Mobility isn't a gimmick — it's your main
+          defense against getting surrounded.
+        </p>
+        <div class="callout">
+          <b>Pro tip:</b> keep moving. Standing still is how new players die. Kill enemies,
+          pick up loot, and let your shields recharge while you reposition.
+        </div>
+      </div>
+      <div class="card">
+        <h3>Controls to internalize</h3>
+        <ul class="keys">
+          <li><kbd>Space</kbd> Jump / double-jump</li>
+          <li><kbd>Ctrl</kbd> + <kbd>Space</kbd> Bullet jump (crouch then jump)</li>
+          <li><kbd>Shift</kbd> Sprint / slide while moving</li>
+          <li><kbd>E</kbd> Melee attack (hold to combo)</li>
+          <li><kbd>F</kbd> Interact / pick up / revive</li>
+          <li><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd> Warframe abilities</li>
+          <li><kbd>R</kbd> Reload</li>
+          <li><kbd>M</kbd> Open the map</li>
+        </ul>
+        <p class="muted">Bindings shown are the default PC layout.</p>
+      </div>
+    </div>
+
+    <h3 class="mt">Your loadout, slot by slot</h3>
+    <div class="card">
+      <div class="loadout" id="loadout"></div>
+      <p class="loadout-detail" id="loadoutDetail">Click a slot to see what it does and how it is modded.</p>
+    </div>
+
+    <div class="grid three mt" id="weaponTypes"></div>
+
+    <h3 class="mt">Later: your Companion</h3>
+    <p class="muted small">
+      Beyond your three weapons you bring a <b>Companion</b> — a moddable ally that fights
+      alongside you and can carry utility like the <b>Vacuum</b> pickup magnet. They level up
+      too, with their own mod loadouts. Here are the kinds you'll meet.
+    </p>
+    <div class="table-wrap">
+      <table class="data-table companion-table" id="companionTable">
+        <thead>
+          <tr><th>Photo</th><th>Companion</th><th>Kind</th><th>What it is good for</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== DAMAGE ===================== -->
+  <section id="damage" class="section alt">
+    <div class="section-head">
+      <span class="kicker">04 — Damage &amp; Elements</span>
+      <h2>The elemental combo builder</h2>
+      <p class="sub">
+        Weapons deal physical damage (<b>Impact</b>, <b>Puncture</b>, <b>Slash</b>) plus whatever
+        elemental mods you install. Two primary elements <b>combine</b> into one secondary element.
+        Mix the four primaries below to see the result.
+      </p>
+    </div>
+
+    <div class="combo-lab" id="comboLab">
+      <div class="combo-col">
+        <h4>Primary elements</h4>
+        <div class="elem-pool" id="elemPool"></div>
+        <p class="muted small">Click two different primaries. Click a selected one to remove it.</p>
+      </div>
+      <div class="combo-mid">
+        <div class="combo-eq" id="comboEq">
+          <span class="combo-aura" aria-hidden="true"></span>
+          <div class="slot" id="slotA">—</div>
+          <span class="plus">+</span>
+          <div class="slot" id="slotB">—</div>
+          <span class="plus eq">=</span>
+          <div class="slot result" id="slotR">—</div>
+        </div>
+      </div>
+      <div class="combo-col">
+        <div class="status-card" id="statusCard">
+          <h4>Status effect</h4>
+          <p class="muted">Pick two elements to reveal the combined damage type and what its <b>proc</b> does.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt">How enemy defenses stack</h3>
+    <p class="muted small">Damage has to chew through layers before it touches health. Click a layer to see what strips it — this is where element choice really pays off.</p>
+    <div class="defense-lab">
+      <div class="def-controls">
+        <span class="def-lbl">Test a damage type</span>
+        <div class="def-hits" id="defHits"></div>
+        <button class="def-play" id="defPlay" type="button"><span aria-hidden="true">▶</span> Simulate hit</button>
+      </div>
+      <div class="def-bar" id="defBar"></div>
+      <div class="def-detail card" id="defDetail"></div>
+    </div>
+
+    <h3 class="mt">Physical damage types</h3>
+    <div class="grid three" id="physicalCards"></div>
+
+    <h3 class="mt">Damage cheat-sheet: what to bring per faction</h3>
+    <p class="muted small">Enemies are not all the same. Matching an element to a faction's defenses is the single biggest damage upgrade you can make. Tap through the icons below.</p>
+    <div class="grid five" id="factionDamage"></div>
+
+    <h3 class="mt">Eximus units: the elite threat</h3>
+    <p class="muted small">Eximus are glowing elite variants of normal enemies with an extra <b>Overguard</b> bar. While it holds they ignore crowd control, and each type brings its own attack or aura — barriers, leech zones, shockwaves and more. Break the Overguard first, then deal with the ability.</p>
+    <div class="grid four" id="eximusGrid"></div>
+
+    <h3 class="mt">Damage calculator (simplified)</h3>
+    <p class="muted small">See how a few core mods multiply your damage. This ignores armor, status, enemy level and headshots — but it shows why base damage and multishot matter so much.</p>
+    <div class="card calc-dmg">
+      <div class="calc-controls">
+        <label>Base damage <input type="range" id="dmgBase" min="5" max="200" value="30" step="1" /><output id="dmgBaseOut">30</output></label>
+        <label>+Base damage mod <input type="range" id="dmgMod" min="0" max="300" value="165" step="5" /><output id="dmgModOut">+165%</output></label>
+        <label>+Elemental damage <input type="range" id="dmgElem" min="0" max="180" value="90" step="5" /><output id="dmgElemOut">+90%</output></label>
+        <label>+Multishot <input type="range" id="dmgMulti" min="0" max="200" value="90" step="5" /><output id="dmgMultiOut">+90%</output></label>
+        <label>Crit chance <input type="range" id="dmgCritC" min="0" max="100" value="20" step="1" /><output id="dmgCritCOut">20%</output></label>
+        <label>Crit damage <input type="range" id="dmgCritD" min="1" max="6" value="2" step="0.1" /><output id="dmgCritDOut">x2.0</output></label>
+      </div>
+      <div class="calc-result" id="dmgResult"></div>
+    </div>
+
+    <h3 class="mt">All status effects at a glance</h3>
+    <p class="muted small">A “proc” is a random status effect triggered on hit, based on the damage types present. Values are from the current Damage system and can change with updates.</p>
+    <div class="table-wrap">
+      <table class="data-table" id="statusTable">
+        <thead>
+          <tr><th>Type</th><th>Status</th><th>What it does (on enemies)</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== MODS ===================== -->
+  <section id="mods" class="section">
+    <div class="section-head">
+      <span class="kicker">05 — Mods &amp; Power</span>
+      <h2>Mods are the real progression</h2>
+      <p class="sub">
+        A max-rank weapon with bad mods is weak. A starter weapon with great mods can clear the
+        whole Star Chart. Learn mods and everything clicks.
+      </p>
+    </div>
+
+    <div class="grid two">
+      <div class="card prose">
+        <h3>How mods work</h3>
+        <ul class="tick">
+          <li><b>Mod capacity</b> = your gear's rank (max <b>30</b>) plus any <b>Aura/Stance</b> bonus.</li>
+          <li>Each mod has a <b>drain</b> cost and a <b>polarity</b> (a symbol).</li>
+          <li>Matching a mod's polarity to a slot's polarity <b>halves its drain</b>.</li>
+          <li>Install an <b>Orokin Catalyst</b> (weapons) or <b>Orokin Reactor</b> (Warframes) to <b>double</b> capacity.</li>
+          <li>Use <b>Forma</b> to change a slot's polarity, then re-level the item to 30.</li>
+          <li>Rank up mods with <b>Endo</b> + <b>Credits</b> (this is called <b>Fusion</b>).</li>
+        </ul>
+        <div class="callout">
+          <b>Beginner priority:</b> don't spread Endo thin. Rank a few core mods
+          (like a base damage mod for your weapon, and Vitality/Redirection for your frame)
+          to max before collecting lots of low-rank mods.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Capacity calculator</h3>
+        <p class="muted small">Estimate how many mods you can fit.</p>
+        <div class="calc">
+          <label>Item rank
+            <input type="range" id="rankRange" min="0" max="30" value="30" />
+            <output id="rankOut">30</output>
+          </label>
+          <label class="row">
+            <input type="checkbox" id="potato" /> Orokin Catalyst/Reactor installed (×2)
+          </label>
+          <label class="row">
+            <input type="checkbox" id="aura" /> Aura / Stance giving +14 capacity
+          </label>
+          <pre class="calc-out" id="capOut">Capacity: 30</pre>
+        </div>
+        <p class="muted small">
+          Base capacity = rank. With a Catalyst/Reactor it doubles. Auras/Stances <i>add</i> capacity
+          (typ. +7 to +18) and are themselves free.
+        </p>
+        <div class="mini-items">
+          <figure><img src="img/catalyst.webp" alt="Orokin Catalyst" loading="lazy" /><figcaption>Catalyst<br><span>weapons ×2</span></figcaption></figure>
+          <figure><img src="img/reactor.webp" alt="Orokin Reactor" loading="lazy" /><figcaption>Reactor<br><span>frames ×2</span></figcaption></figure>
+          <figure><img src="img/forma.webp" alt="Forma" loading="lazy" /><figcaption>Forma<br><span>change polarity</span></figcaption></figure>
+          <figure><img src="img/endo.webp" alt="Endo" loading="lazy" /><figcaption>Endo<br><span>rank mods</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt">Polarities: how mods get cheaper</h3>
+    <div class="card">
+      <div class="polarity-lab" id="polarityLab"></div>
+    </div>
+
+    <h3 class="mt">Crit, status or hybrid?</h3>
+    <p class="muted small">Weapons are pushed in one of three directions by their mods. Pick a build to see which stats matter and which mods feed them.</p>
+    <div class="card">
+      <div class="build-tabs" id="buildTabs"></div>
+      <div class="build-panel" id="buildPanel"></div>
+      <p class="muted small" style="margin:1rem 0 0">Stats shown are illustrative. Real values depend on the individual weapon — check its Arsenal screen.</p>
+    </div>
+
+    <h3 class="mt">Ranking mods (Fusion)</h3>
+    <p class="muted small">Ranking a mod with <b>Endo</b> + <b>Credits</b> strengthens its effect but also raises its drain. Drag to watch Serration scale from rank 0 to rank 10.</p>
+    <div class="card fusion-lab">
+      <div class="fusion-visual">
+        <img src="img/mod_serration.webp" alt="Serration mod" loading="lazy" />
+        <div class="fusion-info">
+          <div class="fusion-rank" id="fusionRank">Rank 0</div>
+          <div class="fusion-bar"><i id="fusionBar"></i></div>
+          <div class="fusion-stats" id="fusionStats"></div>
+        </div>
+      </div>
+      <input type="range" id="fusionRange" min="0" max="10" value="0" class="fusion-range" />
+    </div>
+
+    <h3 class="mt">Example mod cards</h3>
+    <div class="mod-grid" id="modGrid"></div>
+
+    <h3 class="mt">Other things you'll collect</h3>
+    <div class="mini-items wide">
+      <figure><img src="img/mod_vitality.webp" alt="Vitality mod" loading="lazy" /><figcaption>Vitality<span>+Health</span></figcaption></figure>
+      <figure><img src="img/mod_serration.webp" alt="Serration mod" loading="lazy" /><figcaption>Serration<span>+rifle damage</span></figcaption></figure>
+      <figure><img src="img/mod_riven.webp" alt="A Riven mod" loading="lazy" /><figcaption>Riven<span>randomised endgame mod</span></figcaption></figure>
+      <figure><img src="img/platinum.webp" alt="Platinum" loading="lazy" /><figcaption>Platinum<span>premium currency</span></figcaption></figure>
+      <figure><img src="img/credits.webp" alt="Credits" loading="lazy" /><figcaption>Credits<span>free currency</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ===================== STAR CHART ===================== -->
+  <section id="star" class="section alt">
+    <div class="section-head">
+      <span class="kicker">06 — The Star Chart</span>
+      <h2>Where you actually go</h2>
+      <p class="sub">
+        The Star Chart is a map of the solar system. Missions are “nodes”. Complete nodes to
+        unlock neighbours, beat a <b>Junction</b> to reach the next planet. Click a planet to
+        meet <b>every enemy</b> deployed there — with pictures — and its boss.
+      </p>
+    </div>
+    <div class="star-wrap">
+      <div class="planet-list" id="planetList"></div>
+      <div class="planet-info card" id="planetInfo">
+        <h3>Select a planet</h3>
+        <p class="muted">Pick one on the left to see its role in your progression.</p>
+      </div>
+    </div>
+
+    <h3 class="mt">Mission types you'll meet first</h3>
+    <div class="mission-grid" id="missionTypes"></div>
+
+    <h3 class="mt">How endless missions pay out</h3>
+    <div class="card">
+      <p class="muted small">Defense, Survival, Excavation, Interception and Disruption reward you in repeating <b>A → A → B → C</b> rotations. Each tier is better than the last — then it loops. Click a payout below.</p>
+      <div class="rotation" id="rotation"></div>
+      <p class="rot-detail" id="rotationDetail"></p>
+    </div>
+
+    <h3 class="mt">Where to farm key resources</h3>
+    <p class="muted small">Resources are planet-specific. Search a resource or a planet to find a farm spot. Drop tables change with updates, so treat this as a starting point.</p>
+    <input class="search center" id="resourceSearch" type="search" placeholder="Search resources or planets… (try: orokin cell, plastids, eris)" />
+    <div class="resource-grid" id="resourceGrid"></div>
+  </section>
+
+  <!-- ===================== RELICS ===================== -->
+  <section id="relics" class="section">
+    <div class="section-head">
+      <span class="kicker">07 — Prime Gear &amp; Relics</span>
+      <h2>Cracking Void Relics</h2>
+      <p class="sub">
+        <b>Prime</b> Warframes and weapons are the fancier versions of regular gear. You get their
+        parts by opening <b>Void Relics</b> in Void Fissure missions — or by trading with players.
+      </p>
+    </div>
+
+    <div class="grid two">
+      <div class="card prose">
+        <h3>How it works</h3>
+        <ol class="steps">
+          <li>Get a <b>Void Relic</b> (as a mission reward, especially endless missions).</li>
+          <li>Optionally <b>refine</b> it with <b>Void Traces</b> to raise rare-drop odds.</li>
+          <li>Queue for a <b>Void Fissure</b> mission matching that relic's era.</li>
+          <li>Collect <b>Reactor</b> corruption and crack the relic by killing enemies.</li>
+          <li>At extraction everyone picks one reward from the squad's cracked relics.</li>
+        </ol>
+        <img class="card-media tall" src="img/fissure.webp" alt="The Void Fissures mission screen on the Star Chart" loading="lazy" />
+        <p class="muted small">The four relic eras are <b>Lith → Meso → Neo → Axi</b> (plus special Requiem relics).</p>
+      </div>
+
+      <div class="card">
+        <h3>Refinement odds explorer</h3>
+        <div class="relic-eras" id="relicEras"></div>
+        <div class="relic-refine-imgs" id="refineImgs"></div>
+        <div class="refine-btns" id="refineBtns"></div>
+        <div class="odds" id="odds"></div>
+        <div class="relic-slots" id="relicSlots"></div>
+        <p class="muted small">
+          Each relic holds 6 possible rewards: <b>3 common, 2 uncommon, 1 rare</b>. Odds shown are per reward slot.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROGRESS ===================== -->
+  <section id="progress" class="section alt">
+    <div class="section-head">
+      <span class="kicker">08 — Progression</span>
+      <h2>Mastery Rank &amp; your to-do list</h2>
+      <p class="sub">
+        <b>Mastery Rank (MR)</b> measures how much gear you've levelled. Higher MR unlocks
+        weapons, quests and conveniences. You gain mastery for the first time you rank up a
+        Warframe/weapon to 30, and for clearing nodes and Junctions.
+      </p>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Beginner checklist</h3>
+        <p class="muted small">Tick items off — your progress is saved in this browser.</p>
+        <ul class="checklist" id="checklist"></ul>
+        <div class="bar"><span id="checkBar"></span></div>
+        <p class="muted small" id="checkCount">0 / 0 complete</p>
+        <button class="btn ghost small" id="resetCheck">Reset</button>
+      </div>
+      <div class="card prose">
+        <img class="card-media tall" src="img/mastery.webp" alt="Mastery Rank progress screen" loading="lazy" />
+        <h3>How to gain Mastery fast</h3>
+        <ul class="tick">
+          <li><b>Level everything to 30</b> — even weapons you don't like. Mastery is per-item, once.</li>
+          <li><b>Clear every node</b> you can; first-clears give Mastery.</li>
+          <li><b>Beat Junctions</b> — 1,000 Mastery each plus they unlock the map.</li>
+          <li><b>Build cheap weapons</b> from the Market blueprints (many cost only Credits).</li>
+          <li>Variants count separately: a Braton, MK1-Braton, Braton Prime each give their own Mastery.</li>
+        </ul>
+        <div class="callout">
+          <b>Important:</b> you must <b>claim</b> Mastery by passing the MR test when prompted.
+          If you ignore the prompt your points still bank up — you just won't rank until you pass.
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt">Your beginner roadmap</h3>
+    <p class="muted small">A spoiler-light path through the early game. You do not need to rush — but this is the order things unlock.</p>
+    <ol class="roadmap" id="roadmap"></ol>
+
+    <h3 class="mt">Don't get stuck: slots &amp; Platinum</h3>
+    <div class="card prose">
+      <p>
+        The thing that quietly stops new players is <b>inventory slots</b>. You only start with a
+        few, and every Warframe and weapon you want to <em>keep</em> needs one. Build gear you have
+        no slot for and you'll be forced to choose what to sell.
+      </p>
+      <p>
+        Extra slots are bought with <b>Platinum</b>, the premium currency. You never have to pay real
+        money: you can <b>trade</b> Prime parts, mods and Rivens to other players for Platinum, and
+        <b>Nightwave</b> plus events hand out Catalysts, Reactors and sometimes slots for free.
+      </p>
+    </div>
+    <div class="grid three mt" id="slotBoard"></div>
+
+    <h3 class="mt">How Affinity (XP) is shared</h3>
+    <p class="muted small">Affinity is the XP that ranks your gear. Where it goes depends on <b>how</b> the kill happened — and squad kills only count if allies are within <b>Affinity Range</b> (about 50 m).</p>
+    <div class="card affinity-lab" id="affinityLab"></div>
+    <p class="muted small">Tip: bringing fewer weapons concentrates shared Affinity onto the ones you're actually levelling.</p>
+
+    <h3 class="mt">Build or buy? (Credits vs Platinum)</h3>
+    <div class="table-wrap">
+      <table class="data-table" id="buyBuildTable">
+        <thead><tr><th>What</th><th>Build / earn it</th><th>Buy with Platinum</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3 class="mt">Systems you'll unlock later</h3>
+    <div class="grid four" id="systems"></div>
+
+    <h3 class="mt">Glossary</h3>
+    <div class="glossary" id="glossary"></div>
+  </section>
+
+  <!-- ===================== LATER ===================== -->
+  <section id="later" class="section">
+    <div class="section-head">
+      <span class="kicker">09 — Beyond the basics</span>
+      <h2>Later systems to look forward to</h2>
+      <p class="sub">Spoiler-light. These unlock after the early quests — don't stress about them yet, just know they exist.</p>
+    </div>
+
+    <h3>Syndicates &amp; Standing</h3>
+    <div class="card prose">
+      <p>Six main Syndicates live in the Relays. Wear one's <b>Sigil</b> on your Warframe and earn Affinity in missions to gain <b>Standing</b> with them (your daily cap rises with Mastery Rank). Spend Standing on exclusive weapons, mods, Specters and more as you climb their ranks.</p>
+      <p>The catch: Syndicates <b>oppose each other</b>. Gaining with one loses Standing with its enemies — and at very low Standing they send <b>death squads</b> after you in missions. Allied Syndicates gain together.</p>
+    </div>
+    <div class="grid three mt" id="syndicateGrid"></div>
+
+    <h3 class="mt">Focus schools (after The Second Dream)</h3>
+    <p class="muted small">A <b>Focus Lens</b> converts Affinity earned on a ranked item into Focus points. Spend them in five schools that power up your Operator and grant Waybound passives.</p>
+    <div class="grid five" id="focusGrid"></div>
+
+    <h3 class="mt">Kuva Liches &amp; Sisters of Parvos</h3>
+    <p class="muted small">A mid-game nemesis system. Create a personal rival, hunt them across the Star Chart, break their Requiem code, then either <b>Convert</b> them into an ally or <b>Vanquish</b> them for a powerful Kuva/Tenet weapon.</p>
+    <div class="card">
+      <ol class="pipeline" id="lichSteps"></ol>
+    </div>
+  </section>
+
+  <!-- ===================== QUIZ ===================== -->
+  <section id="quiz" class="section">
+    <div class="section-head">
+      <span class="kicker">10 — Test yourself</span>
+      <h2>Beginner quiz</h2>
+    </div>
+    <div class="card quiz" id="quizCard"></div>
+  </section>
+
+  <footer class="footer">
+    <p class="tenno-sign" aria-hidden="true" title="We all lift together">WE ALL LIFT TOGETHER</p>
+    <p>
+      <b>Warframe 101</b> — an unofficial, spoiler-light beginner's guide.
+      Game content and images are the property of Digital Extremes.
+    </p>
+    <p class="muted small">
+      Facts summarized from the community Warframe Wiki (warframe.fandom.com).
+      Warframe is updated constantly, so exact numbers may change — use this as a map, not a contract.
+    </p>
+  </footer>
+</main>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+<script src="language.js"></script>
+</body>
+</html>

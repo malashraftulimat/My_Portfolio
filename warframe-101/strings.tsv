@@ -1,0 +1,990 @@
+# en	ja	ar	tr	ko
+— 1,000 Mastery each plus they unlock the map.	— 各 1,000 マスタリーに加え、マップが解放されます。	— 1000 إتقان لكل منها بالإضافة إلى فتح الخريطة.	— Her biri 1.000 Ustalık verir ve ayrıca haritayı açar.	— 각 1,000 마스터리를 주며 지도도 해금됩니다.
+— a moddable ally that fights alongside you and can carry utility like the	— あなたと共に戦い、次のようなユーティリティを搭載できる改造可能な味方	— حليف قابل للتعديل يقاتل إلى جانبك ويمكنه حمل أدوات مساعدة مثل	— seninle birlikte savaşan ve şunun gibi yardımcı özellikler taşıyabilen, modlanabilir bir müttefik	— 함께 싸우며 다음과 같은 유틸리티를 장착할 수 있는 모딩 가능한 아군
+— a space ninja in a bio-mechanical suit. It is famously deep and famously confusing. This guide walks you through the systems	— バイオメカニカルスーツを着た宇宙忍者。奥が深く、わかりにくいことで有名です。このガイドでは、各システムを順に案内します	— نينجا فضائي يرتدي بدلة حيوية ميكانيكية. تشتهر اللعبة بعمقها وبتعقيدها المربك في آن واحد. يأخذك هذا الدليل في جولة عبر الأنظمة	— biyomekanik bir kostüm giyen uzay ninjası. Hem derin hem de kafa karıştırıcı olmasıyla ünlüdür. Bu rehber sana sistemleri adım adım anlatır	— 생체 기계 슈트를 입은 우주 닌자. 깊이가 있기로도, 헷갈리기로도 유명합니다. 이 가이드는 시스템을 차근차근 안내합니다
+— an unofficial, spoiler-light beginner's guide. Game content and images are the property of Digital Extremes.	— ネタバレに配慮した非公式の初心者向けガイド。ゲームのコンテンツと画像は Digital Extremes の所有物です。	— دليل غير رسمي للمبتدئين قليل الحرق (Spoilers). محتوى اللعبة وصورها ملك لشركة Digital Extremes.	— spoiler içeriği az, resmî olmayan bir başlangıç rehberi. Oyun içeriği ve görseller Digital Extremes'a aittir.	— 스포일러를 최소화한 비공식 초보자 가이드. 게임 콘텐츠와 이미지의 저작권은 Digital Extremes에 있습니다.
+— even weapons you don't like. Mastery is per-item, once.	— たとえ嫌いな武器であっても。マスタリーはアイテムごとに 1 回です。	— حتى الأسلحة التي لا تحبها. يُكتسب الإتقان مرة واحدة لكل عنصر.	— sevmediğin silahlar bile. Ustalık, eşya başına yalnızca bir kez kazanılır.	— 마음에 들지 않는 무기라도요. 마스터리는 아이템당 한 번만 얻습니다.
+— plan before you build a frame you won't actually use.	— 実際には使わないフレームを作る前に、計画を立てましょう。	— خطط قبل أن تبني وورفريم لن تستخدمه فعلاً.	— gerçekte kullanmayacağın bir frame üretmeden önce plan yap.	— 실제로 쓰지 않을 프레임을 만들기 전에 미리 계획하세요.
+— reread the guide and you'll get there.	— ガイドを読み直せば、そこにたどり着きます。	— أعد قراءة الدليل وستصل إلى هناك.	— rehberi yeniden oku, başaracaksın.	— 가이드를 다시 읽으면 해결할 수 있습니다.
+— still updated	— まだ更新されています	— لا يزال محدثًا	— hâlâ güncelleniyor	— 여전히 업데이트 중
+, and level them up.	、レベルアップします。	، ورفع مستواها.	, ve seviyelerini yükselt.	, 그리고 레벨을 올립니다.
+, drop in with up to three other players, complete an objective, and extract. Between missions you spend what you earned to get	、最大 3 人の他のプレイヤーと共にミッションへ降下し、目標を達成して脱出します。ミッションの合間には、獲得したものを使って次を手に入れます	، انزل إلى المهمة مع ما يصل إلى ثلاثة لاعبين آخرين، وأكمل الهدف، ثم انسحب (Extract). بين المهام، تنفق ما كسبته للحصول على	, en fazla üç oyuncuyla birlikte göreve atıl, hedefi tamamla ve tahliye ol. Görevler arasında kazandıklarını harcayarak şunu edinirsin	, 최대 3명의 다른 플레이어와 함께 투입되어 목표를 완수하고 탈출합니다. 미션 사이에는 번 것을 써서 다음을 얻습니다
+, the premium currency. You never have to pay real money: you can	、プレミアム通貨です。実際のお金を支払う必要は一切ありません。次のことができます:	، العملة المميزة. لن تحتاج أبداً إلى دفع أموال حقيقية: يمكنك	, premium para birimi. Asla gerçek para ödemek zorunda değilsin: şunu yapabilirsin	, 프리미엄 화폐입니다. 실제 돈을 낼 필요는 전혀 없습니다. 다음과 같이 할 수 있습니다
+, where the Arsenal, Foundry, Mods and Market live.	、アーセナル、鋳造所、MOD、マーケットがある場所です。	، حيث توجد الأرسنال والمسبك والمودات والسوق.	, Arsenal, Foundry, Modlar ve Market'in bulunduğu yer.	, 아스널, 파운드리, 모드, 마켓이 있는 곳입니다.
+, with interactive widgets and real game imagery to play with.	、インタラクティブなウィジェットと実際のゲーム画像で体験できます。	، مع عناصر تفاعلية وصور حقيقية من اللعبة لتجربها.	, oynayabileceğin etkileşimli araçlar ve gerçek oyun görselleriyle birlikte.	, 직접 만져 볼 수 있는 인터랙티브 위젯과 실제 게임 이미지와 함께.
+: Nihai Başlangıç Rehberi	: ニハイ・バシュランギチ・レーベリ	: نيهاي باشلانجيتش ريبيري	: Nihai Başlangıç ​​Rehberi	: Nihai Başlangıç ​​Rehberi
+: The Ultimate Beginner's Guide	: 究極の初心者ガイド	: الدليل النهائي للمبتدئين	: Nihai Başlangıç ​​Kılavuzu	: 최고의 초보자 가이드
+. Almost every weapon and Warframe is craftable for free — you farm blueprints and materials, build them in the	。ほぼすべての武器と Warframe は無料で製作できます。設計図と素材をファームし、次の場所で製作します:	. يمكن تصنيع كل سلاح ووورفريم تقريباً مجاناً — تجمع المخططات والمواد (Farm) وتبنيها في	. Neredeyse her silah ve Warframe ücretsiz üretilebilir — planları ve malzemeleri farm'layıp şurada inşa edersin	. 거의 모든 무기와 Warframe은 무료로 제작할 수 있습니다. 설계도와 재료를 파밍해서 다음 장소에서 제작합니다
+. Each is weak to different damage — meet them all below.	。それぞれ弱点となるダメージが異なります。以下で全員を確認しましょう。	. كل منها ضعيف أمام أضرار مختلفة — تعرف عليها جميعًا أدناه.	. Her biri farklı hasar türüne karşı zayıftır — hepsiyle aşağıda tanış.	. 각각 서로 다른 피해에 약합니다 — 아래에서 모두 만나 보세요.
+. Gaining with one loses Standing with its enemies — and at very low Standing they send	。ある派閥でスタンディングを上げると、その敵対派閥のスタンディングが下がります。さらにスタンディングが非常に低くなると、彼らは次を送り込んできます	. كسب المكانة (Standing) لدى فصيل يُنقص مكانتك لدى أعدائه — وعندما تنخفض المكانة كثيراً يرسلون	. Birinde itibar kazanmak, düşmanlarındaki itibarını düşürür — ve itibar çok düştüğünde şunları gönderirler	. 한 곳과 가까워지면 그 적대 세력과의 평판이 떨어지고, 평판이 매우 낮아지면 그들이 다음을 보냅니다
+. Odds shown are per reward slot.	。表示されているオッズは報酬スロットごとです。	. الاحتمالات المعروضة هي لكل فتحة مكافأة.	. Gösterilen olasılıklar ödül yuvası başınadır.	. 표시된 확률은 보상 슬롯당 확률입니다.
+. The easiest companion to get early — many new players start with one.	。序盤に入手しやすいコンパニオンで、多くの新規プレイヤーが最初の 1 体にします。	. أسهل رفيق يمكن الوصول إليه مبكرًا — يبدأ العديد من اللاعبين الجدد بواحد.	. Erken edinmesi en kolay yoldaş — birçok yeni oyuncu bununla başlar.	. 초반에 얻기 가장 쉬운 컴패니언이며, 많은 신규 플레이어가 하나로 시작합니다.
+. Then you do it again, on harder planets.	。その後、より困難な惑星でもう一度同じことを繰り返します。	. ثم تفعل ذلك مرة أخرى، على كواكب أصعب.	. Sonra aynısını daha zor gezegenlerde tekrar edersin.	. 그다음 더 어려운 행성에서 다시 반복합니다.
+. You can craft the others later. Click a card to compare.	。他のものは後で製作できます。比較したいカードをクリックしてください。	. يمكنك تصنيع البقية لاحقاً. انقر على بطاقة للمقارنة.	. Diğerlerini sonra üretebilirsin. Karşılaştırmak için bir karta tıkla.	. 나머지는 나중에 제작할 수 있습니다. 카드를 클릭해 비교해 보세요.
+. You only start with a few, and every Warframe and weapon you want to	。最初は少数しか持っておらず、欲しい Warframe や武器はすべて	. ستبدأ ببعضها فقط، وكل وورفريم وسلاح تريد	. Yalnızca birkaçıyla başlarsın ve istediğin her Warframe ile silah	. 처음에는 몇 개만 가지고 시작하며, 원하는 모든 Warframe과 무기는
+. Your home base between missions is the	。ミッションの合間の拠点は	. قاعدتك الرئيسية بين المهام هي	. Görevler arasındaki üssün	. 미션 사이의 거점은
+· capacity 30 →	・容量 30 →	· سعة 30 →	· kapasite 30 →	· 용량 30 →
+↳ skips	↳ スキップする	↳ يتخطى	↳ atlar	↳ 건너뜀
++Ability Strength	+ アビリティ威力	+ قوة القدرة	+Yetenek Gücü	+어빌리티 위력
++Base damage mod	+ 基礎ダメージMOD	+ مود الضرر الأساسي	+Temel hasar modu	+기본 피해 모드
++Cold	+コールド	+البرودة	+Soğuk	+냉기
++Cold & Status	+コールド＆ステータス	+البرودة وتأثير الحالة	+Soğuk ve Durum	+냉기 및 상태 이상
++Crit Damage	+ クリティカル倍率	+ مضاعف الضرر الحرج	+Kritik Hasar	+치명타 피해
++critical chance on rifles	ライフルのクリティカル率 +	فرصة الضربة الحرجة للبنادق +	+tüfeklerde kritik şans	+소총의 치명타 확률
++critical damage on rifles	ライフルのクリティカルダメージ +	ضرر الضربة الحرجة للبنادق +	+tüfeklerde kritik hasar	+소총의 치명타 피해
++damage on rifles — the classic 'base damage' mod	+ライフルのダメージ — 古典的な「基礎ダメージ」MOD	+ ضرر البنادق — مود «الضرر الأساسي» الكلاسيكي	+tüfeklerde hasar — klasik 'temel hasar' modu	+소총 피해 — 고전적인 '기본 피해' 모드
++Elemental damage	+属性ダメージ	+ الضرر العنصري	+Element hasarı	+원소 피해
++Health	+ヘルス	+الصحة	+Can	+체력
++Heat & Status	+ヒート＆ステータス	+ الحرارة والحالة	+Isı ve Durum	+화염 및 상태 이상
++max Energy on Warframes	Warframe の最大エネルギー +	الحد الأقصى للطاقة لدى الوورفريم +	Warframe'lerde +max Enerji	워프레임의 +최대 에너지
++max Health on Warframes	+Warframe の最大ヘルス	+ الحد الأقصى للصحة لدى الوورفريم	+Warframe'lerde maksimum Can	+Warframe 최대 체력
++max Shields on Warframes	+Warframe の最大シールド	+ الحد الأقصى للشيلد لدى الوورفريم	+Warframe'lerde maksimum Kalkan	+Warframe 최대 실드
++Melee Crit Damage	+ 近接クリティカル倍率	+ مضاعف الضرر الحرج للقتال القريب	+Yakın dövüş Kritik Hasarı	+근접 치명타 피해
++melee weapon damage	近接武器のダメージ +	ضرر أسلحة المشاجرة +	+yakın dövüş silahı hasarı	+근접 무기 피해
++Multishot	+ マルチショット	+ طلقات متعددة (Multishot)	+Multishot	+멀티샷
++multishot on rifles	ライフルのマルチショット +	طلقات متعددة للبنادق +	+tüfeklerde çoklu atış	+소총의 멀티샷
++Rifle Crit Chance	+ ライフルクリティカル率	+ فرصة الضربة الحرجة للبنادق	+Tüfek Kritik Şansı	+소총 치명타 확률
++Rifle Crit Damage	+ ライフルクリティカル倍率	+ مضاعف الضرر الحرج للبنادق	+Tüfek Kritik Hasarı	+소총 치명타 피해
++rifle damage	+ライフルのダメージ	+ ضرر البنادق	+tüfek hasarı	+소총 피해
++Toxin & Status	+トキシン＆ステータス	+ السم وتأثير الحالة	+Toksin ve Durum	+독 및 상태 이상
+🤝 Factions	🤝 派閥	🤝 الفصائل	🤝 Gruplar	🤝 세력
+🧑‍🚀 You are the Operator	🧑‍🚀 あなたはオペレーターです	🧑‍🚀 أنت المشغل	🧑‍🚀 Sen Operatör'sün	🧑‍🚀 당신은 오퍼레이터입니다
+🪐 Origin System	🪐 オリジンシステム	🪐 نظام أوريجين (Origin)	🪐 Origin Sistemi	🪐 오리진 시스템
+01 — The Basics	01 — 基本	01 — الأساسيات	01 — Temeller	01 — 기초
+02 — Your Warframe	02 — あなたのWarframe	02 — وورفريم الخاص بك	02 — Warframe'in	02 — 나의 Warframe
+03 — Combat	03 — 戦闘	03 — القتال	03 — Savaş	03 — 전투
+04 — Damage & Elements	04 — ダメージと属性	04 — الضرر والعناصر	04 — Hasar ve Elementler	04 — 피해와 원소
+05 — Mods & Power	05 — MODとパワー	05 — المودات والقوة	05 — Modlar ve Güç	05 — 모드와 힘
+06 — The Star Chart	06 — スターチャート	06 — مخطط النجوم	06 — Yıldız Haritası	06 — 스타 차트
+07 — Prime Gear & Relics	07 — プライムギアとレリック	07 — عتاد برايم والريليك	07 — Prime Ekipman ve Relic'ler	07 — 프라임 장비와 렐릭
+08 — Progression	08 — 進行	08 — التقدم	08 — İlerleme	08 — 성장
+09 — Beyond the basics	09 — 基本を超えて	09 — ما وراء الأساسيات	09 — Temellerin ötesi	09 — 기초를 넘어서
+10 — Test yourself	10 — 腕試し	10 — اختبر نفسك	10 — Kendini sına	10 — 실력 점검
+12 Platinum	12 プラチナ	12 بلاتينيوم	12 Platin	플래티넘 12
+16 left	残り16個	16 متبقٍ	16 kaldı	16개 남음
+2 targets	ターゲット 2 つ	2 أهداف	2 hedef	목표 2개
+20 Platinum	20 プラチナ	20 بلاتينيوم	20 Platin	플래티넘 20
+23 left	残り23個	23 متبقٍ	23 kaldı	23개 남음
+3 common, 2 uncommon, 1 rare	コモン 3 つ、アンコモン 2 つ、レア 1 つ	3 شائع، 2 غير شائع، 1 نادر	3 yaygın, 2 nadir olmayan, 1 nadir	일반 3개, 비일반 2개, 희귀 1개
+6m radius at 10	10 スタック時に半径 6 m	نصف قطر 6 م عند 10 تراكمات	10 yığında 6 m yarıçap	스택 10일 때 반경 6m
+A “proc” is a random status effect triggered on hit, based on the damage types present. Values are from the current Damage system and can change with updates.	「プロック (Proc)」とは、攻撃ヒット時にダメージタイプに応じて確率で発動する状態異常のことです。数値は現在のダメージシステムに基づいており、アップデートで変更される可能性があります。	الـ «Proc» هو تفعيل عشوائي لتأثير حالة عند الإصابة، بحسب أنواع الضرر الموجودة. القيم مأخوذة من نظام الضرر الحالي وقد تتغير مع التحديثات.	"Proc", isabet anında mevcut hasar türlerine göre tetiklenen rastgele bir durum etkisidir. Değerler mevcut Hasar sistemine aittir ve güncellemelerle değişebilir.	"프록"은 명중 시 존재하는 피해 유형에 따라 확률적으로 발동하는 상태 이상입니다. 수치는 현재 피해 시스템 기준이며 업데이트로 바뀔 수 있습니다.
+A bred dog companion that charges into melee. Tanky and loyal, but it needs	白兵戦へ突っ込んでいく、飼育された犬のコンパニオン。タフで忠実ですが、次が必要です	رفيق من الكلاب المُربّاة يندفع إلى القتال القريب. صلب ومخلص، لكنه يحتاج إلى	Yakın dövüşe atılan, evcilleştirilmiş bir köpek yoldaşı. Dayanıklı ve sadıktır, ama şuna ihtiyaç duyar	근접전에 돌진하는 사육견 컴패니언. 튼튼하고 충직하지만 다음이 필요합니다
+A card installed into gear to improve stats or add effects. The core of Warframe's power progression.	ステータスを向上させたり効果を追加するために装備に装着するカード。Warframeの強化システムの核となる要素。	بطاقة (Mod) يتم تركيبها في العتاد لتحسين الإحصائيات أو إضافة تأثيرات. هي أساس التطور وزيادة القوة في Warframe.	Ekipmana takılıp statları artıran veya efekt ekleyen bir kart. Warframe'in güç gelişiminin özüdür.	장비에 장착해 능력치를 올리거나 효과를 추가하는 카드. Warframe 성장의 핵심입니다.
+A Corpus gas giant with great visuals and the Ropalolyst boss. Solid for leveling and mid-game mods.	美しい景観と Ropalolyst ボスを備えた、コーパスのガス惑星。レベル上げやゲーム中盤の MOD 集めに最適です。	عملاق غازي تابع للكوربوس بمناظر رائعة وزعيم Ropalolyst. مناسب لرفع المستوى وللحصول على مودات منتصف اللعبة.	Harika manzaralara ve Ropalolyst patronuna sahip bir Corpus gaz devi. Seviye atlamak ve oyun ortası modları için sağlam bir seçim.	멋진 풍경과 Ropalolyst 보스가 있는 코퍼스 가스 거성. 레벨업과 중반 모드 수급에 좋습니다.
+A decaying clone army that controls most of the system. Heavily armored — stack	システムの大部分を支配する、崩壊しつつあるクローン軍団。重装甲 — 重ねがけしましょう	جيش مستنسخين متحلل يسيطر على معظم النظام. مدرّعون بشدة — كدّس	Sistemin büyük kısmını elinde tutan, çürüyen bir klon ordusu. Ağır zırhlı — şunu yığ	시스템 대부분을 장악한 부패해 가는 클론 군대. 중무장이므로 다음을 중첩하세요
+A digital intelligence hungry for knowledge.	知識に飢えたデジタル知性。	ذكاء رقمي متعطش للمعرفة.	Bilgiye aç dijital bir zekâ.	지식에 굶주린 디지털 지성.
+A duel against a spectre that unlocks the next planet and grants Mastery.	スペクターとの決闘で次の惑星のロックを解除し、マスタリーを獲得します。	مبارزة ضد شبح (Spectre) تفتح الكوكب التالي وتمنح الإتقان.	Bir sonraki gezegeni açan ve Ustalık veren bir Spectre ile düello.	다음 행성을 해금하고 마스터리를 주는 스펙터와의 결투.
+A flight rig for underwater and space combat sections — and open-world travel.	水中および宇宙戦闘セクション、そしてオープンワールド旅行のためのフライトリグ。	منصة طيران للأقسام القتالية تحت الماء والفضائية — والسفر في العالم المفتوح.	Su altı ve uzay savaşı bölümleri ile açık dünya seyahati için bir uçuş donanımı.	수중 및 우주 전투 구간, 그리고 오픈 월드 이동용 비행 장비.
+A floating robot buddy that fights with its own weapon and can carry utility mods like	独自の武器で戦い、次のようなユーティリティ MOD を搭載できる浮遊ロボットの相棒	صديق آلي عائم يقاتل بسلاحه الخاص ويمكنه حمل مودات مساعدة مثل	Kendi silahıyla savaşan ve şu gibi yardımcı modlar taşıyabilen, havada süzülen bir robot arkadaş	자체 무기로 싸우고 다음과 같은 유틸리티 모드를 장착할 수 있는 떠다니는 로봇 친구
+A floating robotic Companion that fights alongside you and can use utility mods like Vacuum.	あなたと共に戦い、Vacuumなどの便利なユーティリティMODを使用できる浮遊型のロボットコンパニオン。	مرافق آلي عائم يقاتل بجانبك ويمكنه استخدام مودات مساعدة مثل Vacuum.	Yanında savaşan ve Vacuum gibi yardımcı modlar kullanabilen, havada süzülen robot yoldaş.	함께 싸우며 Vacuum 같은 유틸리티 모드를 사용할 수 있는 떠다니는 로봇 컴패니언.
+A greedy merchant cult of robots and crewmen. Their	ロボットと乗組員の貪欲な商人カルト。彼らの	طائفة تجارية جشعة من الروبوتات وأفراد الطاقم. هُم	Robotlardan ve mürettebattan oluşan açgözlü bir tüccar tarikatı. Onların	로봇과 승무원으로 이루어진 탐욕스러운 상인 집단. 그들의
+A Grineer shipyard packed with resources like Alloy Plate and Orokin Cells — two things you will need constantly. Endless nodes here are great for early farming.	合金プレートやオロキンセルなど、常に必要になる資源が豊富なグリニアの造船所。ここの無限ミッションは序盤のファームに最適です。	حوض بناء سفن غرينير مليء بالموارد مثل Alloy Plate وOrokin Cells — شيئان ستحتاج إليهما باستمرار. العُقد اللانهائية (Endless) هنا ممتازة للفارمنغ المبكر.	Alloy Plate ve Orokin Cell gibi kaynaklarla dolu bir Grineer tersanesi — sürekli ihtiyaç duyacağın iki şey. Buradaki sonsuz düğümler erken farm için harika.	합금 판과 오로킨 셀 같은 자원이 가득한 그리니어 조선소 — 계속 필요한 두 가지입니다. 이곳의 무한 노드는 초반 파밍에 좋습니다.
+A Kubrow twisted by the Helminth virus — an aggressive Infested bruiser for players who want a melee-focused pet.	ヘルミンス ウイルスによって歪んだクブロウ。近接攻撃に特化したペットを求めるプレイヤー向けの攻撃的な感染型ブルーザーです。	Kubrow مشوّه بفيروس Helminth — مقاتل عدواني من فصيل Infested للاعبين الذين يريدون حيواناً أليفاً يركّز على القتال القريب.	Helminth virüsüyle bozulmuş bir Kubrow — yakın dövüş odaklı bir evcil hayvan isteyen oyuncular için agresif bir Infested dövüşçüsü.	Helminth 바이러스에 뒤틀린 쿠브로 — 근접 전투형 펫을 원하는 플레이어를 위한 공격적인 감염체 싸움꾼.
+A magnetic trickster who pulls, lifts and crushes enemies. Rewards a bit more thought — she can lock down whole rooms and strip shields, but she's squishy if you stand still.	敵を引き寄せ、持ち上げ、粉砕する磁力のトリックスター。少し頭を使うと報われます — 部屋全体を封鎖してシールドを剥がせますが、立ち止まると打たれ弱いです。	مخادعة مغناطيسية تسحب الأعداء وترفعهم وتسحقهم. تكافئ من يفكّر أكثر قليلاً — تستطيع إغلاق غرف كاملة وتجريد الشيلد، لكنها هشّة إذا وقفت ساكناً.	Düşmanları çeken, kaldıran ve ezen manyetik bir düzenbaz. Biraz daha düşünmeyi ödüllendirir — koca odaları kilitleyip kalkanları söker, ama hareketsiz durursan kırılgandır.	적을 끌어당기고 들어 올리고 짓누르는 자기장 트릭스터. 조금 더 생각해야 보답받습니다 — 방 전체를 봉쇄하고 실드를 벗겨낼 수 있지만, 가만히 서 있으면 약합니다.
+A max-rank weapon with bad mods is weak. A starter weapon with great mods can clear the whole Star Chart. Learn mods and everything clicks.	MOD が貧弱な最大ランクの武器は弱いままです。一方、優れた MOD を積んだ初期武器ならスターチャート全体をクリアできます。MOD を理解すれば、すべてが噛み合います。	السلاح ذو الرتبة القصوى مع مودات سيئة يكون ضعيفاً. أما السلاح المبدئي المزوّد بمودات رائعة فيمكنه اجتياز مخطط النجوم بأكمله. تعلّم المودات وسيتضح كل شيء.	Kötü modlu, maksimum rütbeli bir silah zayıftır. Harika modlu bir başlangıç silahı ise tüm Yıldız Haritası'nı temizleyebilir. Modları öğren, her şey yerine oturur.	모드가 형편없는 최대 랭크 무기는 약합니다. 반면 좋은 모드를 단 기본 무기는 스타 차트 전체를 클리어할 수 있습니다. 모드를 이해하면 모든 것이 맞아떨어집니다.
+A mid-game nemesis system. Create a personal rival, hunt them across the Star Chart, break their Requiem code, then either	ゲーム中盤の宿敵システム。専用のライバルを作成し、スターチャート全体で追跡し、レクイエムコードを解読して、その後どちらかを選びます	نظام عدو لمنتصف اللعبة. أنشئ منافساً شخصياً، وطارده عبر مخطط النجوم، وافكّ شيفرة Requiem الخاصة به، ثم اختر أحد الخيارين	Oyun ortası bir nemesis sistemi. Kişisel bir rakip yarat, Yıldız Haritası boyunca onu avla, Requiem kodunu kır, ardından şunlardan birini yap	중반부 숙적 시스템. 나만의 라이벌을 만들고, 스타 차트 곳곳에서 사냥하고, 그들의 레퀴엠 코드를 풀어낸 다음 둘 중 하나를 선택합니다
+A mobile Grineer fortress. Farm Kuva here for Riven rerolls and take on high-difficulty missions once you're established.	グリニアの移動要塞。ここで Kuva をファームして Riven のリロールに使い、慣れてきたら高難易度ミッションに挑戦しましょう。	قلعة غرينير المتنقلة. اجمع Kuva هنا لإعادة لفّ (Reroll) مودات Riven وخض مهام عالية الصعوبة بعد أن تثبّت أقدامك.	Hareketli bir Grineer kalesi. Riven yeniden çevirmeleri için burada Kuva farm'la ve oturduktan sonra yüksek zorluklu görevlere gir.	이동식 그리니어 요새. 이곳에서 Kuva를 파밍해 Riven 리롤에 쓰고, 자리를 잡으면 고난도 미션에 도전하세요.
+A moddable ally that fights alongside you and carries utility like Vacuum to pull in loot. Sentinels float, Kubrows and Kavats run, MOAs and Hounds come later.	一緒に戦い、Vacuum（アイテム引き寄せ）などのユーティリティを装備できる味方。センチネルは浮遊し、クブロウやキャバットは走り、後にはMOAやハウンドも登場します。	حليف قابل للتعديل يقاتل بجانبك ويحمل أدوات مساعدة مثل Vacuum لجمع الغنائم. الـ Sentinels تطير، والـ Kubrows والـ Kavats تركض، والـ MOAs والـ Hounds تأتي لاحقاً.	Seninle savaşan ve ganimeti çekmek için Vacuum gibi yardımcı özellikler taşıyan modlanabilir bir müttefik. Sentinel'ler süzülür, Kubrow'lar ve Kavat'lar koşar; MOA'lar ve Hound'lar daha sonra gelir.	함께 싸우며 Vacuum처럼 전리품을 끌어오는 유틸리티를 장착하는 모딩 가능한 아군. 센티널은 떠다니고, 쿠브로와 카바트는 달리며, MOA와 하운드는 나중에 등장합니다.
+A modular robot built from parts in Fortuna. Swap its head, core and weapon to change how it fights — from crowd control to raw damage.	フォーチュナで入手する部品から組み立てるモジュール式ロボット。頭部、コア、武器を交換して、集団制御から純粋な火力まで戦い方を変えられます。	روبوت معياري يُبنى من أجزاء فورتونا. بدّل رأسه ونواته وسلاحه لتغيّر أسلوب قتاله — من السيطرة على الحشود إلى الضرر الخام.	Fortuna'dan alınan parçalarla inşa edilen modüler bir robot. Kafasını, çekirdeğini ve silahını değiştirerek dövüş tarzını — kalabalık kontrolünden saf hasara kadar — değiştir.	Fortuna에서 얻은 부품으로 만드는 모듈형 로봇. 머리, 코어, 무기를 바꿔 군중 제압부터 순수 피해까지 전투 방식을 바꿉니다.
+A player-built hub with research labs. Clan research unlocks many Warframes and weapons for Credits.	研究所を備えた、プレイヤーが築くハブ。クランの研究により、多くの Warframe や武器をクレジットで解放できます。	مركز يبنيه اللاعبون ويضم مختبرات بحثية. تفتح أبحاث العشيرة العديد من الوورفريم والأسلحة مقابل الاعتمادات.	Araştırma laboratuvarlarına sahip, oyuncuların kurduğu bir merkez. Klan araştırması birçok Warframe ve silahı Kredi karşılığında açar.	연구실이 있는 플레이어 제작 허브. 클랜 연구로 많은 Warframe과 무기를 크레디트로 해금할 수 있습니다.
+A profile-wide level based on how much gear you've ranked and how much of the map you've cleared.	ランク付けしたギアの量とクリアしたマップの量に基づいたプロフィール全体のレベル。	مستوى على مستوى الحساب يعتمد على مقدار العتاد الذي رفعت رتبته ومقدار الخريطة الذي أنجزته.	Rütbelendirdiğin ekipman miktarına ve temizlediğin harita oranına bağlı, profil genelinde bir seviye.	랭크를 올린 장비의 양과 클리어한 지도의 비율에 따라 오르는 프로필 전체 레벨.
+A randomised, weapon-specific mod with generated stats. Endgame min-maxing.	生成されたステータスを持つ、武器専用のランダム MOD。エンドゲームでのミニマックス（最適化）向けです。	مود عشوائي خاص بسلاح معيّن بإحصائيات مولَّدة. مخصص لتحسين البناء في نهاية اللعبة (Min-maxing).	Üretilmiş statlara sahip, rastgele ve silaha özel bir mod. Endgame min-max'ı için.	생성된 능력치를 지닌 무작위 무기 전용 모드. 엔드게임 최적화용.
+A Riven mod	Riven MOD	مود Riven	Riven Modu	Riven 모드
+A robot dog assembled from parts taken from enemy Hounds. Its special modules bring crowd control and debuffs to the fight.	敵のハウンドから奪った部品を組み合わせて組み立てた犬型ロボット。その特別なモジュールは、戦闘に群集制御とデバフをもたらします。	كلب آلي مُجمَّع من أجزاء مأخوذة من الـ Hounds التابعة للعدو. وحداته الخاصة تجلب التحكم في الحشود والتأثيرات السلبية (Debuffs) إلى المعركة.	Düşman Hound'lardan alınan parçalarla birleştirilmiş bir robot köpek. Özel modülleri savaşa kalabalık kontrolü ve zayıflatma getirir.	적 하운드에게서 얻은 부품으로 조립한 로봇 개. 특수 모듈이 전투에 군중 제압과 약화 효과를 더합니다.
+A small Grineer planet off Venus. The Vor & Lech Kril assassination mission drops parts for Warframes like Loki and gives good early mods.	金星沖の小さなグリニア惑星。ヴォルとレッヒ・クリル暗殺ミッションは、Loki のような Warframe 用のパーツをドロップし、優れた初期 MOD を提供します。	كوكب غرينير صغير قبالة كوكب الزهرة. تقوم مهمة اغتيال Vor & Lech Kril بإسقاط أجزاء من وورفريم مثل Loki وتوفر مودات مبكرة جيدة.	Venüs'ün hemen dışındaki küçük bir Grineer gezegeni. Vor & Lech Kril suikast görevi Loki gibi Warframe'lerin parçalarını düşürür ve iyi erken modlar verir.	금성 바로 바깥의 작은 그리니어 행성. Vor & Lech Kril 암살 미션에서 Loki 같은 Warframe 부품이 나오고 좋은 초반 모드를 줍니다.
+A spoiler-light interactive guide	ネタバレ控えめのインタラクティブなガイド	دليل تفاعلي قليل الحرق	Spoiler içeriği az, etkileşimli bir rehber	스포일러 최소화 인터랙티브 가이드
+A spoiler-light path through the early game. You do not need to rush — but this is the order things unlock.	ネタバレを抑えた序盤の道筋。急ぐ必要はありませんが、これが解放される順序です。	مسار قليل الحرق خلال بداية اللعبة. لا داعي للاستعجال — لكن هذا هو الترتيب الذي تُفتح به الأمور.	Oyunun başında spoiler'ı az tutan bir yol. Acele etmene gerek yok — ama işlerin açılma sırası bu.	스포일러를 줄인 초반 진행 경로. 서두를 필요는 없지만, 해금되는 순서는 이렇습니다.
+A straightforward Grineer stretch. The Sergeant assassination rewards parts and introduces you to more mission variety. Good place to settle in and level weapons.	分かりやすいグリニア領域。軍曹の暗殺ではパーツが手に入り、ミッションの種類も増えます。落ち着いて武器をレベルアップするのに最適な場所です。	امتداد غرينير مباشر. اغتيال الرقيب يكافئك بأجزاء ويعرّفك على تنوع أكبر في المهام. مكان جيد للاستقرار ورفع مستوى الأسلحة.	Sade bir Grineer bölgesi. Sergeant suikastı parça verir ve seni daha çeşitli görevlerle tanıştırır. Yerleşmek ve silah seviyelemek için iyi bir yer.	무난한 그리니어 구간. Sergeant 암살은 부품을 보상으로 주고 더 다양한 미션을 소개합니다. 자리 잡고 무기 레벨을 올리기 좋은 곳.
+A system that lets you feed a Warframe to your ship to transplant one of its abilities onto another frame.	Warframe を船に「食べさせて」、その能力の 1 つを別のフレームに移植できるシステム。	نظام يتيح لك تغذية وورفريم إلى سفينتك لنقل إحدى قدراته إلى وورفريم آخر.	Bir Warframe'i gemine yedirip yeteneklerinden birini başka bir frame'e nakletmeni sağlayan sistem.	Warframe을 함선에 먹여 그 능력 하나를 다른 프레임에 이식하는 시스템.
+A techno-organic plague that swarms in melee. Squishy but relentless —	近接戦で群がるテクノオーガニックの疫病。打たれ弱いが容赦がない —	وباء عضوي تقني يجتاح في القتال القريب. هشّ لكنه لا يرحم —	Yakın dövüşte sürü halinde saldıran tekno-organik bir veba. Kırılgan ama amansız —	근접전에서 떼로 몰려드는 기술-유기체 역병. 약하지만 끈질깁니다 —
+A Void mission variant where you crack a Void Relic to get a Prime part or Forma.	ヴォイド レリックをクラックしてプライム パーツまたはフォーマを入手するヴォイド ミッションのバリエーション。	نوع مهمة Void تكسر فيه ريليك Void للحصول على جزء Prime أو Forma.	Bir Prime parçası veya Forma elde etmek için Void Relic açtığın bir Void görev çeşidi.	Void 렐릭을 열어 프라임 부품이나 Forma를 얻는 Void 미션 변형.
+Abilities	能力	القدرات	Yetenekler	어빌리티
+Adapts to and resists repeated damage.	繰り返しのダメージに適応し、耐性を持ちます。	يتكيف مع الأضرار المتكررة ويقاومها.	Tekrarlanan hasara uyum sağlar ve direnç gösterir.	반복되는 피해에 적응하고 저항합니다.
+Adds capacity instead of using it.	容量を使用するのではなく追加します。	يضيف سعة بدلاً من استهلاكها.	Kapasiteyi harcamak yerine ekler.	용량을 소모하는 대신 추가합니다.
+Affinity	アフィニティ	أفينيتي / نقاط الخبرة (Affinity)	Affinity	어피니티
+Affinity is the XP that ranks your gear. Where it goes depends on	アフィニティは、装備のランクを上げる XP です。どこに入るかは次によって決まります	الـ Affinity هي نقاط الخبرة (XP) التي ترفع رتبة عتادك. وجهتها تعتمد على	Affinity, ekipmanını rütbelendiren XP'dir. Nereye gideceği şuna bağlıdır	어피니티는 장비의 랭크를 올리는 경험치입니다. 어디로 가는지는 다음에 따라 다릅니다
+Affinity Range	アフィニティ範囲	نطاق الأفينيتي	Affinity Menzili	어피니티 범위
+after you in missions. Allied Syndicates gain together.	ミッション中にあなたを追ってきます。同盟関係のシンジケートは一緒に評価が上がります。	لملاحقتك أثناء المهام. النقابات المتحالفة تكسب معاً.	görevler boyunca peşine düşer. Müttefik Sendikalar birlikte kazanır.	미션 중 당신을 추적해 옵니다. 동맹 신디케이트는 함께 평판을 얻습니다.
+against this layer	この層に対して	ضد هذه الطبقة	bu katmana karşı	이 층에 대해
+All of it goes to your Warframe.	それはすべてあなたの Warframe に送られます。	كل هذا يذهب إلى وورفريم الخاص بك.	Hepsi Warframe'ine gider.	전부 당신의 Warframe에게 갑니다.
+All status effects at a glance	状態異常を一覧で確認	جميع تأثيرات الحالة بنظرة سريعة	Tüm durum etkilerine bir bakış	모든 상태 이상을 한눈에
+Alloy Plate	アロイ・プレート	ألوي بليت	Alloy Plate	합금 판
+Ally	味方	حليف	Müttefik	아군
+Ally or objective kill	味方または目標対象を倒した場合	قتل حليف أو هدف المهمة	Müttefik veya hedef öldürme	아군 또는 목표물 처치
+Ambulas	アンブラス	أمبولات	Ambulas	앰뷸러스
+Amplified	増幅された	مُضخَّم	Güçlendirilmiş	증폭됨
+Amplifies health damage	ヘルスへのダメージを増幅する	يضخّم الضرر على الصحة	Can hasarını güçlendirir	체력 피해를 증폭시킴
+Amplifies shield damage	シールドダメージを増幅する	يضخّم الضرر على الشيلد	Kalkan hasarını güçlendirir	실드 피해를 증폭시킴
+An agile cat companion that buffs you and the squad. The famous	あなたとチームを強化する機敏な猫の仲間。有名な	رفيق قطة رشيق يعزّزك أنت والفريق. المشهور	Seni ve takımı güçlendiren çevik bir kedi yoldaşı. Ünlü	당신과 분대를 강화하는 민첩한 고양이 컴패니언. 유명한
+An electric Warframe who supercharges movement and weaponry. Popular for speedrunning, Eidolon hunts, and zapping crowds. The most 'frame-agnostic' the longer you play.	動きと武器を強化する電気の Warframe。スピードラン、Eidolon 狩り、群れを感電させるのに人気です。プレイ時間が長くなるほど、最も「フレームを選ばない」存在になります。	وورفريم كهربائي يشحن الحركة والأسلحة. يحظى بشعبية كبيرة في السبيدران وصيد Eidolon وصعق الحشود. يصبح الأكثر «استقلالية عن الفريم» كلما لعبت لفترة أطول.	Hareketi ve silahları aşırı güçlendiren elektrikli bir Warframe. Hız koşusu, Eidolon avı ve kalabalıkları çarpmak için popülerdir. Oynadıkça en 'frame'e bağımlı olmayan' hâle gelir.	이동과 무기를 극대화하는 전기 Warframe. 스피드런, 에이돌론 사냥, 군중 감전으로 인기가 많습니다. 오래 할수록 가장 '프레임을 가리지 않는' 존재가 됩니다.
+An item used to add or change a mod slot's polarity, then re-level the gear. Central to endgame builds.	MOD スロットの極性を追加・変更するために使うアイテム。使用後、ギアのランクは最初からやり直しになります。エンドゲームのビルドの要です。	عنصر يُستخدم لإضافة قطبية فتحة المود أو تغييرها، ثم إعادة رفع مستوى العتاد من جديد. محوري في بناءات نهاية اللعبة.	Bir mod yuvasının kutbunu eklemek veya değiştirmek, ardından ekipmanın seviyesini baştan yükseltmek için kullanılan eşya. Endgame build'lerinin merkezindedir.	모드 슬롯의 극성을 추가하거나 바꾼 뒤 장비 레벨을 처음부터 다시 올리는 아이템. 엔드게임 빌드의 핵심입니다.
+Ancient Disruptor	エンシェント・ディスラプター	المعطّل العتيق (Ancient Disruptor)	Ancient Disruptor	고대 방해자
+Ancient Healer	エンシェント・ヒーラー	المعالج العتيق (Ancient Healer)	Ancient Healer	고대 치유자
+Ancient self-adapting machines from Tau. They learn and resist your damage, so bring	タウの古代の自己適応型マシン。あなたのダメージを学習して耐性を得るため、次を用意しましょう	آلات عتيقة ذاتية التكيف من Tau. تتعلم الضرر الذي تسببه وتقاومه، لذا أحضر	Tau'dan gelen eski, kendine uyum sağlayan makineler. Hasarını öğrenip direnç geliştirirler, o yüzden şunu getir	타우에서 온 고대 자가 적응형 기계. 당신의 피해를 학습하고 저항하므로 다음을 준비하세요
+and open them in Fissures to collect	亀裂で開いて収集します	وفتحها في الصدوع (Fissures) لجمعها	ve toplamak için Yarıklar'da aç	그리고 균열에서 열어 얻으세요
+and raw burst.	そして純粋なバースト火力。	والانفجار الخام للضرر.	ve saf patlama hasarı.	그리고 순수한 폭딜.
+Angels of the Zariman	ザリマンの天使たち	ملائكة الزريمان	Zariman'ın Melekleri	자리만의 천사들
+Any Corpus mission	任意のコーパスミッション	أي مهمة كوربوس	Herhangi bir Corpus görevi	모든 코퍼스 임무
+Any Grineer mission	任意のグリニアミッション	أي مهمة غرينير	Herhangi bir Grineer görevi	모든 그리니어 임무
+Any Void Fissure mission with a full squad	フルパーティでの任意のヴォイド亀裂ミッション	أي مهمة صدع فراغ بفريق كامل	Tam kadroyla herhangi bir Void Fissure görevi	전체 분대를 갖춘 모든 공허 균열 임무
+Any Void Survival or Exterminate — spend it before it decays!	ヴォイドのサバイバルまたは殲滅 — 腐敗する前に使い切る！	أي مهمة بقاء أو إبادة في الفراغ — أنفقها قبل أن تتحلل!	Herhangi bir Void Survival veya Exterminate — bozulmadan önce harcayın!	Void Survival 또는 Exterminate — 부패하기 전에 사용하세요!
+Arbiters of Hexis	ヘクシスの裁定者	محكمو هيكسيس	Hexis'in Hakemleri	헥시스의 중재자
+Archwing	アークウィング	آركوينغ (Archwing)	Archwing	아크윙
+Archwing & Railjack gear	アークウィングとレールジャックのギア	معدات الأركوينج والريلجاك	Archwing ve Railjack ekipmanı	아크윙 & 레일잭 장비
+Archwing missions	アークウィングミッション	مهام الأركوينج	Archwing görevleri	아크윙 미션
+Arctic	北極	القطب الشمالي	Arktik	북극
+are needed and in what order.	が必要であり、その順序は次のとおりです。	هناك حاجة وبأي ترتيب.	gerekli olduğunu ve hangi sırayla olduğunu gösterir.	이(가) 필요하며 그 순서는 다음과 같습니다.
+are remote-controlled bio-metal suits. The child who controls them is the	遠隔操作されるバイオメタルスーツです。それらを操る子どもが、	هي بدلات معدنية حيوية يتم التحكم فيها عن بعد. الطفل الذي يتحكم بهم هو	uzaktan kumandalı biyo-metal kostümlerdir. Onları kontrol eden çocuk	원격 조종되는 바이오 메탈 슈트입니다. 그것을 조종하는 아이는
+Area-of-effect damage	範囲ダメージ	ضرر منطقة التأثير	Alan hasarı	범위 피해
+Area-of-effect damage over time	時間経過に伴う効果範囲ダメージ	ضرر منطقة التأثير مع مرور الوقت	Zamanla alan hasarı	지속 범위 피해
+Arena	アリーナ	الساحة	Arena	아레나
+Arena & late Grineer	アリーナと後半のグリニア	الساحات وغرينير المراحل المتأخرة	Arena ve geç dönem Grineer	아레나 & 후반 그리니어
+Argon Crystal	アルゴン・クリスタル	أرغون كريستال	Argon Crystal	아르곤 크리스탈
+Armor	アーマー	الصلابة	Zırh	아머
+Arsenal	アーセナル	الأرسنال	Arsenal	아스널
+Arson	アーソン	حريق متعمد	Arson	방화
+Assassination	暗殺	اغتيال	Suikast	암살
+assassination target	暗殺対象者	هدف الاغتيال	suikast hedefi	암살 대상
+At extraction everyone picks one reward from the squad's cracked relics.	脱出時に全員が、分隊が開けたレリックの中から報酬を 1 つ選びます。	عند الانسحاب يختار الجميع مكافأة واحدة من الريليك التي فتحها الفريق.	Tahliye sırasında herkes, takımın açtığı Relic'ler arasından bir ödül seçer.	탈출 시 모두가 분대가 연 렐릭 중에서 보상 하나를 고릅니다.
+At the start you choose one of three. Each plays very differently — but	最初に 3 つのうち 1 つを選びます。それぞれ遊び方がまったく異なりますが —	في البداية عليك اختيار واحد من الثلاثة. يلعب كل منهم بشكل مختلف تمامًا — ولكن	Başlangıçta üçünden birini seçersin. Her biri çok farklı oynanır — ama	시작할 때 셋 중 하나를 고릅니다. 각각 플레이 방식이 크게 다르지만 —
+Attacks allies	味方を攻撃する	يهاجم الحلفاء	Müttefiklere saldırır	아군을 공격함
+Average crit multiplier	平均クリティカル倍率	متوسط مضاعف الضرر الحرج	Ortalama kritik çarpanı	평균 치명타 배율
+average damage per trigger pull	トリガーを引くごとの平均ダメージ	متوسط الضرر لكل ضغطة زناد	tetik çekişi başına ortalama hasar	방아쇠 한 번당 평균 피해
+Awaken on the Zariman	ザリマンで目覚める	استيقظ على الزريمان	Zariman'da uyan	자리만에서 깨어나다
+Axi	アクシ	Axi	Axi	악시
+Balanced starter	バランスの取れたスターター	بداية متوازنة	Dengeli başlangıç	균형 잡힌 입문용
+Ballista	バリスタ	Ballista	Ballista	발리스타
+bar. While it holds they ignore crowd control, and each type brings its own attack or aura — barriers, leech zones, shockwaves and more. Break the Overguard first, then deal with the ability.	バー。それが保持されている間、彼らは群衆の制御を無視し、各タイプはバリア、ヒルゾーン、衝撃波など、独自の攻撃またはオーラをもたらします。まずオーバーガードを破壊してから、アビリティに対処してください。	حاجِز. على الرغم من استمرارها، إلا أنها تتجاهل السيطرة على الحشود، وكل نوع يجلب هجومه أو هالته الخاصة - الحواجز، ومناطق العلقة، وموجات الصدمات، والمزيد. اكسر Overguard أولاً، ثم تعامل مع القدرة.	çubuk. Bu böyle devam ederken kalabalık kontrolünü göz ardı ediyorlar ve her tür kendi saldırısını veya aurasını getiriyor; bariyerler, sülük bölgeleri, şok dalgaları ve daha fazlası. Önce Overguard'ı kırın, sonra yetenekle ilgilenin.	술집. 유지하는 동안 군중 제어를 무시하며 각 유형은 장벽, 리치 존, 충격파 등 고유한 공격이나 오라를 가져옵니다. 오버가드를 먼저 깨뜨린 다음 능력을 처리하세요.
+bar. While it holds they ignore crowd control, and each type radiates an	ゲージ。これが残っている間はクラウドコントロールを無視し、種類ごとに次のオーラを放ちます	الشريط. وطالما بقي قائماً فإنهم يتجاهلون السيطرة على الحشود، وكل نوع يشعّ	çubuğu. O doluyken kalabalık kontrolünü yok sayarlar ve her tür şunu yayar	바. 바가 유지되는 동안 군중 제압을 무시하며, 종류마다 다음을 발산합니다
+base damage	基礎ダメージ	الضرر الأساسي	temel hasar	기본 피해
+Base damage	基本ダメージ	الضرر الأساسي	Temel hasar	기본 피해
+Base stats	基礎ステータス	إحصائيات أساسية	Temel statlar	기본 능력치
+Basics	基本	الأساسيات	Temeller	기초
+Battalyst	バタリスト	باتاليست	Battalyst	배탈리스트
+Beast · canine	獣・犬	وحش · كلبي	Canavar · köpeksi	야수 · 개과
+Beast · feline	獣・猫科	وحش · قططي	Canavar · kedigil	야수 · 고양이과
+Beat Junctions	ジャンクションを突破	تجاوز الـ Junctions	Junction'ları geç	정션 돌파
+Beginner checklist	初心者向けチェックリスト	قائمة التحقق للمبتدئين	Yeni başlayan kontrol listesi	초보자 체크리스트
+Beginner priority:	初心者優先：	أولوية المبتدئين:	Yeni başlayan önceliği:	초보자 우선 사항:
+Beginner quiz	初心者向けクイズ	اختبار للمبتدئين	Yeni başlayan testi	초보자 퀴즈
+Best against:	有効な相手:	الأفضل ضد:	Şunlara karşı en iyisi:	효과적인 대상:
+Best stripped by	最も効率よく剥がせる属性	الأفضل في التجريد بواسطة	En iyi şunlarla sökülür	가장 잘 벗겨내는 것
+Beyond your three weapons you bring a	3 つの武器以外にも、	بالإضافة إلى أسلحتك الثلاثة، تصطحب	Üç silahının ötesinde şunu da yanına alırsın	세 가지 무기 외에도 다음을 가져갑니다
+Bigger Grineer	より大きなグリニア	غرينير أضخم	Daha iri Grineer	더 큰 그리니어
+Bindings shown are the default PC layout.	表示されているバインディングはデフォルトの PC レイアウトです。	الارتباطات المعروضة هي تخطيط الكمبيوتر الافتراضي.	Gösterilen tuş atamaları varsayılan PC düzenidir.	표시된 키 설정은 PC 기본 배치입니다.
+Blast	ブラスト	انفجار	Patlama	폭발
+Bleed	ブリード	نزيف	Kanama	출혈
+Bleed DoT	ブリード DoT（継続ダメージ）	ضرر نزيف مع الوقت (DoT)	Kanama DoT	출혈 지속 피해
+Bleed ignores armor	ブリードはアーマーを無視する	النزيف يتجاهل الدرع (Armor)	Kanama zırhı yok sayar	출혈은 아머를 무시함
+Blitz	ブリッツ	الغارة	Baskın	블리츠
+Blueprint from the Market for Credits, then craft with resources in the Foundry.	マーケットでクレジットを使って設計図を入手し、鋳造所で資源を使って製作します。	احصل على المخطط من السوق مقابل الاعتمادات، ثم صنّعه بالموارد في المسبك.	Market'ten Kredi karşılığı planı al, sonra Foundry'de kaynaklarla üret.	마켓에서 크레디트로 설계도를 구한 뒤, 파운드리에서 자원으로 제작합니다.
+Blunt force. Its status causes knockback and staggers enemies. Good against shields and Grineer armor in the current system.	鈍器のような衝撃。状態異常はノックバックとよろめきを引き起こします。現行システムではシールドやグリニアのアーマーに有効です。	قوة ضاربة. تسبب حالتها دفعاً للخلف وتُرنّح الأعداء. جيد ضد الشيلد ودرع غرينير في النظام الحالي.	Künt güç. Durumu geri itme yaratır ve düşmanları sendeletir. Mevcut sistemde kalkanlara ve Grineer zırhına karşı iyidir.	둔기 타격. 상태 이상은 넉백과 휘청임을 일으킵니다. 현재 시스템에서 실드와 그리니어 아머에 좋습니다.
+Boiler	ボイラー	غلاية	Boiler	보일러
+Bombard	ボンバード	Bombard	Bombard	봄바드
+Bonus damage to Alloy armor	合金アーマーへのボーナスダメージ	ضرر إضافي لدرع السبائك	Alloy zırha bonus hasar	합금 아머에 추가 피해
+Boost weapon and ability damage — the go-to school for raw power.	武器と能力のダメージを強化します。生のパワーを得るには最適な方法です。	عزز ضرر الأسلحة والقدرات — المدرسة المثالية للحصول على القوة الخام.	Silah ve yetenek hasarını artırır — saf güç için başvurulacak okul.	무기와 어빌리티 피해를 강화합니다 — 순수한 힘을 위한 대표 계열.
+boosts resource and rare-item drops, making it a farm favourite.	リソースとレアアイテムのドロップ率が上がるため、ファームの定番です。	يعزز إسقاط الموارد والعناصر النادرة، مما يجعله مفضلاً للفارمنغ.	kaynak ve nadir eşya düşüşlerini artırır; farm için favoridir.	자원과 희귀 아이템 드롭률을 높여 줘서 파밍에 인기가 많습니다.
+Boss	ボス	زعيم	Patron	보스
+Bounty	依頼 (Bounty)	مهام الجوائز (Bounties)	Ödül Görevi (Bounty)	현상금
+Brood Mother	ブルード・マザー	الأم الحضنة	Brood Mother	브루드 마더
+Buff	バフ	تقوية (Buff)	Güçlendirme (Buff)	버프
+Build cheap weapons	安価な武器を作る	بناء أسلحة رخيصة	Ucuz silahlar üret	저렴한 무기 제작
+Build in the Foundry	鋳造所で製作	البناء في المسبك	Foundry'de üret	파운드리에서 제작
+Build in the Foundry: install the Foundry segment, then craft weapons and Warframes from blueprints + resources. Builds run in real time and finish while you're offline.	鋳造所で製作: 鋳造所セグメントをインストールし、設計図と資源から武器と Warframe を製作します。製作はリアルタイムで進行し、オフライン中も完了します。	البناء في المسبك: ثبّت قسم المسبك، ثم صنّع الأسلحة والوورفريم من المخططات + الموارد. تعمل عمليات التصنيع في الوقت الفعلي وتكتمل وأنت غير متصل بالإنترنت.	Foundry'de üret: Foundry bölümünü kur, sonra planlardan ve kaynaklardan silah ve Warframe üret. Üretim gerçek zamanlı ilerler ve sen çevrimdışıyken de tamamlanır.	파운드리에서 제작: 파운드리 세그먼트를 설치한 뒤 설계도와 자원으로 무기와 Warframe을 만듭니다. 제작은 실시간으로 진행되며 오프라인 중에도 완료됩니다.
+Build new gear	新しいギアを構築する	بناء معدات جديدة	Yeni ekipman üret	새 장비 제작
+Bullet Jump	バレットジャンプ	القفزة الصاروخية (Bullet Jump)	Bullet Jump	불릿 점프
+Burn DoT	バーン DoT（継続ダメージ）	ضرر حرق مع الوقت (DoT)	Yanma DoT	화상 지속 피해
+Bursa	ブルサ	بورصة	Bursa	버사
+Butcher	肉屋	جزار	Butcher	부처
+Buy a bundle with Platinum if you're in a hurry.	お急ぎの場合は、プラチナのバンドルを購入してください。	اشترِ حزمة بالبلاتينيوم إذا كنت في عجلة من أمرك.	Acelen varsa Platin ile bir paket satın al.	급하다면 플래티넘으로 번들을 구매하세요.
+Buy instantly with Platinum — optional, and often poor value.	プラチナですぐに購入できます。任意で、割高になることが多いです。	اشترِ فوراً بالبلاتينيوم — خيار اختياري وغالباً ما تكون قيمته ضعيفة.	Platin ile anında satın al — isteğe bağlı ve çoğu zaman düşük değerli.	플래티넘으로 즉시 구매 — 선택 사항이며 가성비가 나쁜 경우가 많습니다.
+Buy the full set or parts from other players with Platinum.	プラチナを使用して他のプレイヤーからフルセットまたはパーツを購入します。	اشترِ المجموعة الكاملة أو الأجزاء من لاعبين آخرين بالبلاتينيوم.	Diğer oyunculardan Platin ile tam set veya parça satın al.	다른 플레이어에게 플래티넘으로 세트 전체나 부품을 구매합니다.
+Buy with Platinum	プラチナで購入	اشترِ بالبلاتينيوم	Platin ile satın al	플래티넘으로 구매
+Buy with Platinum to skip the farm.	プラチナで購入するとファームをスキップできます。	اشترِ بالبلاتينيوم لتخطي الفارمنغ.	Farm'ı atlamak için Platin ile satın al.	플래티넘으로 구매해 파밍을 건너뛰세요.
+Buy with Platinum when you need one right now.	今すぐ必要な場合はプラチナで購入してください。	اشترِ بالبلاتينيوم عندما تحتاجه الآن.	Hemen bir tanesine ihtiyacın olduğunda Platin ile satın al.	지금 당장 필요할 때 플래티넘으로 구매하세요.
+buys two more. Level a weapon to 30, then selling it frees the slot — you keep the Mastery.	でさらに 2 つ購入できます。武器をランク 30 まで上げてから売却するとスロットが空き、マスタリーは維持されます。	تشتري فتحتين إضافيتين. ارفع مستوى سلاح إلى 30، ثم بيعه يحرر الفتحة — وتحتفظ بالإتقان.	iki tane daha satın alır. Bir silahı 30. seviyeye çıkarıp satarsan yuva boşalır — Ustalığı korursun.	두 개를 더 구매합니다. 무기를 30레벨까지 올린 뒤 판매하면 슬롯이 비고 마스터리는 유지됩니다.
+By playing for a set number of hours	一定時間プレイすることで	من خلال اللعب لعدد محدد من الساعات	Belirli bir süre oynayarak	정해진 시간만큼 플레이해서
+By ranking up new Warframes, weapons and companions to 30	新しい Warframe、武器、コンパニオンを 30 までランクアップする	برفع رتبة وورفريم وأسلحة ومرافقين جدد إلى 30	Yeni Warframe'leri, silahları ve yoldaşları 30. rütbeye çıkararak	새 Warframe, 무기, 컴패니언을 30랭크까지 올려서
+By spending Platinum	プラチナを消費することで	بإنفاق البلاتينيوم	Platin harcayarak	플래티넘을 사용해서
+Bypassed	バイパス済み	تم تجاوزه	Atlandı	우회됨
+Bypasses shields	シールドをバイパスします	يتجاوز الشيلد	Kalkanları atlar	실드를 우회함
+Calls down tracking beams of Jade Light that deal heavy damage. Break line of sight or destroy the source.	ジェイドライトの追跡ビームを呼び出し、大ダメージを与えます。視界を遮断するか、発生源を破壊してください。	يستدعي أشعة تتبع من Jade Light تسبب ضرراً فادحاً. اكسر خط الرؤية أو دمّر المصدر.	Ağır hasar veren Jade Light takip ışınları yağdırır. Görüş hattını kes veya kaynağı yok et.	큰 피해를 주는 Jade Light의 추적 광선을 내리꽂습니다. 시야를 끊거나 발생원을 파괴하세요.
+Calls down tracking Jade Light beams on up to two players, dealing Heat damage that doubles every 0.5 s. Shoot the top of the beam or break line of sight.	最大 2 人のプレイヤーに追跡ジェイド ライト ビームを呼び出し、0.5 秒ごとに 2 倍になる熱ダメージを与えます。ビームの上部を撃つか、視線を遮断します。	تستدعي تعقب أشعة Jade Light على ما يصل إلى لاعبين، مما يتسبب في ضرر حراري يتضاعف كل 0.5 ثانية. قم بإطلاق النار على الجزء العلوي من الشعاع أو كسر خط الرؤية.	En fazla iki oyuncuya Jade Light ışınlarını takip ederek aşağı çağrılar yapar ve her 0,5 saniyede bir iki katına çıkan Isı hasarı verir. Işının üst kısmını vurun veya görüş hattını kırın.	추적 중인 Jade Light 광선을 최대 두 명의 플레이어에게 불러내어 0.5초마다 두 배로 증가하는 열 피해를 입힙니다. 빔 상단을 쏘거나 시선을 끊으십시오.
+Cambion Drift	カンビオン ドリフト	كامبيون دريفت (Cambion Drift)	Cambion Drift	캠비온 드리프트
+Capacity calculator	容量計算機	حاسبة السعة	Kapasite hesaplayıcı	용량 계산기
+Capacity:	容量：	سعة:	Kapasite:	용량:
+Capacity: 30	容量：30	السعة: 30	Kapasite: 30	용량: 30
+Captain Vor	キャプテン・ヴォル	الكابتن فور	Kaptan Vor	캡틴 보르
+Capture	確保 (Capture)	أسر (Capture)	Yakalama (Capture)	캡처
+Catalyst	触媒	محفز	Katalizör	촉매
+CC	CC	CC	CC	CC
+Cephalon Suda	セファロン・スーダ	سيفالون سودا	Cephalon Suda	세팔론 수다
+Ceres	セレス	سيريس	Ceres	세레스
+change polarity	極性を変更する	تغيير القطبية	kutbu değiştir	극성 변경
+Channels Electricity that chains between targets and can stun you in place.	ターゲット間を連鎖し、その場であなたをスタンさせる電撃を放つ。	يوجّه كهرباء تنتقل بين الأهداف ويمكنها صعقك في مكانك.	Hedefler arasında zincirleme geçen ve seni olduğun yerde sersemletebilen Elektrik yayar.	대상 사이를 연쇄하며 그 자리에서 당신을 기절시킬 수 있는 전기를 흘려보냅니다.
+Charger	チャージャー	Charger	Charger	차저
+Chase down and capture a fleeing VIP target.	逃げるVIPターゲットを追跡して捕らえます。	مطاردة والقبض على هدف VIP الهارب.	Kaçan bir VIP hedefi kovala ve yakala.	도망치는 VIP 대상을 추격해 붙잡으세요.
+Circuits	サーキット	سيركتس	Devre	회로
+Clan Dojo	クラン道場	دوجو العشيرة	Klan Dojo'su	클랜 도조
+Clear every node	すべてのノードをクリアします	أنهِ كل عقدة	Tüm düğümleri temizle	모든 노드 클리어
+Clear nodes, beat Junctions and unlock planet after planet across the Origin System.	ノードをクリアし、ジャンクションを突破し、オリジン システム全体で次々と惑星のロックを解除していきます。	أنهِ العقد، وتجاوز الـ Junctions، وافتح كوكباً تلو الآخر عبر نظام Origin.	Düğümleri temizle, Junction'ları geç ve Origin Sistemi boyunca gezegen gezegen ilerle.	노드를 클리어하고, 정션을 돌파하며, 오리진 시스템 전역의 행성을 하나씩 해금하세요.
+Clear their influence nodes on the Star Chart to reveal which	スターチャート上の彼らの影響ノードをクリアして、どれが	قم بتطهير عُقد نفوذهم على مخطط النجوم لكشف أيّها	Yıldız Haritası'nda onların etki düğümlerini temizleyerek hangisinin	스타 차트에서 그들의 영향 노드를 클리어해 어느 것이
+Click a layer above to read what it does.	上のレイヤーをクリックして、その機能を確認してください。	انقر فوق طبقة أعلاه لقراءة ما تفعله.	Ne yaptığını görmek için yukarıdaki bir katmana tıkla.	위의 층을 클릭해 그 기능을 확인하세요.
+Click a slot to see what it does and how it is modded.	スロットをクリックすると、スロットが何をするのか、どのように改造されているのかが表示されます。	انقر فوق إحدى الفتحات لترى ما تفعله وكيف تم تعديلها.	Ne yaptığını ve nasıl modlandığını görmek için bir yuvaya tıkla.	슬롯을 클릭하면 그 역할과 모딩 방식을 볼 수 있습니다.
+Click two different primaries. Click a selected one to remove it.	2 つの異なるプライマリ武器をクリックします。選択済みのものをクリックすると解除されます。	انقر على سلاحين أساسيين مختلفين. انقر على السلاح المحدد لإزالته.	İki farklı temel element seç. Kaldırmak için seçili olana tekrar tıkla.	서로 다른 기본 원소 두 개를 클릭하세요. 선택한 것을 다시 클릭하면 해제됩니다.
+Cloned flesh under heavy Ferrite armor.	重いフェライトアーマーをまとったクローンの肉体。	لحم مستنسخ تحت درع Ferrite ثقيل.	Ağır Ferrite zırhın altında klonlanmış et.	두꺼운 페라이트 아머 아래의 복제된 살덩이.
+Close-quarters weapon with a Stance mod and a combo counter. Melee scales hard with crit and 'condition overload' style builds into the late game.	スタンスMODとコンボカウンターを備えた近接兵器。クリティカルや「Condition Overload」を活用したビルドにより、エンドゲームで非常に強力になります。	سلاح قتال قريب مع تعديل وضعية (Stance) وعداد ضربات متتالية (Combo). القتال القريب يصبح فتاكاً في المراحل المتقدمة (الإندجيم) بالاعتماد على الضربات الحرجة وبناءات الـ Condition Overload.	Duruş (Stance) modu ve kombo sayacı olan yakın dövüş silahı. Yakın dövüş, kritik ve 'condition overload' tarzı build'lerle oyunun sonlarına doğru çok güçlenir.	스탠스 모드와 콤보 카운터를 가진 근접 무기. 근접은 치명타와 '컨디션 오버로드' 류 빌드로 후반에 매우 강해집니다.
+Cold	コールド	برودة (Cold)	Soğuk	냉기
+Collect	集める	اجمع	Topla	수집
+Combat	戦闘	القتال	Savaş	전투
+Combined mod multiplier	組み合わせた MOD 乗数	مضاعف المودات المجمّع	Birleşik mod çarpanı	합산 모드 배율
+Command a capital ship for space-and-boarding Empyrean missions.	宇宙と搭乗のエンピリアンミッションのために主力艦を指揮しましょう。	قُد سفينة رئيسية لمهام Empyrean الفضائية وعمليات الاقتحام.	Uzay ve gemiye çıkma içeren Empyrean görevleri için bir ana gemi komuta et.	우주 및 승선전이 있는 Empyrean 미션을 위해 주력함을 지휘하세요.
+Common	コモン	شائع	Yaygın	일반
+Common ×3	コモン ×3	شائع ×3	Yaygın ×3	일반 ×3
+Companion	コンパニオン	رفيق	Yoldaş	컴패니언
+Companion mods.	コンパニオンMOD。	مودات المرافقين.	Yoldaş modları.	컴패니언 모드.
+Companions	コンパニオン	المرافقون	Yoldaşlar	컴패니언
+Conculyst	コンキュリスト	كونكولست	Conculyst	콘큘리스트
+Confront them at the showdown. Choose	対決で彼らと対峙してください。選ぶ	واجههم في المواجهة الحاسمة. اختر	Hesaplaşmada onlarla yüzleş. Seç	최후의 대결에서 그들과 맞서세요. 선택하세요
+Confused	混乱した	مشوش	Şaşkın	혼란
+Confusion	混乱	ارتباك	Şaşkınlık	혼란
+Control Module	コントロール・モジュール	كونترول موديول	Kontrol Modülü	컨트롤 모듈
+Controls to internalize	身につけたい操作	عناصر تحكم عليك إتقانها	Öğrenmen gereken kontroller	익혀 두어야 할 조작
+Convert	変換する	حوّل	Dönüştür	변환
+converts Affinity earned on a ranked item into Focus points. Spend them in five schools that power up your Operator and grant Waybound passives.	ランク付けされたアイテムで獲得したアフィニティをフォーカスポイントに変換します。オペレーターを強化し、Waybound パッシブを付与する 5 つのスクール（流派）で消費します。	يحوّل الأفينيتي المكتسب على عنصر مرفوع الرتبة إلى نقاط تركيز (Focus). أنفقها في خمس مدارس تعزز المشغّل وتمنح قدرات Waybound السلبية.	Rütbelendirilmiş bir eşyada kazanılan Affinity'yi Odak (Focus) puanına çevirir. Operatör'ünü güçlendiren ve Waybound pasifleri veren beş okulda harca.	랭크를 올린 아이템에서 얻은 어피니티를 포커스 포인트로 변환합니다. 오퍼레이터를 강화하고 Waybound 패시브를 부여하는 다섯 유파에 사용하세요.
+Corpus	コーパス	الكوربوس (Corpus)	Corpus	코퍼스
+Corpus clan research	コーパスのクラン研究	أبحاث عشيرة الكوربوس	Corpus klan araştırması	코퍼스 클랜 연구
+Corpus merchants who fund prosperity.	繁栄に資金を提供するコーパス商人。	تجار كوربوس الذين يمولون الرخاء.	Refahı finanse eden Corpus tüccarları.	번영에 자금을 대는 코퍼스 상인들.
+Corpus money	コーパスの金	أموال الكوربوس	Corpus parası	코퍼스 자금
+Corpus outpost	コーパス前哨基地	مركز كوربوس متقدم	Corpus karakolu	코퍼스 전초기지
+Corpus shields	コーパスシールド	شيلد الكوربوس	Corpus kalkanları	코퍼스 실드
+Corpus Tech	コーパステック	كوربوس تك	Corpus Teknolojisi	코퍼스 테크
+Corpus weapons & crafting	コーパス武器とクラフト	أسلحة الكوربوس وصناعتها	Corpus silahları ve üretim	코퍼스 무기 및 제작
+Corrosion	腐食	تآكل	Aşınma	부식
+Corrosive	腐食性	تآكلي	Aşındırıcı	부식성
+Corrupted	コラプテッド	الفاسدون (Corrupted)	Bozulmuş (Corrupted)	타락한
+Corrupted Ancient	コラプテッド・エンシェント	العتيق الفاسد (Corrupted Ancient)	Corrupted Ancient	타락한 고대
+Corrupted Bombard	コラプテッド・ボンバード	Bombard فاسد	Corrupted Bombard	타락한 봄바드
+Corrupted Butcher	コラプテッド・ブッチャー	جزار فاسد	Corrupted Butcher	타락한 부처
+Corrupted Crewman	コラプテッド・クルーマン	فرد طاقم فاسد	Corrupted Crewman	타락한 승무원
+Corrupted Drone	コラプテッド・ドローン	درون فاسد	Corrupted Drone	타락한 드론
+Corrupted Heavy Gunner	コラプテッド・ヘビーガンナー	مدفعي ثقيل فاسد	Corrupted Heavy Gunner	타락한 헤비 거너
+Corrupted Lancer	コラプテッド・ランサー	لانسر فاسد	Corrupted Lancer	타락한 랜서
+Corrupted MOA	コラプテッド・MOA	MOA فاسد	Corrupted MOA	타락한 MOA
+Corrupted Nullifier	コラプテッド・ヌリファイア	Nullifier فاسد	Corrupted Nullifier	타락한 눌리파이어
+Corrupted Vor	コラプテッド・ヴォル	فور الفاسد	Corrupted Vor	타락한 보르
+corruption and crack the relic by killing enemies.	コラプションを溜め、敵を倒してレリックを開きます。	الفساد وفتح الريليك بقتل الأعداء.	yozlaşmayı ve düşman öldürerek Relic'i kırmayı.	타락을 쌓고 적을 처치해 렐릭을 엽니다.
+cost and a	コストと	التكلفة و	maliyeti ve bir	비용과
+Councilor Vay Hek	ヴァイ・ヘク議員	المستشار فاي هيك	Meclis Üyesi Vay Hek	의원 베이 헥
+Crack Void Relics for parts, or trade parts with other players.	ヴォイド レリックを分解してパーツを入手したり、他のプレイヤーとパーツを交換したりできます。	افتح ريليك Void للحصول على أجزاء، أو تبادل الأجزاء مع لاعبين آخرين.	Parça için Void Relic'leri kır veya diğer oyuncularla parça takas et.	부품을 얻기 위해 Void 렐릭을 열거나, 다른 플레이어와 부품을 거래하세요.
+Crack your first Relic	最初のレリックを開く	افتح أول ريليك لك	İlk Relic'ini kır	첫 렐릭 열기
+Cracking relics in Void Fissures	ヴォイドの亀裂でレリックを開く	فتح الريليك في صدوع الفراغ	Void Yarıkları'nda Relic kırmak	Void 균열에서 렐릭 열기
+Cracking Void Relics	ヴォイドレリックを開く	فتح ريليك Void	Void Relic'leri kırmak	Void 렐릭 열기
+Crawler	クローラー	الزاحف	Crawler	크롤러
+Credits	クレジット	الاعتمادات (Credits)	Kredi	크레디트
+Credits are earned in-game and used for crafting, fusion and trade taxes. Platinum is the premium currency.	クレジットはゲーム内で獲得され、クラフト、融合、貿易税に使用されます。プラチナはプレミアム通貨です。	تُكتسب الاعتمادات داخل اللعبة وتُستخدم في الصناعة والدمج وضرائب التداول. البلاتينيوم هو العملة المميزة.	Krediler oyun içinde kazanılır; üretimde, füzyonda ve takas vergilerinde kullanılır. Platin premium para birimidir.	크레디트는 게임 내에서 얻으며 제작, 융합, 거래 세금에 사용됩니다. 플래티넘은 프리미엄 화폐입니다.
+Crewman	乗組員	فرد الطاقم	Crewman	승무원
+Crit and status together.	クリティカルと状態異常の両立。	الضرر الحرج وتأثيرات الحالة معاً.	Kritik ve durum bir arada.	치명타와 상태 이상을 함께.
+Crit build	クリティカル特化ビルド	بناء (Build) يعتمد على الضرر الحرج	Kritik build	치명타 빌드
+Crit chance	クリティカル率	فرصة الضربة الحرجة	Kritik şansı	치명타 확률
+Crit Chance	クリティカル率	فرصة الضربة الحرجة	Kritik Şansı	치명타 확률
+Crit damage	クリティカル倍率	مضاعف الضرر الحرج	Kritik hasar	치명타 피해
+Crit Damage	クリティカル倍率	مضاعف الضرر الحرج	Kritik Hasar	치명타 피해
+Crit, status or hybrid?	クリティカル、状態異常、それともハイブリッド？	ضرر حرج، حالة، أم هجين؟	Kritik, durum, yoksa hibrit?	치명타, 상태 이상, 아니면 하이브리드?
+Crowd-control	クラウドコントロール (CC)	التحكم في الحشود (CC)	Kalabalık kontrolü	군중 제압
+Crowds	群衆	الحشود	Kalabalıklar	군중
+Crush	クラッシュ	سحق (Crush)	Ezme (Crush)	압착
+Cryotic	クライオティック	كرايوتيك	Cryotic	크라이오틱
+Ctrl	Ctrl	Ctrl	Ctrl	Ctrl
+Cutting. Its status causes Bleed, a damage-over-time that ignores armor — the reason Slash builds are so popular on crit weapons.	切断。状態異常はブリードを引き起こします。これはアーマーを無視する継続ダメージで、クリティカル武器でスラッシュビルドが非常に人気な理由です。	قطع. تتسبب حالتها في النزيف (Bleed)، وهو ضرر مستمر مع الوقت يتجاهل الدرع — ولهذا تحظى بنيات Slash بشعبية كبيرة على الأسلحة الحرجة.	Kesme. Durumu, zırhı yok sayan zamanla hasar olan Kanama'ya yol açar — Slash build'lerinin kritik silahlarda bu kadar popüler olmasının sebebi.	베기. 상태 이상은 출혈을 일으키는데, 이는 아머를 무시하는 지속 피해입니다 — 치명타 무기에서 베기 빌드가 인기 있는 이유입니다.
+Damage	ダメージ	ضرر	Hasar	피해
+Damage cheat-sheet: what to bring per faction	ダメージ早見表: 勢力ごとに何を持っていくか	ورقة مرجعية للضرر: ماذا تحضر لكل فصيل	Hasar kopya kâğıdı: hangi grup için ne getirmeli	피해 치트 시트: 세력별로 무엇을 가져갈까
+Damage has to chew through layers before it touches health. Click a layer to see what strips it — this is where element choice really pays off.	ダメージはヘルスに届く前に、複数の層を削り切る必要があります。層をクリックすると、何で剥がせるかが分かります。属性選びが本当に効いてくるのがここです。	يجب أن يخترق الضرر عدة طبقات قبل أن يصل إلى الصحة. انقر على طبقة لترى ما الذي يجردها — وهنا يؤتي اختيار العنصر ثماره حقاً.	Hasar, Cana ulaşmadan önce katmanları aşmak zorundadır. Neyin söktüğünü görmek için bir katmana tıkla — element seçimi asıl burada işe yarar.	피해는 체력에 닿기 전에 여러 층을 뚫어야 합니다. 층을 클릭해 무엇으로 벗겨내는지 확인하세요 — 원소 선택이 진가를 발휘하는 곳입니다.
+damage multiplier x	ダメージ倍率×	مضاعف الضرر x	hasar çarpanı x	피해 배율 x
+Damage over time	継続ダメージ	الضرر مع مرور الوقت	Zamanla hasar	지속 피해
+Damage per projectile	発射物ごとのダメージ	الضرر لكل قذيفة	Mermi başına hasar	투사체당 피해
+Dash forward as a blade of energy, damaging and cutting through enemies in your path.	エネルギーの刃として前方にダッシュし、行く手の敵にダメージを与えて切り裂きます。	اندفع للأمام كنصل من الطاقة، فتُلحق الضرر بالأعداء في طريقك وتقطعهم.	Bir enerji bıçağı olarak ileri atıl; yolundaki düşmanlara hasar ver ve onları kes.	에너지의 칼날이 되어 앞으로 돌진하며 경로상의 적에게 피해를 주고 베어 넘깁니다.
+death squads	暗殺部隊	فرق الموت	ölüm mangaları	암살 부대
+Debuff	デバフ	إضعاف (Debuff)	Zayıflatma (Debuff)	디버프
+Defection	離反 (Defection)	انشقاق (Defection)	Defection	이탈
+Defend a console through a short hacking sequence at several points.	いくつかの地点で、短いハッキングシーケンスの間コンソールを防衛します。	دافع عن وحدة تحكم خلال تسلسل اختراق قصير في عدة نقاط.	Birkaç noktada kısa bir hackleme sekansı boyunca bir konsolu savun.	여러 지점에서 짧은 해킹 시퀀스 동안 콘솔을 방어하세요.
+Defense	防衛	الدفاع	Savunma	방어
+Defense — health, shields, armor.	防御 — ヘルス、シールド、アーマー。	الدفاع — الصحة والشيلد والدرع.	Savunma — can, kalkan, zırh.	방어 — 체력, 실드, 아머.
+Defense, Survival, Excavation, Interception and Disruption reward you in repeating	防衛、生存、発掘、迎撃、妨害は、ラウンドを繰り返すごとに報酬を与えてくれます	يكافئك الدفاع والبقاء والتنقيب والاعتراض والتعطيل على شكل جولات متكررة	Savunma, Hayatta Kalma, Kazı, Önleme ve Bozma görevleri tekrarlanan turlarla ödüllendirir	방어, 생존, 발굴, 요격, 교란은 반복되는 라운드마다 보상을 줍니다
+Deimos	デイモス	ديموس	Deimos	데이모스
+deployed there — with pictures — and its boss.	そこに配置されている敵（写真付き）と、そのボス。	المنتشرين هناك — مع الصور — وزعيمها.	orada konuşlanmış olanlar — resimleriyle — ve patronu.	그곳에 배치된 적(사진 포함)과 보스.
+Detonate	爆発する	تفجير	Patlat	기폭
+Detonate a magnetic pulse that strips enemy armor and shields while restoring allies' shields.	磁気パルスを爆発させて敵の鎧とシールドを剥ぎ取り、味方のシールドを回復します。	فجّر نبضة مغناطيسية تجرد درع العدو وشيلده مع استعادة شيلد الحلفاء.	Düşman zırhını ve kalkanlarını söken, müttefiklerin kalkanlarını onaran bir manyetik darbe patlat.	자기 펄스를 터뜨려 적의 아머와 실드를 벗겨내고 아군의 실드를 회복시킵니다.
+detonates at 10	10 スタックで爆発する	ينفجر عند 10 تراكمات	10 yığında patlar	스택 10에서 폭발
+Detonates at 10 stacks or on death	10スタックまたは死亡時に爆発する	ينفجر عند 10 تراكمات أو عند الموت	10 yığında veya ölünce patlar	스택 10 또는 사망 시 폭발
+Detonite Ampule	デトナイト・アンプル	ديتونايت أمبول	Patlayıcı Ampul	디토나이트 앰플
+Detron Crewman	デトロン・クルーマン	فرد طاقم Detron	Detron Crewman	데트론 승무원
+Direct poison	直接毒	السم المباشر	Doğrudan zehir	직접 독
+Discharge	放電	تفريغ	Boşalma	방전
+Disrupt	妨害する	تعطيل	Boz	교란
+Disruption	妨害 (Disruption)	تشويش (Disruption)	Bozma (Disruption)	교란
+DNA Stabilizers	DNA安定剤	مثبتات الحمض النووي	DNA Dengeleyiciler	DNA 안정제
+Don't get stuck: slots & Platinum	行き詰まらないために: スロットとプラチナ	لا تتعثر: الفتحات والبلاتينيوم	Takılıp kalma: yuvalar ve Platin	막히지 않으려면: 슬롯과 플래티넘
+Doubles your mod capacity	MODの容量が2倍になります	يضاعف سعة المود لديك	Mod kapasiteni ikiye katlar	모드 용량을 두 배로
+Drain	ドレイン	استنزاف	Tüketim	소모
+Drains your Energy just by being nearby. Kill it to stop the drain.	近くにいるだけでエネルギーを奪われます。吸収を止めるには倒してください。	يستنزف طاقتك بمجرد وجودك بالقرب منه. اقتله لإيقاف الاستنزاف.	Yakınında olman bile Enerjini çeker. Çekimi durdurmak için onu öldür.	근처에 있는 것만으로 에너지를 빨아들입니다. 처치하면 흡수가 멈춥니다.
+Ducats	デュカット	دوكات (Ducats)	Dukat	듀캇
+Duel a spectre to unlock the next planet — also gives Mastery.	スペクターと決闘して次の惑星を解放します。マスタリーも獲得できます。	مبارزة شبح لفتح الكوكب التالي — تمنحك أيضًا الإتقان.	Bir sonraki gezegeni açmak için bir Spectre ile düello yap — Ustalık da verir.	스펙터와 결투해 다음 행성을 해금하세요 — 마스터리도 줍니다.
+Each mod has a	各MODには	لكل مود	Her modun bir	각 모드에는
+Each relic holds 6 possible rewards:	各レリックには 6 つの可能な報酬が含まれています。	يحتوي كل ريليك على 6 مكافآت محتملة:	Her Relic 6 olası ödül içerir:	각 렐릭에는 6가지 보상이 들어 있습니다:
+Early crafting & weapons	初期のクラフトと武器	الصناعة المبكرة والأسلحة	Erken üretim ve silahlar	초반 제작 및 무기
+Earning Platinum	プラチナを獲得する	كسب البلاتينيوم	Platin kazanmak	플래티넘 얻기
+Earth	地球	الأرض	Dünya	지구
+Eidolon Teralyst	エイドロン・テラリスト	إيدولون تراليست	Eidolon Teralyst	에이돌론 테랄리스트
+Electric Crawler	エレクトリック・クローラー	الزاحف الكهربائي	Electric Crawler	전기 크롤러
+Electric Shield	電気シールド	الدرع الكهربائي	Elektrik Kalkanı	전기 실드
+Electricity	電気	كهرباء	Elektrik	전기
+Electronics & gear	電子機器とギア	الالكترونيات والعتاد	Elektronik ve ekipman	전자 장비와 기어
+Elite Crewman	エリート乗組員	فرد طاقم نخبة	Elite Crewman	엘리트 승무원
+Elite Lancer	エリートランサー	لانسر النخبة	Elite Lancer	엘리트 랜서
+Emit a flash that blinds and stuns nearby enemies, opening them to finishers.	近くの敵を盲目にして気絶させるフラッシュを発し、敵にフィニッシャーの隙を与えます。	أطلق وميضاً يعمي الأعداء القريبين ويصعقهم، فيجعلهم عرضة لضربات الإنهاء (Finishers).	Yakındaki düşmanları kör edip sersemleten, onları sonlandırma hamlelerine açık bırakan bir flaş yay.	근처 적을 실명시키고 기절시켜 피니셔에 노출시키는 섬광을 방출합니다.
+Emits a 3.5 m Toxin aura that deals level-scaled damage with a guaranteed Toxin proc. Engage from outside the cloud.	保証されたToxin procでレベルスケールのダメージを与える3.5 mのToxinオーラを放出します。クラウドの外側から関与します。	ينبعث هالة من السموم بحجم 3.5 م والتي تتسبب في ضرر على مستوى واسع باستخدام عملية توكسين مضمونة. الانخراط من خارج السحابة.		
+Emits a 3.5 m Toxin aura that deals level-scaled damage with a guaranteed Toxin proc. Engage from outside the cloud. Called Septic on some units.	保証されたToxin procでレベルスケールのダメージを与える3.5 mのToxinオーラを放出します。クラウドの外側から関与します。一部のユニットではセプティックと呼ばれます。	ينبعث هالة من السموم بحجم 3.5 م والتي تتسبب في ضرر على مستوى واسع باستخدام عملية توكسين مضمونة. الانخراط من خارج السحابة. يطلق عليه اسم الصرف الصحي في بعض الوحدات.	Garantili bir Toksin tetiklemesi ile seviye ölçekli hasar veren 3,5 m'lik bir Toksin aurası yayar. Bulutun dışından etkileşime geçin. Bazı birimlerde Septic olarak adlandırıldı.	보장된 독소 발동으로 레벨에 따른 피해를 주는 3.5m의 독소 오라를 방출합니다. 클라우드 외부에서 참여하세요. 일부 유닛에서는 정화조라고 불립니다.
+EN	JP	إن		
+Endgame	エンドゲーム	المراحل المتقدمة (الإندجيم)	Endgame	엔드게임
+Endo	エンドー	إندو	Endo	엔도
+Enemies	敵	الأعداء	Düşmanlar	적
+Enemies are not all the same. Matching an element to a faction's defenses is the single biggest damage upgrade you can make. Tap through the icons below.	敵はすべて同じではありません。属性を勢力の防御に合わせることは、最も大きなダメージ強化になります。下のアイコンをタップしてください。	الأعداء ليسوا جميعاً متشابهين. إن مطابقة العنصر مع دفاعات الفصيل هي أكبر ترقية للضرر يمكنك إجراؤها. اضغط على الأيقونات أدناه.	Düşmanlar birbirine benzemez. Bir elementi grubun savunmasına uydurmak, yapabileceğin en büyük hasar yükseltmesidir. Aşağıdaki simgelere dokun.	적은 모두 같지 않습니다. 원소를 세력의 방어에 맞추는 것이 낼 수 있는 가장 큰 피해 강화입니다. 아래 아이콘을 눌러 보세요.
+Enemy kind	敵の種類	نوع العدو	Düşman türü	적 종류
+Energy	エネルギー	طاقة	Enerji	에너지
+Energy and efficiency.	エネルギーと効率。	الطاقة والكفاءة.	Enerji ve verimlilik.	에너지와 효율.
+Energy Leech	エネルギーリーチ	علقة الطاقة	Energy Leech	에너지 리치
+Energy regeneration and efficiency — a near-universal comfort pick.	エネルギー回復と効率 — ほぼ万人向けの定番。	تجديد الطاقة وكفاءتها — خيار مناسب لمعظم الناس تقريباً.	Enerji yenilenmesi ve verimlilik — neredeyse herkes için rahat bir tercih.	에너지 재생과 효율 — 거의 누구에게나 무난한 선택.
+Entrati Lanthorn	エントラティ・ランソーン	إنتراتي لانثورن	Giriş Lanthorn	엔트라티 랜톤
+Entropic	エントロピー	انتروبيا	Entropik	엔트로피
+Environmentalists who want a pure, green Earth.	純粋で緑豊かな地球を望む環境活動家。	دعاة حماية البيئة الذين يريدون أرضًا نقية وخضراء.	Saf, yeşil bir Dünya isteyen çevreciler.	순수하고 푸른 지구를 원하는 환경주의자들.
+Era	時代	العصر (Era)	Çağ (Era)	시대
+Eris	エリス	ايريس	Eris	에리스
+Escape	逃げる	يهرب	Kaçmak	탈출하다
+Escort and protect drills while collecting Cryotic. Endless.	クライオティックを集めながら、ドリルを護衛して守ります。エンドレス。	رافق واحمِ المثاقب أثناء جمع Cryotic. لا نهائية (Endless).	Cryotic toplarken matkapları koru ve onlara eşlik et. Sonsuz.	크라이오틱을 수집하는 동안 드릴을 호위하고 보호하세요. 무한.
+Escort groups of defectors to safety across a map.	離反者のグループをマップ越しに安全な場所まで護衛します。	مرافقة مجموعات من المنشقين إلى بر الأمان عبر الخريطة.	Bir grup sığınmacıya haritanın karşısındaki güvenli yere kadar eşlik et.	이탈자 무리를 지도 건너편 안전한 곳까지 호위하세요.
+Estimate how many mods you can fit.	どれくらいの MOD を装着できるかを見積もってください。	قدّر عدد المودات التي يمكنك تركيبها.	Kaç mod sığdırabileceğini tahmin et.	장착할 수 있는 모드 수를 어림해 보세요.
+Europa	エウロパ	أوروبا	Europa	에우로파
+every enemy	あらゆる敵	كل عدو	her düşman	모든 적
+Every Warframe carries three weapons plus a Companion. Learn them below.	すべての Warframe は 3 つの武器とコンパニオン 1 体を持ち込みます。以下で確認しましょう。	يحمل كل وورفريم ثلاثة أسلحة بالإضافة إلى رفيق. تعرّف عليها أدناه.	Her Warframe üç silah ve bir Yoldaş taşır. Aşağıda öğren.	모든 Warframe은 무기 세 개와 컴패니언 하나를 가져갑니다. 아래에서 알아보세요.
+Exalted	エグザルテッド	السامي (Exalted)	Exalted	엑살티드
+Exalted Blade	Exalted Blade (エグザルテッドブレード)	النصل السامي (Exalted Blade)	Exalted Blade	Exalted Blade (엑살티드 블레이드)
+Example mod cards	MODカードの例	أمثلة على بطاقات المودات	Örnek mod kartları	모드 카드 예시
+Excalibur	エクスカリバー	إكسكاليبر (Excalibur)	Excalibur	엑스칼리버
+Excavation	発掘	التنقيب	Kazı	발굴
+Excavation missions	発掘ミッション	مهمات التنقيب	Kazı görevleri	발굴 미션
+Eximus are glowing elite enemies with an extra	Eximus は、追加能力を持つ光り輝くエリート敵です	وحدات Eximus هم أعداء نخبة متوهجون يمتلكون قدرة إضافية	Eximus, ekstra bir yeteneğe sahip, parlayan elit düşmanlardır	Eximus는 추가 능력을 가진 빛나는 정예 적입니다
+Eximus are glowing elite variants of normal enemies with an extra	Eximus は通常の敵の輝くエリートの変種で、追加の	Eximus هي نسخ النخبة المتوهجة من الأعداء العاديين مع إضافة	Eximus, normal düşmanların ekstra özelliklere sahip parlayan elit çeşitleridir.	엑시무스(Eximus)는 추가 능력을 지닌 일반 적의 빛나는 엘리트 변종입니다.
+Eximus unit	エクシマスユニット	وحدة Eximus	Eximus birimi	Eximus 유닛
+Eximus units: the elite threat	Eximus ユニット: エリートの脅威	وحدات Eximus: تهديد النخبة	Eximus birimleri: elit tehdit	Eximus 유닛: 정예 위협
+Explodes on death, damaging everyone nearby. Kill it from a distance or get clear before it pops.	死亡時に爆発し、周囲の全員にダメージを与えます。遠くから倒すか、爆発する前に距離を取りましょう。	ينفجر عند الموت ويلحق الضرر بكل من حوله. اقتله من مسافة بعيدة أو ابتعد عنه قبل أن ينفجر.	Öldüğünde patlayıp etrafındaki herkese hasar verir. Uzaktan öldür veya patlamadan önce uzaklaş.	죽을 때 폭발해 주변 모두에게 피해를 줍니다. 멀리서 처치하거나 터지기 전에 벗어나세요.
+Explore later systems	後半の星系を探索する	استكشاف الأنظمة الكوكبية اللاحقة	Sonraki sistemleri keşfet	후반 시스템 탐험
+Exterminate	殲滅 (Exterminate)	إبادة (Exterminate)	Yok Etme (Exterminate)	섬멸
+Extra slots are bought with	追加スロットは以下で購入できます	تُشترى الفتحات الإضافية بـ	Ek yuvalar şununla satın alınır	추가 슬롯은 다음으로 구매합니다
+faction icon	派閥アイコン	أيقونة الفصيل	grup simgesi	세력 아이콘
+Factions you earn Standing with to buy exclusive weapons, mods and cosmetics. Some oppose each other.	スタンディングを稼いで専用の武器、MOD、コスメティックを購入できる勢力。互いに敵対しているものもあります。	فصائل تكسب لديها المكانة (Standing) لشراء أسلحة ومودات ومظاهر تجميلية حصرية. بعضها يعادي البعض الآخر.	Özel silah, mod ve kozmetik satın almak için itibar kazandığın gruplar. Bazıları birbirine düşmandır.	전용 무기, 모드, 코스메틱을 사기 위해 평판을 쌓는 세력. 일부는 서로 적대합니다.
+Fanatics who purge corruption with fire.	汚染を炎で浄化する狂信者たち。	المتعصبون الذين يطهرون الفساد بالنار.	Yozlaşmayı ateşle arındıran fanatikler.	타락을 불로 정화하는 광신도들.
+Farm	ファーム	فارمنغ (Farm)	Farm	파밍
+Fast & versatile	高速かつ多用途	سريع ومتعدد الاستخدامات	Hızlı ve çok yönlü	빠르고 다재다능
+Feed a Warframe to your ship to transplant one ability onto another frame.	Warframe を船に「食べさせて」、1 つの能力を別のフレームに移植します。	غذِّ سفينتك بوورفريم لنقل إحدى القدرات إلى وورفريم آخر.	Bir Warframe'i gemine yedirerek bir yeteneği başka bir frame'e nakleder.	Warframe을 함선에 먹여 한 어빌리티를 다른 프레임에 이식합니다.
+Ferrite	フェライト	فيريت	Ferrite	페라이트
+Ferrite armor	フェライトアーマー	درع Ferrite	Ferrite zırh	페라이트 아머
+Fieldron Sample	フィールドロン・サンプル	فيلدرون سامبل	Fieldron Örneği	필드론 샘플
+Fight & loot	戦って略奪する	قتال ونهب	Savaş ve ganimet	전투와 약탈
+Fight a boss for a guaranteed Warframe part or special reward.	保証された Warframe パーツまたは特別な報酬を得るためにボスと戦ってください。	قاتل زعيماً للحصول على جزء مضمون من وورفريم أو مكافأة خاصة.	Garantili bir Warframe parçası veya özel ödül için bir patronla savaş.	보스와 싸워 확정 Warframe 부품이나 특별 보상을 얻으세요.
+Finish the Vor's Prize quest	ヴォルズ・プライズ (Vor's Prize) クエストを完了する	أكمل مهمة جائزة Vor	Vor's Prize görevini bitir	Vor's Prize 퀘스트 완료
+Finish the Vor's Prize quest and learn the absolute basics: move, shoot, extract.	ヴォルズ・プライズ (Vor's Prize) クエストを完了して、移動、射撃、脱出という最も基本的なことを学びましょう。	أكمل مهمة جائزة Vor وتعلّم الأساسيات المطلقة: التحرك وإطلاق النار والانسحاب (Extract).	Vor's Prize görevini bitir ve en temel şeyleri öğren: hareket, ateş, tahliye.	Vor's Prize 퀘스트를 완료하고 가장 기본적인 것을 배우세요: 이동, 사격, 탈출.
+Fire Rate	発射速度	معدل الإطلاق	Atış Hızı	연사 속도
+First real step	本当の第一歩	أول خطوة حقيقية	İlk gerçek adım	첫 진짜 걸음
+Fissure	亀裂	الصدع	Yarık	균열
+Five questions. No pressure — it's a looter-shooter, not an exam.	質問は 5 つ。プレッシャーはありません。これはルートシューターであって、試験ではありません。	خمسة أسئلة. بلا ضغط — إنها لعبة لوت-شوتر (Looter-Shooter) وليست اختباراً.	Beş soru. Baskı yok — bu bir looter-shooter, sınav değil.	질문 다섯 개. 부담 없이 — 이건 루터 슈터지 시험이 아닙니다.
+Flameblade	フレイムブレード	Flameblade	Flameblade	플레임블레이드
+Flawless — you're ready, Tenno. ⭐	完璧 — 準備はできています、テンノ。 ⭐	أداء مثالي — أنت جاهز يا Tenno. ⭐	Kusursuz — hazırsın, Tenno. ⭐	완벽합니다 — 준비됐어요, 테노. ⭐
+Flow	フロー	فلو	Akış	흐름
+Focus	フォーカス (Focus)	التركيز (Focus)	Odak (Focus)	포커스
+Focus Lens	フォーカスレンズ	عدسة التركيز (Focus Lens)	Odak Merceği (Focus Lens)	포커스 렌즈
+Focus lens icon representing the Operator	オペレーターを表すフォーカス レンズのアイコン	أيقونة عدسة التركيز تمثّل المشغّل	Operatör'ü temsil eden Odak Merceği simgesi	오퍼레이터를 나타내는 포커스 렌즈 아이콘
+Forma	フォーマ	فورما (Forma)	Forma	포르마
+Foundry	鋳造所	المسبك (Foundry)	Foundry	파운드리
+frames ×2	フレーム×2	وورفريم ×2	frame ×2	프레임 ×2
+Free	無料	مجاني	Ücretsiz	무료
+Free a captive and escort them to extraction.	捕虜を解放し、脱出地点まで護衛します。	حرّر أسيراً ورافقه إلى نقطة الانسحاب.	Bir esiri kurtar ve tahliye noktasına kadar ona eşlik et.	포로를 구출해 탈출 지점까지 호위하세요.
+free currency	無料の通貨	عملة مجانية	ücretsiz para birimi	무료 화폐
+Freeze	フリーズ	تجميد	Dondurma	동결
+Fusion	融合	الدمج	Füzyon	융합
+Gallium	ガリウム	غاليوم	Gallium	갈륨
+Gas	ガス	الغاز	Gaz	가스
+Gas city	ガス都市	مدينة الغاز	Gaz şehri	가스 도시
+Gas Cloud	ガス雲	سحابة الغاز	Gaz Bulutu	가스 구름
+Get a	次を入手:	احصل على	Şunu al	다음을 입수
+Get mods & resources	MOD とリソースを入手する	احصل على المودات والموارد	Mod ve kaynak edin	모드와 자원 얻기
+Ghoul	グール	الغول	Ghoul	구울
+Gives you free Platinum	無料でプラチナをプレゼント	يمنحك البلاتينيوم مجانًا	Sana bedava Platin verir	무료 플래티넘 제공
+Glossary	用語集	مسرد	Sözlük	용어집
+Good for:	向いている用途:	مناسب لـ:	Şunlar için iyi:	추천 용도:
+Grants nearby allies damage reduction — kill the Guardian first or everything soaks more.	近くの味方にダメージ軽減を付与します — 先にガーディアンを倒さないと、全体がより多くのダメージに耐えます。	يمنح الحلفاء القريبين تقليلاً للضرر — اقتل الـ Guardian أولاً وإلا سيمتص الجميع ضرراً أكبر.	Yakındaki müttefiklere hasar azaltma verir — önce Guardian'ı öldür, yoksa herkes daha fazla hasar emer.	근처 아군에게 피해 감소를 부여합니다 — Guardian을 먼저 처치하지 않으면 모두가 더 많은 피해를 버팁니다.
+Grind stop	グラインドストップ	توقف الطحن	Grind duraklaması	지루한 파밍 구간
+Grineer	グリニア	الغرينير (Grineer)	Grineer	그리니어
+Grineer clan research	グリニアのクラン研究	أبحاث عشيرة الغرينير	Grineer klan araştırması	그리니어 부족 연구
+Grineer defectors protecting the colonies.	植民地を守るグリニアの離反者たち。	المنشقون عن غرينير يحمون المستعمرات.	Kolonileri koruyan Grineer sığınmacıları.	식민지를 지키는 그리니어 이탈자들.
+Grineer faction icon	グリニア派閥のアイコン	أيقونة فصيل غرينير	Grineer grup simgesi	그리니어 세력 아이콘
+Guardian	ガーディアン	Guardian	Guardian	가디언
+halves its drain	ドレインを半分にする	يخفض استهلاكها إلى النصف	tüketimini yarıya indirir	소모량을 절반으로
+halves the drain	ドレインを半分にする	يخفض الاستهلاك إلى النصف	tüketimi yarıya indirir	소모량을 절반으로
+Healing, revives and protective barriers for you and your squad.	あなたと分隊のための回復、蘇生、防護バリア。	الشفاء والإنعاش والحواجز الوقائية لك ولفريقك.	Senin ve takımın için iyileştirme, diriltme ve koruyucu bariyerler.	당신과 분대를 위한 치유, 부활, 보호막.
+Heals itself and nearby allies over time. Focus it down to switch the healing off.	時間の経過とともに自身と近くの味方を回復します。集中攻撃で倒すと回復を止められます。	يشفي نفسه والحلفاء القريبين بمرور الوقت. ركز عليه لإيقاف عملية الشفاء.	Zamanla kendini ve yakındaki müttefikleri iyileştirir. İyileştirmeyi kapatmak için ona yoğunlaş.	시간이 지나며 자신과 근처 아군을 치유합니다. 집중 공격으로 쓰러뜨리면 치유가 멈춥니다.
+Health	ヘルス	صحة	Can	체력
+Health Leech	ヘルス・リーチ	علقة الصحة	Health Leech	체력 리치
+Heat	ヒート	حرارة (Heat)	Isı	화염
+Heavy Gunner	ヘビーガンナー	مدفعي ثقيل	Heavy Gunner	헤비 거너
+Hellion	ヘリオン	هيليون	Hellion	헬리온
+Helminth	ヘルミンス (Helminth)	Helminth	Helminth	헬민스
+Helminth Charger	ヘルミンスチャージャー	Helminth Charger	Helminth Charger	헬민스 차저
+Hexenon	ヘキセノン	هيكسينون	Altıgen	헥세논
+High-level Corpus territory. A stepping stone before Sedna and Eris, with valuable resource nodes.	高レベルのコーパス領域。貴重な資源ノードを備えたセドナとエリスの前の足がかり。	منطقة كوربوس رفيعة المستوى. نقطة انطلاق قبل Sedna وEris، مع نقاط موارد قيمة.	Yüksek seviyeli Corpus bölgesi. Sedna ve Eris'ten önce bir basamak; değerli kaynak düğümleri var.	고레벨 코퍼스 영역. 세드나와 에리스 이전의 디딤돌이며 가치 있는 자원 노드가 있습니다.
+High-level Infested territory with the Jordas Golem. Infested missions are a classic spot for leveling and for farming Mutagen Samples.	ジョーダス ゴーレムがいる高レベルの感染体領域。感染体ミッションは、レベル上げや変異原サンプルのファームの定番です。	منطقة Infested عالية المستوى فيها Jordas Golem. تُعد مهام Infested مكاناً كلاسيكياً لرفع المستوى ولفارمنغ عينات المطفرات (Mutagen Samples).	Jordas Golem'in bulunduğu yüksek seviyeli Infested bölgesi. Infested görevleri seviye atlamak ve Mutagen Sample farm'lamak için klasik bir yerdir.	Jordas Golem이 있는 고레벨 감염체 영역. 감염체 미션은 레벨업과 Mutagen Sample 파밍의 정석입니다.
+Higher-level Grineer and the Sargas Ruk assassination. Good mid-game farming for resources and credits.	より高レベルのグリニアとサルガス・ルク暗殺。資源とクレジットを集めるゲーム中盤のファームに最適です。	غرينير بمستوى أعلى واغتيال Sargas Ruk. مناسب لفارمنغ الموارد والاعتمادات في منتصف اللعبة.	Daha yüksek seviyeli Grineer ve Sargas Ruk suikastı. Oyun ortasında kaynak ve Kredi farm'lamak için iyi.	더 높은 레벨의 그리니어와 Sargas Ruk 암살. 자원과 크레디트를 모으는 중반 파밍에 좋습니다.
+Hijack	ハイジャック	خطف	Hijack	하이재크
+Hold and defend multiple capture points from enemy waves.	敵の波から複数の占領ポイントを保持して守ります。	احتفظ بعدة نقاط سيطرة (Capture) وادفع عنها موجات العدو.	Düşman dalgalarına karşı birden fazla ele geçirme noktasını tut ve savun.	적의 웨이브로부터 여러 점령 지점을 사수하세요.
+Home of The Index — an arena where you can earn large amounts of Credits. Also a Corpus stronghold with the Hyena Pack.	The Index の本拠地 — 大量のクレジットを稼げるアリーナ。ハイエナパックがいるコーパスの拠点でもあります。	موطن The Index — ساحة يمكنك فيها كسب كميات كبيرة من الاعتمادات. وهي أيضاً معقل الكوربوس مع Hyena Pack.	The Index'in yuvası — büyük miktarda Kredi kazanabileceğin bir arena. Aynı zamanda Hyena Pack'in bulunduğu bir Corpus kalesi.	The Index의 본거지 — 많은 크레디트를 벌 수 있는 아레나. Hyena Pack이 있는 코퍼스 거점이기도 합니다.
+Hound	ハウンド	Hound	Hound	하운드
+How do you mainly raise your Mastery Rank?	マスタリーランクは主にどうやって上げますか？	كيف يمكنك رفع رتبة إتقانك بشكل أساسي؟	Ustalık Rütbeni esas olarak nasıl yükseltirsin?	마스터리 랭크는 주로 어떻게 올리나요?
+How endless missions pay out	エンドレスミッションの報酬の出方	كيف تمنح المهام اللانهائية مكافآتها	Sonsuz görevler nasıl ödeme yapar	무한 미션의 보상 방식
+How enemy defenses stack	敵の防御の重なり方	كيف تتراكم دفاعات العدو	Düşman savunmaları nasıl üst üste biner	적의 방어가 쌓이는 방식
+How it works	仕組み	كيف يعمل	Nasıl çalışır	작동 방식
+How mods work	MODの仕組み	كيف تعمل المودات	Modlar nasıl çalışır	모드의 작동 방식
+How to gain Mastery fast	早くマスタリーを獲得する方法	كيف تكتسب الإتقان بسرعة	Ustalık nasıl hızlı kazanılır	마스터리를 빠르게 올리는 법
+Hybrid build	ハイブリッドビルド	بناء هجين	Hibrit build	하이브리드 빌드
+Hyena Pack	ハイエナパック	قطيع الضباع (Hyena Pack)	Hyena Pack	하이에나 팩
+Ignite	発火	إشعال	Tutuştur	점화
+Impact	インパクト	صدمة (Impact)	Darbe (Impact)	충격
+Impact staggers enemies and raises the Parazon Mercy-kill threshold — crowd control rather than raw damage.	Impact は敵をよろめかせ、Parazon の Mercy-kill のしきい値を上げます。純粋なダメージというより、クラウドコントロール向けです。	تُرنّح الصدمة الأعداء وترفع عتبة Mercy-kill الخاصة بـ Parazon — سيطرة على الحشود أكثر منها ضرراً خالصاً.	Darbe düşmanları sendeletir ve Parazon Mercy-kill eşiğini yükseltir — ham hasardan çok kalabalık kontrolü.	충격은 적을 휘청이게 하고 Parazon Mercy-kill 기준치를 높입니다 — 순수 피해보다 군중 제압에 가깝습니다.
+Impale all enemies in range with summoned energy javelins.	召喚されたエネルギージャベリンで範囲内のすべての敵を串刺しにします。	اطعن جميع الأعداء في النطاق برماح طاقة مستدعاة.	Çağrılan enerji mızraklarıyla menzildeki tüm düşmanları delip geç.	소환한 에너지 투창으로 범위 내 모든 적을 꿰뚫습니다.
+Important:	重要：	مهم:	Önemli:	중요:
+in the order you meet them	出会う順に	بالترتيب الذي تقابلهم به	karşılaştığın sırayla	만나는 순서대로
+in Void Fissure missions — or by trading with players.	Void Fissure ミッションで、またはプレイヤーとの取引によって。	في مهمات Void Fissure — أو عن طريق التداول مع اللاعبين.	Void Yarığı görevlerinde — veya oyuncularla takas ederek.	Void Fissure 미션에서 — 또는 플레이어와의 거래로.
+Incarnon	インカノン	إنكارنون	Incarnon	인카논
+Index	インデックス (The Index)	The Index	The Index	인덱스
+Infested	感染体 (Infested)	الموبوؤون (Infested)	Infested	감염체
+Infested · beast	感染体・獣	Infested · وحش	Infested · canavar	감염체 · 야수
+Infested + open world	感染 + オープンワールド	الموبوءة + العالم المفتوح	Infested + açık dünya	감염체 + 오픈 월드
+Infested endgame	感染体のエンドゲーム	المراحل المتقدمة لدى Infested	Infested endgame	감염체 엔드게임
+Infested gear & crafting	感染体のギアと製作	عتاد المصابين وصناعته	Infested ekipmanı ve üretim	감염체 장비 및 제작
+Infested hordes	感染体の大群	جحافل الموبوءة	Infested orduları	감염체 무리
+Infested missions	感染体ミッション	مهام المصابين	Infested görevleri	감염체 미션
+Infested weapons	感染体の武器	الأسلحة الموبوءة	Infested silahları	감염체 무기
+Install an	次を取り付ける:	ثبّت	Şunu tak	다음을 설치
+Install the Foundry segment and craft weapons and Warframes from blueprints plus resources.	鋳造所セグメントをインストールし、設計図と資源から武器と Warframe を製作します。	ثبّت قسم المسبك وصنّع الأسلحة والوورفريم من المخططات بالإضافة إلى الموارد.	Foundry bölümünü kur ve planlar ile kaynaklardan silah ve Warframe üret.	파운드리 세그먼트를 설치하고 설계도와 자원으로 무기와 Warframe을 제작하세요.
+Install the Mods, Foundry and Arsenal segments	MOD、鋳造所、アーセナルの各セグメントをインストールする	ثبّت أقسام المودات والمسبك والأرسنال	Mod, Foundry ve Arsenal bölümlerini kur	모드, 파운드리, 아스널 세그먼트 설치
+Instantly builds an item in the Foundry	鋳造所でアイテムを即座に完成させる	يقوم على الفور ببناء عنصر في المسبك	Foundry'de bir eşyayı anında bitirir	파운드리에서 아이템을 즉시 완성합니다
+Intact	無傷	سليم (Intact)	Bozulmamış (Intact)	온전함
+Intensify	インテンシファイ	إنتنسيفاي	Güçlendir (Intensify)	강화
+Interception	迎撃	اعتراض	Önleme	요격
+into one secondary element. Mix the four primaries below to see the result.	1 つの二次属性に変換します。下の 4 つの基本属性を組み合わせて結果を確認しましょう。	إلى عنصر ثانوي واحد. اخلط العناصر الأساسية الأربعة أدناه لترى النتيجة.	tek bir ikincil elemente dönüşür. Sonucu görmek için aşağıdaki dört temel elementi karıştır.	하나의 2차 원소로. 아래 4가지 기본 원소를 섞어 결과를 확인하세요.
+inventory slots	インベントリスロット	فتحات المخزون	envanter yuvaları	인벤토리 슬롯
+Inventory slots	インベントリスロット	فتحات المخزون	Envanter yuvaları	인벤토리 슬롯
+It is the game's premium currency	ゲームのプレミアム通貨です	إنها العملة المميزة للعبة	Oyunun premium para birimidir	게임의 프리미엄 화폐입니다
+It opens the Clan Dojo	クラン道場を開きます	يفتح دوجو العشيرة	Klan Dojo'sunu açar	클랜 도조를 엽니다
+It permanently boosts your Warframe's stats	Warframe のステータスを永続的に向上させます	إنه يعزز إحصائيات وورفريم بشكل دائم	Warframe'inin statlarını kalıcı olarak artırır	Warframe의 능력치를 영구적으로 올려 줍니다
+it with	それと	مع	bunu	그것을
+Item rank	アイテムランク	رتبة العنصر	Eşya rütbesi	아이템 랭크
+Jackal	ジャッカル	جاكال (Jackal)	Jackal	자칼
+Jade Light	ジェイドライト	Jade Light	Jade Light	제이드 라이트
+Join or create a Clan for research blueprints	研究設計図のためにクランに参加または作成します	انضم إلى عشيرة أو أنشئها لمخططات البحث	Araştırma planları için bir Klan'a katıl veya kur	연구 설계도를 위해 클랜에 가입하거나 만드세요
+Jordas Golem	ジョーダス ゴーレム	جورداس جوليم	Jordas Golem	조르다스 골렘
+Juggernaut	ジャガーノート	Juggernaut	Juggernaut	저거너트
+Junction	ジャンクション	البوابة (Junction)	Junction	정션
+Jupiter	木星	كوكب المشتري	Jüpiter	목성
+just for looks	見た目だけのために	فقط للمظهر	sırf görünüş için	외형만을 위해
+Kavat	キャバット	كافات	Kavat	카바트
+Keep going!	続けて！	واصل التقدم!	Devam et!	계속하세요!
+keep moving. Standing still is how new players die. Kill enemies, pick up loot, and let your shields recharge while you reposition.	動き続けてください。新規プレイヤーが死ぬ原因は、立ち止まることです。敵を倒し、戦利品を拾い、位置を変えながらシールドを回復させましょう。	استمر في التحرك. الوقوف ساكناً هو السبب في موت اللاعبين الجدد. اقتل الأعداء والتقط الغنائم ودع الشيلد يُعاد شحنه أثناء تغيير موقعك.	Hareket etmeye devam et. Yeni oyuncuların ölmesinin sebebi olduğun yerde durmaktır. Düşman öldür, ganimet topla ve yer değiştirirken kalkanlarının dolmasına izin ver.	계속 움직이세요. 가만히 서 있는 것이 신규 플레이어가 죽는 이유입니다. 적을 처치하고, 전리품을 줍고, 위치를 바꾸는 동안 실드를 재충전하세요.
+Kela De Thaym	ケラ・デ・テイム	كيلا دي تيم	Kela De Thaym	켈라 데 타임
+Key mindset:	重要な考え方:	العقلية الأساسية:	Temel zihniyet:	핵심 마음가짐:
+Kill a set number of enemies, then extract. Simple and great for testing builds.	一定数の敵を倒してから脱出します。シンプルでビルドのテストに最適です。	اقتل عدداً محدداً من الأعداء، ثم انسحب (Extract). بسيطة وممتازة لاختبار البناءات.	Belirli sayıda düşman öldür, sonra tahliye ol. Basit ve build denemek için harika.	정해진 수의 적을 처치한 뒤 탈출합니다. 단순해서 빌드 테스트에 좋습니다.
+Kind	種類	النوع	Tür	종류
+Knockback	ノックバック	دفع للخلف (Knockback)	Geri itme	넉백
+Kubrow	クブロウ	كوبرو	Kubrow	쿠브로
+Kuva	クバ	كوفا	Kuva	쿠바
+Kuva Fortress	クバ要塞	قلعة كوفا	Kuva Kalesi	쿠바 요새
+Kuva Larvaling	クバ ラルバリング	كوفا لارفالينج (Kuva Larvaling)	Kuva Larvaling	쿠바 라바링
+Kuva Liches & Sisters of Parvos	クバ・リッチとパルヴォスの姉妹たち	كوفا ليتشيس وأخوات بارفوس	Kuva Lich'leri ve Parvos'un Kız Kardeşleri	쿠바 리치 & 파르보스의 자매들
+Kuva Siphon and Kuva Flood missions on the Kuva Fortress	クバ要塞のクバサイフォン／クバフラッド	مهام نازع الكوفا وطوفان الكوفا في قلعة كوفا	Kuva Kalesi'nde Kuva Sifonu ve Kuva Tufanı görevleri	쿠바 요새에서의 쿠바 사이펀 및 쿠바 플러드 임무
+Kuva siphons	クバサイフォン	سيفونات كوفا	Kuva sifonları	쿠바 사이펀
+Lancer	ランサー	لانسر	Lancer	랜서
+Landing Crafts	ランディングクラフト	سفن الهبوط (Landing Crafts)	Çıkarma Gemileri	상륙정
+Language	言語	لغة		
+Late chart	終盤のスターチャート	المراحل المتأخرة من مخطط النجوم	Geç dönem harita	후반 차트
+Late-game Grineer space, plus the Rathuum arenas. The Kela De Thaym boss and high-level nodes test your build.	ゲーム後半のグリニア スペースとラトゥーム アリーナ。 Kela De Thaym のボスと上位ノードがビルドをテストします。	فضاء غرينير في أواخر اللعبة، بالإضافة إلى ساحات Rathuum. يختبر زعيم Kela De Thaym والعُقد عالية المستوى بناءك.	Oyun sonu Grineer uzayı ve Rathuum arenaları. Kela De Thaym patronu ve yüksek seviyeli düğümler build'ini sınar.	후반부 그리니어 우주와 Rathuum 아레나. Kela De Thaym 보스와 고레벨 노드가 빌드를 시험합니다.
+Later	後で	لاحقاً	Sonra	나중에
+Later systems to look forward to	今後のシステムに期待	أنظمة لاحقة لنتطلع إليها	İleride seni bekleyen sistemler	기대할 만한 후반 시스템
+Later: your Companion	後で: あなたのコンパニオン	لاحقاً: رفيقك	Sonra: Yoldaşın	나중에: 컴패니언
+Layer	層	طبقة	Katman	층
+Leaper	リーパー	Leaper	Leaper	리퍼
+Learn mods & Forma	MOD と Forma を学ぶ	تعلّم المودات وForma	Modları ve Forma'yı öğren	모드와 Forma 배우기
+Leaves burning ground and can unleash a fiery shockwave. Keep moving so you don't stand in it.	燃える地面を残し、炎の衝撃波を放つことがあります。その上に立たないよう動き続けてください。	يترك أرضاً مشتعلة وقد يطلق موجة صدمية نارية. استمر في التحرك حتى لا تقف فيها.	Yanan zemin bırakır ve ateşli bir şok dalgası yayabilir. İçinde durmamak için hareket etmeye devam et.	불타는 땅을 남기고 화염 충격파를 터뜨릴 수 있습니다. 그 안에 서지 않도록 계속 움직이세요.
+Leaves toxic clouds that poison you and slow your movement. Keep clear of the gas.	あなたを毒状態にし、移動を遅くする有毒な雲を残します。ガスから離れてください。	يترك سحبًا سامة تسممك وتبطئ حركتك. ابتعد عن الغاز.	Seni zehirleyen ve hareketini yavaşlatan zehirli bulutlar bırakır. Gazdan uzak dur.	당신을 중독시키고 이동을 느리게 하는 독구름을 남깁니다. 가스에서 떨어져 계세요.
+Lech Kril	レッヒ・クリル	ليخ كريل	Lech Kril	렉 크릴
+Leech	ヒル	علقة	Sülük	거머리
+Leech Osprey	リーチ・オスプレイ	Leech Osprey	Leech Osprey	리치 오스프리
+Lephantis	レファンティス	ليفانتيس	Lephantis	레판티스
+Level everything to 30	すべてを30にレベルアップする	ارفع مستوى كل شيء إلى 30	Her şeyi 30'a kadar yükselt	모든 것을 30까지 레벨업
+Level up gear	ギアのレベルアップ	رفع مستوى العتاد	Ekipman seviyelendirme	장비 레벨업
+Level your starter Warframe and weapons to Rank 30	スターター Warframe と武器をランク 30 にレベルアップします	ارفع مستوى وورفريم المبدئي وأسلحتك إلى الرتبة 30	Başlangıç Warframe'ini ve silahlarını Rütbe 30'a çıkar	시작 Warframe과 무기를 랭크 30까지 올리세요
+Levitate and crush all nearby enemies with overwhelming magnetism.	圧倒的な磁力で周囲の敵をすべて浮遊させて粉砕します。	ارفع جميع الأعداء القريبين في الهواء واسحقهم بمغناطيسية ساحقة.	Ezici bir manyetizmayla yakındaki tüm düşmanları havaya kaldırıp ez.	압도적인 자력으로 주변의 모든 적을 띄워 올려 짓누릅니다.
+Lith	リス	Lith	Lith	리스
+Lith → Meso → Neo → Axi	リス→メソ→ネオ→アクシ	Lith → Meso → Neo → Axi	Lith → Meso → Neo → Axi	Lith → Meso → Neo → Axi
+ll see the weapon they	彼らが使う武器が見えます	ستشاهد السلاح الذي يستخدمونه	onların kullandığı silahı göreceksin	그들이 가진 무기를 보게 될 것입니다
+Lobber Crawler	ロバー・クローラー	Lobber Crawler	Lobber Crawler	로버 크롤러
+Lua	ルア	لوا	Lua	루아
+Madurai	マドゥライ	مادوراي	Madurai	마두라이
+Madurai polarity · base drain 14	マドゥライ極性・基本ドレイン 14	قطبية مادوراي · الاستهلاك الأساسي 14	Madurai kutbu · temel tüketim 14	마두라이 극성 · 기본 소모 14
+Mag	マグ	ماج	Mag	매그
+Magnetic	磁気	مغناطيسي	Manyetik	자기
+Magnetize	磁化する	مغنطة	Mıknatıslama	자화
+Makes the enemy attack its own allies and increases the damage it receives. Great against crowds and armored targets.	敵に味方を攻撃させ、受けるダメージを増加させる。群衆やアーマーを持つターゲットに有効です。	يجعل العدو يهاجم حلفاءه ويزيد الضرر الذي يتلقاه. ممتاز ضد الحشود والأهداف المدرعة.	Düşmanı kendi müttefiklerine saldırtır ve aldığı hasarı artırır. Kalabalıklara ve zırhlı hedeflere karşı harika.	적이 아군을 공격하게 만들고 받는 피해를 늘립니다. 군중과 아머가 두꺼운 대상에게 탁월합니다.
+Malignant Force	悪性の力	القوة الخبيثة	Malignant Force	악성 세력
+Marks nearby players with a purple Energy Leech zone that collapses after 3 seconds, dealing Magnetic damage and a proc that wrecks your Energy and Shields. Step out of the zone.	近くのプレイヤーに紫色のエネルギーリーチゾーンをマークします。このゾーンは 3 秒後に崩壊し、磁気ダメージとエネルギーとシールドを破壊するプロックを与えます。ゾーンから抜け出します。	قم بتمييز اللاعبين القريبين بمنطقة علقة الطاقة الأرجوانية التي تنهار بعد 3 ثوانٍ، مما يسبب ضررًا مغناطيسيًا وعملية تدمر طاقتك ودروعك. اخرج من المنطقة.	Yakındaki oyuncuları, 3 saniye sonra çöken, Manyetik hasar veren ve Enerjinizi ve Kalkanlarınızı mahveden bir tetiklemeyi başlatan mor bir Enerji Sülüğü bölgesiyle işaretler. Bölgenin dışına çıkın.	주변 플레이어에게 3초 후에 붕괴되는 보라색 에너지 흡수 영역을 표시하여 자기 피해를 입히고 에너지와 보호막을 파괴하는 발동 효과를 줍니다. 해당 구역에서 벗어나십시오.
+Maroo	マルー	مارو	Maroo	마루
+Maroo's Bazaar	マルーズ バザール	بازار مارو	Maroo'nun Pazarı	마루의 바자
+Mars	火星	المريخ	Mars	화성
+Mastery by passing the MR test when prompted. If you ignore the prompt your points still bank up — you just won't rank until you pass.	マスタリー。指示されたら MR テストに合格してください。プロンプトを無視してもポイントは溜まり続けます — 合格するまでランクが上がらないだけです。	الإتقان عن طريق اجتياز اختبار MR عند الطلب. وإذا تجاهلت التنبيه فستظل نقاطك تتراكم — لكن رتبتك لن ترتفع حتى تنجح.	Ustalık. İstendiğinde MR testini geçerek kazanılır. İstemi görmezden gelirsen puanların yine birikir — sadece testi geçene kadar rütbe atlamazsın.	마스터리. 안내가 뜨면 MR 테스트를 통과하세요. 안내를 무시해도 포인트는 계속 쌓이며, 통과하기 전까지 랭크만 오르지 않습니다.
+Mastery Rank & your to-do list	マスタリーランクとやるべきことリスト	رتبة الإتقان وقائمة المهام الخاصة بك	Ustalık Rütbesi ve yapılacaklar listen	마스터리 랭크와 할 일 목록
+Mastery Rank progress screen	マスタリーランク進行画面	شاشة التقدم في رتبة الإتقان	Ustalık Rütbesi ilerleme ekranı	마스터리 랭크 진행 화면
+Matching a mod's polarity to a slot's polarity	MODの極性をスロットの極性に一致させる	مطابقة قطبية المود مع قطبية الفتحة	Bir modun kutbunu yuvanın kutbuyla eşleştirmek	모드의 극성을 슬롯의 극성과 맞추기
+Matching slot	一致するスロット	فتحة مطابقة	Eşleşen yuva	일치하는 슬롯
+max ×	最大×	الحد الأقصى ×	maks ×	최대 ×
+Meet your Operator, unlock Focus, and see why Warframe's story is worth the climb.	オペレーターと出会い、フォーカスを解放して、Warframe のストーリーが苦労して進む価値のある理由を確かめましょう。	تعرّف على المشغّل، وافتح Focus، واكتشف لماذا تستحق قصة وورفريم عناء الوصول.	Operatör'ünle tanış, Odak'ı aç ve Warframe'in hikâyesinin neden uğraşmaya değer olduğunu gör.	오퍼레이터를 만나고, 포커스를 해금하고, Warframe의 이야기가 왜 올라갈 가치가 있는지 확인하세요.
+Melee	近接武器	القتال القريب	Yakın dövüş	근접
+Melee upgrades: combo duration, finishers and movement.	近接の強化：コンボ持続時間、フィニッシャー、機動力。	ترقيات القتال القريب: مدة سلسلة الضربات (Combo)، حركات الإنهاء، والحركة.	Yakın dövüş yükseltmeleri: kombo süresi, sonlandırma hamleleri ve hareket.	근접 강화: 콤보 지속시간, 피니셔, 이동.
+melt to	に溶ける	تذوب أمام	şuna karşı erir:	녹아내려
+Mercury	水星	عطارد	Merkür	수성
+Meso	メソ	Meso	Meso	메소
+Mimic	ミミック	Mimic	Mimic	미믹
+Mine Osprey	マイン・オスプレイ	Mine Osprey	Mine Osprey	마인 오스프리
+mission matching that relic's era.	そのレリックの時代に対応するミッション。	مهمة تطابق عصر ذلك الريليك.	o Relic'in çağına uyan görev.	그 렐릭의 시대에 맞는 미션.
+mission splash	ミッションのスプラッシュ画像	صورة افتتاحية للمهمة (Splash)	görev ekran görüntüsü	미션 스플래시
+Mission types you'll meet first	最初に遭遇するミッションの種類	أنواع المهام التي ستقابلها أولاً	İlk karşılaşacağın görev türleri	가장 먼저 만나게 될 미션 유형
+MOA	MOA	MOA	MOA	MOA
+Mobile Defense	機動防衛 (Mobile Defense)	دفاع متنقل (Mobile Defense)	Mobil Savunma (Mobile Defense)	모바일 디펜스
+Mobility isn't a gimmick — it's your main defense against getting surrounded.	機動力は単なるギミックではありません。敵に囲まれないための最大の防御手段です。	الحركة المستمرة ليست مجرد استعراض — إنها وسيلة دفاعك الأساسية لتجنب الحصار.	Hareketlilik bir hile değil — kuşatılmaya karşı ana savunmandır.	기동성은 잔재주가 아닙니다 — 포위당하지 않기 위한 가장 중요한 방어입니다.
+Mod	MOD (モッド)	مود (Mod)	Mod	모드 (Mod)
+Mod capacity	MOD容量	سعة المودات	Mod kapasitesi	모드 용량
+mod card	MOD カード	بطاقة مود	mod kartı	모드 카드
+Mods	MOD (モッド)	المودات (Mods)	Modlar	모드 (Mods)
+Mods are the real progression	MODこそが真の成長要素	المودات (Mods) هي أساس التطور الحقيقي	Modlar gerçek ilerlemedir	모드가 진짜 성장 요소입니다
+Mods that feed it	それを強化する MOD	المودات التي تغذيها	Onu besleyen modlar	그것을 키우는 모드
+Morphics	モーフィックス	مورفيكس	Morphics	모픽스
+Mostly not craftable.	ほとんどは製作不可。	في الغالب لا يمكن تصنيعها.	Çoğunlukla üretilemez.	대부분 제작 불가.
+Moves at high speed and dashes to dodge or close in. It marks the ground beneath you, then calls down lightning bolts after a short delay — watch the marker and move.	高速で移動し、ダッシュして回避または接近します。足元の地面にマークを付け、少し遅れて稲妻を呼びます。マーカーに注意して移動してください。	يتحرك بسرعة عالية ويندفع للمراوغة أو الاقتراب. فهو يحدد الأرض تحتك، ثم يطلق صاعقة بعد مهلة قصيرة - راقب العلامة وتحرك.	Yüksek hızda hareket eder ve atlatmak veya yaklaşmak için atılır. Altınızdaki zemini işaretler, ardından kısa bir gecikmenin ardından şimşekleri çağırır; işaretçiyi izleyin ve hareket edin.	빠른 속도로 움직이며 회피하거나 접근하기 위해 돌진합니다. 땅에 표시를 한 다음 잠시 후 번개를 불러옵니다. 마커를 보고 이동합니다.
+Moving, shooting, slicing	移動、射撃、スライス	التحرك وإطلاق النار والقطع	Hareket, ateş, kesme	이동, 사격, 베기
+Multiply every hit.	すべてのヒットを倍化します。	مضاعفة كل ضربة.	Her vuruşu çarpar.	모든 타격에 배율을 곱합니다.
+Multishot	マルチショット	الطلقات المتعددة (Multishot)	Multishot	멀티샷
+Mutagen Sample	ミュータジェン・サンプル	ميوتاسين سامبل	Mutagen Sample	돌연변이 샘플
+Mutalist Osprey	ミュータリスト・オスプレイ	Mutalist Osprey	Mutalist Osprey	뮤탈리스트 오스프리
+muted small	静かな小さい	صامتة صغيرة	muted small	흐릿한 작은
+Nano Spores	ナノ・スポアーズ	نانو سبورز	Nano Spores	나노 포자
+Napalm	ナパーム	النابالم	Napalm	네이팜
+Naramon	ナラモン	نارامون	Naramon	나라몬
+Nauseous Crawler	ノーシャス・クローラー	Nauseous Crawler	Nauseous Crawler	구역질 크롤러
+Necramech	ネクロメカ	نكراميك	Necramech	네크라메크
+needs one. Build gear you have no slot for and you'll be forced to choose what to sell.	必要です。スロットのない装備を製作すると、何を売却するか選ぶことになります。	يحتاج إلى فتحة. إذا صنّعت عتاداً ليس لديك فتحة له، فستضطر إلى اختيار ما تبيعه.	bir tane gerekir. Yuvası olmayan ekipman üretirsen neyi satacağını seçmek zorunda kalırsın.	하나가 필요합니다. 슬롯이 없는 장비를 만들면 무엇을 팔지 선택해야 합니다.
+Neo	ネオ	Neo	Neo	네오
+Neptune	海王星	نبتون	Neptün	해왕성
+Neural Sensors	ニューラル・センサー	نيورال سينسورز	Nöral Sensörler	신경 센서
+Neurodes	ニューロード	نيورودز	Neurodes	뉴로드
+Neutral	中性	حيادي	Nötr	중립
+New accounts start with only a couple of Warframe slots. Each extra one costs about	新しいアカウントは、いくつかの Warframe スロットのみから始まります。追加の 1 つあたりの費用は約	تبدأ الحسابات الجديدة بفتحتين فقط من وورفريم. كل واحدة إضافية تكلف حوالي	Yeni hesaplar yalnızca birkaç Warframe yuvasıyla başlar. Her ek yuva yaklaşık	새 계정은 Warframe 슬롯 몇 개만 가지고 시작합니다. 추가 슬롯은 하나당 약
+New Loka	ニューロカ	New Loka	New Loka	뉴 로카
+New player	新規プレイヤー	لاعب جديد	Yeni oyuncu	신규 플레이어
+Newer content	新しいコンテンツ	محتوى أحدث	Daha yeni içerik	최신 콘텐츠
+Nightwave	ナイトウェーブ (Nightwave)	نايت ويف (Nightwave)	Nightwave	나이트웨이브
+No special effect	特別な効果はありません	لا يوجد تأثير خاص	Özel etki yok	특수 효과 없음
+No stacking proc — it simply refreshes on the target.	スタックするプロックはなく、ターゲット上で更新されるだけです。	لا يوجد Proc متراكم — يتم تجديده ببساطة على الهدف.	Yığılan Proc yok — hedefte sadece yenilenir.	중첩되는 프록이 없고, 대상에게 그저 갱신될 뿐입니다.
+none of them is a trap	どれも罠ではありません	ليس أي منها فخاً	hiçbiri tuzak değil	어느 것도 함정이 아닙니다
+Not craftable.	クラフト不可。	لا يمكن تصنيعها.	Üretilemez.	제작 불가.
+Not craftable. Earn from Nightwave, Invasions, Sorties and alerts.	クラフト不可。ナイトウェーブ、侵略、出撃、アラートから獲得できます。	لا يمكن تصنيعها. احصل عليها من Nightwave والغزوات (Invasions) وSorties والتنبيهات.	Üretilemez. Nightwave, İstilalar, Sortie'ler ve uyarılardan kazan.	제작 불가. Nightwave, 침공, 소티, 알림에서 획득하세요.
+Nullifier Crewman	ヌリファイア・クルーマン	عضو طاقم مبطل (Nullifier Crewman)	Nullifier Crewman	눌리파이어 승무원
+Offense — damage, crit, multishot.	オフェンス — ダメージ、クリティカル、マルチショット。	الهجوم — الضرر والضربات الحرجة والطلقات المتعددة.	Saldırı — hasar, kritik, multishot.	공격 — 피해, 치명타, 멀티샷.
+on your Warframe and earn Affinity in missions to gain	Warframe に装着し、ミッションでアフィニティを獲得して	على وورفريمك واكسب الأفينيتي في المهام لتحصل على	Warframe'ine tak ve görevlerde Affinity kazanarak şunu elde et	Warframe에 장착하고 미션에서 어피니티를 얻어서 얻으세요
+Only by trading with other players	他のプレイヤーとの取引のみ	فقط من خلال التداول مع لاعبين آخرين	Yalnızca diğer oyuncularla takas ederek	다른 플레이어와의 거래로만
+Open the map	マップを開く	افتح الخريطة	Haritayı aç	지도 열기
+Open the Star Chart	スターチャートを開く	افتح مخطط النجوم	Yıldız Haritası'nı aç	스타 차트 열기
+Open World	オープンワールド	عالم مفتوح	Açık Dünya	오픈 월드
+Operator	オペレーター	المشغّل (Operator)	Operatör	오퍼레이터
+oppose each other	互いに敵対する	يتعادون فيما بينهم	birbirine düşman	서로 적대함
+Optionally	オプションで	اختيارياً	İsteğe bağlı	선택 사항
+or in a clan dojo. That is how free players fund slots and cosmetics.	またはクランの道場で。これが無料プレイヤーがスロットやコスメティックの資金を賄う方法です。	أو في دوجو العشيرة. هكذا يموّل اللاعبون المجانيون الفتحات والمظاهر التجميلية.	veya bir klan dojo'sunda. Ücretsiz oyuncular yuvalarını ve kozmetiklerini böyle finanse eder.	또는 클랜 도조에서. 무료 플레이어는 이렇게 슬롯과 코스메틱 자금을 마련합니다.
+Orbiter	オービター	المركبة المدارية (Orbiter)	Orbiter	오비터
+Organ Shatter	オーガン・シャッター	Organ Shatter (تحطيم الأعضاء)	Organ Shatter	오르간 섀터
+Orokin	オロキン	أوروكين	Orokin	오로킨
+Orokin Catalyst	オロキンカタリスト	محفز الأوروكين (Catalyst)	Orokin Katalizörü	오로킨 촉매
+Orokin Cells	オロキン・セル	أوروكين سيلز	Orokin Cell	오로킨 셀
+Orokin moon	オロキンムーン	قمر اوروكين	Orokin ayı	오로킨 달
+Orokin Reactor	オロキンリアクター	مفاعل الأوروكين (Reactor)	Orokin Reaktörü	오로킨 리액터
+Orokin-brainwashed mix of every faction.	オロキンに洗脳された各派閥の混合体。	مزيج من كل الفصائل تعرّض لغسيل الدماغ على يد الأوروكين.	Orokin tarafından beyni yıkanmış, her gruptan karışık birlik.	오로킨에게 세뇌된 모든 세력의 혼성군.
+Orokin-tower guardians: Grineer, Corpus and Infested units brainwashed with Orokin tech. Versatile and dangerous —	オロキンタワーの守護者: オロキンのテクノロジーで洗脳されたグリニア、コーパス、感染体のユニット。多用途で危険 —	حراس برج Orokin: وحدات Grineer وCorpus وInfested التي تم غسل دماغها باستخدام تقنية Orokin. متعددة الاستخدامات وخطيرة -	Orokin kulesinin koruyucuları: Orokin teknolojisiyle beyni yıkanmış Grineer, Corpus ve Infested birimleri. Çok yönlü ve tehlikeli —	오로킨 탑의 수호자: 오로킨 기술로 세뇌된 그리니어, 코퍼스, 감염체 유닛. 다재다능하고 위험합니다 —
+Other things you'll collect	他に集めるもの	أشياء أخرى سوف تجمعها	Toplayacağın diğer şeyler	그 밖에 모으게 될 것들
+over time or its health decays.	時間が経つか、ヘルスが減衰します。	بمرور الوقت أو تتدهور صحته.	zamanla ya da canı azalır.	시간이 지나면서 또는 체력이 감소합니다.
+Overguard	オーバーガード	درع إضافي (Overguard)	Overguard	오버가드
+Oxium	オキシウム	أوكسيوم	Oxium	옥시움
+Oxium Osprey	オキシウム・オスプレイ	أوكسيوم أوسبري	Oxium Osprey	옥시움 오스프리
+Passive:	パッシブ:	سلبي:	Pasif:	패시브:
+Penjaga	ペンジャガ	بينجاجا	Penjaga	펜자가
+per slot	スロットごと	لكل فتحة	yuva başına	슬롯당
+Perrin Sequence	ペリンシーケンス	تسلسل بيرين	Perrin Sequence	페린 시퀀스
+Phobos	フォボス	فوبوس	Phobos	포보스
+Photo	写真	صورة	Fotoğraf	사진
+Physical damage types	物理的ダメージの種類	أنواع الضرر الفيزيائي	Fiziksel hasar türleri	물리 피해 유형
+Pick a mission	ミッションを選択してください	اختر مهمة	Bir görev seç	미션 선택
+Pick a starter Warframe you actually enjoy	実際に楽しめるスターター Warframe を選びましょう	اختر وورفريم مبدئياً تستمتع به فعلاً	Gerçekten hoşuna giden bir başlangıç Warframe'i seç	정말 마음에 드는 시작 Warframe을 고르세요
+Pick one on the left to see its role in your progression.	左側から 1 つを選択すると、進行状況におけるその役割が表示されます。	اختر واحدًا على اليسار لترى دوره في تقدمك.	Gelişimindeki rolünü görmek için soldan birini seç.	왼쪽에서 하나를 선택하면 성장 과정에서의 역할이 표시됩니다.
+Pick two elements to reveal the combined damage type and what its	2 つの要素を選択して、複合的なダメージ タイプとその内容を明らかにします。	اختر عنصرين للكشف عن نوع الضرر المشترك وما هو عليه	İki element seç ve birleşik hasar türünü ve onun neyi	두 원소를 선택해 합성 피해 유형과 그 효과를 확인하세요
+Pick your first Warframe	最初の Warframe を選択してください	اختر أول وورفريم لك	İlk Warframe'ini seç	첫 Warframe 고르기
+pickup magnet. They level up too, with their own mod loadouts. Here are the kinds you'll meet.	ピックアップマグネット。彼らも独自の MOD ロードアウトでレベルアップします。あなたが出会うのは次の種類です。	مغناطيس التقاط. ترتفع مستوياتها هي أيضاً، مع تجهيزات مودات خاصة بها. إليك الأنواع التي ستقابلها.	eşya çekme mıknatısı. Onlar da kendi mod donanımlarıyla seviye atlar. Karşılaşacağın türler şunlar.	아이템 흡수 자석. 이들도 자체 모드 구성으로 레벨이 오릅니다. 만나게 될 종류는 다음과 같습니다.
+Piercing. Its status Weakens enemies, cutting the damage they deal. Good against armored and Corpus robotic targets.	貫通。状態異常は敵を弱体化させ、与えるダメージを減少させます。アーマーを持つ敵やコーパスのロボット系に有効です。	اختراق. تُضعف حالتها الأعداء وتقلل الضرر الذي يلحقونه. جيد ضد الأهداف المدرعة وروبوتات الكوربوس.	Delme. Durumu düşmanları zayıflatır ve verdikleri hasarı azaltır. Zırhlı hedeflere ve Corpus robotlarına karşı iyidir.	관통. 상태 이상은 적을 약화시켜 가하는 피해를 줄입니다. 아머가 두꺼운 대상과 코퍼스 로봇에게 좋습니다.
+Pilot a heavy mech in open worlds and certain missions.	オープンワールドや特定のミッションで重量級メカを操縦しましょう。	قُد ميكا ثقيلة في العوالم المفتوحة ومهام معينة.	Açık dünyalarda ve bazı görevlerde ağır bir mekayı kullan.	오픈 월드와 일부 미션에서 중형 메카를 조종하세요.
+Pistol	ピストル	مسدس	Tabanca	권총
+Pistols, thrown weapons and dual pistols. Often used for utility or as a backup — some secondaries are top-tier damage.	ピストル、投擲武器、二丁拳銃。ユーティリティやバックアップとしてよく使われます。一部のセカンダリはトップクラスのダメージを誇ります。	المسدسات والأسلحة المقذوفة والمسدسات المزدوجة. تُستخدم غالباً كأداة مساعدة أو سلاح احتياطي — وبعض الأسلحة الثانوية تتمتع بضرر من الفئة الأولى.	Tabancalar, fırlatılan silahlar ve çift tabancalar. Genellikle yardımcı veya yedek olarak kullanılır — bazı ikincil silahlar üst düzey hasar verir.	권총, 투척 무기, 쌍권총. 유틸리티나 보조 무기로 자주 쓰이지만 일부 보조 무기는 최상급 피해를 냅니다.
+Plains of Eidolon	エイドロンの平原	سهول إيدولون	Eidolon Ovaları	에이돌론 평원
+Planet Earth on the Star Chart	スターチャート上の地球	كوكب الأرض على مخطط النجوم	Yıldız Haritası'ndaki Dünya	스타 차트의 지구
+Plastids	プラスチド	بلاستيدز	Plastid	플라스티드
+Platinum	プラチナ	بلاتينيوم (Platinum)	Platin	플래티넘
+Platinum only — or earn Platinum by trading. Watch for Nightwave rewards.	プラチナのみ — またはトレードでプラチナを獲得します。ナイトウェーブの報酬に注目してください。	بلاتينيوم فقط — أو اكسب البلاتينيوم عبر التداول. انتبه لمكافآت Nightwave.	Yalnızca Platin — veya takasla Platin kazan. Nightwave ödüllerine göz kulak ol.	플래티넘 전용 — 또는 거래로 플래티넘을 버세요. Nightwave 보상도 눈여겨보세요.
+Platinum or events — the main 'just for looks' spending.	プラチナやイベント — 主な「見た目のため」の出費。	البلاتينيوم أو الأحداث — الإنفاق الرئيسي «لمجرد المظهر».	Platin veya etkinlikler — 'sırf görünüş için' başlıca harcama.	플래티넘 또는 이벤트 — '외형만을 위한' 주된 지출.
+Play The Second Dream	「The Second Dream」をプレイする	العب The Second Dream	The Second Dream'i oyna	The Second Dream 플레이하기
+plus events hand out Catalysts, Reactors and sometimes slots for free.	さらにイベントでは触媒、リアクター、そして場合によってはスロットが無料で配布されます。	بالإضافة إلى الأحداث التي توزع المحفزات والمفاعلات وأحيانًا الفتحات مجانًا.	ayrıca etkinlikler Katalizör, Reaktör ve bazen yuvaları bedava dağıtır.	그리고 이벤트에서 촉매, 리액터, 때로는 슬롯까지 무료로 나눠 줍니다.
+Pluto	冥王星	بلوتو	Plüton	명왕성
+Point Strike	ポイントストライク	بوينت سترايك	Point Strike	포인트 스트라이크
+Poison	毒	سم	Zehir	독
+Polarities: how mods get cheaper	極性: MOD のコストが下がる仕組み	القطبية: كيف تقل تكلفة المودات	Kutuplar: modlar nasıl ucuzlar	극성: 모드 비용이 줄어드는 원리
+Polarity	極性	قطبية	Kutup	극성
+Polarity symbols are approximated for clarity. Matching a mod	極性記号はわかりやすくするために近似的に示しています。 MODのマッチング	يتم تقريب رموز القطبية من أجل الوضوح. مطابقة المود	Kutup sembolleri anlaşılırlık için yaklaşık gösterilmiştir. Bir modu eşleştirmek	극성 기호는 알아보기 쉽게 근사한 것입니다. 모드를 맞추면
+Polarity symbols are approximated for clarity. Matching a mod's polarity to its slot	極性記号はわかりやすくするために近似的に示しています。 MOD の極性をスロットに一致させる	يتم تقريب رموز القطبية من أجل الوضوح. مطابقة قطبية المود مع فتحته	Kutup sembolleri anlaşılırlık için yaklaşık gösterilmiştir. Bir modun kutbunu yuvasıyla eşleştirmek	극성 기호는 알아보기 쉽게 근사한 것입니다. 모드의 극성을 슬롯에 맞추면
+Polarize	極性変更	تغيير القطبية	Kutuplandır	극성 변경
+Polymer Bundle	ポリマー・バンドル	بوليمر بندل	Polymer Bundle	폴리머 번들
+premium currency	プレミアム通貨	العملة المميزة	premium para birimi	프리미엄 화폐
+Pressure Point	プレッシャーポイント	بريشر بوينت	Basınç Noktası	압력점
+Primary	プライマリ	أساسي	Birincil	프라이머리
+Primary elements	基本属性	العناصر الأساسية	Temel elementler	기본 원소
+Prime	プライム	برايم (Prime)	Prime	프라임
+Prime gear	プライムギア	عتاد Prime	Prime ekipman	프라임 장비
+Prime gear & Warframes	プライムギアとWarframe	عتاد البرايم ووورفريم	Prime ekipman ve Warframe'ler	프라임 장비와 Warframe
+Prime parts, mods and Rivens to other players for Platinum, and	プライムパーツ、MOD、Riven を他のプレイヤーにプラチナで売り、	أجزاء Prime والمودات ومودات Riven للاعبين الآخرين مقابل البلاتينيوم، و	Prime parçalarını, modları ve Riven'ları diğer oyunculara Platin karşılığı sat ve	프라임 부품, 모드, Riven을 다른 플레이어에게 플래티넘으로 팔고,
+Prime relics	プライムレリック	ريليك Prime	Prime Relic'ler	프라임 렐릭
+Primed Cryo Rounds	プライムド・クライオ・ラウンド	Primed Cryo Rounds	Primed Cryo Rounds	프라임드 크라이오 라운드
+Primed Fury	プライムドフューリー	برايمد فيوري	Primed Fury	프라임드 퓨리
+Pro tip:	プロのヒント:	نصيحة احترافية:	Pro ipucu:	꿀팁:
+Proc	状態異常の発動 (プロック)	تفعيل الحالة	Proc	프록
+Proc ·	プロック・	Proc ·	Proc ·	프록 ·
+Proc stacks	状態異常のスタック（蓄積）	تراكمات الحالة (Proc Stacks)	Proc yığınları	프록 스택
+Prod Crewman	プロッド・クルーマン	Prod Crewman	Prod Crewman	프로드 승무원
+Progress	進行状況	تقدم	İlerleme	진행도
+Protect an objective through waves of enemies — endless, pays out in rotations.	敵のウェーブから目標を守ります。エンドレスで、報酬はローテーションごとに出ます。	احمِ هدفاً عبر موجات من الأعداء — لا نهائية (Endless)، وتُمنح المكافآت بالتناوب (Rotations).	Düşman dalgaları boyunca bir hedefi koru — sonsuz ve ödülleri rotasyonlarla verir.	적 웨이브로부터 목표를 지키세요 — 무한이며 로테이션 단위로 보상합니다.
+Pull	Pull	سحب (Pull)	Çekme (Pull)	끌어당김
+Punches the ground to send a Blast shockwave in a straight line, dealing level-scaled damage plus a knockdown and Blast proc. Jump or roll over it — it only hits once.	地面をパンチしてブラスト衝撃波を直線に送り、レベルスケールのダメージに加えてノックダウンとブラスト効果を与えます。ジャンプしたり転がったりしてその上を飛び越える - ヒットするのは 1 回だけです。	قم بضرب الأرض لإرسال موجة صادمة متفجرة في خط مستقيم، مما يسبب ضررًا على نطاق واسع بالإضافة إلى ضربة قاضية وأداة انفجار. اقفز أو تدحرج فوقه، فهو يضرب مرة واحدة فقط.		
+Punches the ground to send a Blast shockwave in a straight line, dealing level-scaled damage plus a knockdown and Blast proc. Jump or roll over it — it only hits once. Called Volatile on Infested.	地面をパンチしてブラスト衝撃波を直線に送り、レベルスケールのダメージに加えてノックダウンとブラスト効果を与えます。ジャンプしたり転がったりしてその上を飛び越える - ヒットするのは 1 回だけです。 Infested では Volatile と呼ばれます。	قم بضرب الأرض لإرسال موجة صادمة متفجرة في خط مستقيم، مما يسبب ضررًا على نطاق واسع بالإضافة إلى ضربة قاضية وأداة انفجار. اقفز أو تدحرج فوقه، فهو يضرب مرة واحدة فقط. دعا متقلبة على الموبوءة.	Düz bir çizgide bir Blast şok dalgası göndermek için yere yumruk atar, seviye ölçekli hasar artı bir yere düşürme ve Blast tetiklemesi verir. Üzerinden atlayın veya yuvarlanın; yalnızca bir kez vurur. İstila Edildiğinde Uçucu olarak adlandırılır.	지면을 강타하여 폭발 충격파를 직선으로 보내 레벨에 맞는 피해를 입히고 넉다운 및 폭발 발동을 가합니다. 점프하거나 굴러가세요. 한 번만 맞습니다. 감염되면 불안정하다고 합니다.
+Puncture	パンクチャー	اختراق (Puncture)	Delme (Puncture)	관통
+PvE	PvE	لاعب ضد البيئة	PvE	PvE
+Queue for a	次のキューに入る:	ادخل قائمة الانتظار لـ	Şunun için sıraya gir	다음 대기열에 참가
+Quick detour	急な寄り道	استطراد سريع	Kısa bir sapma	잠깐 다른 길
+Quiz	クイズ	اختبار	Test	퀴즈
+Radial Blind	ラジアル・ブラインド (Radial Blind)	عمى شعاعي (Radial Blind)	Radial Blind	래디얼 블라인드
+Radial Javelin	ラジアル・ジャベリン (Radial Javelin)	رماح شعاعية (Radial Javelin)	Radial Javelin	래디얼 재블린
+Radiates a chilling aura that slows you and shields nearby allies. Break Overguard, then close in.	凍てつくオーラを放ち、あなたの移動を遅くしつつ、近くの味方を保護します。オーバーガードを破壊してから距離を詰めましょう。	تشع هالة باردة تُبطئك وتحمي الحلفاء القريبين. حطّم Overguard ثم اقترب.	Seni yavaşlatan ve yakındaki müttefikleri koruyan ürpertici bir aura yayar. Önce Overguard'ı kır, sonra yaklaş.	서늘한 오라를 방출해 당신을 느리게 하고 근처 아군을 보호합니다. 오버가드를 깬 다음 접근하세요.
+Radiation	放射線	إشعاع	Radyasyon	방사능
+Railjack	レールジャック	ريل جاك (Railjack)	Railjack	레일잭
+Railjack, Necramechs, Kuva Liches and Incarnon weapons — the endgame opens up.	レールジャック、ネクラメカ、クバリッチ、インカーノンの武器 - エンドゲームが始まります。	أسلحة Railjack وNecramechs وKuva Liches وIncarnon — تفتح نهاية اللعبة.	Railjack, Necramech'ler, Kuva Lich'leri ve Incarnon silahları — endgame açılıyor.	Railjack, Necramech, 쿠바 리치, Incarnon 무기 — 엔드게임이 열립니다.
+Raise a barrier that blocks incoming fire and adds Electricity to shots fired through it.	飛来する攻撃を防ぎ、通過した弾に電気を付与するバリアを展開します。	ارفع حاجزًا يمنع النيران القادمة ويضيف الكهرباء إلى الطلقات التي يتم إطلاقها من خلاله.	Gelen ateşi engelleyen ve içinden geçen atışlara Elektrik ekleyen bir bariyer kur.	날아오는 사격을 막고, 통과한 탄에 전기를 부여하는 방벽을 세웁니다.
+Raise Status Chance so hits reliably proc your elements. The dual-stat elemental mods add both elemental damage and status chance at once — Viral, Corrosive and Heat are the usual targets.	ステータス確率を上げて、ヒットで属性が確実に発動するようにします。デュアルステータスの属性 MOD は、属性ダメージとステータス確率を同時に上げます。Viral、Corrosive、Heat が定番です。	ارفع فرصة تفعيل الحالة لتُفعّل ضرباتك عناصرها بشكل موثوق. المودات العنصرية ذات الحالة المزدوجة تضيف الضرر العنصري وفرصة الحالة معاً — وViral وCorrosive وHeat هي الخيارات المعتادة.	Vuruşların elementlerini güvenilir şekilde tetiklemesi için Durum Şansı'nı artır. Çift statlı element modları hem element hasarı hem de durum şansı ekler — Viral, Corrosive ve Heat olağan hedeflerdir.	상태 이상 확률을 올려 타격이 원소를 안정적으로 발동하게 하세요. 듀얼 스탯 원소 모드는 원소 피해와 상태 이상 확률을 동시에 올려 줍니다 — Viral, Corrosive, Heat가 주로 노리는 대상입니다.
+randomised endgame mod	ランダム化されたエンドゲーム MOD	مود عشوائي لنهاية اللعبة	rastgele endgame modu	무작위 엔드게임 모드
+Randomised, weapon-specific endgame stats	ランダム化された武器固有のエンドゲームステータス	إحصائيات نهاية اللعبة العشوائية والخاصة بالأسلحة	Rastgele, silaha özel endgame statları	무작위, 무기 전용 엔드게임 능력치
+Rank	ランク	رتبة	Rütbe	랭크
+Rank 0	ランク0	الرتبة 0	Rütbe 0	랭크 0
+rank mods	MOD のランクアップ	رفع رتبة المودات	mod rütbesi yükseltme	모드 랭크업
+Rank up mods with	MOD のランクを上げる:	ارفع رتبة المودات باستخدام	Modların rütbesini şununla yükselt	모드 랭크를 올리려면
+Ranking a mod with	MOD のランクを上げるには:	رفع رتبة مود باستخدام	Bir modu rütbelendirmek için	모드 랭크를 올리려면
+Rare	レア	نادر	Nadir	희귀
+Rare ×1	レア×1	نادر ×1	Nadir ×1	희귀 ×1
+Reach Mastery Rank 5	マスタリーランク5に到達する	الوصول إلى مرتبة الإتقان 5	Ustalık Rütbesi 5'e ulaş	마스터리 랭크 5 달성
+Reactor	リアクター	مفاعل	Reaktör	리액터
+Red Veil	レッドベール	Red Veil	Red Veil	레드 베일
+Redirection	リダイレクション	ريديريكشن	Yönlendirme	리다이렉션
+Refinement odds explorer	精製オッズ確認ツール	مستكشف احتمالات التحسين (Refinement)	Rafine olasılık gezgini	정제 확률 탐색기
+Refining Void Relics	ヴォイドレリックの精製	تحسين ريليك الفراغ	Void Relic'leri rafine etmek	Void 렐릭 정제하기
+Release a bolt of electricity that chains to nearby enemies and stuns them.	電気のボルトを放ち、近くの敵を連鎖させて気絶させます。	أطلق صاعقة كهربائية تنتقل بين الأعداء القريبين وتصعقهم.	Yakındaki düşmanlara zincirleme geçen ve onları sersemleten bir Elektrik çarpması fırlat.	근처 적에게 연쇄되며 기절시키는 전기 볼트를 발사합니다.
+Releases a 30 m ring of fire that deals Heat damage and knocks you down. Roll through the wave to avoid both the damage and the burn.	30メートルの火の輪を放ち、熱ダメージを与えてダウンさせます。ダメージと火傷の両方を避けるために、波の中を転がってください。	يطلق حلقة من النار طولها 30 مترًا تسبب ضررًا حراريًا وتسقطك أرضًا. مرر عبر الموجة لتجنب الضرر والحرق.	Isı hasarı veren ve sizi yere seren 30 m'lik bir ateş halkası çıkarır. Hem hasarı hem de yanmayı önlemek için dalganın üzerinden geçin.	30m 길이의 불의 고리를 방출하여 열 피해를 입히고 사용자를 쓰러뜨립니다. 손상과 화상을 모두 피하기 위해 파도를 굴러가십시오.
+Releases three slow-moving Electricity orbs that drift toward you for 8 seconds. Shoot them down or kill the Eximus to end them.	3 つのゆっくりとした動きの電気オーブを放出し、8 秒間あなたに向かって漂います。彼らを撃ち落とすか、エクシマスを殺して彼らを終わらせてください。	تطلق ثلاثة أجرام سماوية كهربائية بطيئة الحركة تنجرف نحوك لمدة 8 ثوانٍ. أطلق عليهم النار أو اقتل Eximus للقضاء عليهم.		
+Releases three slow-moving Electricity orbs that drift toward you for 8 seconds. Shoot them down or kill the Eximus to end them. Called Bioelectric on Infested.	3 つのゆっくりとした動きの電気オーブを放出し、8 秒間あなたに向かって漂います。彼らを撃ち落とすか、エクシマスを殺して彼らを終わらせてください。 InfestedではBioelectricと呼ばれます。	تطلق ثلاثة أجرام سماوية كهربائية بطيئة الحركة تنجرف نحوك لمدة 8 ثوانٍ. أطلق عليهم النار أو اقتل Eximus للقضاء عليهم. تسمى الكهرباء الحيوية على المصابة.	8 saniye boyunca size doğru sürüklenen, yavaş hareket eden üç Elektrik küresini serbest bırakır. Onları yok etmek için onları vurun veya Eximus'u öldürün. Infested'de Biyoelektrik denir.	8초 동안 자신을 향해 표류하는 느리게 움직이는 전기 구체 3개를 방출합니다. 그들을 격추하거나 엑시무스를 죽여 그들을 끝내세요. 인페스티드에서는 생체 전기를 호출합니다.
+Relic	レリック	ريليك (Relic)	Relic	렐릭
+relic — odds are per reward slot.	レリック — オッズは報酬スロットごとです。	ريليك — الاحتمالات لكل فتحة مكافأة.	Relic — olasılıklar ödül yuvası başınadır.	렐릭 — 확률은 보상 슬롯당입니다.
+Relics	レリック	الريليك	Relic'ler	렐릭
+Relics are opened in Fissure missions. Refining them with Void Traces raises the odds of the rare reward.	レリックは亀裂ミッションで開きます。Void Traces で精製すると、レアな報酬の確率が上がります。	تُفتح الريليك في مهام الصدوع (Fissures). ويؤدي تحسينها باستخدام Void Traces إلى زيادة احتمالات الحصول على المكافأة النادرة.	Relic'ler Yarık görevlerinde açılır. Onları Void Traces ile rafine etmek nadir ödül olasılığını artırır.	렐릭은 Fissure 미션에서 엽니다. Void Traces로 정제하면 희귀 보상 확률이 올라갑니다.
+Reload	リロード	إعادة تحميل	Şarjör değiştirme	재장전
+Requiem mods	レクイエムMOD	مودات Requiem	Requiem modları	레퀴엠 모드
+Requiem Relics	レクイエムレリック	ريليك Requiem	Requiem Relic'leri	레퀴엠 렐릭
+Rerolls a Riven mod's stats	Riven MOD のステータスをリロールします	يعيد توليد إحصائيات مود Riven (Reroll)	Bir Riven modunun statlarını yeniden çevirir	Riven 모드의 능력치를 리롤합니다
+Rescue	レスキュー	إنقاذ	Kurtarma	구출
+Reset	リセット	إعادة ضبط	Sıfırla	초기화
+Resource hub	リソースハブ	محور الموارد	Kaynak merkezi	자원 허브
+Resources are planet-specific. Search a resource or a planet to find a farm spot. Drop tables change with updates, so treat this as a starting point.	資源は惑星ごとに異なります。資源または惑星を検索して、ファームする場所を探しましょう。ドロップテーブルはアップデートで変わるため、出発点として考えてください。	الموارد خاصة بكل كوكب. ابحث عن مورد أو كوكب للعثور على مكان للفارمنغ. تتغير جداول الإسقاط مع التحديثات، لذا تعامل مع هذا كنقطة بداية.	Kaynaklar gezegene özeldir. Farm yeri bulmak için bir kaynak veya gezegen ara. Düşüş tabloları güncellemelerle değişir, o yüzden bunu bir başlangıç noktası olarak gör.	자원은 행성마다 다릅니다. 자원이나 행성을 검색해 파밍 장소를 찾으세요. 드롭 테이블은 업데이트로 바뀌므로 출발점으로만 삼으세요.
+Rifles, shotguns, bows and launchers. Your main ranged damage. Mods like Serration and elemental combos live here.	ライフル、ショットガン、弓、ランチャー。メインの遠距離ダメージ源です。Serration や属性コンボなどの MOD はここに装着します。	بنادق وبنادق صيد (Shotguns) وأقواس وقاذفات. مصدر ضررك الرئيسي على المدى البعيد. توجد هنا مودات مثل Serration وتركيبات العناصر.	Tüfekler, pompalılar, yaylar ve fırlatıcılar. Ana menzilli hasar kaynağın. Serration ve element kombinasyonları gibi modlar buraya gider.	소총, 샷건, 활, 런처. 주력 원거리 피해원입니다. Serration과 원소 조합 같은 모드가 여기에 들어갑니다.
+Rime Rounds	ライム・ラウンド (Rime Rounds)	Rime Rounds	Rime Rounds	라임 라운드
+Riven	Riven	Riven	Riven	Riven
+Riven Mod	リヴェンモッド	ريڤن مود	Riven Modu	리븐 모드
+Riven rerolls & Liches	Riven のリロールとリッチ	إعادة لفّ الريڤن والليتش	Riven yeniden çevirmeleri ve Lich'ler	Riven 리롤과 리치
+Robotic · bipedal	ロボット・二足歩行	روبوتي · ثنائي الأرجل	Robotik · iki ayaklı	로봇 · 두 발
+Robotic · canine	ロボット・犬	روبوتي · كلبي	Robotik · köpeksi	로봇 · 개과
+Robotic · floating	ロボット・浮遊	روبوتي · عائم	Robotik · havada süzülen	로봇 · 부유형
+Robotics	ロボット工学	الروبوتات	Robotik birimler	로보틱스
+Roller	ローラー	Roller	Roller	롤러
+Ropalolyst	ロパロリスト	Ropalolyst	Ropalolyst	로팔로리스트
+rotations. Each tier is better than the last — then it loops. Click a payout below.	ローテーション。各ティアは前より良くなり、その後ループします。以下の報酬をクリックしてください。	الدورات (Rotations). كل مستوى أفضل من السابق، ثم تتكرر الدورة. انقر على مكافأة أدناه.	rotasyonlar. Her kademe bir öncekinden iyidir — sonra başa döner. Aşağıdaki bir ödüle tıkla.	로테이션. 각 단계는 이전보다 좋으며 이후 반복됩니다. 아래 보상을 클릭하세요.
+Rubedo	ルビドー	روبيدو	Rubedo	루베도
+Run a Void Fissure, pick a squad reward and start building Prime gear.	Void Fissure ミッションをプレイし、分隊の報酬を選んで Prime ギア作りを始めましょう。	ادخل مهمة Void Fissure، واختر مكافأة الفريق وابدأ ببناء عتاد Prime.	Bir Void Yarığı görevi oyna, takım ödülünü seç ve Prime ekipman üretmeye başla.	Void Fissure를 돌고, 분대 보상을 고르고, 프라임 장비 제작을 시작하세요.
+Runner	ランナー	Runner	Runner	러너
+s stats", "You crack it in a Void Fissure to get a Prime part or Forma", "It is the game	ステータス」、「Void Fissure で開けて Prime パーツまたは Forma を入手する」、「これはゲームの	s stats"، "تفتحه في Void Fissure للحصول على جزء Prime أو Forma"، "إنها	s stats", "Prime parçası veya Forma elde etmek için bir Void Yarığı'nda kırarsın", "Oyunun	능력치", "Void Fissure에서 열어 프라임 부품이나 Forma를 얻는다", "게임의
+Sabotage	サボタージュ	تخريب	Sabotaj	사보타주
+Salvage	サルベージ	سالفيج	Kurtarma (Salvage)	샐비지
+Sapping Osprey	サッピング・オスプレイ	Sapping Osprey	Sapping Osprey	새핑 오스프리
+Sargas Ruk	サルガス・ルク	سارجاس روك	Sargas Ruk	사르가스 룩
+Saturn	土星	زحل	Satürn	토성
+Scorpion	スコーピオン	Scorpion	Scorpion	스콜피온
+Secondary	セカンダリ	ثانوي	İkincil	보조 무기
+Sedna	セドナ	سيدنا	Sedna	세드나
+See how a few core mods multiply your damage. This ignores armor, status, enemy level and headshots — but it shows why base damage and multishot matter so much.	いくつかのコア MOD がダメージを倍増させる様子をご覧ください。これはアーマー、ステータス、敵のレベル、ヘッドショットを無視しますが、基本ダメージとマルチショットがなぜそれほど重要なのかを示しています。	شاهد كيف تضاعف بعض المودات الأساسية ضررك. هذا يتجاهل الدرع والحالة ومستوى العدو وطلقات الرأس — لكنه يوضح سبب أهمية الضرر الأساسي والطلقات المتعددة.	Birkaç temel modun hasarını nasıl katladığını gör. Bu; zırhı, durumu, düşman seviyesini ve kafa vuruşlarını yok sayar — ama temel hasar ve multishot'ın neden bu kadar önemli olduğunu gösterir.	핵심 모드 몇 개가 피해를 어떻게 배가시키는지 보세요. 아머, 상태 이상, 적 레벨, 헤드샷은 무시하지만, 기본 피해와 멀티샷이 왜 그렇게 중요한지 보여 줍니다.
+Seeker	シーカー	Seeker	Seeker	시커
+Seekers of truth and mastery of the self.	真実の探求者と、自己の極み。	الباحثون عن الحقيقة وإتقان الذات.	Hakikati ve kendine hâkimiyeti arayanlar.	진리를 구하고 자기 자신을 다스리는 자들.
+Select a planet	惑星を選択してください	اختر كوكبًا	Bir gezegen seç	행성 선택
+Select a step above to learn what happens at each stage.	上のステップを選択して、各段階で何が起こるかを確認してください。	حدد خطوة أعلاه لمعرفة ما يحدث في كل مرحلة.	Her aşamada ne olduğunu öğrenmek için yukarıdan bir adım seç.	위의 단계를 선택하면 각 단계에서 무슨 일이 일어나는지 알 수 있습니다.
+Sentient	センティエント	الواعون (Sentient)	Sentient	센티언트
+Sentinel	センチネル	Sentinel	Sentinel	센티널
+Sentinels & gear	センチネルとギア	الحراس والعتاد	Sentinel'ler ve ekipman	센티널과 장비
+Sentinels, Kubrows, Kavats, MOAs and Hounds — your loyal, moddable allies.	センチネル、クブロウ、キャバット、MOA、ハウンド - あなたの忠実な改造可能な味方です。	Sentinels وKubrows وKavats وMOA وHounds — حلفاؤك المخلصون والقابلون للتعديل.	Sentinel'ler, Kubrow'lar, Kavat'lar, MOA'lar ve Hound'lar — sadık, modlanabilir müttefiklerin.	센티널, 쿠브로, 카바트, MOA, 하운드 — 충직하고 모딩 가능한 아군들.
+Serration	セレーション	سيراتيون	Serration	세레이션
+Serration mod	Serration MOD	مود Serration	Serration modu	Serration 모드
+Serration mod card	Serration MOD カード	بطاقة مود Serration	Serration mod kartı	Serration 모드 카드
+Shield Lancer	シールドランサー	شيلد لانسر	Shield Lancer	실드 랜서
+Shield Osprey	シールドオスプレイ	شيلد اوسبري	Shield Osprey	실드 오스프리
+Shields	シールド	نقاط الحماية	Kalkan	실드
+Shields on crewmen, robotics everywhere.	乗組員はシールドを持ち、ロボットはどこにでもいます。	شيلد لدى أفراد الطاقم، وروبوتات في كل مكان.	Mürettebatın kalkanı var, robotlar her yerde.	승무원은 실드가 있고, 로봇은 어디에나 있습니다.
+Shift	シフト	Shift	Kaydır	전환
+Shock	ショック	صعق	Şok	감전
+Sigil	印章	سيجيل	Sigil	시질
+Simulate hit	ヒットをシミュレートする	محاكاة إصابة	Vuruşu simüle et	타격 시뮬레이션
+Sister candidate	シスター候補	الأخت المرشحة	Sister adayı	시스터 후보
+Six main Syndicates live in the Relays. Wear one's	6 つの主要シンジケートがリレーに拠点を置いています。いずれかの	تتخذ ست نقابات رئيسية من الـ Relays مقراً لها. ارتدِ شعار إحداها	Altı ana Sendika Relay'lerde bulunur. Birinin	여섯 주요 신디케이트가 릴레이에 있습니다. 그중 하나의
+Skip to the quiz	クイズにスキップ	انتقل إلى الاختبار	Teste atla	퀴즈로 건너뛰기
+Slash	スラッシュ	قطع (Slash)	Kesme (Slash)	베기
+Slash Dash	Slash Dash	اندفاع القطع (Slash Dash)	Slash Dash	슬래시 대시
+Slash's Bleed damage-over-time ignores armor completely — the reason Slash crit builds dominate.	スラッシュのブリード（継続ダメージ）はアーマーを完全に無視します。これが、スラッシュのクリティカルビルドが主流である理由です。	يتجاهل ضرر النزيف (Bleed) المستمر الخاص بـ Slash الدرع تماماً — وهذا هو سبب هيمنة بناءات Slash الحرجة.	Slash'in Kanama (zamanla hasar) etkisi zırhı tamamen yok sayar — Slash kritik build'lerinin baskın olmasının sebebi.	Slash의 출혈 지속 피해는 아머를 완전히 무시합니다 — Slash 치명타 빌드가 지배적인 이유입니다.
+slot result	スロット結果	نتيجة الفتحة	yuva sonucu	슬롯 결과
+slot result filled	スロットの結果が埋まりました	نتيجة الفتحة مكتملة	yuva sonucu dolu	슬롯 결과 채워짐
+small muted	小さな静かな	صامتة صغيرة	small muted	작은 흐릿한
+Smeeta	スミータ	سميتا	Smeeta	스미타
+Sneak into vaults and hack consoles without tripping alarms. Rewards great mods.	警報を鳴らさずに金庫へ忍び込み、コンソールをハッキングします。優れた MOD が報酬です。	تسلل إلى الخزائن واخترق وحدات التحكم دون تفعيل الإنذارات. يمنح مودات رائعة كمكافأة.	Alarmları tetiklemeden kasalara sız ve konsolları hackle. Harika modlar ödül verir.	경보를 울리지 않고 금고에 잠입해 콘솔을 해킹하세요. 훌륭한 모드를 보상으로 줍니다.
+Sniper Crewman	スナイパー・クルーマン	فرد طاقم قناص	Sniper Crewman	스나이퍼 승무원
+So you want to play	では、次をプレイしたいのですね	إذن تريد أن تلعب	Yani oynamak istiyorsun	그래서 플레이하고 싶다면
+Solid!	いい調子！	جيد جداً!	Sağlam!	좋아요!
+Solo-friendly	ソロフレンドリー	مناسب للعب المنفرد	Solo dostu	솔로 친화적
+Sorties	ソーティ (Sorties)	المهام اليومية (Sorties)	Sortie'ler	소티
+Space	宇宙	فضاء	Uzay	우주
+Special mods that add mod capacity instead of using it. Auras go on Warframes, Stances on melee weapons.	MOD 容量を使用する代わりに追加する特別な MOD。オーラは Warframe で、スタンスは近接武器で使用されます。	مودات خاصة تضيف سعة المودات بدلاً من استهلاكها. الـ Auras تُركَّب على الوورفريم، والـ Stances (الوضعيات) على أسلحة القتال القريب.	Kapasiteyi harcamak yerine ekleyen özel modlar. Aura'lar Warframe'lere, Stance'ler yakın dövüş silahlarına takılır.	용량을 소모하는 대신 추가해 주는 특수 모드. 오라는 Warframe에, 스탠스는 근접 무기에 장착합니다.
+Special units	特殊ユニット	وحدات خاصة	Özel birimler	특수 유닛
+Speed	スピード	سرعة	Hız	속도
+Split between the weapon that fired and your Warframe.	発射した武器と Warframe の間で分配されます。	يُوزَّع بين السلاح الذي أطلق النار ووورفريمك.	Ateşleyen silah ile Warframe'in arasında bölünür.	발사한 무기와 당신의 Warframe 사이에 나뉩니다.
+Split Chamber	スプリットチェンバー	سبلت تشيمبر	Split Chamber	스플릿 챔버
+Spoiler-light. These unlock after the early quests — don't stress about them yet, just know they exist.	ネタバレ控えめ。これらは序盤のクエストの後に解放されます。まだ気にする必要はありません。存在することだけ知っておいてください。	قليل الحرق. تُفتح هذه بعد المهام المبكرة — لا تقلق بشأنها الآن، فقط اعلم أنها موجودة.	Spoiler içeriği az. Bunlar erken görevlerden sonra açılır — şimdilik kafana takma, sadece var olduklarını bil.	스포일러 최소화. 초반 퀘스트 이후에 해금됩니다 — 아직 신경 쓰지 말고 존재한다는 것만 알아 두세요.
+Spy	潜入 (Spy)	تجسس (Spy)	Casusluk (Spy)	스파이
+Squishy but an endless melee swarm.	耐久力は低いが、無限に押し寄せる近接攻撃の群れ。	هشة البنية ولكنها تهاجم بأعداد لا حصر لها في القتال القريب.	Kırılgan ama sonsuz bir yakın dövüş sürüsü.	약하지만 끝없이 몰려드는 근접 무리.
+Stab your Lich or Sister with the correct Requiem sequence to break the code.	正しいレクイエムシーケンスでリッチやシスターを刺し、暗号を解読してください。	اطعن الـ Lich أو الـ Sister بتسلسل Requiem الصحيح لكسر الشيفرة.	Doğru Requiem dizisiyle Lich'ine veya Sister'ına bıçak sap ve kodu kır.	올바른 Requiem 시퀀스로 Lich나 Sister를 찔러 코드를 깨세요.
+Stack Crit Chance and Crit Damage so most of your shots crit, then add Multishot to fire more projectiles per trigger pull. Best on weapons whose base crit chance is already high.	クリティカル確率とクリティカル倍率を積み上げて、ほとんどの弾がクリティカルになるようにし、さらにマルチショットを加えてトリガー 1 回あたりの発射数を増やします。基礎クリティカル確率がすでに高い武器に最適です。	كدّس Crit Chance وCrit Damage بحيث تكون معظم طلقاتك حرجة، ثم أضف Multishot لإطلاق مقذوفات أكثر مع كل ضغطة زناد. الأفضل مع الأسلحة التي تكون فرصتها الحرجة الأساسية مرتفعة أصلاً.	Çoğu atışın kritik vurması için Kritik Şans ve Kritik Hasar'ı yığ, ardından tetik çekişi başına daha fazla mermi atmak için Multishot ekle. Temel kritik şansı zaten yüksek silahlarda en iyisi.	치명타 확률과 치명타 피해를 쌓아 대부분의 사격이 치명타가 되게 한 뒤, 멀티샷을 더해 방아쇠당 더 많은 투사체를 쏘세요. 기본 치명타 확률이 이미 높은 무기에 가장 좋습니다.
+Stack procs that do the work.	スタックするプロックに仕事を任せましょう。	كدّس تأثيرات Proc لتقوم بالعمل.	İşi yapan Proc'ları yığ.	일을 해 주는 프록을 쌓으세요.
+Stacks 10 times	10 回スタックする	يتراكم 10 مرات	10 kez yığılır	10회 중첩
+Stagger	よろめき	ترنح	Sendeleme	휘청임
+Standing	スタンディング	المكانة (Standing)	İtibar	평판
+Star Chart	スターチャート	مخطط النجوم (Star Chart)	Yıldız Haritası	스타 차트
+Start the guide ↓	ガイドを開始↓	ابدأ الدليل ↓	Rehbere başla ↓	가이드 시작하기 ↓
+Start The Second Dream quest	「The Second Dream」クエストを開始する	ابدأ مهمة The Second Dream	The Second Dream görevini başlat	The Second Dream 퀘스트 시작
+Stats shown are illustrative. Real values depend on the individual weapon — check its Arsenal screen.	表示されているステータスは例示です。実際の値は武器ごとに異なります。アーセナル画面で確認してください。	الإحصائيات المعروضة توضيحية. تعتمد القيم الحقيقية على السلاح الفردي — تحقق من شاشة الأرسنال الخاصة به.	Gösterilen statlar örnektir. Gerçek değerler her silaha göre değişir — Arsenal ekranından kontrol et.	표시된 수치는 예시입니다. 실제 값은 무기마다 다르니 아스널 화면에서 확인하세요.
+Status	ステータス	حالة	Durum	상태
+Status build	状態異常特化ビルド	بناء (Build) يعتمد على تأثير الحالة	Durum build'i	상태 이상 빌드
+Status Chance	状態異常確率	فرصة تفعيل الحالة	Durum Şansı	상태 이상 확률
+Status effect	状態異常	تأثير الحالة	Durum etkisi	상태 이상 효과
+Steel Meridian	スチールメリディアン	Steel Meridian	Steel Meridian	스틸 메리디언
+Step	ステップ	خطوة	Adım	단계
+Stops shield regeneration	シールドの再生を停止します	يوقف تجدد الشيلد	Kalkan yenilenmesini durdurur	실드 재생을 멈춥니다
+Streamline	ストリームライン	ستريملاين	Streamline	스트림라인
+strengthens its effect but also raises its drain. Drag to watch Serration scale from rank 0 to rank 10.	効果は強まりますが、ドレインも増えます。ドラッグして、Serration がランク 0 からランク 10 までどう変化するか確認しましょう。	يقوّي تأثيره لكنه يرفع استهلاكه أيضاً. اسحب لترى كيف يتدرّج Serration من الرتبة 0 إلى الرتبة 10.	etkisini güçlendirir ama tüketimini de artırır. Serration'ın Rütbe 0'dan Rütbe 10'a nasıl ölçeklendiğini görmek için sürükle.	효과를 강화하지만 소모량도 늘립니다. 드래그해서 Serration이 랭크 0에서 랭크 10까지 어떻게 변하는지 보세요.
+Stripped	剥がされた	مُجرَّد	Sökülmüş	벗겨짐
+Support	サポート	الدعم	Destek	지원
+Surge	うねり	طفرة	Kabarmak	급등하다
+Survival	生存 (Survival)	بقاء (Survival)	Hayatta Kalma (Survival)	생존 (Survival)
+Sword	剣	سيف	Kılıç	검
+Swords, staves, claws, whips and glaives. Melee scales hard into late game with combo counters and stances.	剣、杖、爪、鞭、グレイヴ。近接武器はコンボカウンターとスタンスを活かし、ゲーム終盤にかけて大きく強くなります。	السيوف والعصي والمخالب والسياط والجلايف. يزداد القتال القريب قوة كبيرة في اللعبة المتأخرة بفضل عدادات الكومبو (Combo) والوضعيات (Stances).	Kılıçlar, asalar, pençeler, kamçılar ve glaive'ler. Yakın dövüş, kombo sayaçları ve Stance'lerle oyunun sonlarına doğru çok güçlenir.	검, 지팡이, 발톱, 채찍, 글레이브. 근접은 콤보 카운터와 스탠스로 후반에 크게 강해집니다.
+Syndicate	シンジケート	النقابة (Syndicate)	Sendika	신디케이트
+Syndicates & Standing	シンジケートとスタンディング	النقابات والمكانة	Sendikalar ve İtibar	신디케이트와 평판
+Systems you'll unlock later	後から解放されるシステム	الأنظمة التي ستفتحها لاحقًا	Daha sonra açacağın sistemler	나중에 해금되는 시스템
+tear through the horde.	大群を切り裂く。	تمزّق الحشود.	sürüyü paramparça et.	무리를 찢어발기세요.
+Tellurium	テルリウム	تيلوريوم	Tellurium	텔루륨
+Tenno	テンノ	Tenno	Tenno	테노
+TENNO	テンノ	تينو		텐노
+Tesla Chain	テスラチェーン	سلسلة تسلا	Tesla Chain	테슬라 체인
+Test a damage type	ダメージタイプをテストする	اختبار نوع الضرر	Bir hasar türünü dene	피해 유형 테스트
+that buffs its allies or drains you. Break Overguard first, then kill the source of the aura.	味方を強化するか、あなたを消耗させるオーラ。まずオーバーガードを破壊し、その後オーラの発生源を倒しましょう。	الذي يقوّي حلفاءه أو يستنزفك. حطّم Overguard أولاً، ثم اقتل مصدر الهالة.	müttefiklerini güçlendiren veya seni tüketen. Önce Overguard'ı kır, sonra aura'nın kaynağını öldür.	아군을 강화하거나 당신을 소모시키는 오라. 먼저 오버가드를 깨고 오라의 근원을 처치하세요.
+The	その	ال	Şu	그
+The ancient fallen empire that built the Warframes, the Void tech and the Relics.	Warframe、ヴォイドのテクノロジー、レリックを生み出した古代の滅びた帝国。	الإمبراطورية القديمة المنهارة التي صنعت وورفريم وتقنية Void والريليك.	Warframe'leri, Void teknolojisini ve Relic'leri yaratan kadim, çökmüş imparatorluk.	Warframe, Void 기술, 렐릭을 만들어 낸 고대의 몰락한 제국.
+The catch: Syndicates	落とし穴: シンジケート	العيب: النقابات	Tuzak: Sendikalar	함정: 신디케이트
+The core loop	コアループ	الحلقة الأساسية	Ana döngü	핵심 루프
+The elemental combo builder	属性コンボビルダー	منشئ تركيبات العناصر	Element kombinasyon oluşturucu	원소 조합 빌더
+The five factions you'll fight	あなたが戦うことになる 5 つの勢力	الفصائل الخمسة التي ستقاتلها	Savaşacağın beş grup	맞서 싸우게 될 다섯 세력
+The four relic eras are	レリックの 4 つの時代 (Era) は次のとおりです。	عصور الريليك الأربعة هي	Dört Relic çağı şunlardır	렐릭의 네 시대는 다음과 같습니다
+The free in-game currency, used for crafting, fusion and trading taxes.	無料のゲーム内通貨。クラフト、融合、取引税に使用されます。	العملة المجانية داخل اللعبة، وتُستخدم في الصناعة والدمج وضرائب التداول.	Üretimde, füzyonda ve takas vergilerinde kullanılan oyun içi ücretsiz para birimi.	제작, 융합, 거래 세금에 쓰이는 게임 내 무료 화폐.
+The Infested moon. Home to the Necralisk and the Cambion Drift open world, plus the Heart of Deimos quest. A hub for the Entrati family and Necramech content later on.	感染体の月。Necralisk と Cambion Drift オープンワールド、そして Heart of Deimos クエストの舞台です。後の Entrati 一族や Necramech コンテンツの拠点でもあります。	قمر Infested. موطن Necralisk وعالم Cambion Drift المفتوح، بالإضافة إلى مهمة Heart of Deimos. ومركز لعائلة Entrati ومحتوى Necramech لاحقاً.	Infested ayı. Necralisk ile Cambion Drift açık dünyasına ve Heart of Deimos görevine ev sahipliği yapar. Daha sonra Entrati ailesi ve Necramech içeriği için bir merkez.	감염체의 달. Necralisk와 Cambion Drift 오픈 월드, 그리고 Heart of Deimos 퀘스트의 무대입니다. 이후 Entrati 가문과 Necramech 콘텐츠의 거점이기도 합니다.
+the kill happened — and squad kills only count if allies are within	キルが起きた場所に応じます。また、分隊のキルは味方が範囲内にいる場合にのみ	مكان حدوث القتل — ولا تُحتسب عمليات قتل الفريق إلا إذا كان الحلفاء ضمن النطاق	öldürmenin gerçekleştiği yere göre — ve takım öldürmeleri yalnızca müttefikler şu menzildeyse sayılır	처치가 일어난 곳에 따라 달라지며, 분대 처치는 아군이 범위 안에 있을 때만
+The legendary colony ship. Unlocked later in the story, with powerful Incarnon weapon upgrades and endgame bounties.	伝説のコロニー船。ストーリーの後半で解放され、強力なインカーノン武器のアップグレードとエンドゲームのバウンティが利用できます。	سفينة المستعمرة الأسطورية. يتم فتحها لاحقًا في القصة، مع ترقيات قوية لسلاح Incarnon ومكافآت نهاية اللعبة.	Efsanevi koloni gemisi. Hikâyede daha sonra açılır; güçlü Incarnon silah yükseltmeleri ve endgame ödül görevleri sunar.	전설의 식민선. 이야기 후반에 해금되며 강력한 Incarnon 무기 강화와 엔드게임 현상금이 있습니다.
+The loop, visually	ループを視覚的に	الحلقة، بصرياً	Döngü, görsel olarak	루프를 그림으로
+The magic is that	その魔法とは、	السحر هو أن	Sihir şu ki	마법은 바로
+The main enemy factions are the	主な敵勢力は以下の通りです。	فصائل العدو الرئيسية هي	Ana düşman grupları şunlardır	주요 적 세력은 다음과 같습니다
+The Orbiter screen where you equip Warframes, weapons, Companions and install mods.	Warframe、武器、コンパニオンを装備し、MOD をインストールする Orbiter 画面。	شاشة Orbiter حيث تجهّز وورفريم والأسلحة والمرافقين وتثبّت المودات.	Warframe'leri, silahları ve Yoldaşları donattığın ve modları kurduğun Orbiter ekranı.	Warframe, 무기, 컴패니언을 장착하고 모드를 설치하는 Orbiter 화면.
+The Orbiter station where blueprints + resources become Warframes, weapons and more.	設計図と資源が Warframe や武器などに生まれ変わる Orbiter のステーション。	محطة Orbiter حيث تتحول المخططات والموارد إلى وورفريم وأسلحة وغيرها.	Planların ve kaynakların Warframe'lere, silahlara ve daha fazlasına dönüştüğü Orbiter istasyonu.	설계도와 자원이 Warframe과 무기 등으로 바뀌는 Orbiter 스테이션.
+The Orokin moon with unique puzzles and the Octavia's Anthem-area content. Home to some of the game's best story missions.	ユニークなパズルと Octavia's Anthem 関連エリアのコンテンツがあるオロキンの月。ゲームでも屈指のストーリーミッションがここにあります。	قمر Orokin فيه ألغاز فريدة ومحتوى منطقة Octavia's Anthem. موطن بعض من أفضل مهام القصة في اللعبة.	Eşsiz bulmacalara ve Octavia's Anthem bölgesi içeriğine sahip Orokin ayı. Oyunun en iyi hikâye görevlerinden bazılarına ev sahipliği yapar.	독특한 퍼즐과 Octavia's Anthem 관련 구역 콘텐츠가 있는 오로킨의 달. 게임 최고의 스토리 미션 일부가 이곳에 있습니다.
+The Orokin-era, upgraded version of a Warframe or weapon, with better stats and extra polarity slots.	オロキン時代の、より優れたステータスと追加の極性スロットを備えた、Warframe または武器のアップグレードされたバージョン。	نسخة مطورة من وورفريم أو سلاح من عصر Orokin، مع إحصائيات أفضل وفتحات قطبية إضافية.	Daha iyi statlara ve ek kutup yuvalarına sahip, bir Warframe veya silahın Orokin dönemi, yükseltilmiş sürümü.	더 나은 능력치와 추가 극성 슬롯을 가진, 오로킨 시대의 Warframe 또는 무기 상위 버전.
+The Perrin Sequence	ペリンシーケンス	تسلسل بيرين	Perrin Sequence	페린 시퀀스
+The poster boy and the friendliest first pick. A swordsman who is strong, simple and effective everywhere. Great if you like getting up close.	ゲームの顔であり、最初の 1 体として最も親しみやすい選択。強く、シンプルで、どこでも通用する剣士。接近戦が好きなら最適です。	الوجه الإعلاني للعبة وأكثر الخيارات الأولى ودّية. مبارز قوي وبسيط وفعّال في كل مكان. رائع إذا كنت تحب القتال عن قرب.	Oyunun yüzü ve en dost canlısı ilk tercih. Güçlü, basit ve her yerde etkili bir kılıç ustası. Yakından dövüşmeyi seviyorsan harika.	게임의 얼굴이자 가장 친근한 첫 선택. 강하고 단순하며 어디서나 통하는 검사. 가까이서 싸우는 것을 좋아한다면 훌륭합니다.
+The premium currency. Can be bought with real money or earned by trading with players.	プレミアム通貨。リアルマネーで購入することも、プレイヤーとの取引で獲得することもできます。	العملة المميزة. يمكن شراؤها بأموال حقيقية أو كسبها عبر التداول مع اللاعبين.	Premium para birimi. Gerçek parayla satın alınabilir veya oyuncularla takas ederek kazanılabilir.	프리미엄 화폐. 현금으로 구매하거나 플레이어와의 거래로 얻을 수 있습니다.
+The Raptors	ラプターズ	رابتورز	The Raptors	랩터즈
+The Sergeant	軍曹	الرقيب	The Sergeant	서전트
+The Star Chart is a map of the solar system. Missions are “nodes”. Complete nodes to unlock neighbours, beat a	スターチャートは太陽系の地図です。ミッションは「ノード」です。ノードを完了して隣接ノードを解放し、	مخطط النجوم هو خريطة النظام الشمسي. المهام هي «العُقد». أكمل العُقد لفتح العُقد المجاورة، واهزم	Yıldız Haritası güneş sisteminin bir haritasıdır. Görevler "düğümlerdir". Komşu düğümleri açmak için düğümleri tamamla,	스타 차트는 태양계의 지도입니다. 미션은 "노드"입니다. 노드를 완료해 이웃 노드를 해금하고,
+The symbol on a mod and a slot. Matching them halves a mod's capacity drain.	MOD とスロットにあるシンボル。これを一致させると、MOD の容量ドレインが半分になります。	الرمز الموجود على المود وعلى الفتحة. تؤدي مطابقتهما إلى تخفيض استهلاك سعة المود إلى النصف.	Bir modun ve bir yuvanın üzerindeki sembol. Eşleştirmek modun kapasite tüketimini yarıya indirir.	모드와 슬롯에 있는 기호. 둘을 일치시키면 모드의 용량 소모가 절반이 됩니다.
+The thing that quietly stops new players is	新規プレイヤーが気づかないうちに行き詰まる原因は、	الشيء الذي يعيق اللاعبين الجدد بصمت هو	Yeni oyuncuları sessizce durduran şey	신규 플레이어를 조용히 막는 것은
+The Void Fissures mission screen on the Star Chart	スターチャートのVoid Fissuresミッション画面	شاشة مهام Void Fissures على مخطط النجوم	Yıldız Haritası'ndaki Void Yarığı görev ekranı	스타 차트의 Void Fissure 미션 화면
+them into an ally or	彼らを味方にするか、	تحويلهم إلى حليف أو	onları bir müttefike dönüştürmek ya da	그들을 아군으로 만들거나
+Thermite Rounds	テルミットラウンド	Thermite Rounds	Thermite Rounds	테르밋 라운드
+Those primaries do not combine — pick two different elements.	これらの基本属性は組み合わせられません。2 つの異なる属性を選んでください。	هذه العناصر الأساسية لا تندمج — اختر عنصرين مختلفين.	Bu temel elementler birleşmez — iki farklı element seç.	이 기본 원소들은 조합되지 않습니다 — 서로 다른 두 원소를 고르세요.
+Thrax Centurion	スラックス・センチュリオン	Thrax Centurion	Thrax Centurion	트랙스 센추리온
+three Requiem mods	3つのレクイエムMOD	ثلاثة مودات Requiem	üç Requiem modu	레퀴엠 모드 세 개
+Tick items off — your progress is saved in this browser.	項目にチェックを入れると、進行状況がこのブラウザに保存されます。	ضع علامة على العناصر — يُحفظ تقدمك في هذا المتصفح.	Maddeleri işaretle — ilerlemen bu tarayıcıda kaydedilir.	항목을 체크하세요 — 진행 상황은 이 브라우저에 저장됩니다.
+Tier A — common rewards: resources, common mods, Endo and common Relics. Paid at the end of rounds 1 and 2.	Tier A — 一般報酬: 資源、コモン MOD、Endo、コモンレリック。ラウンド 1 と 2 の終了時に付与されます。	المستوى أ — مكافآت شائعة: الموارد والمودات الشائعة وEndo وريليك شائعة. تُمنح في نهاية الجولتين 1 و2.	Kademe A — yaygın ödüller: kaynaklar, yaygın modlar, Endo ve yaygın Relic'ler. 1. ve 2. turların sonunda verilir.	티어 A — 일반 보상: 자원, 일반 모드, 엔도, 일반 렐릭. 라운드 1과 2 종료 시 지급됩니다.
+Tier B — a step up: rarer mods, more Endo and better Relics. Paid at the end of round 3.	Tier B — ステップアップ: よりレアなMOD、より多くのEndo、より優れたレリック。ラウンド 3 の終了時に支払われます。	المستوى ب — خطوة للأعلى: مودات أندر والمزيد من Endo وريليك أفضل. تُمنح في نهاية الجولة 3.	Kademe B — bir üst basamak: daha nadir modlar, daha fazla Endo ve daha iyi Relic'ler. 3. turun sonunda verilir.	티어 B — 한 단계 위: 더 희귀한 모드, 더 많은 엔도, 더 좋은 렐릭. 라운드 3 종료 시 지급됩니다.
+Tier C — the best table: rare mods, Prime parts and larger resource bundles. Paid at round 4, then the cycle restarts at A.	Tier C — 最高のテーブル: レア MOD、プライム パーツ、より大きなリソース バンドル。ラウンド 4 で支払われ、サイクルは A から再開されます。	المستوى ج — أفضل جدول: مودات نادرة وأجزاء Prime وحزم موارد أكبر. تُمنح في الجولة 4، ثم تبدأ الدورة من جديد عند المستوى أ.	Kademe C — en iyi tablo: nadir modlar, Prime parçaları ve daha büyük kaynak paketleri. 4. turda verilir, sonra döngü A'dan yeniden başlar.	티어 C — 최고의 테이블: 희귀 모드, 프라임 부품, 더 큰 자원 번들. 라운드 4에 지급되고, 이후 A부터 다시 시작합니다.
+Tip: bringing fewer weapons concentrates shared Affinity onto the ones you're actually levelling.	ヒント: 持ち込む武器を減らすと、共有されるアフィニティが、実際にレベル上げしている武器に集中します。	نصيحة: اصطحاب عدد أقل من الأسلحة يركّز الأفينيتي المشترك على الأسلحة التي ترفع مستواها فعلاً.	İpucu: Daha az silah getirmek, paylaşılan Affinity'yi gerçekten seviyelediğin silahlara yoğunlaştırır.	팁: 가져가는 무기를 줄이면 공유되는 어피니티가 실제로 레벨업 중인 무기에 집중됩니다.
+to change a slot's polarity, then re-level the item to 30.	スロットの極性を変更してから、アイテムをもう一度ランク 30 まで上げ直します。	لتغيير قطبية الفتحة، ثم أعد رفع مستوى العنصر إلى 30.	bir yuvanın kutbunu değiştirmek, sonra eşyayı yeniden 30. seviyeye çıkarmak için.	슬롯의 극성을 바꾼 다음, 아이템을 다시 30레벨까지 올리세요.
+to chew through them.	それらを削り切るために。	لاختراقها.	onları aşmak için.	그것들을 뚫기 위해.
+to play	プレイするために	للعب	oynamak için	플레이하려면
+to raise rare-drop odds.	レアドロップ確率を上げるため。	لرفع احتمالات الإسقاط النادر.	nadir düşüş olasılığını artırmak için.	희귀 드롭 확률을 올리기 위해.
+to reach the next planet. Click a planet to meet	次の惑星に到達するために。惑星をクリックして、そこにいるものと出会いましょう	للوصول إلى الكوكب التالي. انقر على كوكب للتعرف على	sonraki gezegene ulaşmak için. Tanışmak için bir gezegene tıkla	다음 행성에 도달하기 위해. 행성을 클릭해 만나 보세요
+to recruit them as an ally, or	彼らを味方として勧誘するか、	لتجنيدهم كحليف، أو	onları müttefik olarak devşirmek veya	그들을 아군으로 영입하거나,
+Toggle navigation	ナビゲーションを切り替え	تبديل التنقل	Gezinmeyi aç/kapat	내비게이션 전환
+Toxic Ancient	トキシック・エンシェント	العتيق السام (Toxic Ancient)	Toxic Ancient	독성 고대
+Toxic Crawler	トキシック・クローラー	الزاحف السام (Toxic Crawler)	Toxic Crawler	독성 크롤러
+Toxin	トキシン	السمّ (Toxin)	Toksin	독
+Toxin skips Shields entirely and poisons health directly	トキシンはシールドを完全に無視し、ヘルスに直接ダメージを与える	السمّ (Toxin) يتخطى الشيلد تماماً ويُلحق الضرر بالصحة مباشرة	Toksin Kalkanları tamamen atlar ve doğrudan Cana zehir verir	독은 실드를 완전히 건너뛰고 체력에 직접 독을 입힙니다
+Toxin skips Shields entirely and poisons health directly — the classic anti-Corpus bypass.	トキシンはシールドを完全に無視し、ヘルスに直接ダメージを与える — 対コーパスの定番のバイパス手段です。	السمّ (Toxin) يتخطى الشيلد تماماً ويُلحق الضرر بالصحة مباشرة — الالتفاف الكلاسيكي ضد الكوربوس.	Toksin Kalkanları tamamen atlar ve doğrudan Cana zehir verir — klasik Corpus karşıtı atlatma yolu.	독은 실드를 완전히 건너뛰고 체력에 직접 독을 입힙니다 — 대 코퍼스의 고전적인 우회로.
+Trade Prime parts, rare mods and Rivens to other players for Platinum at	Prime パーツ、レア MOD、Riven を他のプレイヤーとプラチナで取引します。取引場所:	تداول أجزاء Prime والمودات النادرة ومودات Riven مع لاعبين آخرين مقابل البلاتينيوم في	Prime parçalarını, nadir modları ve Riven'ları diğer oyuncularla Platin karşılığı takas et:	프라임 부품, 희귀 모드, Riven을 다른 플레이어와 플래티넘으로 거래하세요. 장소:
+Transform certain weapons with powerful evolution upgrades from the Zariman and beyond.	ザリマン以降の強力な進化アップグレードで、特定の武器を進化させます。	حوّل أسلحة معينة بترقيات تطورية قوية من Zariman وما بعدها.	Belirli silahları Zariman ve sonrasındaki güçlü evrim yükseltmeleriyle dönüştür.	자리만 이후의 강력한 진화 강화로 특정 무기를 변신시킵니다.
+Trap an enemy in a magnetic bubble that absorbs gunfire and explodes it onto anyone inside.	敵を、銃撃を吸収する磁気バブルに閉じ込め、吸収した分を内部の全員への爆発として放ちます。	احبس عدواً في فقاعة مغناطيسية تمتص إطلاق النار وتفجّره على كل من بداخلها.	Bir düşmanı ateşi emen ve onu içindeki herkesin üzerine patlatan manyetik bir baloncuğa hapset.	총격을 흡수하고 그것을 안에 있는 모두에게 폭발로 되돌려주는 자기장 거품에 적을 가두세요.
+Trigger and kill a	発動させて倒す	فعّل واقتل	Tetikle ve öldür	발동시켜 처치하기
+Trooper	トルーパー	Trooper	Trooper	트루퍼
+Turns enemies on each other	敵同士を争わせる	ينقلب الأعداء على بعضهم البعض	Düşmanları birbirine düşürür	적끼리 서로 싸우게 만듭니다
+Tusk Bombard	タスク・ボンバード	تاسك بومبارد	Tusk Bombard	터스크 봄바드
+Tutorial home	チュートリアルのホーム	الصفحة الرئيسية للدليل	Rehber ana sayfası	튜토리얼 홈
+Two primary elements combine into a secondary element. What does Cold + Toxin make?	2 つの基本属性を組み合わせると複合属性になります。コールド + トキシンは何になるでしょう？	يندمج عنصران أساسيان في عنصر ثانوي. ماذا ينتج عن البرودة + السم؟	İki temel element birleşip ikincil bir element olur. Soğuk + Toksin neyi yapar?	두 기본 원소가 합쳐져 2차 원소가 됩니다. 냉기 + 독은 무엇이 될까요?
+Tyl Regor	ティル・レゴール	تيل ريجور	Tyl Regor	틸 레고르
+Type	タイプ	النوع	Tür	유형
+Unairu	ウナイル	أونايرو	Unairu	우나이루
+Uncommon	アンコモン	غير شائع	Nadir olmayan	비일반
+Uncommon ×2	アンコモン×2	غير شائع ×2	Nadir olmayan ×2	비일반 ×2
+Underwater labs	水中実験室	مختبرات تحت الماء	Su altı laboratuvarları	수중 연구소
+Unleash a wave of electricity that chains through and paralyzes crowds.	群れを次々に連鎖して麻痺させる電撃の波を放ちます。	أطلق العنان لموجة من الكهرباء التي تخترق الحشود وتشلها.	Kalabalıkların arasından zincirleme geçip onları felç eden bir Elektrik dalgası salıver.	군중을 연쇄적으로 관통하며 마비시키는 전기 파동을 방출합니다.
+Unlock and try a Void Fissure mission	Void Fissure ミッションを解放して挑戦する	افتح مهمة Void Fissure وجرّبها	Bir Void Yarığı görevini aç ve dene	Void Fissure 미션을 해금하고 도전하기
+Uranus	天王星	أورانوس	Uranüs	천왕성
+Use	使う	استخدم	Kullan	사용
+use strict	use strict	use strict	use strict	use strict
+Utility — range, duration, speed.	ユーティリティ — 範囲、持続時間、速度。	المنفعة — النطاق والمدة والسرعة.	Yardımcı — menzil, süre, hız.	유틸리티 — 범위, 지속시간, 속도.
+Vacuum	Vacuum（バキューム）	Vacuum	Vacuum	Vacuum
+Vanquish	ヴァンキッシュ	قهر	Vanquish	밴퀴시
+Variants count separately: a Braton, MK1-Braton, Braton Prime each give their own Mastery.	バリアントは個別にカウントされます。Braton、MK1-Braton、Braton Prime はそれぞれ独自のマスタリーを与えます。	يتم احتساب المتغيرات بشكل منفصل: كل من Braton، وMK1-Braton، وBraton Prime يمنح كل منهم إتقانه الخاص.	Varyantlar ayrı sayılır: Braton, MK1-Braton ve Braton Prime'ın her biri kendi Ustalığını verir.	변종은 각각 따로 집계됩니다: Braton, MK1-Braton, Braton Prime은 각각 자기 몫의 마스터리를 줍니다.
+Vazarin	バザリン	فازارين	Vazarin	바자린
+ve ranked and how much of the map you	ランクを上げたギアの量と、マップをどれだけ	التي رفعت رتبتها ومقدار الخريطة الذي	rütbelendirdiğin ekipmanın miktarına ve haritanın ne kadarını	랭크를 올린 장비의 양과 지도를 얼마나
+Venomous	毒のある	سام	Zehirli	맹독성
+Venus	金星	الزهرة	Venüs	금성
+Viral	ヴァイラル	فيرال (Viral)	Viral	바이럴
+Virus	ウイルス	فيروس (Virus)	Virüs	바이러스
+Vital Sense	バイタルセンス	ڤيتال سينس	Vital Sense	바이털 센스
+Vitality	バイタリティ	فيتاليتي	Canlılık	활력
+Vitality mod	Vitality MOD	مود Vitality	Vitality modu	Vitality 모드
+Void	ヴォイド	الفراغ	Void	보이드
+Void Angel	ヴォイドエンジェル	Void Angel	Void Angel	보이드 엔젤
+Void Fissure	ヴォイド亀裂 (Void Fissure)	صدع Void (Void Fissure)	Void Yarığı (Void Fissure)	보이드 균열 (Void Fissure)
+Void Relic	ヴォイドレリック	ريليك Void (Void Relic)	Void Relic	보이드 렐릭 (Void Relic)
+Void Relics	ヴォイドレリック	ريليك Void (Void Relics)	Void Relic'ler	보이드 렐릭 (Void Relics)
+Void Traces	ボイド・トレース	فويد تريسز	Void Traces	보이드 트레이스
+Voidgel Orb	ボイドジェル・オーブ	فويدجل أورب	Hiçlik Küresi	공허 젤 오브
+Volatile	ボラタイル (Volatile)	متقلب	Değişken (Volatile)	휘발성
+Volatile Runner	ボラタイル・ランナー	Volatile Runner	Volatile Runner	휘발성 러너
+Volt	ボルト	فولت	Volt	볼트
+vs the stack	スタックとの比較	مقابل المكدس	yığına karşı	스택 대비
+Warframe	Warframe	وورفريم	Warframe	Warframe
+WARFRAME	WARFRAME	وورفريم	WARFRAME	WARFRAME
+Warframe 101	Warframe 101	وورفريم 101	Warframe 101	Warframe 101
+Warframe 101 — An Interactive Beginner's Guide	Warframe 101 — インタラクティブな初心者ガイド	وورفريم 101 — دليل تفاعلي للمبتدئين	Warframe 101 — Etkileşimli Başlangıç Rehberi	Warframe 101 — 인터랙티브 초보자 가이드
+Warframe abilities	Warframe の能力	قدرات وورفريم	Warframe yetenekleri	Warframe 어빌리티
+Warframe is a free-to-play, third-person	Warframe は基本プレイ無料の三人称視点	وورفريم لعبة مجانية (Free-to-Play) بمنظور الشخص الثالث	Warframe, oynaması ücretsiz, üçüncü şahıs	Warframe은 무료로 즐기는 3인칭
+Warframe is a marathon, not a sprint. Don't try to learn every system on day one	Warframeは短距離走ではなくマラソンです。初日にすべてのシステムを理解しようとしないでください。	لعبة وورفريم أشبه بماراثون وليست سباق سرعة. لا تحاول فهم كل الأنظمة في اليوم الأول	Warframe bir sprint değil, maratondur. İlk günde her sistemi öğrenmeye çalışma	Warframe은 단거리 달리기가 아니라 마라톤입니다. 첫날부터 모든 시스템을 익히려 하지 마세요
+Warframe is a marathon, not a sprint. Don't try to learn every system on day one — the game unlocks them gradually for a reason.	Warframe は短距離走ではなくマラソンです。初日からすべてのシステムを理解しようとしないでください。ゲームが少しずつ解放していくのには理由があります。	لعبة وورفريم أشبه بماراثون وليست سباق سرعة. لا تحاول فهم كل الأنظمة في اليوم الأول، فاللعبة تفتحها تدريجياً لسبب وجيه.	Warframe bir sprint değil, maratondur. İlk günde her sistemi öğrenmeye çalışma — oyun onları kademeli olarak açar, bunun bir sebebi var.	Warframe은 단거리 달리기가 아니라 마라톤입니다. 첫날부터 모든 시스템을 익히려 하지 마세요 — 게임이 시스템을 서서히 해금하는 데는 이유가 있습니다.
+Warframe parts & gear	Warframe のパーツとギア	أجزاء وعتاد وورفريم	Warframe parçaları ve ekipmanı	Warframe 부품과 장비
+Warframe slots	Warframe スロット	فتحات وورفريم	Warframe yuvaları	Warframe 슬롯
+Warframe: The Ultimate Beginner's Guide	Warframe: 究極の初心者ガイド	Warframe: الدليل النهائي للمبتدئين	Warframe: Nihai Başlangıç ​​Kılavuzu	Warframe: 최고의 초보자를 위한 가이드
+Warframes	Warframe	وورفريم	Warframe'ler	Warframe
+Warframes & helmets	Warframe とヘルメット	وورفريم والخوذات	Warframe'ler ve kasklar	Warframe과 헬멧
+Warframes & weapons	Warframe と武器	وورفريم والأسلحة	Warframe'ler ve silahlar	Warframe과 무기
+Warframes and weapons are the fancier versions of regular gear. You get their parts by opening	Warframe と武器は、通常の装備の豪華版です。次を開くことでパーツを入手できます	وورفريم والأسلحة هي الإصدارات الأرقى من العتاد العادي. تحصل على أجزائها عن طريق فتح	Warframe'ler ve silahlar, sıradan ekipmanın daha gösterişli sürümleridir. Parçalarını şunu açarak alırsın	Warframe과 무기는 일반 장비의 상위 버전입니다. 그 부품은 다음을 열어서 얻습니다
+We all lift together	みんなで一緒に持ち上げます	نحن جميعا نرفع معا	Hep birlikte kaldırıyoruz	우리 모두 함께 들어요
+WE ALL LIFT TOGETHER	みんなで一緒に持ち上げましょう	نحن جميعا نرفع معا	HEP BİRLİKTE KALDIRIYORUZ	우리 모두 함께 들어 올리세요
+Weakened	弱体化した	مُضعَف	Zayıflatılmış	약화됨
+Weapon slots	武器スロット	فتحات الأسلحة	Silah yuvaları	무기 슬롯
+Weapons	武器	الأسلحة	Silahlar	무기
+Weapons & gear	武器と装備	الأسلحة والعتاد	Silahlar ve ekipman	무기와 장비
+Weapons & Warframes	武器とWarframe	الأسلحة ووورفريم	Silahlar ve Warframe'ler	무기와 Warframe
+weapons ×2	武器×2	الأسلحة ×2	silah ×2	무기 ×2
+Weapons are pushed in one of three directions by their mods. Pick a build to see which stats matter and which mods feed them.	武器は MOD によって 3 つの方向性のいずれかに伸びていきます。ビルドを選ぶと、どのステータスが重要で、どの MOD がそれを伸ばすかが分かります。	تتجه الأسلحة بفضل مودّاتها نحو أحد ثلاثة اتجاهات. اختر بناءً (Build) لمعرفة الإحصائيات المهمة والمودات التي تدعمها.	Silahlar modlarıyla üç yönden birine itilir. Hangi statların önemli olduğunu ve hangi modların onları beslediğini görmek için bir build seç.	무기는 모드에 의해 세 방향 중 하나로 나아갑니다. 빌드를 선택해 어떤 능력치가 중요하고 어떤 모드가 그것을 키우는지 확인하세요.
+Weapons share a limited inventory too. Roughly	武器も限られたインベントリ枠を共有します。おおよそ	تشترك الأسلحة في مخزون محدود أيضاً. تقريباً	Silahlar da sınırlı bir envanteri paylaşır. Yaklaşık	무기도 제한된 인벤토리를 공유합니다. 대략
+weapons with a high base crit chance — rifles, bows, snipers and many melee.	基礎クリティカル確率が高い武器 — ライフル、弓、スナイパーライフル、そして多くの近接武器。	أسلحة ذات فرصة حرجة أساسية عالية — بنادق وأقواس وقناصات وكثير من أسلحة القتال القريب.	temel kritik şansı yüksek silahlar — tüfekler, yaylar, keskin nişancılar ve birçok yakın dövüş silahı.	기본 치명타 확률이 높은 무기 — 소총, 활, 저격총, 그리고 많은 근접 무기.
+weapons with solid crit AND status — the usual endgame direction.	確実なクリティカルとステータスを持つ武器 — 通常のエンドゲームの方向性。	أسلحة تجمع بين الضربات الحرجة القوية وتأثيرات الحالة — الاتجاه المعتاد في نهاية اللعبة.	sağlam kritik VE duruma sahip silahlar — olağan endgame yönü.	탄탄한 치명타와 상태 이상을 모두 갖춘 무기 — 일반적인 엔드게임 방향.
+WELCOME TENNO	テンノさん、ようこそ	مرحبًا تينو	HOŞGELDİNİZ TENNO	텐노 여러분을 환영합니다
+Welcome, Tenno	ようこそ、テンノ	مرحبًا تينو	Hoş geldin Tenno	환영합니다, 텐노
+What	何	ماذا	Ne	무엇을
+What does an Orokin Catalyst or Reactor do?	オロキンのカタリストまたはリアクターは何をしますか？	ماذا يفعل محفز أو مفاعل Orokin؟	Bir Orokin Katalizörü veya Reaktörü ne yapar?	Orokin 촉매나 리액터는 무엇을 하나요?
+What is the main use of a Void Relic?	ヴォイドレリックの主な用途は何ですか？	ما الاستخدام الرئيسي لريليك Void؟	Bir Void Relic'in ana kullanımı nedir?	Void 렐릭의 주된 용도는 무엇인가요?
+What is Warframe, really?	そもそもWarframeって何？	ما هو وورفريم حقاً؟	Warframe aslında nedir?	Warframe이란 정확히 무엇일까요?
+What it is good for	何に向いているか	ما الذي يناسبه	Ne işe yarar	무엇에 좋은가
+Where to farm key resources	主要な資源をどこでファームするか	أين تجمع الموارد الأساسية؟	Temel kaynaklar nerede farm'lanır	핵심 자원은 어디서 파밍할까
+Where you actually go	実際に行くところ	أين تذهب في الواقع	Gerçekte gittiğin yerler	실제로 가게 되는 곳
+where you are a	そこであなたは	حيث أنت	burada sen bir	그곳에서 당신은
+Where you start. Grineer and the Vor's Prize questline live here. The Plains of Eidolon open-world and the town of Cetus are also on Earth — visit them for bounties and the Ostron syndicate.	あなたが始まる場所。グリニアとヴォルズ・プライズのクエストラインはここにあります。エイドロンの平原オープンワールドとセタスの町も地球にあり、バウンティやオストロン シンジケートのために訪れましょう。	حيث تبدأ. هنا غرينير وسلسلة مهام جائزة Vor. كما أن عالم سهول Eidolon المفتوح ومدينة Cetus على الأرض أيضاً — زرهما للحصول على المهام المكافئة (Bounties) ونقابة Ostron.	Başladığın yer. Grineer ve Vor's Prize görev zinciri burada. Eidolon Ovaları açık dünyası ve Cetus kasabası da Dünya'dadır — Ödül Görevleri ve Ostron sendikası için ziyaret et.	시작하는 곳. 그리니어와 Vor's Prize 퀘스트라인이 여기 있습니다. Plains of Eidolon 오픈 월드와 Cetus 마을도 지구에 있습니다 — 현상금과 Ostron 신디케이트를 위해 방문하세요.
+Which currency is the free-to-play one used for crafting?	製作に使われる、無料で手に入る通貨はどれですか？	ما العملة المجانية المستخدمة في الصناعة؟	Üretimde kullanılan, oynaması ücretsiz para birimi hangisidir?	제작에 쓰이는 무료 플레이용 화폐는 무엇일까요?
+Wisp & clan research	ウィスプとクラン研究	ويسپ وأبحاث الكلان	Wisp ve klan araştırması	위습 및 클랜 연구
+Wrong slot	間違ったスロット	فتحة خاطئة	Yanlış yuva	잘못된 슬롯
+Yank enemies and loot toward you with a magnetic burst, knocking them down.	磁気バーストで敵と戦利品を自分のほうへ引き寄せ、敵をなぎ倒します。	اسحب الأعداء والغنائم نحوك بدفعة مغناطيسية، مما يطرحهم أرضاً.	Manyetik bir patlamayla düşmanları ve ganimeti kendine doğru çek, onları yere devir.	자기 폭발로 적과 전리품을 당신 쪽으로 끌어당겨 쓰러뜨립니다.
+You — the Tenno child who controls the Warframe. Unlocked and expanded through story quests.	あなた — Warframe を操るテンノの子ども。ストーリークエストを通じて解放・拡張されていきます。	أنت — طفل Tenno الذي يتحكم بالوورفريم. يُفتح ويتوسع عبر مهام القصة.	Sen — Warframe'i kontrol eden Tenno çocuğu. Hikâye görevleriyle açılır ve genişler.	당신 — Warframe을 조종하는 테노 아이. 스토리 퀘스트를 통해 해금되고 확장됩니다.
+You and the other players — the Operators who pilot Warframes.	あなたと他のプレイヤー、つまり Warframe を操縦するオペレーターです。	أنت واللاعبون الآخرون — المشغّلون الذين يقودون الوورفريم.	Sen ve diğer oyuncular — Warframe'leri yöneten Operatörler.	당신과 다른 플레이어들 — Warframe을 조종하는 오퍼레이터들.
+You are fast on purpose. Use	あなたが速いのには理由があります。次を使いましょう	أنت سريع عن قصد. استخدم	Bilerek hızlısın. Kullan	당신은 일부러 빠르게 만들어졌습니다. 사용하세요
+You crack it in a Void Fissure to get a Prime part or Forma	ヴォイド亀裂で開くと、Prime パーツまたは Forma が入手できます	تفتحه في Void Fissure للحصول على جزء Prime أو Forma	Prime parçası veya Forma elde etmek için onu bir Void Yarığı'nda kırarsın	Void Fissure에서 열면 프라임 부품이나 Forma를 얻습니다
+You fight across the solar system in ships called	あなたは太陽系を越え、次の名前の船で戦います	أنت تقاتل عبر النظام الشمسي في سفن تسمى	Güneş sistemi boyunca şu adlı gemilerle savaşırsın	당신은 다음이라는 함선을 타고 태양계 곳곳에서 싸웁니다
+you must	必ず〜しなければなりません	يجب عليك أن	mutlaka	반드시
+You pick a mission from the	次からミッションを選びます	تختار مهمة من	Bir görevi şuradan seçersin	다음에서 미션을 고릅니다
+Your beginner roadmap	初心者向けロードマップ	خريطة طريقك للمبتدئين	Yeni başlayan yol haritan	초보자 로드맵
+your gear is the progression	ギアこそが成長です	عتادك هو التقدم	ekipmanın ilerlemenin kendisidir	장비가 곧 성장입니다
+Your loadout	現在のロードアウト	عتادك الحالي	Yükleniş	나의 로드아웃
+Your loadout, slot by slot	ロードアウトのスロット詳細	عتادك الحالي، فتحة بفتحة	Yükleniş, yuva yuva	슬롯별 로드아웃
+Your Warframe ability kill	Warframe のアビリティによるキル	قتل بقدرة وورفريمك	Warframe yeteneğiyle öldürme	Warframe 어빌리티 처치
+Your weapon kill	武器によるキル	قتل بسلاحك	Silahla öldürme	무기 처치
+Zariman	ザリマン	زريمان	Zariman	자리만
+Zariman 10-0	ザリマン 10-0	زريمان 10-0	Zariman 10-0	자리만 10-0
+Zariman bounties, Void Cascade or Void Armageddon	ザリマンのバウンティ、ヴォイドカスケード、ヴォイド・アルマゲドン	مكافآت زاريمان أو فويد كاسكيد أو فويد أرماجيدون	Zariman ödülleri, Void Cascade veya Void Armageddon	자리만 현상금, 공허 폭포 또는 공허 아마겟돈
+Zariman crafting	ザリマンのクラフト	صناعة زاريمان	Zariman işçiliği	자리만 제작
+Zariman gear & Incarnon	ザリマンの装備とインカーノン	عتاد زاريمان وإنكارنون	Zariman teçhizatı ve Incarnon	자리만 장비 & 인카논
+Zariman missions and Void Flood	ザリマンのミッションとヴォイドフラッド	مهام زاريمان وفويد فلود	Zariman misyonları ve Void Flood	자리만 임무와 공허 홍수
+Zariman specials	ザリマンの特別コンテンツ	ميزات Zariman الخاصة	Zariman özel içerikleri	자리만 특수 콘텐츠
+Zenurik	ゼヌリク	زينوريك	Zenurik	제누릭
